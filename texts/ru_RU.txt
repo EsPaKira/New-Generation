@@ -1,0 +1,17 @@
+Characteristics=Характеристики
+Close characteristics=Скрыть характеристики
+Main characteristics=Основные характеристики
+Other characteristics=Остальные характеристики
+Types of protection=Виды защиты
+Body=Тело
+Soul=Душа
+Max. oxygen=Макс. кислород
+Max. HP=Макс. HP
+Max. mana=Макс. мана
+Agility=Ловкость
+Accuracy=Меткость
+Heat preservation=Сохранение тепла
+Heat reflection=Отражение тепла
+Crush damage protection=Защита от дробящего урона
+Cutting damage protection=Защита от режущего урона
+Piercing damage protection=Защита от колющего урона

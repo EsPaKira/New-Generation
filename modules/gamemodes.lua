@@ -1,0 +1,63 @@
+-- Original code - base_survival by MihailRis
+
+local gamemodes = {
+    players = {}
+}
+
+function gamemodes.get_characteristics_manager(playerid)
+    local entity = entities.get(player.get_entity(playerid))
+    if entity == nil then
+        return nil
+    end
+    return entity:get_component("newgen_survival:characteristics_manager")
+end
+
+function gamemodes.is_dead(playerid)
+    return player.get_entity(playerid) == 0
+end
+
+
+function gamemodes.set(playerid, name)
+    local gamemode = gamemodes.get(playerid)
+    if name == "creative" then
+        rules.set("allow-cheat-movement", true)
+        rules.set("allow-flight", true)
+        rules.set("allow-noclip", true)
+        rules.set("allow-debug-cheats", true)
+        rules.set("allow-fast-interaction", true)
+        rules.set("allow-content-access", true)
+        rules.set("allow-destroy", true)
+        player.set_instant_destruction(playerid, true)
+        player.set_infinite_items(playerid, true)
+    elseif name == "survival" then
+        rules.set("allow-cheat-movement", false)
+        rules.set("allow-flight", false)
+        rules.set("allow-noclip", false)
+        rules.set("allow-debug-cheats", false)
+        rules.set("allow-fast-interaction", false)
+        rules.set("allow-content-access", false)
+        rules.set("allow-destroy", true)
+        player.set_instant_destruction(playerid, false)
+        player.set_infinite_items(playerid, false)
+        player.set_flight(playerid, false)
+        player.set_noclip(playerid, false)
+    end
+    gamemode.current = name
+    events.emit("newgen_survival:gamemodes.set", playerid, name)
+end
+
+function gamemodes.exists(name)
+    return name == "creative" or name == "survival"
+end
+
+function gamemodes.get(playerid)
+    if gamemodes.players[playerid] == nil then
+        gamemodes.players[playerid] = {
+            current=player.is_infinite_items(playerid)
+            and "creative" or "survival"}
+        events.emit("newgen_survival:gamemodes.set", playerid, gamemodes.players[playerid].current)
+    end
+    return gamemodes.players[playerid]
+end
+
+return gamemodes

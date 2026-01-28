@@ -1,0 +1,20 @@
+{
+    "textures": [
+        "gui/space",
+        "gui/head",
+        "gui/helmet",
+        "gui/gloves",
+        "gui/body",
+        "gui/chestplate",
+        "gui/cloak",
+        "gui/legs",
+        "gui/greaves",
+        "gui/belt",
+        "gui/boots",
+        "gui/standard_body",
+        "gui/standard_soul"
+    ],
+    "post-effects": [
+        "death"
+    ]
+}
