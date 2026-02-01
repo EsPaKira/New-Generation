@@ -2,7 +2,7 @@ local characteristics = {}
 
 local function def_characteristics(name, def_value)
     characteristics[name] = SAVED_DATA[name] or ARGS[name] or def_value
-    this["get_"..name] = function() return characteristics[name] end
+    this["get_"..name] = function() return characteristics[name] or SAVED_DATA[name] or 0 end
 end
 
 -- base values
@@ -19,7 +19,7 @@ def_characteristics("accuracy", 1)
 def_characteristics("heat_preservation", 0)
 def_characteristics("heat_reflection", 0)
 def_characteristics("crush_damage_protection", 0)
-def_characteristics("cutting_damage_protection", 0)
+def_characteristics("slashing_damage_protection", 0)
 def_characteristics("piercing_damage_protection", 0)
 
 function set_params(param, value)

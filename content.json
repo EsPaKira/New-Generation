@@ -1,7 +1,9 @@
 {
+  "blocks": [],
+  "items": [
+    "fur_cape"
+  ],
   "entities": [
     "base:player"
-  ],
-  "items": [],
-  "blocks": []
+  ]
 }

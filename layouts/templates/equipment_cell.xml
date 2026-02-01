@@ -1,0 +1,3 @@
+<container id="equipment_cell_%{index}" size="108" hover-color="100" pos="%{x},%{y}" color="#00000050" onclick="DATA:choose_equipment(%{index})">
+    <image size="108" src="%{src}" />
+</container>

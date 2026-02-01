@@ -1,0 +1,13 @@
+<container size="300,571" color="#00000050">
+    <container size="300,35"><label gravity="center-center">@Selected item</label></container>
+    <image size="220" pos="40,75" src="%{src}" />
+    <container size="300,45" pos="0,335"><label gravity="center-center">@Types of protection</label></container>
+
+    <container size="300,30" color="100" pos="0,380"><label pos="5,8">@Heat preservation</label><label id="heat_preservation" pos="260,8" markup="md">%{heat_p}</label></container>
+    <container size="300,30" pos="0,410"><label pos="5,8">@Heat reflection</label><label id="heat_reflection" pos="260,8" markup="md">%{heat_r}</label></container>
+    <container size="300,30" color="100" pos="0,440"><label pos="5,8">@Crush damage protection</label><label id="crush_damage_protection" pos="260,8" markup="md">%{crush_d_p}</label></container>
+    <container size="300,30" pos="0,470"><label pos="5,8">@Slashing damage protection</label><label id="slashing_damage_protection" pos="260,8" markup="md">%{slashing_d_p}</label></container>
+    <container size="300,30" color="100" pos="0,500"><label pos="5,8">@Piercing damage protection</label><label id="piercing_damage_protection" pos="260,8" markup="md">%{piercing_d_p}</label></container>
+
+    <button size="300,36" gravity="bottom-center" hover-color="#023602" color="#0ee60e66" onclick="equipment_button('equip')">@Equip</button>
+</container>

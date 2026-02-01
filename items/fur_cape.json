@@ -1,0 +1,14 @@
+{
+    "icon": "items:fur_cape",
+    "stack-size": 1,
+    "newgen_survival:equipment": {
+        "slot": "cloak",
+        "protections": {
+            "heat_preservation": 1,
+            "heat_reflection": 1.5,
+            "crush_damage_protection": 0.2,
+            "slashing_damage_protection": 0.2,
+            "piercing_damage_protection": 0.2
+        }
+    }
+}

@@ -1,5 +1,10 @@
 Characteristics=Характеристики
 Close characteristics=Скрыть характеристики
+Selected item=Выбранный предмет
+Equipped item=Надетый предмет
+No equipment at this slot=Нет снаряжения в этом слоте
+Equip=Надеть
+Remove=Снять
 Main characteristics=Основные характеристики
 Other characteristics=Остальные характеристики
 Types of protection=Виды защиты
@@ -13,5 +18,5 @@ Accuracy=Меткость
 Heat preservation=Сохранение тепла
 Heat reflection=Отражение тепла
 Crush damage protection=Защита от дробящего урона
-Cutting damage protection=Защита от режущего урона
+Slashing damage protection=Защита от рубящего урона
 Piercing damage protection=Защита от колющего урона

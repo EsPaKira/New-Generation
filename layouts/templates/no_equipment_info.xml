@@ -1,0 +1,3 @@
+<container size="300,35" color="#00000050">
+    <label gravity="center-center">@No equipment at this slot</label>
+</container>

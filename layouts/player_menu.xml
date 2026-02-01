@@ -47,26 +47,26 @@
     <panel id="c_panel" size-func="400, gui.get_viewport()[2]" orientation="vertical" color="#00000070" visible="false">
         <container size="400,50"><label gravity="center-center">@Main characteristics</label></container>
 
-        <container size="400,30" color="100"><label pos="30,8">@Body</label><label id="body_level" pos="370,8"></label></container>
-        <container size="400,30"><label pos="30,8">@Soul</label><label id="soul_level" pos="370,8"></label></container>
+        <container size="400,30" color="100"><label pos="30,8">@Body</label><label id="body_level" pos="360,8"></label></container>
+        <container size="400,30"><label pos="30,8">@Soul</label><label id="soul_level" pos="360,8"></label></container>
 
 
         <container size="400,50"><label gravity="center-center">@Other characteristics</label></container>
 
-        <container size="400,30" color="100"><label pos="30,8">@Max. HP</label><label id="max_health" pos="370,8"></label></container>
-        <container size="400,30"><label pos="30,8">@Max. oxygen</label><label id="max_oxygen" pos="370,8"></label></container>
-        <container size="400,30" color="100"><label pos="30,8">@Max. mana</label><label id="max_mana" pos="370,8"></label></container>
-        <container size="400,30"><label pos="30,8">@Agility</label><label id="agility" pos="370,8"></label></container>
-        <container size="400,30" color="100"><label pos="30,8">@Accuracy</label><label id="accuracy" pos="370,8"></label></container>
+        <container size="400,30" color="100"><label pos="30,8">@Max. HP</label><label id="max_health" pos="360,8"></label></container>
+        <container size="400,30"><label pos="30,8">@Max. oxygen</label><label id="max_oxygen" pos="360,8"></label></container>
+        <container size="400,30" color="100"><label pos="30,8">@Max. mana</label><label id="max_mana" pos="360,8"></label></container>
+        <container size="400,30"><label pos="30,8">@Agility</label><label id="agility" pos="360,8"></label></container>
+        <container size="400,30" color="100"><label pos="30,8">@Accuracy</label><label id="accuracy" pos="360,8"></label></container>
 
 
         <container size="400,50"><label gravity="center-center">@Types of protection</label></container>
 
-        <container size="400,30" color="100"><label pos="30,8">@Heat preservation</label><label id="heat_preservation" pos="370,8"></label></container>
-        <container size="400,30"><label pos="30,8">@Heat reflection</label><label id="heat_reflection" pos="370,8"></label></container>
-        <container size="400,30" color="100"><label pos="30,8">@Crush damage protection</label><label id="crush_damage_protection" pos="370,8"></label></container>
-        <container size="400,30"><label pos="30,8">@Cutting damage protection</label><label id="cutting_damage_protection" pos="370,8"></label></container>
-        <container size="400,30" color="100"><label pos="30,8">@Piercing damage protection</label><label id="piercing_damage_protection" pos="370,8"></label></container>
+        <container size="400,30" color="100"><label pos="30,8">@Heat preservation</label><label id="heat_preservation" pos="360,8"></label></container>
+        <container size="400,30"><label pos="30,8">@Heat reflection</label><label id="heat_reflection" pos="360,8"></label></container>
+        <container size="400,30" color="100"><label pos="30,8">@Crush damage protection</label><label id="crush_damage_protection" pos="360,8"></label></container>
+        <container size="400,30"><label pos="30,8">@Slashing damage protection</label><label id="slashing_damage_protection" pos="360,8"></label></container>
+        <container size="400,30" color="100"><label pos="30,8">@Piercing damage protection</label><label id="piercing_damage_protection" pos="360,8"></label></container>
     </panel>
     <button id="close_c_panel" hover-color="050" color="100" pos="400,0" visible="false" onclick="close_c_panel()">@Close characteristics</button>
 
@@ -74,17 +74,29 @@
     <container id="equipment_menu" size-func="gui.get_viewport()[1], gui.get_viewport()[2]" color="#00000070" visible="false">
         <button hover-color="050" color="100" gravity="top-right" onclick="close_equipment_menu()">@Back</button>
 
-        <container size="555,40" color="#00000050">
-            <container id="head_info" size="50,40" pos="10,0" hover-color="100" onclick="choose_equipment_slot('head')"><image size="40" gravity="center-center" src="gui/head" /></container>
-            <container id="helmet_info" size="50,40" pos="65,0" hover-color="100" onclick="choose_equipment_slot('helmet')"><image size="40" gravity="center-center" src="gui/helmet" /></container>
-            <container id="cloak_info" size="50,40" pos="120,0" hover-color="100" onclick="choose_equipment_slot('cloak')"><image size="40" gravity="center-center" src="gui/cloak" /></container>
-            <container id="body_info" size="50,40" pos="175,0" hover-color="100" onclick="choose_equipment_slot('body')"><image size="40" gravity="center-center" src="gui/body" /></container>
-            <container id="chestplate_info" size="50,40" pos="230,0" hover-color="100" onclick="choose_equipment_slot('chestplate')"><image size="40" gravity="center-center" src="gui/chestplate" /></container>
-            <container id="gloves_info" size="50,40" pos="285,0" hover-color="100" onclick="choose_equipment_slot('gloves')"><image size="40" gravity="center-center" src="gui/gloves" /></container>
-            <container id="legs_info" size="50,40" pos="340,0" hover-color="100" onclick="choose_equipment_slot('legs')"><image size="40" gravity="center-center" src="gui/legs" /></container>
-            <container id="greaves_info" size="50,40" pos="395,0" hover-color="100" onclick="choose_equipment_slot('greaves')"><image size="40" gravity="center-center" src="gui/greaves" /></container>
-            <container id="belt_info" size="50,40" pos="450,0" hover-color="100" onclick="choose_equipment_slot('belt')"><image size="40" gravity="center-center" src="gui/belt" /></container>
-            <container id="boots_info" size="50,40" pos="505,0" hover-color="100" onclick="choose_equipment_slot('boots')"><image size="40" gravity="center-center" src="gui/boots" /></container>
+        <container size="558,40" color="#00000050">
+            <container id="head_info" size="50,40" pos="7,0" hover-color="100" onclick="choose_equipment_slot('head')"><image size="40" gravity="center-center" src="gui/head" /></container>
+            <container id="helmet_info" size="50,40" pos="62,0" hover-color="100" onclick="choose_equipment_slot('helmet')"><image size="40" gravity="center-center" src="gui/helmet" /></container>
+            <container id="cloak_info" size="50,40" pos="117,0" hover-color="100" onclick="choose_equipment_slot('cloak')"><image size="40" gravity="center-center" src="gui/cloak" /></container>
+            <container id="body_info" size="50,40" pos="172,0" hover-color="100" onclick="choose_equipment_slot('body')"><image size="40" gravity="center-center" src="gui/body" /></container>
+            <container id="chestplate_info" size="50,40" pos="227,0" hover-color="100" onclick="choose_equipment_slot('chestplate')"><image size="40" gravity="center-center" src="gui/chestplate" /></container>
+            <container id="gloves_info" size="50,40" pos="282,0" hover-color="100" onclick="choose_equipment_slot('gloves')"><image size="40" gravity="center-center" src="gui/gloves" /></container>
+            <container id="legs_info" size="50,40" pos="337,0" hover-color="100" onclick="choose_equipment_slot('legs')"><image size="40" gravity="center-center" src="gui/legs" /></container>
+            <container id="greaves_info" size="50,40" pos="392,0" hover-color="100" onclick="choose_equipment_slot('greaves')"><image size="40" gravity="center-center" src="gui/greaves" /></container>
+            <container id="belt_info" size="50,40" pos="447,0" hover-color="100" onclick="choose_equipment_slot('belt')"><image size="40" gravity="center-center" src="gui/belt" /></container>
+            <container id="boots_info" size="50,40" pos="502,0" hover-color="100" onclick="choose_equipment_slot('boots')"><image size="40" gravity="center-center" src="gui/boots" /></container>
         </container>
+        <container id="equipment_list" size-func="558, gui.get_viewport()[2] - 55" pos="0,55" color="#00000050" visible="false">
+        
+        </container>
+
+        <container id="equipped_item_info" size="300,571" position-func="gui.get_viewport()[1] - 300, 37">
+        </container>
+        <container id="cannot_remove_item" size="300,35" position-func="gui.get_viewport()[1] - 300, 613" hover-color="#00000050" color="#33020250" onclick="hide_error_info()" visible="false">
+            <label gravity="center-center">@No free slot in inventory</label>
+        </container>
+
+        <container id="choosen_item_info" size="300,571" position-func="gui.get_viewport()[1] - 625, 37">
+        </container>     
     </container>
 </container>

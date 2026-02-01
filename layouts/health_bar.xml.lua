@@ -27,6 +27,6 @@ end
 
 function on_open()
     local c_manager = gamemodes.get_characteristics_manager(hud.get_player())
-    survival_hud.set_health(c_manager.get_health(), c_manager.get_max_health())
-    survival_hud.set_oxygen(c_manager.get_oxygen(), c_manager.get_max_oxygen())
+    survival_hud.set_health(c_manager:get_health(), c_manager:get_max_health())
+    survival_hud.set_oxygen(c_manager:get_oxygen(), c_manager:get_max_oxygen())
 end
