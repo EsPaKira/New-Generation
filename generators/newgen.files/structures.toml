@@ -1,0 +1,13 @@
+tree0 = {}
+tree1 = {}
+tree2 = {}
+spruce0 = {}
+spruce1 = {}
+puddle = {lowering=2}
+bush0 = {lowering=-1}
+bush1 = {lowering=-1}
+sandstone_coal0 = {lowering=15}
+sandstone_coal1 = {lowering=10}
+limestone_coal0 = {lowering=15}
+limestone_coal1 = {lowering=10}
+ruins0 = {lowering=2}

@@ -9,7 +9,7 @@ function gamemodes.get_characteristics_manager(playerid)
     if entity == nil then
         return nil
     end
-    return entity:get_component("newgen_survival:characteristics_manager")
+    return entity:get_component("newgen:characteristics_manager")
 end
 
 function gamemodes.is_dead(playerid)
@@ -43,7 +43,7 @@ function gamemodes.set(playerid, name)
         player.set_noclip(playerid, false)
     end
     gamemode.current = name
-    events.emit("newgen_survival:gamemodes.set", playerid, name)
+    events.emit("newgen:gamemodes.set", playerid, name)
 end
 
 function gamemodes.exists(name)
@@ -55,7 +55,7 @@ function gamemodes.get(playerid)
         gamemodes.players[playerid] = {
             current=player.is_infinite_items(playerid)
             and "creative" or "survival"}
-        events.emit("newgen_survival:gamemodes.set", playerid, gamemodes.players[playerid].current)
+        events.emit("newgen:gamemodes.set", playerid, gamemodes.players[playerid].current)
     end
     return gamemodes.players[playerid]
 end

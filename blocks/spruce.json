@@ -1,0 +1,13 @@
+{
+    "material": "base:wood",
+    "texture-faces": [
+        "spruce",
+        "spruce",
+        "spruce_top",
+        "spruce_top",
+        "spruce",
+        "spruce"
+    ],
+    "rotation": "pipe",
+    "base:durability": 6.0
+}

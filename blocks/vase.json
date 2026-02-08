@@ -1,0 +1,8 @@
+{
+    "model": "custom",
+    "model-name": "vase",
+    "hitbox": [0.125, 0, 0.125, 0.75, 0.875, 0.75],
+    "material": "base:glass",
+    "grounded": true,
+    "base:durability": 2.0
+}

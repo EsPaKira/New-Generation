@@ -10,9 +10,8 @@ Other characteristics=Остальные характеристики
 Types of protection=Виды защиты
 Body=Тело
 Soul=Душа
-Max. oxygen=Макс. кислород
-Max. HP=Макс. HP
-Max. mana=Макс. мана
+Oxygen=Кислород
+Mana=Мана
 Agility=Ловкость
 Accuracy=Меткость
 Heat preservation=Сохранение тепла
@@ -20,3 +19,48 @@ Heat reflection=Отражение тепла
 Crush damage protection=Защита от дробящего урона
 Slashing damage protection=Защита от рубящего урона
 Piercing damage protection=Защита от колющего урона
+
+# Предметы
+
+blackberry=черника
+fur cape=меховая накидка
+stick=палка
+coal=каменный уголь
+
+# Блоки
+
+blackberry bush=куст черники
+bush=куст
+cattail=камыш
+chalk coal=уголь в мелу
+chalk=мел
+dead bush=мёртвый куст
+dead grass=мёртвая трава
+dead tall grass=мёртвая высокая трава
+dead white bush=мёртвый бледный куст
+diorite=диорит
+dolomite coal=уголь в доломите
+dolomite stone=камень доломита
+dolomite=доломит
+gabbro stone=камень габбро
+gabbro=габбро
+gneiss stone=камень гнейса
+gneiss=гнейс
+granite stone=камень гранита
+granite=гранит
+gypsum coal=уголь в гипсе
+gypsum=гипс
+limestone coal=уголь в известняке
+limestone=известняк
+marble stone=камень мрамора
+marble=мрамор
+moss=мох
+peridotite stone=камень перидотита
+peridotite=перидотит
+red brick=красные кирпичи
+sandstone coal=уголь в песчанике
+sandstone stone=камень песчаника
+sandstone=песчаник
+spruce leaves=хвоя
+spruce=сосновое бревно
+vase=ваза

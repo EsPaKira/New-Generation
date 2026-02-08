@@ -1,0 +1,3 @@
+@box from (0.125,0,0.125) to (0.875,0.875,0.875) texture "blocks:gneiss"
+@box from (0.3125,0.875,0.3125) to (0.6875,1,0.6875) texture "blocks:gneiss"
+@box from (0.25,1,0.25) to (0.75,1.0625,0.75) texture "blocks:gneiss"

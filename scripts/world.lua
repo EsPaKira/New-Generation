@@ -17,16 +17,16 @@ local function get_durability(id)
 end
 
 local function stop_breaking(target)
-    events.emit("newgen_survival:stop_destroy", pid, target)
+    events.emit("newgen:stop_destroy", pid, target)
     target.breaking = false
 end
 
 function on_world_open()
-    events.on("newgen_survival:gamemodes.set", function(pid, name)
+    events.on("newgen:gamemodes.set", function(pid, name)
         local entity = entities.get(player.get_entity(pid))
         if entity then
-            entity:set_enabled("newgen_survival:health_system", name == "survival")
-            entity:set_enabled("newgen_survival:oxygen_system", name == "survival")
+            entity:set_enabled("newgen:health_system", name == "survival")
+            entity:set_enabled("newgen:oxygen_system", name == "survival")
         end
     end)
     rules.create("keep-inventory", false)
@@ -63,7 +63,7 @@ local function tick_breaking(pid, tps)
         local power = 1.0
         local invid, slot = player.get_inventory(pid)
         local itemid, _ = inventory.get(invid, slot)
-        local tool = item.properties[itemid]["newgen_survival:tool"]
+        local tool = item.properties[itemid]["newgen:tool"]
         if tool and tool.type == "breaker" then
             local material = tool.materials[block.material(blockid)]
             if material then
@@ -81,7 +81,7 @@ local function tick_breaking(pid, tps)
             target.tick = 0
             target.progress = 0.0
             target.power = power
-            events.emit("newgen_survival:start_destroy", pid, target)
+            events.emit("newgen:start_destroy", pid, target)
         end
 
         target.progress = target.progress + (1.0/tps) * speed
@@ -94,7 +94,7 @@ local function tick_breaking(pid, tps)
             end
             return stop_breaking(target)
         end
-        events.emit("newgen_survival:progress_destroy", pid, target)
+        events.emit("newgen:progress_destroy", pid, target)
     elseif target.wrapper then
         stop_breaking(target)
     end

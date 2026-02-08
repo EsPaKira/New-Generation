@@ -1,0 +1,20 @@
+@rect from (0.625,0,0.125) right (0,0,1) up (0,1.125,0) texture "blocks:bush" region-scale (1,1)
+@rect from (0.625,0,1.125) right (0,0,-1) up (0,1.125,0) texture "blocks:bush" region-scale (1,1)
+
+@rect from (0.125,0,0.625) right (1,0,0) up (0,1.125,0) texture "blocks:bush" region-scale (1,1)
+@rect from (1.125,0,0.625) right (-1,0,0) up (0,1.125,0) texture "blocks:bush" region-scale (1,1)
+
+@rect from (0.1875,0,0.1875) right (0.894,0,0.894) up (0,1,0) texture "blocks:bush" region(0,0,0.99,0.99) region-scale (1,1)
+@rect from (1.0625,0,1.0625) right (-0.894,0,-0.894) up (0,1,0) texture "blocks:bush" region(0,0,0.99,0.99) region-scale (1,1)
+
+@rect from (1.0625,0,0.1875) right (-0.894,0,0.894) up (0,1,0) texture "blocks:bush" region(0,0,0.99,0.99) region-scale (1,1)
+@rect from (0.1875,0,1.0625) right (0.894,0,-0.894) up (0,1,0) texture "blocks:bush" region(0,0,0.99,0.99) region-scale (1,1)
+
+@box from (0.6,0.4,0.2) to (0.725,0.525,0.325) texture "blocks:blackberry"
+@box from (0.1,0.6,0.55) to (0.225,0.725,0.675) texture "blocks:blackberry"
+@box from (0.9,0.2,0.3) to (1,0.325,0.425) texture "blocks:blackberry"
+@box from (0.6,0.5,0.9) to (0.725,0.625,1) texture "blocks:blackberry"
+@box from (0.4,0.15,0.4) to (0.525,0.275,0.525) texture "blocks:blackberry"
+@box from (0.75,0.6,0.7) to (0.875,0.725,0.825) texture "blocks:blackberry"
+@box from (0.875,0.4,0.6) to (1,0.525,0.725) texture "blocks:blackberry"
+@box from (0.2,0.4,0.9) to (0.325,0.525,1.025) texture "blocks:blackberry"

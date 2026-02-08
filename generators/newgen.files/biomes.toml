@@ -1,0 +1,195 @@
+[forest]
+parameters = [
+    {weight=0.5, value=0.5},
+    {weight=0.5, value=0.3},
+    {weight=0.55, value=0.5}
+]
+layers = [
+    {below-sea-level=false, height=1, block="base:grass_block"},
+    {height=7, block="base:dirt"},
+    {height=-1, block="base:bazalt"}
+]
+sea-layers = [
+    {height=-1, block="base:water"}
+]
+plant-chance = 0.42
+plants = [
+    {weight=1, block="base:grass"},
+    {weight=0.05, block="newgen:dead_grass"},
+    {weight=0.03, block="newgen:dead_tall_grass"},
+    {weight=0.03, block="base:flower"},
+    {weight=0.03, block="newgen:bush"},
+    {weight=0.03, block="newgen:small_stick"},
+    {weight=0.01, block="newgen:dead_bush"},
+    {weight=0.01, block="newgen:blackberry_bush"},
+    {weight=0.01, block="newgen:moss"}
+]
+structure-chance = 0.032
+structures = [
+    {name="tree0", weight=1},
+    {name="tree1", weight=1},
+    {name="tree2", weight=1},
+    {name="bush0", weight=0.5},
+    {name="bush1", weight=0.5},
+    {name="ruins0", weight=0.01}
+]
+
+
+[spruce_forest]
+parameters = [
+    {weight=0.9, value=0.1},
+    {weight=0.6, value=0.8},
+    {weight=0.3, value=0.4}
+]
+layers = [
+    {below-sea-level=false, height=1, block="base:grass_block"},
+    {height=7, block="base:dirt"},
+    {height=-1, block="newgen:gabbro"}
+]
+sea-layers = [
+    {height=-1, block="base:water"}
+]
+plant-chance = 0.42
+plants = [
+    {weight=1, block="base:grass"},
+    {weight=0.05, block="newgen:dead_grass"},
+    {weight=0.03, block="newgen:dead_tall_grass"},
+    {weight=0.03, block="base:flower"},
+    {weight=0.03, block="newgen:bush"},
+    {weight=0.03, block="newgen:small_stick"},
+    {weight=0.01, block="newgen:dead_bush"},
+    {weight=0.01, block="newgen:blackberry_bush"},
+    {weight=0.01, block="newgen:moss"}
+]
+structure-chance = 0.01
+structures = [
+    {name="spruce0", weight=1},
+    {name="spruce1", weight=1},
+    {name = "bush0", weight = 0.5},
+    {name = "bush1", weight = 0.5},
+    {name="ruins0", weight=0.01}
+]
+
+
+[desert]
+parameters = [
+    {weight=1, value=1},
+    {weight=0.1, value=-1},
+    {weight=0.45, value=0.6}
+]
+layers = [
+    {height=6, block="base:sand"},
+    {height=20, block="newgen:sandstone"},
+    {height=25, block="newgen:gneiss"},
+    {height=-1, block="newgen:granite"}
+]
+sea-layers = [
+    {height=-1, block="base:water"}
+]
+"plant-chance" = 0.1
+plants = [
+    {weight=0.5, block="newgen:sandstone_stone"},
+    {weight=0.05, block="newgen:dead_grass"},
+    {weight=0.03, block="newgen:dead_tall_grass"},
+    {weight=0.03, block="newgen:dead_bush"}
+]
+structure-chance=0.003
+structures = [
+    {name="sandstone_coal0", weight=0.1},
+    {name="sandstone_coal1", weight=1}
+]
+
+[mountains]
+parameters = [
+    {weight=1, value=0.4},
+    {weight=1, value=0.9},
+    {weight=1, value=1}
+]
+layers = [
+    {height=20, block="newgen:limestone"},
+    {height=-1, block="newgen:marble"}
+]
+sea-layers = [
+    {height=-1, block="base:water"}
+]
+plant-chance = 0.25
+plants = [
+    {weight=0.7, block="base:grass"},
+    {weight=0.05, block="newgen:dead_grass"},
+    {weight=0.04, block="newgen:marble_stone"},
+    {weight=0.03, block="newgen:dead_tall_grass"},
+    {weight=0.03, block="newgen:dead_bush"},
+    {weight=0.03, block="newgen:bush"}
+]
+structure-chance=0.003
+structures = [
+    {name="limestone_coal0", weight=0.1},
+    {name="limestone_coal1", weight=1}
+]
+
+
+[plains]
+parameters = [
+    {weight=0.6, value=0.5},
+    {weight=0.6, value=0.5},
+    {weight=0.5, value=0.3}
+]
+layers = [
+    {below-sea-level=false, height=1, block="base:grass_block"},
+    {height=5, block="base:dirt"},
+    {height=-1, block="newgen:diorite"}
+]
+sea-layers = [
+    {height=-1, block="base:water"}
+]
+plant-chance = 0.35
+plants = [
+    {weight=1, block="base:grass"},
+    {weight=0.05, block="newgen:dead_grass"},
+    {weight=0.03, block="newgen:dead_tall_grass"},
+    {weight=0.03, block="newgen:dead_bush"},
+    {weight=0.03, block="base:flower"},
+    {weight=0.03, block="newgen:bush"}
+]
+structure-chance=0.003
+structures = [
+    {name="tree0", weight=1},
+    {name="tree1", weight=1},
+    {name = "bush0", weight = 5},
+    {name = "bush1", weight = 5},
+    {name="ruins0", weight=0.01}
+]
+
+[swamp]
+parameters = [
+    {weight=0.9, value=0.5},
+    {weight=1, value=1},
+    {weight=0.3, value=0.2}
+]
+layers = [
+    {below-sea-level=false, height=1, block="base:grass_block"},
+    {height=37, block="base:dirt"},
+    {height=-1, block="newgen:dolomite"}
+]
+sea-layers = [
+    {height=-1, block="base:water"}
+]
+plant-chance = 0.5
+plants = [
+    {weight=1, block="base:grass"},
+    {weight=0.05, block="newgen:cattail"},
+    {weight=0.05, block="newgen:bush"},
+    {weight=0.03, block="newgen:dead_grass"},
+    {weight=0.03, block="newgen:small_stick"},
+    {weight=0.02, block="newgen:dead_tall_grass"},
+    {weight=0.01, block="newgen:dead_bush"}
+]
+structure-chance = 0.02
+structures = [
+    {name="spruce0", weight=1},
+    {name="spruce1", weight=1},
+    {name = "bush0", weight = 0.5},
+    {name = "bush1", weight = 0.5},
+    {name = "puddle", weight = 0.05},
+    {name="ruins0", weight=0.01}
+]

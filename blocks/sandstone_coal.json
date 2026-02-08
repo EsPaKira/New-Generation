@@ -1,0 +1,9 @@
+{
+    "texture": "sandstone_coal",
+    "base:durability": 12.0,
+    "base:loot": [
+        {"item": "newgen:coal",
+        "min": 1,
+        "max": 4}
+    ]  
+}

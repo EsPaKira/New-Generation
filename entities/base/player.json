@@ -1,8 +1,8 @@
 {
     "components": [
-        "newgen_survival:swimming_system",
+        "newgen:swimming_system",
         {
-            "name": "newgen_survival:characteristics_manager",
+            "name": "newgen:characteristics_manager",
             "args": {
                 "health": 20,
                 "max_health": 20,
@@ -10,8 +10,8 @@
                 "max_oxygen": 20
             }
         },
-        "newgen_survival:health_system",
-        "newgen_survival:oxygen_system",
-        "newgen_survival:equipment_system"  
+        "newgen:health_system",
+        "newgen:oxygen_system",
+        "newgen:equipment_system"  
     ]
 }

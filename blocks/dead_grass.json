@@ -1,0 +1,10 @@
+{
+    "model": "X",
+    "texture": "dead_grass",
+    "hitbox": [0.15, 0, 0.15, 0.7, 0.6, 0.7],
+    "grounded": true,
+    "obstacle": false,
+    "light-passing": true,
+    "replaceable": true,
+    "material": "base:grass"
+}

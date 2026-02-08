@@ -40,38 +40,38 @@
             <container pos="0,110" size="110,30"><label gravity="center-center">@Body</label></container>
             <container pos="110,110" size="110,30"><label gravity="center-center">@Soul</label></container>
         </container>
-        <button id="detailed_information" size="220,30" gravity="bottom-center" onclick="open_c_panel()">@Characteristics</button>
+        <button id="detailed_information" hover-color="050" color="100" size="220,30" gravity="bottom-center" onclick="open_c_panel()">@Characteristics</button>
     </container>
 
     <!-- characteristics panel -->
     <panel id="c_panel" size-func="400, gui.get_viewport()[2]" orientation="vertical" color="#00000070" visible="false">
         <container size="400,50"><label gravity="center-center">@Main characteristics</label></container>
 
-        <container size="400,30" color="100"><label pos="30,8">@Body</label><label id="body_level" pos="360,8"></label></container>
-        <container size="400,30"><label pos="30,8">@Soul</label><label id="soul_level" pos="360,8"></label></container>
+        <container size="400,30" color="100"><label pos="30,8">@Body</label><label id="body_level" pos="310,8"></label></container>
+        <container size="400,30"><label pos="30,8">@Soul</label><label id="soul_level" pos="310,8"></label></container>
 
 
         <container size="400,50"><label gravity="center-center">@Other characteristics</label></container>
 
-        <container size="400,30" color="100"><label pos="30,8">@Max. HP</label><label id="max_health" pos="360,8"></label></container>
-        <container size="400,30"><label pos="30,8">@Max. oxygen</label><label id="max_oxygen" pos="360,8"></label></container>
-        <container size="400,30" color="100"><label pos="30,8">@Max. mana</label><label id="max_mana" pos="360,8"></label></container>
-        <container size="400,30"><label pos="30,8">@Agility</label><label id="agility" pos="360,8"></label></container>
-        <container size="400,30" color="100"><label pos="30,8">@Accuracy</label><label id="accuracy" pos="360,8"></label></container>
+        <container size="400,30" color="100"><label pos="20,8">@HP</label><label id="max_health" pos="300,8"></label></container>
+        <container size="400,30"><label pos="20,8">@Oxygen</label><label id="max_oxygen" pos="300,8"></label></container>
+        <container size="400,30" color="100"><label pos="20,8">@Mana</label><label id="max_mana" pos="300,8"></label></container>
+        <container size="400,30"><label pos="20,8">@Agility</label><label id="agility" pos="310,8"></label></container>
+        <container size="400,30" color="100"><label pos="20,8">@Accuracy</label><label id="accuracy" pos="310,8"></label></container>
 
 
         <container size="400,50"><label gravity="center-center">@Types of protection</label></container>
 
-        <container size="400,30" color="100"><label pos="30,8">@Heat preservation</label><label id="heat_preservation" pos="360,8"></label></container>
-        <container size="400,30"><label pos="30,8">@Heat reflection</label><label id="heat_reflection" pos="360,8"></label></container>
-        <container size="400,30" color="100"><label pos="30,8">@Crush damage protection</label><label id="crush_damage_protection" pos="360,8"></label></container>
-        <container size="400,30"><label pos="30,8">@Slashing damage protection</label><label id="slashing_damage_protection" pos="360,8"></label></container>
-        <container size="400,30" color="100"><label pos="30,8">@Piercing damage protection</label><label id="piercing_damage_protection" pos="360,8"></label></container>
+        <container size="400,30" color="100"><label pos="20,8">@Heat preservation</label><label id="heat_preservation" pos="310,8"></label></container>
+        <container size="400,30"><label pos="20,8">@Heat reflection</label><label id="heat_reflection" pos="310,8"></label></container>
+        <container size="400,30" color="100"><label pos="20,8">@Crush damage protection</label><label id="crush_damage_protection" pos="310,8"></label></container>
+        <container size="400,30"><label pos="20,8">@Slashing damage protection</label><label id="slashing_damage_protection" pos="310,8"></label></container>
+        <container size="400,30" color="100"><label pos="20,8">@Piercing damage protection</label><label id="piercing_damage_protection" pos="310,8"></label></container>
     </panel>
     <button id="close_c_panel" hover-color="050" color="100" pos="400,0" visible="false" onclick="close_c_panel()">@Close characteristics</button>
 
     <!-- equipment menu -->
-    <container id="equipment_menu" size-func="gui.get_viewport()[1], gui.get_viewport()[2]" color="#00000070" visible="false">
+    <container id="equipment_menu" size-func="gui.get_viewport()[1], gui.get_viewport()[2]" color="#000000cc" visible="false">
         <button hover-color="050" color="100" gravity="top-right" onclick="close_equipment_menu()">@Back</button>
 
         <container size="558,40" color="#00000050">

@@ -1,7 +1,7 @@
 {
     "icon": "items:fur_cape",
     "stack-size": 1,
-    "newgen_survival:equipment": {
+    "newgen:equipment": {
         "slot": "cloak",
         "protections": {
             "heat_preservation": 1,

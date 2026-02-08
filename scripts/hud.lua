@@ -10,31 +10,31 @@ local health_effect
 local hit_timer = 0
 
 function on_hud_open()
-    health_effect = gfx.posteffects.index("newgen_survival:death")
+    health_effect = gfx.posteffects.index("newgen:death")
 
-    events.on("newgen_survival:gamemodes.set", function(playerid, name)
+    events.on("newgen:gamemodes.set", function(playerid, name)
         if name == "survival" then
-            hud.open_permanent("newgen_survival:health_bar")
+            hud.open_permanent("newgen:health_bar")
 
             local entity = entities.get(player.get_entity(playerid))
             if not entity then
                 return -- dead
             end
-            local c_manager = entity:get_component("newgen_survival:characteristics_manager")
-            survival_hud.set_health(c_manager.get_health(), c_manager.get_max_health())
-            survival_hud.set_oxygen(c_manager.get_oxygen(), c_manager.get_max_oxygen())
+            local c_manager = entity:get_component("newgen:characteristics_manager")
+            survival_hud.set_health(c_manager:get_health(), c_manager:get_max_health())
+            survival_hud.set_oxygen(c_manager:get_oxygen(), c_manager:get_max_oxygen())
         else
-            hud.close("newgen_survival:health_bar")
+            hud.close("newgen:health_bar")
         end
     end)
 
-    events.on("newgen_survival:player_health.set", function(eid, health, max_health)
+    events.on("newgen:player_health.set", function(eid, health, max_health)
         if eid == player.get_entity(hud.get_player()) then
             survival_hud.set_health(health, max_health)
         end
     end)
 
-    events.on("newgen_survival:player_oxygen.set", function(eid, oxygen, max_oxygen)
+    events.on("newgen:player_oxygen.set", function(eid, oxygen, max_oxygen)
         if eid == player.get_entity(hud.get_player()) then
             survival_hud.set_oxygen(oxygen, max_oxygen)
         end
@@ -56,13 +56,13 @@ function on_hud_open()
         end
     end)
 
-    events.on("newgen_survival:start_destroy", function(pid, target)
+    events.on("newgen:start_destroy", function(pid, target)
         target.wrapper = gfx.blockwraps.wrap(
             {target.x, target.y, target.z}, "cracks/cracks_0"
         )
     end)
 
-    events.on("newgen_survival:progress_destroy", function(pid, target)
+    events.on("newgen:progress_destroy", function(pid, target)
         local x = target.x
         local y = target.y
         local z = target.z
@@ -102,11 +102,11 @@ function on_hud_open()
         end
     end)
 
-    events.on("newgen_survival:stop_destroy", function(pid, target)
+    events.on("newgen:stop_destroy", function(pid, target)
         gfx.blockwraps.unwrap(target.wrapper)
     end)
 
-    events.on("newgen_survival:player_death", function(pid, just_happened)
+    events.on("newgen:player_death", function(pid, just_happened)
         if just_happened then
             local pos = cameras.get(player.get_camera(pid)):get_pos()
         end
@@ -132,7 +132,7 @@ function on_hud_open()
         gfx.posteffects.set_intensity(health_effect, 1.0)
     end)
 
-    events.on("newgen_survival:player_damage", function(pid, points)
+    events.on("newgen:player_damage", function(pid, points)
         if pid ~= hud.get_player() then
             return
         end
@@ -140,14 +140,14 @@ function on_hud_open()
         player.set_rot(pid, x, y, math.random() < 0.5 and 13 or -13)
     end)
 
-    -- input.add_callback("newgen_survival.eat", function()
+    -- input.add_callback("newgen.eat", function()
     --     if menu.page ~= "" or hud.is_inventory_open() then
     --         return
     --     end
     --     local pid = hud.get_player()
     --     local invid, slot = player.get_inventory()
     --     local itemid, _ = inventory.get(invid, slot)
-    --     local food = item.properties[itemid]["newgen_survival:food"]
+    --     local food = item.properties[itemid]["newgen:food"]
     --     if not food then
     --         return
     --     end
@@ -191,15 +191,18 @@ function on_hud_open()
             return
         end
 
-        if hud.is_open("newgen_survival:player_button") then
-            hud.close("newgen_survival:player_button")
+        if hud.is_open("newgen:player_button") then
+            hud.close("newgen:player_button")
             return
         end
-        hud.open_permanent("newgen_survival:player_button")
+        if hud.is_open("newgen:crafts") then
+            hud.close("newgen:crafts")
+        end
+        hud.open_permanent("newgen:player_button")
     end)
 
     input.add_callback("key:escape", function()
-        hud.close("newgen_survival:player_button")
+        hud.close("newgen:player_button")
     end)
 end
 
@@ -207,7 +210,7 @@ function on_hud_render()
     local pid = hud.get_player()
     if gamemodes.is_dead(pid) then
         if not isdead then
-            events.emit("newgen_survival:player_death", pid)
+            events.emit("newgen:player_death", pid)
         end
         local rx, ry, rz = player.get_rot(pid)
         local t = time.delta() * 75

@@ -1,0 +1,45 @@
+[
+    {
+        "components": [
+            {"id": "base:wood.item", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:stick", "count": 8}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:spruce.item", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:stick", "count": 8}
+        ]
+    },
+    {
+        "components": [
+            {"id": "base:wood.item", "count": 2}
+        ],
+        "results": [
+            {"id": "base:wooden_door.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:coal", "count": 1},
+            {"id": "newgen:stick", "count": 1}
+        ],
+        "results": [
+            {"id": "base:torch.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:limestone_stone", "count": 2},
+            {"id": "newgen:stick", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:bush", "count": 1}
+        ],
+        "comment": "there will be craft for stone tools"
+    }
+]

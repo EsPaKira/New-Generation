@@ -4,7 +4,7 @@ local gamemodes = require "gamemodes"
 local base_util = require "base:util"
 
 
-local c_manager = entity:require_component("newgen_survival:characteristics_manager")
+local c_manager = entity:require_component("newgen:characteristics_manager")
 
 local health = c_manager:get_health()
 local max_health = c_manager:get_max_health()
@@ -14,7 +14,7 @@ function set_health(value)
     health = math.min(math.max(0, value), max_health)
     c_manager.set_params("health", health)
 
-    events.emit("newgen_survival:player_health.set", entity:get_uid(), health, max_health)
+    events.emit("newgen:player_health.set", entity:get_uid(), health, max_health)
 end
 
 local function drop_inventory(invid)
@@ -32,8 +32,8 @@ local function drop_inventory(invid)
 end
 
 function die()
-    events.emit("newgen_survival:death", entity)
-    events.emit("newgen_survival:player_death", entity:get_player(), true)
+    events.emit("newgen:death", entity)
+    events.emit("newgen:player_death", entity:get_player(), true)
 
     local pid = entity:get_player()
     if not rules.get("keep-inventory") then
@@ -46,7 +46,7 @@ end
 function heal(points)
     local pid = entity:get_player()
     if points < 1 and pid then
-        events.emit("newgen_survival:player_heal", pid, points)
+        events.emit("newgen:player_heal", pid, points)
     end
     set_health(math.min(health + points, max_health))
 end
@@ -57,7 +57,7 @@ function damage(points)
         return
     end
     if points > 0 and pid then
-        events.emit("newgen_survival:player_damage", pid, points)
+        events.emit("newgen:player_damage", pid, points)
     end
     set_health(health - points)
     if health == 0 then

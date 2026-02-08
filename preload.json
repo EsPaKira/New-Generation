@@ -12,7 +12,8 @@
         "gui/belt",
         "gui/boots",
         "gui/standard_body",
-        "gui/standard_soul"
+        "gui/standard_soul",
+        "gui/crafting"
     ],
     "post-effects": [
         "death"

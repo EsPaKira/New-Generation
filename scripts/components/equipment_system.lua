@@ -1,4 +1,4 @@
-local c_manager = entity:get_component("newgen_survival:characteristics_manager")
+local c_manager = entity:get_component("newgen:characteristics_manager")
 
 local equipments = {}
 
@@ -52,11 +52,11 @@ function equip(slot)
 end
 
 function get_all_characteristics_by_slot(slot)
-    return item.properties[item.index(equipments[slot])]["newgen_survival:equipment"].protections
+    return item.properties[item.index(equipments[slot])]["newgen:equipment"].protections
 end
 
 function get_characteristic_by_slot(slot, type_of_protection)
-    return item.properties[item.index(equipments[slot])]["newgen_survival:equipment"].protections[type_of_protection]
+    return item.properties[item.index(equipments[slot])]["newgen:equipment"].protections[type_of_protection]
 end
 
 function get_item_by_slot(slot)

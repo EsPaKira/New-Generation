@@ -6,7 +6,7 @@ function equipment_search.search_equipment_by_tag(invid, tag)
     for i = 0, inventory.size(invid) - 1 do
         local id, _ = inventory.get(invid, i)
         if id ~= 0 then
-            local equipment = item.properties[id]["newgen_survival:equipment"]
+            local equipment = item.properties[id]["newgen:equipment"]
             if equipment and equipment.slot == tag then
                 table.insert(found, id)
             end
@@ -20,11 +20,11 @@ function equipment_search.get_equipment_system(pid)
     if entity == nil then
         return nil
     end
-    return entity:get_component("newgen_survival:equipment_system")
+    return entity:get_component("newgen:equipment_system")
 end
 
 function equipment_search.get_equipment_characteristics(id, slot, pid, type_of_protection)
-    local compared_property = equipment_search.compare_with_equipped(item.properties[id]["newgen_survival:equipment"].protections, slot, pid, type_of_protection)
+    local compared_property = equipment_search.compare_with_equipped(item.properties[id]["newgen:equipment"].protections, slot, pid, type_of_protection)
     return compared_property
 end
 

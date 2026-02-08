@@ -1,0 +1,11 @@
+@rect from (0.625,0,0.125) right (0,0,1) up (0,1.125,0) texture "blocks:bush" region-scale (1,1)
+@rect from (0.625,0,1.125) right (0,0,-1) up (0,1.125,0) texture "blocks:bush" region-scale (1,1)
+
+@rect from (0.125,0,0.625) right (1,0,0) up (0,1.125,0) texture "blocks:bush" region-scale (1,1)
+@rect from (1.125,0,0.625) right (-1,0,0) up (0,1.125,0) texture "blocks:bush" region-scale (1,1)
+
+@rect from (0.1875,0,0.1875) right (0.894,0,0.894) up (0,1,0) texture "blocks:bush" region(0,0,0.99,0.99) region-scale (1,1)
+@rect from (1.0625,0,1.0625) right (-0.894,0,-0.894) up (0,1,0) texture "blocks:bush" region(0,0,0.99,0.99) region-scale (1,1)
+
+@rect from (1.0625,0,0.1875) right (-0.894,0,0.894) up (0,1,0) texture "blocks:bush" region(0,0,0.99,0.99) region-scale (1,1)
+@rect from (0.1875,0,1.0625) right (0.894,0,-0.894) up (0,1,0) texture "blocks:bush" region(0,0,0.99,0.99) region-scale (1,1)

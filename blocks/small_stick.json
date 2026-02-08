@@ -1,0 +1,24 @@
+{
+    "texture-faces": [
+        "transparent",
+        "transparent",
+        "transparent",
+        "stick",
+        "transparent",
+        "transparent"
+    ],
+    "model": "aabb",
+    "hitbox": [0.0, 0.0, 0.0, 1, 0.1, 1],
+    "rotation": "pane",
+    "light-passing": true,
+    "sky-light-passing": true,
+    "material": "base:wood",
+    "obstacle": false,
+    "grounded": true,
+    "hidden": true,
+    "picking-item": "newgen:stick",
+    "base:durability": 0.0,
+    "base:loot": [
+        {"item": "newgen:stick", "count": 1}
+    ]
+}

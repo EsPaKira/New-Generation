@@ -1,6 +1,6 @@
 {
-    "id": "newgen_survival",
-    "title": "New Generation: Survival",
-    "version": "0.29",
-    "description": "Survival for NewGen"
+    "id": "newgen",
+    "title": "New Generation",
+    "version": "0.1.0",
+    "description": "Survival mod"
 }

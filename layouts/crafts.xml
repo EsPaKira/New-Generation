@@ -1,0 +1,15 @@
+<container size-func="gui.get_viewport()[1], gui.get_viewport()[2]">
+    <panel size-func="980,gui.get_viewport()[2]" color="#00000050" gravity="center-center">
+        <button size="980,30" interactive="false">Crafts</button>
+        <container size="980,300" id="crafts_table"></container>
+    </panel>
+    
+
+    <panel id="craft_info" size="168,1000" visible="false" color="#00000050">
+        <button onclick="hide_info()">@Close</button>
+        <image id="craft_info_img" src="blocks:transparent" hover-color="400" size="128,128" margin="20" />
+        <panel id="craft_info_components" size="168,800"></panel>
+        <button id="craft_info_name" interactive="false"></button>
+        <button id="craft_info_button" onclick="craft()">@Craft</button>
+    </panel>
+</container>

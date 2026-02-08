@@ -1,0 +1,19 @@
+{
+    "material": "base:carpet",
+    "texture-faces": [
+        "moss_side",
+        "moss_side",
+        "moss",
+        "moss",
+        "moss_side",
+        "moss_side"
+    ],
+    "model": "aabb",
+    "hitbox": [0, 0, 0, 1, 0.0625, 1],
+    "grounded": true,
+    "replaceable": true,
+    "obstacle": false,
+    "sky-light-passing": true,
+    "light-passing": true,
+    "base:durability": 1.0
+}

@@ -8,7 +8,7 @@ local controller = {
 }
 
 function go_back()
-    hud.close("newgen_survival:player_menu")
+    hud.close("newgen:player_menu")
     close_c_panel()
     close_equipment_menu()
     hud.open_inventory()
@@ -26,6 +26,10 @@ function open_c_panel()
     local characteristics = c_manager.get_characteristics()
     table.map(characteristics, function(i, value)
         if i == "health" or i == "oxygen" or i == "mana" then
+            document["max_"..i].text = c_manager["get_"..i]() .. "/" .. c_manager["get_max_"..i]()
+            return
+        end
+        if i == "max_health" or i == "max_oxygen" or i == "max_mana" then
             return
         end
         document[i].text = tostring(value)
@@ -121,10 +125,31 @@ function show_equipped_item()
     }))
 end
 
+function show_equipped_item_in_main_menu(slot)
+    local e_system = e_search.get_equipment_system(hud.get_player())
+    local item_in_slot = e_system.get_item_by_slot(slot)
+    if item_in_slot ~= 0 then
+        document[slot].src = item.icon(item_in_slot)
+    else 
+        document[slot].src = "gui/"..slot
+    end
+end
+
 function on_open()
     controller.choosen_equipment = nil
     close_c_panel()
     close_equipment_menu()
+
+    show_equipped_item_in_main_menu("head")
+    show_equipped_item_in_main_menu("helmet")
+    show_equipped_item_in_main_menu("cloak")
+    show_equipped_item_in_main_menu("body")
+    show_equipped_item_in_main_menu("chestplate")
+    show_equipped_item_in_main_menu("gloves")
+    show_equipped_item_in_main_menu("legs")
+    show_equipped_item_in_main_menu("greaves")
+    show_equipped_item_in_main_menu("belt")
+    show_equipped_item_in_main_menu("boots")
 end
 
 function equipment_button(value)
@@ -135,14 +160,10 @@ function equipment_button(value)
             local slot = inventory.find_by_item(player.get_inventory(hud.get_player()), controller.equipment[controller.choosen_equipment])
             inventory.set(player.get_inventory(hud.get_player()), slot, equipped_item, 1)
             e_system.set_equipment(controller.choosen_slot, controller.equipment[controller.choosen_equipment])
-            controller.choosen_equipment = nil
-            open_equipment_list()
         else
             local slot = inventory.find_by_item(player.get_inventory(hud.get_player()), controller.equipment[controller.choosen_equipment])
             inventory.set(player.get_inventory(hud.get_player()), slot, 0, 1)
             e_system.set_equipment(controller.choosen_slot, controller.equipment[controller.choosen_equipment])
-            controller.choosen_equipment = nil
-            open_equipment_list()
         end
     else
         if e_system.get_item_by_slot(controller.choosen_slot) ~= nil and e_system.get_item_by_slot(controller.choosen_slot) ~= 0 then
@@ -155,10 +176,11 @@ function equipment_button(value)
             local equipped_item = e_system.get_item_by_slot(controller.choosen_slot)
             inventory.set(player.get_inventory(hud.get_player()), slot, equipped_item, 1)
             e_system.remove_equipment(controller.choosen_slot)
-            controller.choosen_equipment = nil
-            open_equipment_list()
         end
     end
+    controller.choosen_equipment = nil
+    open_equipment_list()
+    show_equipped_item_in_main_menu(controller.choosen_slot)
 end
 
 function hide_error_info()

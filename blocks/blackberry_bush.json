@@ -1,0 +1,20 @@
+{
+    "model": "custom",
+    "material": "base:grass",
+    "model-name": "blackberry_bush",
+    "hitbox": [0.1, 0, 0.1, 0.8, 1, 0.8],
+    "light-passing": true,
+    "rotation": "pane",
+    "obstacle": false,
+    "grounded": true,
+    "state-based": {
+        "offset": 0,
+        "bits": 4,
+        "variants": [
+            {
+                "model": "custom",
+                "model-name": "bush"
+            }
+        ]
+    }
+}
