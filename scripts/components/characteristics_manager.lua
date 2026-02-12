@@ -2,7 +2,7 @@ local characteristics = {}
 
 local function def_characteristics(name, def_value)
     characteristics[name] = SAVED_DATA[name] or ARGS[name] or def_value
-    this["get_"..name] = function() return characteristics[name] or SAVED_DATA[name] or 0 end
+    this["get_"..name] = function() return characteristics[name] or SAVED_DATA[name] or ARGS[name] or 0 end
 end
 
 -- base values

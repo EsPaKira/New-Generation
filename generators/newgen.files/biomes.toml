@@ -57,6 +57,7 @@ plants = [
     {weight=0.03, block="base:flower"},
     {weight=0.03, block="newgen:bush"},
     {weight=0.03, block="newgen:small_stick"},
+    {weight=0.03, block="newgen:gabbro_stone"},
     {weight=0.01, block="newgen:dead_bush"},
     {weight=0.01, block="newgen:blackberry_bush"},
     {weight=0.01, block="newgen:moss"}
@@ -67,6 +68,8 @@ structures = [
     {name="spruce1", weight=1},
     {name = "bush0", weight = 0.5},
     {name = "bush1", weight = 0.5},
+    {name="gabbro_little_rock", weight=0.1},
+    {name="gabbro_big_rock", weight=0.02},
     {name="ruins0", weight=0.01}
 ]
 
@@ -124,7 +127,9 @@ plants = [
 structure-chance=0.003
 structures = [
     {name="limestone_coal0", weight=0.1},
-    {name="limestone_coal1", weight=1}
+    {name="limestone_coal1", weight=1},
+    {name="marble_little_rock", weight=0.1},
+    {name="marble_big_rock", weight=0.02}
 ]
 
 
@@ -151,12 +156,14 @@ plants = [
     {weight=0.03, block="base:flower"},
     {weight=0.03, block="newgen:bush"}
 ]
-structure-chance=0.003
+structure-chance=0.005
 structures = [
     {name="tree0", weight=1},
     {name="tree1", weight=1},
     {name = "bush0", weight = 5},
     {name = "bush1", weight = 5},
+    {name="diorite_little_rock", weight=0.12},
+    {name="diorite_big_rock", weight=0.03},
     {name="ruins0", weight=0.01}
 ]
 
@@ -182,7 +189,8 @@ plants = [
     {weight=0.03, block="newgen:dead_grass"},
     {weight=0.03, block="newgen:small_stick"},
     {weight=0.02, block="newgen:dead_tall_grass"},
-    {weight=0.01, block="newgen:dead_bush"}
+    {weight=0.01, block="newgen:dead_bush"},
+    {weight=0.01, block="newgen:dolomite_stone"}
 ]
 structure-chance = 0.02
 structures = [

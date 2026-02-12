@@ -11,3 +11,9 @@ sandstone_coal1 = {lowering=10}
 limestone_coal0 = {lowering=15}
 limestone_coal1 = {lowering=10}
 ruins0 = {lowering=2}
+marble_little_rock = {}
+marble_big_rock = {}
+diorite_little_rock = {}
+diorite_big_rock = {}
+gabbro_little_rock = {}
+gabbro_big_rock = {}

@@ -3,5 +3,5 @@
         <image size="48,48" gravity="center-center" src="%{src}"/>
     </container>
     
-    <button id="craft_component_text_%{index}" interactive="false" size="100,44" gravity="center-right" color="#57575750">%{text}</button>
+    <button id="craft_component_text_%{index}" interactive="false" size="232,44" gravity="center-right" color="#57575750">%{text}</button>
 </container>

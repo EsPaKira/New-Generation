@@ -1,0 +1,18 @@
+[
+    {
+        "components": [
+            {"id": "base:wood.item", "count": 2}
+        ],
+        "results": [
+            {"id": "base:wooden_door.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "base:wood.item", "count": 1}
+        ],
+        "results": [
+            {"id": "base:planks.item", "count": 2}
+        ]
+    }
+]

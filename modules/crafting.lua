@@ -2,7 +2,14 @@
 
 local crafting = {}
 
-crafting.crafts = file.read_combined_list("primitive_crafts.json")
+function crafting.add_workbench_crafts(name)
+    crafting.crafts = nil
+    crafting.crafts = file.read_combined_list("primitive_crafts.json")
+    if name ~= 0 then
+        print("aboba")
+        table.merge(crafting.crafts, file.read_combined_list(name .. "_crafts.json"))
+    end
+end
 
 function crafting.find_all_containing(id)
     local found = {}

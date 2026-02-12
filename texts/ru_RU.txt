@@ -1,3 +1,7 @@
+# GUI
+
+# Меню игрока
+
 Characteristics=Характеристики
 Close characteristics=Скрыть характеристики
 Selected item=Выбранный предмет
@@ -20,12 +24,19 @@ Crush damage protection=Защита от дробящего урона
 Slashing damage protection=Защита от рубящего урона
 Piercing damage protection=Защита от колющего урона
 
+# Меню крафтов
+
+Crafts=Крафты
+Close=Закрыть
+Craft=Создать
+
 # Предметы
 
 blackberry=черника
-fur cape=меховая накидка
-stick=палка
 coal=каменный уголь
+fur cape=меховая накидка
+primitive tool=примитивный инструмент
+stick=палка
 
 # Блоки
 
@@ -64,3 +75,4 @@ sandstone=песчаник
 spruce leaves=хвоя
 spruce=сосновое бревно
 vase=ваза
+workbench=верстак

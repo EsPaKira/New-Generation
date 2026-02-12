@@ -1,0 +1,21 @@
+{
+    "icon": "items:primitive_tool",
+    "uses": 52,
+    "newgen:tool": {
+        "type": "breaker",
+        "materials": {
+            "base:stone": {
+                "speed": 3
+            },
+            "base:wood": {
+                "speed": 2
+            },
+            "base:ground": {
+                "speed": 1.5
+            },
+            "base:grass_block": {
+                "speed": 1.2
+            }
+        }
+    }
+}

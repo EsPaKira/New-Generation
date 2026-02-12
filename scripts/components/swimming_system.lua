@@ -22,7 +22,7 @@ end
 
 local function is_in_water()
     local pos = entity_pos()
-    return block.get(pos[1], pos[2] - 0.3, pos[3]) == water or block.get(pos[1], pos[2] + 1, pos[3]) == water
+    return block.get(pos[1], pos[2] + 0.1, pos[3]) == water or block.get(pos[1], pos[2] + 1, pos[3]) == water
 end
 
 function head_underwater()

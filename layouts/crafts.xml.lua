@@ -7,17 +7,23 @@ local controller = {
     invsize = 0,
     max_crafts = 0,
     item_index = 0,
+    type_of_crafts = nil
 }
 
-local CRAFT_ROWS = 4
-local CRAFT_COLS = 13
+local CRAFT_ROWS = 9
+local CRAFT_COLS = 10
 local craft_buttons = {}
 
 local function display_craft(craft, button, stats)
     for _, node in ipairs(button) do
+        -- if node.id == "craft_bar" then
+        --     local is_enough = crafting.is_enough(craft, stats)
+        --     print(is_enough)
+        --     node.color = is_enough and {230, 14, 14, 80} or {14, 230, 14, 80}
+        --     return
+        -- end
         node.visible = true
         node.src = item.icon(item.index(craft.results[1].id))
-        break
     end
 end
 
@@ -78,11 +84,15 @@ function on_items_update(invid, slotid)
     refresh_crafts(invid)
 end
 
-function on_open()
+function on_open(type_of_crafts)
+    crafting.add_workbench_crafts(type_of_crafts)
+    document["crafts_header"].text = type_of_crafts == 0 and "Crafts" or "Crafts on " .. type_of_crafts
+    controller.type_of_crafts = type_of_crafts
+
     local pid = hud.get_player()
     local pinvid = player.get_inventory(pid)
     controller.invid = pinvid
-    if controller.max_crafts == 0 then --НА БУДУЩЕЕ: НЕ СОЗДАВАТЬ ПУСТЫЕ КЛЕТКИ. СОЗДАВАТЬ СТОЛЬКО, СКОЛЬКО ЕСТЬ КРАФТОВ 
+    if controller.max_crafts == 0 then
         for row=0, CRAFT_ROWS-1 do
             for col=0, CRAFT_COLS-1 do
                 local index = row * CRAFT_COLS + col
@@ -113,22 +123,40 @@ function craft()
     end
     refresh_crafts(controller.invid)
     refresh_components(craft)
-    document["craft_info_button"].enabled = crafting.is_enough(craft, controller.stats)
+    local is_enough = crafting.is_enough(craft, controller.stats)
+    document["craft_info_button"].enabled = is_enough
+    document["craft_info_button"].color = is_enough and {14, 230, 14, 80} or {230, 14, 14, 40}
+    document["craft_info_button"].hoverColor = is_enough and {2, 54, 2, 255} or {230, 14, 14, 40}
 end
 
 function controller:show_info(index)
     local craft = self.shown_crafts[index + 1]
-    document["craft_info"].pos = input.get_mouse_pos()
+    if not craft then
+        return
+    end
     document["craft_info_img"].src = item.icon(item.index(craft.results[1].id))
     document["craft_info_name"].text = item.caption(item.index(craft.results[1].id))
     document["craft_info_components"]:clear()
     display_components(craft)
     document["craft_info"].visible = true
-    document["craft_info_button"].enabled = crafting.is_enough(craft, self.stats)
+
+    local is_enough = crafting.is_enough(craft, self.stats)
+    document["craft_info_button"].enabled = is_enough
+    document["craft_info_button"].color = is_enough and {14, 230, 14, 80} or {230, 14, 14, 40}
+    document["craft_info_button"].hoverColor = is_enough and {2, 54, 2, 255} or {230, 14, 14, 40}
     controller.item_index = index
 end
 
 function hide_info()
     document["craft_info"].visible = false
     document["craft_info_components"]:clear()
+end
+
+function go_back()
+    hud.close("newgen:crafts")
+
+    if controller.type_of_crafts == 0 then
+        hud.open_inventory()
+        hud.open_permanent("newgen:player_button")
+    end
 end

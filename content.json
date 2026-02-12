@@ -37,13 +37,15 @@
     "spruce",
     "spruce_leaves",
     "vase",
-    "dead_white_bush"
+    "dead_white_bush",
+    "workbench"
   ],
   "items": [
     "fur_cape",
     "blackberry",
     "coal",
-    "stick"
+    "stick",
+    "primitive_tool"
   ],
   "entities": [
     "base:player"

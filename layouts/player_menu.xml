@@ -44,7 +44,7 @@
     </container>
 
     <!-- characteristics panel -->
-    <panel id="c_panel" size-func="400, gui.get_viewport()[2]" orientation="vertical" color="#00000070" visible="false">
+    <panel id="c_panel" size-func="400, gui.get_viewport()[2]" orientation="vertical" color="050" visible="false">
         <container size="400,50"><label gravity="center-center">@Main characteristics</label></container>
 
         <container size="400,30" color="100"><label pos="30,8">@Body</label><label id="body_level" pos="310,8"></label></container>
@@ -74,7 +74,7 @@
     <container id="equipment_menu" size-func="gui.get_viewport()[1], gui.get_viewport()[2]" color="#000000cc" visible="false">
         <button hover-color="050" color="100" gravity="top-right" onclick="close_equipment_menu()">@Back</button>
 
-        <container size="558,40" color="#00000050">
+        <container size="558,40" color="050">
             <container id="head_info" size="50,40" pos="7,0" hover-color="100" onclick="choose_equipment_slot('head')"><image size="40" gravity="center-center" src="gui/head" /></container>
             <container id="helmet_info" size="50,40" pos="62,0" hover-color="100" onclick="choose_equipment_slot('helmet')"><image size="40" gravity="center-center" src="gui/helmet" /></container>
             <container id="cloak_info" size="50,40" pos="117,0" hover-color="100" onclick="choose_equipment_slot('cloak')"><image size="40" gravity="center-center" src="gui/cloak" /></container>
@@ -86,17 +86,22 @@
             <container id="belt_info" size="50,40" pos="447,0" hover-color="100" onclick="choose_equipment_slot('belt')"><image size="40" gravity="center-center" src="gui/belt" /></container>
             <container id="boots_info" size="50,40" pos="502,0" hover-color="100" onclick="choose_equipment_slot('boots')"><image size="40" gravity="center-center" src="gui/boots" /></container>
         </container>
-        <container id="equipment_list" size-func="558, gui.get_viewport()[2] - 55" pos="0,55" color="#00000050" visible="false">
+        <panel size-func="558, gui.get_viewport()[2]" pos="0,55" color="050">
+            <container id="equipment_list" size="558, 943" visible="false" scrollable="true">
+                <!-- content is generated in script -->
+            </container>
+        </panel>
         
-        </container>
 
         <container id="equipped_item_info" size="300,571" position-func="gui.get_viewport()[1] - 300, 37">
+            <!-- content is generated in script -->
         </container>
         <container id="cannot_remove_item" size="300,35" position-func="gui.get_viewport()[1] - 300, 613" hover-color="#00000050" color="#33020250" onclick="hide_error_info()" visible="false">
             <label gravity="center-center">@No free slot in inventory</label>
         </container>
 
         <container id="choosen_item_info" size="300,571" position-func="gui.get_viewport()[1] - 625, 37">
+            <!-- content is generated in script -->
         </container>     
     </container>
 </container>

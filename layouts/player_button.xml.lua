@@ -4,5 +4,5 @@ end
 
 function open_crafting_menu()
     hud.close("newgen:player_button")
-    hud.show_overlay("newgen:crafts")
+    hud.show_overlay("newgen:crafts", false)
 end
