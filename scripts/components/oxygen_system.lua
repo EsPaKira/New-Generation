@@ -10,6 +10,9 @@ function set_oxygen(value)
     oxygen = math.min(math.max(0, value), max_oxygen)
     c_manager.set_params("oxygen", oxygen)
 
+    if entity:get_player() == -1 then
+        return
+    end
     events.emit("newgen:player_oxygen.set", entity:get_uid(), oxygen, max_oxygen)
 end
 

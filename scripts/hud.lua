@@ -14,12 +14,13 @@ function on_hud_open()
 
     events.on("newgen:gamemodes.set", function(playerid, name)
         if name == "survival" then
-            hud.open_permanent("newgen:health_bar")
-
             local entity = entities.get(player.get_entity(playerid))
             if not entity then
                 return -- dead
             end
+
+            hud.open_permanent("newgen:health_bar")
+
             local c_manager = entity:get_component("newgen:characteristics_manager")
             survival_hud.set_health(c_manager:get_health(), c_manager:get_max_health())
             survival_hud.set_oxygen(c_manager:get_oxygen(), c_manager:get_max_oxygen())
@@ -29,15 +30,11 @@ function on_hud_open()
     end)
 
     events.on("newgen:player_health.set", function(eid, health, max_health)
-        if eid == player.get_entity(hud.get_player()) then
-            survival_hud.set_health(health, max_health)
-        end
+        survival_hud.set_health(health, max_health)
     end)
 
     events.on("newgen:player_oxygen.set", function(eid, oxygen, max_oxygen)
-        if eid == player.get_entity(hud.get_player()) then
-            survival_hud.set_oxygen(oxygen, max_oxygen)
-        end
+        survival_hud.set_oxygen(oxygen, max_oxygen)
     end)
 
     console.add_command("gamemode player:sel=$obj.id name:str=''", 
@@ -114,7 +111,6 @@ function on_hud_open()
             return
         end
         isdead = true
-        
         hud.close_inventory()
         if just_happened then
             local px, py, pz = player.get_pos(pid)

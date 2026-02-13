@@ -1,0 +1,22 @@
+{
+    "components": [
+        "core:pathfinding",
+        {
+            "name": "core:mob",
+            "args": {
+                "jump_force": 8.0
+            }
+        },
+        {
+            "name": "newgen:characteristics_manager",
+            "args": {
+                "health": 4,
+                "max_health": 4
+            }
+        },
+        "newgen:health_system",
+        "newgen:test"
+    ],
+    "hitbox": [0.75, 0.75, 0.75],
+    "skeleton-name": "newgen:test"
+}

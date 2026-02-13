@@ -14,6 +14,10 @@ function set_health(value)
     health = math.min(math.max(0, value), max_health)
     c_manager.set_params("health", health)
 
+    local pid = entity:get_player()
+    if pid == -1 then
+        return
+    end
     events.emit("newgen:player_health.set", entity:get_uid(), health, max_health)
 end
 
@@ -32,10 +36,15 @@ local function drop_inventory(invid)
 end
 
 function die()
-    events.emit("newgen:death", entity)
-    events.emit("newgen:player_death", entity:get_player(), true)
+    --events.emit("newgen:death", entity)
 
     local pid = entity:get_player()
+    if pid == -1 then
+        entity:despawn()
+        return
+    end
+
+    events.emit("newgen:player_death", entity:get_player(), true)
     if not rules.get("keep-inventory") then
         drop_inventory(player.get_inventory(pid))
     end
@@ -53,7 +62,7 @@ end
 
 function damage(points)
     local pid = entity:get_player()
-    if gamemodes.get(pid).current == "creative" then
+    if pid and gamemodes.get(pid).current == "creative" then
         return
     end
     if points > 0 and pid then

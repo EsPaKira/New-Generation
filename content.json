@@ -1,4 +1,15 @@
 {
+  "entities": [
+    "base:player",
+    "test"
+  ],
+  "items": [
+    "fur_cape",
+    "blackberry",
+    "coal",
+    "stick",
+    "primitive_tool"
+  ],
   "blocks": [
     "bush",
     "blackberry_bush",
@@ -39,15 +50,5 @@
     "vase",
     "dead_white_bush",
     "workbench"
-  ],
-  "items": [
-    "fur_cape",
-    "blackberry",
-    "coal",
-    "stick",
-    "primitive_tool"
-  ],
-  "entities": [
-    "base:player"
   ]
 }
