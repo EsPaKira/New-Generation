@@ -1,0 +1,11 @@
+{
+    "texture": "red_clay",
+    "base:durability": 5,
+    "base:loot": [
+        {
+            "item": "newgen:red_clay_chunk",
+            "min": 2,
+            "max": 4
+        }
+    ]
+}

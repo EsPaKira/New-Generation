@@ -1,0 +1,6 @@
+@box from (0,0,0) to (1,0.75,1) texture "blocks:red_clay" {
+    @part tags (north) texture "blocks:clay_oven_face_fire" region-scale (1,1.335)
+}
+@box from (0.0625,0.75,0.0625) to (0.9375,1.25,0.9375) texture "blocks:red_clay" {
+    @part tags (top) texture "blocks:clay_oven_top_fire" region-scale (1.14,1.14)
+}

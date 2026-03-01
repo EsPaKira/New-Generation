@@ -1,4 +1,9 @@
 {
     "icon": "items:coal",
-    "placing-block": "newgen:coal_stone"
+    "placing-block": "newgen:coal_stone",
+    "newgen:material": {
+        "type": "fuel",
+        "max-temperature": 600, 
+        "burning-time": 1200
+    }
 }

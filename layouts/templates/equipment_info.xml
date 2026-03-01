@@ -1,4 +1,4 @@
-<container size="300,571" color="050">
+<container size="300,571" color="#00000070">
     <container size="300,35"><label gravity="center-center">@Equipped item</label></container>
     <image size="220" pos="40,75" src="%{src}" />
     <container size="300,45" pos="0,335"><label gravity="center-center">@Types of protection</label></container>

@@ -56,13 +56,13 @@ function on_physics_update()
             if input.is_active("movement.jump") then
                 vel[2] = 3
                 if not body_underwater() then
-                    vel[2] = 6
+                    vel[2] = 4
                 end
             end
             if input.is_active("movement.crouch") then
                 vel[2] = -3
             end
-            body:set_vel(vel)
         end
+        body:set_vel(vel)
     end
 end

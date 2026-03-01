@@ -1,4 +1,9 @@
 {
     "icon": "items:stick",
-    "placing-block": "newgen:small_stick"
+    "placing-block": "newgen:small_stick",
+    "newgen:material": {
+        "type": "fuel",
+        "max-temperature": 800, 
+        "burning-time": 200
+    }
 }

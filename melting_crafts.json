@@ -1,0 +1,10 @@
+[
+    {
+        "components": [
+            {"id": "newgen:malachite_ore", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:copper_ingot", "count": 1}
+        ]
+    }
+]

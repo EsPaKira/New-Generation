@@ -2,6 +2,8 @@
 
 local base_util = require "base:util"
 local gamemodes = require "gamemodes"
+--local world_data = require "world_data"
+local furnaces = require "furnaces"
 
 local breaking_blocks = {}
 
@@ -30,6 +32,19 @@ function on_world_open()
         end
     end)
     rules.create("keep-inventory", false)
+
+    -- open newgen modules
+    --world_data.open()
+end
+
+function on_world_tick() 
+    -- tick newgen modules
+    furnaces.tick()
+end
+
+function on_world_quit()
+    -- save newgen data
+    --world_data.save()
 end
 
 local function tick_breaking(pid, tps)

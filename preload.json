@@ -13,7 +13,11 @@
         "gui/boots",
         "gui/standard_body",
         "gui/standard_soul",
-        "gui/crafting"
+        "gui/crafting",
+        "gui/clay_oven",
+        "gui/fire",
+        "gui/fire_active",
+        "gui/progress_bar"
     ],
     "post-effects": [
         "death"

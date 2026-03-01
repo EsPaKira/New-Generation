@@ -3,17 +3,17 @@
     <button hover-color="050" color="100" gravity="top-right" onclick="go_back()">@Back</button>
 
     <button id="crafts_header" size="755,30" z-index="2" interactive="false" position-func="gui.get_viewport()[1]/2 - 377.5, 0" context="ru_RU"></button>
-    <panel size-func="755,gui.get_viewport()[2]" color="050" position-func="gui.get_viewport()[1]/2 - 377.5, 30">
+    <panel size-func="755,gui.get_viewport()[2]" color="#00000070" position-func="gui.get_viewport()[1]/2 - 377.5, 30">
         <container size="755,710" id="crafts_table">
             <!-- content is generated in script -->
         </container>
     </panel>
 
-    <panel id="craft_info" size="300,1000" position-func="gui.get_viewport()[1] - 300, 37" visible="false" color="050">
-        <button onclick="hide_info()">@Close</button>
+    <panel id="craft_info" size="300,1000" position-func="gui.get_viewport()[1] - 300, 37" visible="false" color="#00000070">
+        <button onclick="hide_info()" color="050" hover-color="#00000050">@Close</button>
         <image id="craft_info_img" src="blocks:transparent" hover-color="400" size="200,200" margin="50" />
-        <panel id="craft_info_components" size="300,800"></panel>
         <button id="craft_info_name" interactive="false"></button>
+        <panel id="craft_info_components" size="300,800"></panel>
         <button id="craft_info_button" onclick="craft()" hover-color="#023602" color="#0ee60e66">@Craft</button>
     </panel>
 </container>

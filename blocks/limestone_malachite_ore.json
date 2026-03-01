@@ -1,0 +1,16 @@
+{
+    "texture": "limestone_malachite",
+    "base:durability": 12.0,
+    "base:loot": [
+        {
+            "item": "newgen:malachite_ore",
+            "min": 1,
+            "max": 3
+        },
+        {
+            "item": "newgen:limestone_stone",
+            "min": 3,
+            "max": 6
+        }
+    ]  
+}

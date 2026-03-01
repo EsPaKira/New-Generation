@@ -194,7 +194,9 @@ function on_hud_open()
         if hud.is_open("newgen:crafts") then
             hud.close("newgen:crafts")
         end
-        hud.open_permanent("newgen:player_button")
+        if not hud.is_inventory_open() then
+            hud.open_permanent("newgen:player_button")
+        end
     end)
 
     input.add_callback("key:escape", function()

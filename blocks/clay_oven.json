@@ -1,0 +1,19 @@
+{
+    "model": "custom",
+    "model-name": "clay_oven",
+    "rotation": "pane",
+    "size": [1, 1, 1],
+    "hitboox": [0, 0, 0, 1, 1, 1],
+    "ui-layout": "newgen:clay_oven",
+    "inventory-size": 3,
+    "state-based": {
+        "offset": 0,
+        "bits": 4,
+        "variants": [
+            {
+                "model": "custom",
+                "model-name": "clay_oven_fire"
+            }
+        ]
+    }
+}

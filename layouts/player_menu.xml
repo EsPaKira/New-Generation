@@ -1,50 +1,53 @@
 <container size-func="gui.get_viewport()[1], gui.get_viewport()[2]" color="#0a060c">
     <image size-func="gui.get_viewport()[1], gui.get_viewport()[2]" src="gui/space" />
-    <button hover-color="050" color="100" gravity="top-right" onclick="go_back()">@Back</button>
+    
+    <container id="first_menu" size-func="gui.get_viewport()[1], gui.get_viewport()[2]">
+        <button hover-color="050" color="100" gravity="top-right" onclick="go_back()">@Back</button>
 
-    <container id="skills_trees" position-func="gui.get_viewport()[1]/2-300, 30" size="600,50" color="#000000">
-        <container pos="240,0" size="50" hover-color="100"><image id="body_tree" size="50" src="gui/standard_body" /></container>
-        <container pos="310,0" size="50" hover-color="100"><image id="soul_tree" size="50" src="gui/standard_soul" /></container>
-    </container>
-
-
-    <container position-func="gui.get_viewport()[1]/2-300, 90" size="600,2" color="#b7fcfc"></container>
-    <container id="equipment" position-func="gui.get_viewport()[1]/2-230, 120" size="460">
-        <container pos="80,0" size="300,100">
-            <container pos="0,0" size="100" hover-color="100" color="#00000070" onclick="open_equipment_menu('head')"><image id="head" size="100" src="gui/head" /></container>
-            <container pos="200,0" size="100" hover-color="100" color="#00000070" onclick="open_equipment_menu('helmet')"><image id="helmet" size="100" src="gui/helmet" /></container>
+        <container id="skills_trees" position-func="gui.get_viewport()[1]/2-300, 30" size="600,50" color="#000000">
+            <container pos="240,0" size="50" hover-color="100"><image id="body_tree" size="50" src="gui/standard_body" /></container>
+            <container pos="310,0" size="50" hover-color="100"><image id="soul_tree" size="50" src="gui/standard_soul" /></container>
         </container>
 
-        <container pos="0,120" size="460,100">
-            <container pos="0,0" size="100" hover-color="100" color="#00000070" onclick="open_equipment_menu('cloak')"><image id="cloak" size="100" src="gui/cloak" /></container>
-            <container pos="120,0" size="100" hover-color="100" color="#00000070" onclick="open_equipment_menu('body')"><image id="body" size="100" src="gui/body"/></container>
-            <container pos="240,0" size="100" hover-color="100" color="#00000070" onclick="open_equipment_menu('chestplate')"><image id="chestplate" size="100" src="gui/chestplate" /></container>
-            <container pos="360,0" size="100" hover-color="100" color="#00000070" onclick="open_equipment_menu('gloves')"><image id="gloves" size="100" src="gui/gloves" /></container>
+
+        <container position-func="gui.get_viewport()[1]/2-300, 90" size="600,2" color="#b7fcfc"></container>
+        <container id="equipment" position-func="gui.get_viewport()[1]/2-230, 120" size="460">
+            <container pos="80,0" size="300,100">
+                <container pos="0,0" size="100" hover-color="100" color="#00000070" onclick="open_equipment_menu('head')"><image id="head" size="100" src="gui/head" /></container>
+                <container pos="200,0" size="100" hover-color="100" color="#00000070" onclick="open_equipment_menu('helmet')"><image id="helmet" size="100" src="gui/helmet" /></container>
+            </container>
+
+            <container pos="0,120" size="460,100">
+                <container pos="0,0" size="100" hover-color="100" color="#00000070" onclick="open_equipment_menu('cloak')"><image id="cloak" size="100" src="gui/cloak" /></container>
+                <container pos="120,0" size="100" hover-color="100" color="#00000070" onclick="open_equipment_menu('body')"><image id="body" size="100" src="gui/body"/></container>
+                <container pos="240,0" size="100" hover-color="100" color="#00000070" onclick="open_equipment_menu('chestplate')"><image id="chestplate" size="100" src="gui/chestplate" /></container>
+                <container pos="360,0" size="100" hover-color="100" color="#00000070" onclick="open_equipment_menu('gloves')"><image id="gloves" size="100" src="gui/gloves" /></container>
+            </container>
+
+            <container pos="60,240" size="340,100">
+                <container pos="0,0" size="100" hover-color="100" color="#00000070" onclick="open_equipment_menu('legs')"><image id="legs" size="100" src="gui/legs" /></container>
+                <container pos="120,0" size="100" hover-color="100" color="#00000070" onclick="open_equipment_menu('greaves')"><image id="greaves" size="100" src="gui/greaves" /></container>
+                <container pos="240,0" size="100" hover-color="100" color="#00000070" onclick="open_equipment_menu('belt')"><image id="belt" size="100" src="gui/belt" /></container>
+            </container>
+
+            <container pos="180,360" size="100" hover-color="100" color="#00000070" onclick="open_equipment_menu('boots')"><image id="boots" size="100" src="gui/boots" /></container>
         </container>
+        <container position-func="gui.get_viewport()[1]/2-300, 610" size="600,2" color="#b7fcfc"></container>
 
-        <container pos="60,240" size="340,100">
-            <container pos="0,0" size="100" hover-color="100" color="#00000070" onclick="open_equipment_menu('legs')"><image id="legs" size="100" src="gui/legs" /></container>
-            <container pos="120,0" size="100" hover-color="100" color="#00000070" onclick="open_equipment_menu('greaves')"><image id="greaves" size="100" src="gui/greaves" /></container>
-            <container pos="240,0" size="100" hover-color="100" color="#00000070" onclick="open_equipment_menu('belt')"><image id="belt" size="100" src="gui/belt" /></container>
+
+        <container id="characteristics" position-func="gui.get_viewport()[1]/2-100, 630" size="220,170" color="#00000050">
+            <container size="220,140">
+                <image pos="20,20" size="80" src="gui/standard_body" />
+                <image pos="120,20" size="80" src="gui/standard_soul" />
+                <container pos="0,110" size="110,30"><label gravity="center-center">@Body</label></container>
+                <container pos="110,110" size="110,30"><label gravity="center-center">@Soul</label></container>
+            </container>
+            <button id="detailed_information" hover-color="050" color="#00000070" size="220,30" gravity="bottom-center" onclick="open_c_panel()">@Characteristics</button>
         </container>
-
-        <container pos="180,360" size="100" hover-color="100" color="#00000070" onclick="open_equipment_menu('boots')"><image id="boots" size="100" src="gui/boots" /></container>
-    </container>
-    <container position-func="gui.get_viewport()[1]/2-300, 610" size="600,2" color="#b7fcfc"></container>
-
-
-    <container id="characteristics" position-func="gui.get_viewport()[1]/2-100, 630" size="220,170" color="#00000050">
-        <container size="220,140">
-            <image pos="20,20" size="80" src="gui/standard_body" />
-            <image pos="120,20" size="80" src="gui/standard_soul" />
-            <container pos="0,110" size="110,30"><label gravity="center-center">@Body</label></container>
-            <container pos="110,110" size="110,30"><label gravity="center-center">@Soul</label></container>
-        </container>
-        <button id="detailed_information" hover-color="050" color="100" size="220,30" gravity="bottom-center" onclick="open_c_panel()">@Characteristics</button>
     </container>
 
     <!-- characteristics panel -->
-    <panel id="c_panel" size-func="400, gui.get_viewport()[2]" orientation="vertical" color="050" visible="false">
+    <panel id="c_panel" size-func="400, gui.get_viewport()[2]" orientation="vertical" color="#00000070" visible="false">
         <container size="400,50"><label gravity="center-center">@Main characteristics</label></container>
 
         <container size="400,30" color="100"><label pos="30,8">@Body</label><label id="body_level" pos="310,8"></label></container>
@@ -55,7 +58,7 @@
 
         <container size="400,30" color="100"><label pos="20,8">@HP</label><label id="max_health" pos="300,8"></label></container>
         <container size="400,30"><label pos="20,8">@Oxygen</label><label id="max_oxygen" pos="300,8"></label></container>
-        <container size="400,30" color="100"><label pos="20,8">@Mana</label><label id="max_mana" pos="300,8"></label></container>
+        <container size="400,30" color="100" tooltip="Magical energy" tooltip-delay="0.08"><label pos="20,8">@Archium</label><label id="max_archium" pos="300,8"></label></container>
         <container size="400,30"><label pos="20,8">@Agility</label><label id="agility" pos="310,8"></label></container>
         <container size="400,30" color="100"><label pos="20,8">@Accuracy</label><label id="accuracy" pos="310,8"></label></container>
 
@@ -71,10 +74,10 @@
     <button id="close_c_panel" hover-color="050" color="100" pos="400,0" visible="false" onclick="close_c_panel()">@Close characteristics</button>
 
     <!-- equipment menu -->
-    <container id="equipment_menu" size-func="gui.get_viewport()[1], gui.get_viewport()[2]" color="#000000cc" visible="false">
+    <container id="equipment_menu" size-func="gui.get_viewport()[1], gui.get_viewport()[2]" visible="false">
         <button hover-color="050" color="100" gravity="top-right" onclick="close_equipment_menu()">@Back</button>
 
-        <container size="558,40" color="050">
+        <container size="558,40" color="#00000070">
             <container id="head_info" size="50,40" pos="7,0" hover-color="100" onclick="choose_equipment_slot('head')"><image size="40" gravity="center-center" src="gui/head" /></container>
             <container id="helmet_info" size="50,40" pos="62,0" hover-color="100" onclick="choose_equipment_slot('helmet')"><image size="40" gravity="center-center" src="gui/helmet" /></container>
             <container id="cloak_info" size="50,40" pos="117,0" hover-color="100" onclick="choose_equipment_slot('cloak')"><image size="40" gravity="center-center" src="gui/cloak" /></container>
@@ -86,7 +89,7 @@
             <container id="belt_info" size="50,40" pos="447,0" hover-color="100" onclick="choose_equipment_slot('belt')"><image size="40" gravity="center-center" src="gui/belt" /></container>
             <container id="boots_info" size="50,40" pos="502,0" hover-color="100" onclick="choose_equipment_slot('boots')"><image size="40" gravity="center-center" src="gui/boots" /></container>
         </container>
-        <panel size-func="558, gui.get_viewport()[2]" pos="0,55" color="050">
+        <panel size-func="558, gui.get_viewport()[2]" pos="0,55" color="#00000070">
             <container id="equipment_list" size="558, 943" visible="false" scrollable="true">
                 <!-- content is generated in script -->
             </container>
@@ -96,7 +99,7 @@
         <container id="equipped_item_info" size="300,571" position-func="gui.get_viewport()[1] - 300, 37">
             <!-- content is generated in script -->
         </container>
-        <container id="cannot_remove_item" size="300,35" position-func="gui.get_viewport()[1] - 300, 613" hover-color="#00000050" color="#33020250" onclick="hide_error_info()" visible="false">
+        <container id="cannot_remove_item" size="300,35" position-func="gui.get_viewport()[1] - 300, 613" hover-color="#00000070" color="#33020250" onclick="hide_error_info()" visible="false">
             <label gravity="center-center">@No free slot in inventory</label>
         </container>
 

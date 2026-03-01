@@ -1,21 +1,21 @@
 <container size="525,70" position-func="gui.get_viewport()[1]/2-262.5,gui.get_viewport()[2]-125" z-index="-1">
     <!--  Air  -->
     <container gravity="top-right" size="240, 22" id="oxygen_bar_root">
-        <container color="#00000070" size="240, 25"/>
+        <container color="#00000090" size="240, 25"/>
         <container color="#b9f4fa40" size="240, 22" id="oxygen_bar"/>
         <label gravity="center-center" id="oxygen">20/20</label>
     </container>
     <container size="525,45" pos="0, 25">
         <!--  Health  -->
         <container size="240, 25" gravity="top-left">
-            <container color="#00000070" size="240, 25"/>
-            <container color="#FF000080" size="240, 25" id="health_bar"/>
+            <container color="#00000090" size="240, 25"/>
+            <container color="#800e13" size="240, 25" id="health_bar"/>
             <label gravity="center-center" id="health">20/20</label>
         </container>
         <!--  Stamina  -->
         <container size="240, 25" gravity="top-right">
-            <container color="#00000070" size="240, 25"/>
-            <container color="#ffee0080" size="240, 25" id="stamina_bar"/>
+            <container color="#00000090" size="240, 25"/>
+            <container color="#c49102" size="240, 25" id="stamina_bar"/>
             <label gravity="center-center" id="stamina">20/20</label>
         </container>
     </container>

@@ -1,0 +1,18 @@
+<inventory size="524,200" color="#000000">
+    <image size="524,200" src="gui/clay_oven" />
+    <!-- <slot index="0" size="52" pos="50,38"></slot> -->
+    <slot index="0" size="52" pos="110,38"></slot>
+    <!-- <slot index="2" size="52" pos="170,38"></slot> -->
+
+    <slot index="1" size="52" pos="110,110"></slot>
+
+    <!-- <slot index="4" size="52" pos="302,38" placing="false"></slot> -->
+    <slot index="2" size="52" pos="362,38" placing="false"></slot>
+    <!-- <slot index="6" size="52" pos="422,38" placing="false"></slot> -->
+
+    <image id="progress_bar" size="40" pos="240,42" src="gui/progress_bar" />
+    <image id="fire" size="40" pos="58,114" src="gui/fire" />
+
+    <container size="70,15" pos="302,120"><label id="t"></label></container>
+    <container size="70,15" pos="302,140"><label id="m"></label></container>
+</inventory>

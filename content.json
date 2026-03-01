@@ -1,15 +1,4 @@
 {
-  "entities": [
-    "base:player",
-    "test"
-  ],
-  "items": [
-    "fur_cape",
-    "blackberry",
-    "coal",
-    "stick",
-    "primitive_tool"
-  ],
   "blocks": [
     "bush",
     "blackberry_bush",
@@ -49,6 +38,27 @@
     "spruce_leaves",
     "vase",
     "dead_white_bush",
-    "workbench"
+    "workbench",
+    "red_clay",
+    "clay_oven",
+    "dolomite_malachite_ore",
+    "limestone_malachite_ore"
+  ],
+  "items": [
+    "fur_cape",
+    "blackberry",
+    "coal",
+    "stick",
+    "primitive_tool",
+    "red_clay_chunk",
+    "malachite_ore",
+    "ash",
+    "copper_ingot",
+    "slag",
+    "unknown_alloy"
+  ],
+  "entities": [
+    "base:player",
+    "test"
   ]
 }

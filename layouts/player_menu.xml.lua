@@ -25,11 +25,11 @@ function open_c_panel()
     local c_manager = gamemodes.get_characteristics_manager(hud.get_player())
     local characteristics = c_manager.get_characteristics()
     table.map(characteristics, function(i, value)
-        if i == "health" or i == "oxygen" or i == "mana" then
+        if i == "health" or i == "oxygen" or i == "archium" then
             document["max_"..i].text = c_manager["get_"..i]() .. "/" .. c_manager["get_max_"..i]()
             return
         end
-        if i == "max_health" or i == "max_oxygen" or i == "max_mana" then
+        if i == "max_health" or i == "max_oxygen" or i == "max_archium" then
             return
         end
         document[i].text = tostring(value)
@@ -44,12 +44,14 @@ end
 function open_equipment_menu(slot)
     choose_equipment_slot(slot)
     close_c_panel()
+    document["first_menu"].visible = false
     document["equipment_menu"].visible = true
 end
 
 function close_equipment_menu()
     document["equipment_menu"].visible = false
     document["equipment_list"].visible = false
+    document["first_menu"].visible = true
 end
 
 function choose_equipment_slot(new_slot)

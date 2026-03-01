@@ -97,5 +97,13 @@
             {"id": "newgen:workbench.item", "count": 1},
             {"id": "newgen:primitive_tool", "count": 1}
         ]
+    },
+    {
+        "components": [
+            {"id": "newgen:red_clay_chunk", "count": 20}
+        ],
+        "results": [
+            {"id": "newgen:clay_oven.item", "count": 1}
+        ]
     }
 ]
