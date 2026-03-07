@@ -2,8 +2,6 @@
     "icon": "items:malachite",
     "newgen:material": {
         "type": "metal",
-        "result": "newgen:copper_ingot",
-        "melting-point": 1085,
-        "metal-count": 5
+        "melting-point": 1085
     }
 }

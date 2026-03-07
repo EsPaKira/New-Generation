@@ -1,0 +1,13 @@
+{
+    "model": "custom",
+    "model-name": "primitive_forge",
+    "size": [2, 2, 1],
+    "hitboxes": [
+        [0, 0, 0, 2, 1, 1],
+        [1, 1, 0, 1, 0.875, 0.625]
+    ],
+    "rotation": "pane",
+    "emission": [10, 5, 2],
+    "sky-light-passing": true,
+    "light-passing": true
+}

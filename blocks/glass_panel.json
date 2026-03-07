@@ -1,0 +1,11 @@
+{
+    "model": "custom",
+    "material": "base:glass",
+    "model-name": "glass_panel",
+    "hitbox": [0, 0, 0.4375, 1, 1, 0.125],
+    "draw-group": 4,
+    "light-passing": true,
+    "translucent": true,
+    "sky-light-passing": true,
+    "rotation": "pane"
+}

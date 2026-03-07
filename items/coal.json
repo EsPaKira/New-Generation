@@ -3,7 +3,7 @@
     "placing-block": "newgen:coal_stone",
     "newgen:material": {
         "type": "fuel",
-        "max-temperature": 600, 
+        "max-temperature": 1000, 
         "burning-time": 1200
     }
 }

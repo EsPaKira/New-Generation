@@ -1,0 +1,14 @@
+@box from (0,0,0) to (1,0.875,1) texture "blocks:bazalt" delete (west)
+
+@box from (1,0,0) to (2,1,1) texture "blocks:bazalt" delete (top)
+@box from (1.875,1,0.875) to (1.125,0.875,0.125) texture "blocks:bazalt" {
+    @part tags (top) texture "blocks:burning_coals"
+}
+@rect from (1,1,0) right (1,0,0) up (0,0,0.125) texture "blocks:bazalt"
+@rect from (1.125,1,0.875) right (0.75,0,0) up (0,0,0.125) texture "blocks:bazalt"
+@rect from (1,1,1) right (0,0,-1) up (0.125,0,0) texture "blocks:bazalt"
+@rect from (1.875,1,1) right (0,0,-1) up (0.125,0,0) texture "blocks:bazalt"
+
+@box from (1,1,0) to (1.125,1.875,0.125) delete (bottom, top) texture "blocks:bazalt"
+@box from (1.875,1,0) to (2,1.875,0.125) delete (bottom, top) texture "blocks:bazalt"
+@box from (0.9375,1.75,-0.0625) to (2.0625,1.875,0.625) rotate (10,0,0) texture "blocks:red_bricks"

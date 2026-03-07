@@ -33,11 +33,23 @@ Craft=Создать
 
 # Предметы
 
+ash=пепел
 blackberry=черника
 coal=каменный уголь
+copper axe head=медная голова топора
+copper axe=медный топор
+copper ingot=самородок меди
 fur cape=меховая накидка
-primitive tool=примитивный инструмент
+malachite ore=малахит
+red brick=красный кирпич
+red clay chunk=кусок красной глины
+slag=шлак
 stick=палка
+stone axe head=каменная голова топора
+stone axe=каменный топор
+stone hammer head=каменная головка молота
+stone hammer=каменный молот
+unknown alloy=неизвестный сплав
 
 # Блоки
 
@@ -46,16 +58,19 @@ bush=куст
 cattail=камыш
 chalk coal=уголь в мелу
 chalk=мел
+clay oven=глиняная печь
 dead bush=мёртвый куст
 dead grass=мёртвая трава
 dead tall grass=мёртвая высокая трава
 dead white bush=мёртвый бледный куст
 diorite=диорит
 dolomite coal=уголь в доломите
+dolomite malachite ore=рудный малахит в доломите
 dolomite stone=камень доломита
 dolomite=доломит
 gabbro stone=камень габбро
 gabbro=габбро
+glass panel=стеклянная панель
 gneiss stone=камень гнейса
 gneiss=гнейс
 granite stone=камень гранита
@@ -63,17 +78,20 @@ granite=гранит
 gypsum coal=уголь в гипсе
 gypsum=гипс
 limestone coal=уголь в известняке
+limestone malachite ore=рудный малахит в известняке
 limestone=известняк
 marble stone=камень мрамора
 marble=мрамор
 moss=мох
 peridotite stone=камень перидотита
 peridotite=перидотит
-red brick=красные кирпичи
+primitive forge=примитивная кузница
+red bricks=красные кирпичи
+red clay=красная глина
 sandstone coal=уголь в песчанике
 sandstone stone=камень песчаника
 sandstone=песчаник
 spruce leaves=хвоя
 spruce=сосновое бревно
-vase=ваза
+pot=горшок
 workbench=верстак

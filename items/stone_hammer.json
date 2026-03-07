@@ -1,0 +1,12 @@
+{
+    "icon": "items:stone_hammer",
+    "uses": 52,
+    "newgen:tool": {
+        "type": "breaker",
+        "materials": {
+            "base:stone": {
+                "speed": 3
+            }
+        }
+    }
+}

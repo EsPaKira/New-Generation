@@ -43,7 +43,7 @@ function furnaces.tick()
         end
         
         -- remove furnace from furnaces if all processes are completed
-        if f[4][1] <= 0 and f[4][2] <= 200 and f[4][3] <= 200 then
+        if f[4][1] <= 0 and f[4][2] <= 100 and f[4][3] <= 100 then
             block.set_variant(f[1], f[2], f[3], 0)
             furnaces.remove(f[5])
             events.emit("newgen:furnace.remove")
@@ -140,8 +140,11 @@ function furnaces.melt(finvid, craft)
     local material, mcount = inventory.get(finvid, 0)
     local result, rcount = inventory.get(finvid, 2)
     local craft_result = item.index(craft.results[1].id)
-    mcount = mcount - 1
-    rcount = rcount + 1
+    mcount = mcount - craft.components[1].count
+
+    if mcount < 0 then return end
+
+    rcount = rcount + craft.results[1].count
     if result ~= 0 then
         if result ~= craft_result then return end
 

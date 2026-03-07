@@ -1,11 +1,11 @@
 {
-    "icon": "items:primitive_tool",
+    "icon": "items:stone_axe",
     "uses": 52,
     "newgen:tool": {
         "type": "breaker",
         "materials": {
             "base:stone": {
-                "speed": 3
+                "speed": 1.2
             },
             "base:wood": {
                 "speed": 2

@@ -1,0 +1,5 @@
+@box from (0,0,0.46875) to (1,1,0.53125) texture "blocks:glass_panel"
+
+@box from (0.46875,0,0.4375) to (0.53125,1,0.5625) texture "blocks:glass_panel_frame"
+@box from (0,0.25,0.4376) to (1,0.3125,0.5624) texture "blocks:glass_panel_frame"
+@box from (0,0.6875,0.4376) to (1,0.75,0.5624) texture "blocks:glass_panel_frame"
