@@ -2,7 +2,7 @@
 
 local base_util = require "base:util"
 local gamemodes = require "gamemodes"
---local world_data = require "world_data"
+local world_data = require "world_data"
 local furnaces = require "furnaces"
 
 local breaking_blocks = {}
@@ -31,10 +31,30 @@ function on_world_open()
             entity:set_enabled("newgen:oxygen_system", name == "survival")
         end
     end)
+    events.on("newgen:death", function(pos)
+        gfx.particles.emit(pos, random.random(20, 30), {
+            lifetime = 5,
+            lifetime_spread = 1,
+            spawn_interval = 0.001,
+            explosion = {4, 4, 4},
+            angle_spread = 0.05,
+            velocity = {0, 1, 0},
+            acceleration = {0, -11, 0},
+            size = {0.5, 0.5, 0.5},
+            spawn_shape = "box",
+            spawn_spread = {0.5, 0.5, 0.5},
+            lighting = true,
+            collision = true,
+            frames = {
+                "particles:blood_0",
+                "particles:blood_1"
+            }
+        })
+    end)
     rules.create("keep-inventory", false)
 
     -- open newgen modules
-    --world_data.open()
+    world_data.open()
 end
 
 function on_world_tick() 
@@ -44,7 +64,7 @@ end
 
 function on_world_quit()
     -- save newgen data
-    --world_data.save()
+    world_data.save()
 end
 
 local function tick_breaking(pid, tps)

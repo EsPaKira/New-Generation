@@ -1,0 +1,41 @@
+{
+    "components": [
+        "core:pathfinding",
+        {
+            "name": "core:mob",
+            "args": {
+                "jump_force": 8.0,
+                "movement_speed": 5.0
+            }
+        },
+        {
+            "name": "newgen:characteristics_manager",
+            "args": {
+                "health": 8,
+                "max_health": 8
+            }
+        },
+        {
+            "name": "newgen:loot",
+            "args": {
+                "loot_table": [
+                    {   
+                        "item": "newgen:fur_cape",
+                        "min": 1,
+                        "max": 2
+                    },
+                    {
+                        "item": "newgen:coal",
+                        "min": 5,
+                        "max": 10
+                    }
+                ]
+                    
+            }
+        },
+        "newgen:health_system",
+        "newgen:bear"
+    ],
+    "hitbox": [1, 1.875, 1],
+    "skeleton-name": "newgen:bear"
+}

@@ -1,4 +1,28 @@
 {
+  "entities": [
+    "base:player",
+    "bear"
+  ],
+  "items": [
+    "fur_cape",
+    "blackberry",
+    "coal",
+    "stick",
+    "stone_axe",
+    "red_clay_chunk",
+    "malachite_ore",
+    "ash",
+    "copper_ingot",
+    "slag",
+    "unknown_alloy",
+    "stone_hammer",
+    "stone_axe_head",
+    "stone_hammer_head",
+    "copper_axe",
+    "copper_axe_head",
+    "red_brick",
+    "bear_summoning_card"
+  ],
   "blocks": [
     "bush",
     "blackberry_bush",
@@ -45,28 +69,5 @@
     "primitive_forge",
     "red_bricks",
     "pot"
-  ],
-  "items": [
-    "fur_cape",
-    "blackberry",
-    "coal",
-    "stick",
-    "stone_axe",
-    "red_clay_chunk",
-    "malachite_ore",
-    "ash",
-    "copper_ingot",
-    "slag",
-    "unknown_alloy",
-    "stone_hammer",
-    "stone_axe_head",
-    "stone_hammer_head",
-    "copper_axe",
-    "copper_axe_head",
-    "red_brick"
-  ],
-  "entities": [
-    "base:player",
-    "test"
   ]
 }

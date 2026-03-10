@@ -34,6 +34,7 @@ Craft=Создать
 # Предметы
 
 ash=пепел
+bear summoning card=карта призыва медведя
 blackberry=черника
 coal=каменный уголь
 copper axe head=медная голова топора

@@ -4,7 +4,6 @@ local furnaces = {
 furnaces.crafts = file.read_combined_list("melting_crafts.json")
 
 function furnaces.open(data)
-    print(data[1])
     furnaces.FURNACES = data
 end
 

@@ -14,9 +14,9 @@ function on_update(tps)
     if nearest_p and vec3.distance(pos, {px, py, pz}) < 20 then
         pathfinding.set_target({px, py, pz})
         pathfinding.set_refresh_interval(5)
-        if vec3.distance(pos, {px, py, pz}) < 2 then
+        mob.look_at({px, py + 1, pz}, true)
+        if vec3.distance(pos, {px, py, pz}) < 3 then
             atack_timer = atack_timer + 1 / tps * speed_of_attack
-            print(atack_timer)
             if atack_timer >= 1 then 
                 atack_timer = 0
                 attack(player.get_entity(nearest_p))

@@ -14,8 +14,8 @@ function set_health(value)
     health = math.min(math.max(0, value), max_health)
     c_manager.set_params("health", health)
 
-    local pid = entity:get_player()
-    if pid == -1 then
+    if entity:get_player() == -1 then
+        -- entity ~= player
         return
     end
     events.emit("newgen:player_health.set", entity:get_uid(), health, max_health)
@@ -36,10 +36,15 @@ local function drop_inventory(invid)
 end
 
 function die()
-    --events.emit("newgen:death", entity)
+    local tsf = entity.transform
+    events.emit("newgen:death", tsf:get_pos())
 
     local pid = entity:get_player()
     if pid == -1 then
+        local loot = entity:get_component("newgen:loot")
+        if loot then
+            loot.drop_loot()
+        end
         entity:despawn()
         return
     end
@@ -53,10 +58,6 @@ function die()
 end
 
 function heal(points)
-    local pid = entity:get_player()
-    if points < 1 and pid then
-        events.emit("newgen:player_heal", pid, points)
-    end
     set_health(math.min(health + points, max_health))
 end
 
