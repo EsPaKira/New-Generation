@@ -120,6 +120,7 @@ function on_hud_open()
             player.set_pos(pid, player.get_spawnpoint(pid))
             player.set_rot(pid, 0, 0, 0)
             player.set_entity(pid, -1)
+            print(pid, player.get_entity(pid))
             menu:reset()
             isdead = false
             gfx.posteffects.set_intensity(health_effect, 0.0)
@@ -186,7 +187,7 @@ function on_hud_open()
         if hud.is_paused() then
             return
         end
-
+        hud.close("newgen:body_tree")
         if hud.is_open("newgen:player_button") then
             hud.close("newgen:player_button")
             return
@@ -201,6 +202,7 @@ function on_hud_open()
 
     input.add_callback("key:escape", function()
         hud.close("newgen:player_button")
+        hud.close("newgen:body_tree")
     end)
 end
 

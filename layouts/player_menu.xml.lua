@@ -203,3 +203,7 @@ function controller:choose_equipment(id)
         piercing_d_p = e_search.get_equipment_characteristics(controller.equipment[id], controller.choosen_slot, hud.get_player(), "piercing_damage_protection")
     }))
 end
+
+function open_tree(tree)
+    hud.open_permanent("newgen:" .. tree .. "_tree")
+end

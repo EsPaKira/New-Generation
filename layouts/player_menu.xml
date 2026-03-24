@@ -5,7 +5,7 @@
         <button hover-color="050" color="100" gravity="top-right" onclick="go_back()">@Back</button>
 
         <container id="skills_trees" position-func="gui.get_viewport()[1]/2-300, 30" size="600,50" color="#000000">
-            <container pos="240,0" size="50" hover-color="100"><image id="body_tree" size="50" src="gui/standard_body" /></container>
+            <container pos="240,0" size="50" hover-color="100" onclick="open_tree('body')"><image id="body_tree" size="50" src="gui/standard_body" /></container>
             <container pos="310,0" size="50" hover-color="100"><image id="soul_tree" size="50" src="gui/standard_soul" /></container>
         </container>
 

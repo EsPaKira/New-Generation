@@ -15,15 +15,15 @@ local CRAFT_COLS = 10
 local craft_buttons = {}
 
 local function display_craft(craft, button, stats)
-    for _, node in ipairs(button) do
-        -- if node.id == "craft_bar" then
-        --     local is_enough = crafting.is_enough(craft, stats)
-        --     print(is_enough)
-        --     node.color = is_enough and {230, 14, 14, 80} or {14, 230, 14, 80}
-        --     return
-        -- end
-        node.visible = true
-        node.src = item.icon(item.index(craft.results[1].id))
+    for i, node in ipairs(button) do
+        if i == 2 then
+            local is_enough = crafting.is_enough(craft, stats)
+            node.visible = true
+            node.color = is_enough and {14, 230, 14, 80} or {230, 14, 14, 80}
+        else
+            node.visible = true
+            node.src = item.icon(item.index(craft.results[1].id))
+        end
     end
 end
 
@@ -59,7 +59,6 @@ local function refresh_crafts(invid)
         local craft_button = craft_buttons[i + 1]
         for _, node in ipairs(craft_button) do
             node.visible = false
-            break
         end
     end
 end
@@ -86,7 +85,7 @@ end
 
 function on_open(type_of_crafts)
     crafting.add_workbench_crafts(type_of_crafts)
-    document["crafts_header"].text = type_of_crafts == 0 and "Crafts" or "Crafts on " .. type_of_crafts
+    document["crafts_header"].text = type_of_crafts == 0 and gui.str("Crafts") or gui.str("Crafts on " .. type_of_crafts)
     controller.type_of_crafts = type_of_crafts
 
     local pid = hud.get_player()
@@ -135,7 +134,7 @@ function controller:show_info(index)
         return
     end
     document["craft_info_img"].src = item.icon(item.index(craft.results[1].id))
-    document["craft_info_name"].text = item.caption(item.index(craft.results[1].id))
+    document["craft_info_name"].text = gui.str(item.caption(item.index(craft.results[1].id)))
     document["craft_info_components"]:clear()
     display_components(craft)
     document["craft_info"].visible = true
