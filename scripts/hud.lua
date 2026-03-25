@@ -2,6 +2,7 @@
 
 local gamemodes = require "gamemodes"
 local survival_hud = require "survival_hud"
+local equipment = require "characters/characters_equipment"
 
 local death_ambient
 local isdead = false
@@ -10,6 +11,7 @@ local health_effect
 local hit_timer = 0
 
 function on_hud_open()
+    equipment.equip(hud.get_player(), "main_hero", "head", "aboba", "equip")
     health_effect = gfx.posteffects.index("newgen:death")
 
     events.on("newgen:gamemodes.set", function(playerid, name)
