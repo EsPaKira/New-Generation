@@ -4,9 +4,9 @@ local crafting = {}
 
 function crafting.add_workbench_crafts(name)
     crafting.crafts = nil
-    crafting.crafts = file.read_combined_list("primitive_crafts.json")
+    crafting.crafts = file.read_combined_list("crafts/primitive_crafts.json")
     if name ~= 0 then
-        table.merge(crafting.crafts, file.read_combined_list(name .. "_crafts.json"))
+        table.merge(crafting.crafts, file.read_combined_list("crafts/" .. name .. "_crafts.json"))
     end
 end
 

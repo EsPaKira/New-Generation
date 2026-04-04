@@ -28,8 +28,14 @@ Piercing damage protection=Защита от колющего урона
 # Меню крафтов
 
 Crafts=Крафты
+Crafts on workbench=Крафты на верстаке
+Crafts on primitive_forge=Крафты на примитивной кузнице
 Close=Закрыть
 Craft=Создать
+
+# Меню навыков
+Research=Исследовать
+
 
 # Предметы
 
@@ -51,6 +57,7 @@ stone axe=каменный топор
 stone hammer head=каменная головка молота
 stone hammer=каменный молот
 unknown alloy=неизвестный сплав
+
 
 # Блоки
 

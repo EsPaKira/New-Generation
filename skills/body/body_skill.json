@@ -1,0 +1,9 @@
+{
+    "id": "body_skill",
+    "name": "Уровень тела",
+    "description": "Увеличивает весь наносимый физический урон.",
+    "stats-buffs": [
+        {"id": "body_level", "buff": 1}
+    ],
+    "max-level": 2
+}

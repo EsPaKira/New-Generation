@@ -1,4 +1,4 @@
 <container id="craft_slot_%{index}" size="70" color="#00000050" pos="%{x},%{y}" hover-color="100" onclick="DATA:show_info(%{index})">
     <image src="blocks:transparent" visible="false" hover-color="400" size="70"/>
-    <container id="craft_bar" size="70,2" gravity="bottom-center"></container>
+    <container size="70,2" gravity="bottom-center" visible="true"></container>
 </container>
