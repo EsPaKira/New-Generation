@@ -12,11 +12,13 @@ local characters = {
 function characters.unlock_new_character(pid, character_name)
     local player_characters = characters.get_player_data(pid)
     player_characters[character_name] = {
+        entity_id = nil,
         stats = {},
         equipment = {},
         skills = {}
     }
 end
+-- below - character data structure
 -- group     > field      > value
 -- equipment > slot       > name
 -- stats     > stat_name  > value
