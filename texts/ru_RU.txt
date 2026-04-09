@@ -1,6 +1,6 @@
 # GUI
 
-# Меню игрока
+# Меню персонажей
 
 Characteristics=Характеристики
 Close characteristics=Скрыть характеристики
@@ -24,12 +24,19 @@ Heat reflection=Отражение тепла
 Crush damage protection=Защита от дробящего урона
 Slashing damage protection=Защита от рубящего урона
 Piercing damage protection=Защита от колющего урона
+Choosen character name=Имя выбранного персонажа
 
 # Меню крафтов
 
 Crafts=Крафты
+Crafts on workbench=Крафты на верстаке
+Crafts on primitive_forge=Крафты на примитивной кузнице
 Close=Закрыть
 Craft=Создать
+
+# Меню навыков
+Research=Исследовать
+
 
 # Предметы
 
@@ -51,6 +58,7 @@ stone axe=каменный топор
 stone hammer head=каменная головка молота
 stone hammer=каменный молот
 unknown alloy=неизвестный сплав
+
 
 # Блоки
 
@@ -96,3 +104,23 @@ spruce leaves=хвоя
 spruce=сосновое бревно
 pot=горшок
 workbench=верстак
+
+
+# Персонажи
+
+Wayne=Уэйн
+
+
+# Деревья навыков(названия навыков)
+
+Survivability=Живучесть
+Bigger lungs=Большие легкие
+
+
+# Деревья навыков(описание навыков)
+
+Increases maximum HP for 2.=Увеличивает максимальный запас HP на 2.
+Increases all physical damage dealt.=Увеличивает весь наносимый физический урон.
+Increases maximum oxygen for 2.=Увеличивает максимальный запас кислорода на 2.
+Increases agility for 1%.=Увеличивает ловкость на 1%.
+Increases accuracy for 1%.=Увеличивает меткость на 1%.

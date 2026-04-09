@@ -1,0 +1,15 @@
+{
+    "components": [
+        {
+            "name": "newgen:characteristics_manager",
+            "args": {
+                "health": 20,
+                "max_health": 20
+            }
+        },
+        "newgen:health_system",
+        "newgen:minerva"
+    ],
+    "hitbox": [0.8, 2, 0.8],
+    "skeleton-name": "newgen:minerva"
+}

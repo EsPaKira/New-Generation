@@ -1,0 +1,9 @@
+{
+    "id": "body_skill",
+    "name": "Body",
+    "description": "Increases all physical damage dealt.",
+    "stats-buffs": [
+        {"id": "body_level", "value": 1}
+    ],
+    "max-level": 2
+}

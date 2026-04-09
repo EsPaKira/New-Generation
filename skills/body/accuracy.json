@@ -1,0 +1,13 @@
+{
+    "id": "accuracy",
+    "name": "Accuracy",
+    "description": "Increases accuracy for 1%.",
+    "stats-buffs": [
+        {"id": "accuracy", "value": 0.01}
+    ],
+    "max-level": 5,
+    "required-skills": [
+        {"id": "body_skill", "level": 1}
+    ],
+    "active-path": "gui/4_skills_from_1_4_active"
+}

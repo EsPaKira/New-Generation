@@ -17,7 +17,20 @@
         "gui/clay_oven",
         "gui/fire",
         "gui/fire_active",
-        "gui/progress_bar"
+        "gui/progress_bar",
+        "gui/body_skill",
+        "gui/bigger_lungs",
+        "gui/survivability",
+        "gui/agility",
+        "gui/accuracy",
+        "gui/4_skills_from_1",
+        "gui/4_skills_from_1_1_active",
+        "gui/4_skills_from_1_2_active",
+        "gui/4_skills_from_1_3_active",
+        "gui/4_skills_from_1_4_active",
+        "gui/4_skills_from_1_all_active",
+        "gui/active_frame",
+        "gui/unactive_frame"
     ],
     "post-effects": [
         "death"

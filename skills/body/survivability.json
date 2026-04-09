@@ -1,0 +1,14 @@
+{
+    "id": "survivability",
+    "name": "Survivability",
+    "description": "Increases maximum HP for 2.",
+    "stats-buffs": [
+        {"id": "health", "value": 2},
+        {"id": "max_health", "value": 2}
+    ],
+    "max-level": 4,
+    "required-skills": [
+        {"id": "body_skill", "level": 1}
+    ],
+    "active-path": "gui/4_skills_from_1_1_active"
+}

@@ -7,11 +7,11 @@
                 "health": 20,
                 "max_health": 20,
                 "oxygen": 20,
-                "max_oxygen": 20
+                "max_oxygen": 20,
+                "name": "wayne"
             }
         },
         "newgen:health_system",
-        "newgen:oxygen_system",
-        "newgen:equipment_system"  
+        "newgen:oxygen_system"
     ]
 }

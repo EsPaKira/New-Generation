@@ -1,4 +1,5 @@
 local gamemodes = require "gamemodes"
+local characters = require "characters/characters_main"
 
 local c_manager = entity:require_component("newgen:characteristics_manager")
 
@@ -6,14 +7,23 @@ local oxygen = c_manager:get_oxygen()
 local max_oxygen = c_manager:get_max_oxygen()
 
 
-function set_oxygen(value)
-    oxygen = math.min(math.max(0, value), max_oxygen)
-    c_manager.set_params("oxygen", oxygen)
-
-    if entity:get_player() == -1 then
-        return
+function load_oxygen()
+    if c_manager.is_player() then
+        oxygen = c_manager:get_oxygen()
+        max_oxygen = c_manager:get_max_oxygen()
     end
-    events.emit("newgen:player_oxygen.set", entity:get_uid(), oxygen, max_oxygen)
+end
+
+function set_oxygen(value)
+    load_oxygen()
+    oxygen = math.min(math.max(0, value), max_oxygen)
+    local is_player, character_name = c_manager.is_player()
+    if is_player then
+        characters.set_field(hud.get_player(), character_name, "stats", "oxygen", oxygen)
+        events.emit("newgen:player_oxygen.set", entity:get_uid(), oxygen, max_oxygen)
+    else
+        c_manager.set_params("oxygen", oxygen)
+    end
 end
 
 local time_under_water = 0

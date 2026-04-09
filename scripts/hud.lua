@@ -1,7 +1,7 @@
 -- Original code - base_survival by MihailRis
 
 local gamemodes = require "gamemodes"
-local survival_hud = require "survival_hud"
+local survival_ui = require "survival_ui"
 
 local death_ambient
 local isdead = false
@@ -19,22 +19,18 @@ function on_hud_open()
                 return -- dead
             end
 
-            hud.open_permanent("newgen:health_bar")
-
-            local c_manager = entity:get_component("newgen:characteristics_manager")
-            survival_hud.set_health(c_manager:get_health(), c_manager:get_max_health())
-            survival_hud.set_oxygen(c_manager:get_oxygen(), c_manager:get_max_oxygen())
+            hud.open_permanent("newgen:survival_ui")
         else
-            hud.close("newgen:health_bar")
+            hud.close("newgen:survival_ui")
         end
     end)
 
     events.on("newgen:player_health.set", function(eid, health, max_health)
-        survival_hud.set_health(health, max_health)
+        survival_ui.set_health(health, max_health)
     end)
 
     events.on("newgen:player_oxygen.set", function(eid, oxygen, max_oxygen)
-        survival_hud.set_oxygen(oxygen, max_oxygen)
+        survival_ui.set_oxygen(oxygen, max_oxygen)
     end)
 
     console.add_command("gamemode player:sel=$obj.id name:str=''", 
@@ -49,7 +45,7 @@ function on_hud_open()
             gamemodes.set(pid, name)
             return "set game mode to ["..name.."]"
         else
-            return "error: game mode ["..name.."] does not exists. Maybe you mean 'creative' or 'survival'?"
+            return "game mode ["..name.."] does not exists. Maybe you mean 'creative' or 'survival'?"
         end
     end)
 
@@ -120,6 +116,7 @@ function on_hud_open()
             player.set_pos(pid, player.get_spawnpoint(pid))
             player.set_rot(pid, 0, 0, 0)
             player.set_entity(pid, -1)
+            print("Player ID, entity ID: ", pid, player.get_entity(pid), "is dead")
             menu:reset()
             isdead = false
             gfx.posteffects.set_intensity(health_effect, 0.0)
@@ -135,28 +132,6 @@ function on_hud_open()
         local x, y, z = player.get_rot(pid)
         player.set_rot(pid, x, y, math.random() < 0.5 and 13 or -13)
     end)
-
-    -- input.add_callback("newgen.eat", function()
-    --     if menu.page ~= "" or hud.is_inventory_open() then
-    --         return
-    --     end
-    --     local pid = hud.get_player()
-    --     local invid, slot = player.get_inventory()
-    --     local itemid, _ = inventory.get(invid, slot)
-    --     local food = item.properties[itemid]["newgen:food"]
-    --     if not food then
-    --         return
-    --     end
-    --     local health = gamemodes.get_player_health(pid)
-    --     if health.get_health() >= health.get_max_health() then
-    --         return
-    --     end
-    --     health.heal(food.heal)
-
-    --     if not player.is_infinite_items(pid) then
-    --         inventory.decrement(invid, slot)
-    --     end
-    -- end)
 
     local prev_hand_controller = hud.hand_controller or hud.default_hand_controller
     hud.hand_controller = function()
@@ -180,13 +155,13 @@ function on_hud_open()
         skeleton.set_matrix("hand", bone, matrix)
     end
 
-    -- PLAYER UI
+    -- CARACTERS MENU UI
 
     input.add_callback("hud.inventory", function()
         if hud.is_paused() then
             return
         end
-
+        hud.close("newgen:body_tree")
         if hud.is_open("newgen:player_button") then
             hud.close("newgen:player_button")
             return
@@ -201,6 +176,7 @@ function on_hud_open()
 
     input.add_callback("key:escape", function()
         hud.close("newgen:player_button")
+        hud.close("newgen:body_tree")
     end)
 end
 

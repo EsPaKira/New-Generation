@@ -1,7 +1,7 @@
 local furnaces = {
     FURNACES = {}
 }
-furnaces.crafts = file.read_combined_list("melting_crafts.json")
+furnaces.crafts = file.read_combined_list("crafts/melting_crafts.json")
 
 function furnaces.open(data)
     furnaces.FURNACES = data

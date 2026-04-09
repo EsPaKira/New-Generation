@@ -1,0 +1,14 @@
+{
+    "id": "bigger_lungs",
+    "name": "Bigger lungs",
+    "description": "Increases maximum oxygen for 2.",
+    "stats-buffs": [
+        {"id": "oxygen", "value": 2},
+        {"id": "max_oxygen", "value": 2}
+    ],
+    "max-level": 5,
+    "required-skills": [
+        {"id": "body_skill", "level": 1}
+    ],
+    "active-path": "gui/4_skills_from_1_2_active"
+}

@@ -2,6 +2,7 @@
 
 local gamemodes = require "gamemodes"
 local base_util = require "base:util"
+local characters = require "characters/characters_main"
 
 
 local c_manager = entity:require_component("newgen:characteristics_manager")
@@ -10,15 +11,25 @@ local health = c_manager:get_health()
 local max_health = c_manager:get_max_health()
 
 
-function set_health(value)
-    health = math.min(math.max(0, value), max_health)
-    c_manager.set_params("health", health)
-
-    if entity:get_player() == -1 then
-        -- entity ~= player
-        return
+function load_health()
+    if c_manager.is_player() then
+        health = c_manager:get_health()
+        max_health = c_manager:get_max_health()
     end
-    events.emit("newgen:player_health.set", entity:get_uid(), health, max_health)
+end
+
+function set_health(value)
+    if value == health then return end
+    load_health()
+    health = math.min(math.max(0, value), max_health)
+    local is_player, character_name = c_manager.is_player()
+
+    if is_player then
+        characters.set_field(hud.get_player(), character_name, "stats", "health", health)
+        events.emit("newgen:player_health.set", entity:get_uid(), health, max_health)
+    else
+        c_manager.set_params("health", health)
+    end
 end
 
 local function drop_inventory(invid)
@@ -72,6 +83,7 @@ function damage(points)
     set_health(health - points)
     if health == 0 then
         die()
+        characters.set_field(pid, characters.get_choosen_character(pid), "stats", "health", characters.get_field(pid, characters.get_choosen_character(pid), "stats", "max_health"))
     end
 end
 

@@ -2,7 +2,7 @@
     <image size-func="gui.get_viewport()[1], gui.get_viewport()[2]" src="gui/space" />
     <button hover-color="050" color="100" gravity="top-right" onclick="go_back()">@Back</button>
 
-    <button id="crafts_header" size="755,30" z-index="2" interactive="false" position-func="gui.get_viewport()[1]/2 - 377.5, 0" context="ru_RU"></button>
+    <button id="crafts_header" size="755,30" z-index="2" interactive="false" position-func="gui.get_viewport()[1]/2 - 377.5, 0">@Crafts</button>
     <panel size-func="755,gui.get_viewport()[2]" color="#00000070" position-func="gui.get_viewport()[1]/2 - 377.5, 30">
         <container size="755,710" id="crafts_table">
             <!-- content is generated in script -->

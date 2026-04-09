@@ -1,0 +1,13 @@
+{
+    "id": "agility",
+    "name": "Agility",
+    "description": "Increases agility for 1%.",
+    "stats-buffs": [
+        {"id": "agility", "value": 0.01}
+    ],
+    "max-level": 5,
+    "required-skills": [
+        {"id": "body_skill", "level": 1}
+    ],
+    "active-path": "gui/4_skills_from_1_3_active"
+}
