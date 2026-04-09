@@ -2,43 +2,47 @@
     <image size-func="gui.get_viewport()[1], gui.get_viewport()[2]" src="gui/space" />
     <button hover-color="050" color="100" gravity="top-right" onclick="go_back()">@Back</button>
     <container size="1000,30" position-func="gui.get_viewport()[1]/2-500, 15" color="#000000">
-        <label gravity="center-center">Body skill tree</label>
+        <label gravity="center-center">@Body</label>
     </container>
     
     <container position-func="gui.get_viewport()[1]/2-550, 60" size="1100,2" color="#b7fcfc"></container>
 
     <panel size-func="1000, gui.get_viewport()[2]" position-func="gui.get_viewport()[1]/2 - 500, 67">
         <container size="1000,400" scrollable="true">
-            <container id="ttest" size="108" pos="449, 32">
+            <container size="108" pos="449, 32">
                 <image size="96" pos="6" src="gui/body_skill" />
-                <image size="108" src="gui/unactive_frame" />
-                <container size="96" pos="6" hover-color="#10101070" color="#101010bb" onclick="toggle_skill_info('body_skill')"></container>
+                <image id="body_skill_frame" size="108" src="gui/unactive_frame" />
+                <container id="body_skill_shadow" size="96" pos="6" hover-color="#10101070" color="#101010bb" onclick="toggle_skill_info('body_skill')"></container>
             </container>
 
             <!-- second layer -->
             <container id="body2_4_skills_from_1" size="624,64" pos="188,140">
                 <image size="624,64" src="gui/4_skills_from_1" />
+                <image id="survivability_path" size="624,64" src="blocks:transparent" />
+                <image id="bigger_lungs_path" size="624,64" src="blocks:transparent" />
+                <image id="agility_path" size="624,64" src="blocks:transparent" />
+                <image id="accuracy_path" size="624,64" src="blocks:transparent" />
             </container>
 
             <container size="108" pos="188, 204">
-                <image size="96" pos="6" src="gui/health_skill" />
-                <image size="108" src="gui/unactive_frame" />
-                <container size="96" pos="6" hover-color="#10101070" color="#101010bb" onclick="toggle_skill_info('health_skill')"></container>
+                <image size="96" pos="6" src="gui/survivability" />
+                <image id="survivability_frame" size="108" src="gui/unactive_frame" />
+                <container id="survivability_shadow" size="96" pos="6" hover-color="#10101070" color="#101010bb" onclick="toggle_skill_info('survivability')"></container>
             </container>
             <container size="108" pos="360, 204">
-                <image size="96" pos="6" src="gui/oxygen_skill" />
-                <image size="108" src="gui/unactive_frame" />
-                <container size="96" pos="6" hover-color="#10101070" color="#101010bb"></container>
+                <image size="96" pos="6" src="gui/bigger_lungs" />
+                <image id="bigger_lungs_frame" size="108" src="gui/unactive_frame" />
+                <container id="bigger_lungs_shadow" size="96" pos="6" hover-color="#10101070" color="#101010bb" onclick="toggle_skill_info('bigger_lungs')"></container>
             </container>
             <container size="108" pos="532, 204">
-                <image size="96" pos="6" src="gui/agility_skill" />
-                <image size="108" src="gui/unactive_frame" />
-                <container size="96" pos="6" hover-color="#10101070" color="#101010bb"></container>
+                <image size="96" pos="6" src="gui/agility" />
+                <image id="agility_frame" size="108" src="gui/unactive_frame" />
+                <container id="agility_shadow" size="96" pos="6" hover-color="#10101070" color="#101010bb" onclick="toggle_skill_info('agility')"></container>
             </container>
             <container size="108" pos="704, 204">
-                <image size="96" pos="6" src="gui/accuracy_skill" />
-                <image size="108" src="gui/unactive_frame" />
-                <container size="96" pos="6" hover-color="#10101070" color="#101010bb"></container>
+                <image size="96" pos="6" src="gui/accuracy" />
+                <image id="accuracy_frame" size="108" src="gui/unactive_frame" />
+                <container id="accuracy_shadow" size="96" pos="6" hover-color="#10101070" color="#101010bb" onclick="toggle_skill_info('accuracy')"></container>
             </container>
         </container>
     </panel>
@@ -51,7 +55,7 @@
         </container>
 
         <button id="skill_name" size="300,30" pos="75,184" color="#20202070" interactive="false"></button>
-        <container size="400,124" pos="25,224" color="#20202070"><label id="skill_description" size="384,108" pos="8,4" multiline="true" text-wrap="true">Very long description of skill</label></container>
+        <container size="400,124" pos="25,224" color="#20202070"><label id="skill_description" size="384,108" pos="8,4" multiline="true" text-wrap="true"></label></container>
 
         <button size="150,40" pos="150,353" hover-color="#9c560590" color="#e2b904bb" onclick="research_skill()">@Research</button>
     </container>

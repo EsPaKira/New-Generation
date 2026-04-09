@@ -18,6 +18,4 @@ function on_open(invid)
     if furnaces.contains(controller.invid) then
         document["fire"].src = "gui/fire_active"
     end
-
-    --print(inventory.get(invid, 3))
 end

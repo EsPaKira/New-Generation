@@ -1,10 +1,11 @@
-local gamemodes = require "gamemodes"
-local e_search = require "equipment_search"
+local characters = require "characters/characters_main"
+local equipment = require "characters/characters_equipment"
 
 local controller = {
     equipment = nil,
     choosen_slot = nil,
-    choosen_equipment = nil
+    choosen_equipment = nil,
+    choosen_character = nil
 }
 
 function go_back()
@@ -22,18 +23,14 @@ function open_c_panel()
 
     document["c_panel"].visible = true
     document["close_c_panel"].visible = true
-    local c_manager = gamemodes.get_characteristics_manager(hud.get_player())
-    local characteristics = c_manager.get_characteristics()
-    table.map(characteristics, function(i, value)
-        if i == "health" or i == "oxygen" or i == "archium" then
-            document["max_"..i].text = c_manager["get_"..i]() .. "/" .. c_manager["get_max_"..i]()
-            return
+    local stats = characters.get_group(hud.get_player(), controller.choosen_character, "stats")
+    for key, value in pairs(stats) do
+        if key == "health" or key == "oxygen" or key == "archium" then
+            document["max_".. key].text = value .. "/" .. stats["max_" .. key]
+        elseif key ~= "max_health" and key ~= "max_oxygen" and key ~= "max_archium" then
+            document[key].text = tostring(value)
         end
-        if i == "max_health" or i == "max_oxygen" or i == "max_archium" then
-            return
-        end
-        document[i].text = tostring(value)
-    end)
+    end
 end
 
 function close_c_panel()
@@ -90,7 +87,7 @@ function open_equipment_list()
     show_equipped_item()
     document["choosen_item_info"]:clear()
 
-    controller.equipment = e_search.search_equipment_by_tag(player.get_inventory(hud.get_player()), controller.choosen_slot)
+    controller.equipment = equipment.search_equipment_by_tag(player.get_inventory(hud.get_player()), controller.choosen_slot)
     local e_cols = math.ceil(#controller.equipment / 5)
 
     local index = 0
@@ -112,35 +109,36 @@ end
 
 function show_equipped_item()
     document["equipped_item_info"]:clear()
-    local e_system = e_search.get_equipment_system(hud.get_player())
-    if e_system.get_item_by_slot(controller.choosen_slot) == 0 then
+    local itemid = equipment.get_equipment_by_slot(hud.get_player(), controller.choosen_character, controller.choosen_slot)
+    if itemid == 0 then
         document["equipped_item_info"]:add(gui.template("no_equipment_info"))
         return
     end
     document["equipped_item_info"]:add(gui.template("equipment_info", {
-        src = item.icon(e_system.get_item_by_slot(controller.choosen_slot)),
-        heat_p = e_system.get_characteristic_by_slot(controller.choosen_slot, "heat_preservation"),
-        heat_r = e_system.get_characteristic_by_slot(controller.choosen_slot, "heat_reflection"),
-        crush_d_p = e_system.get_characteristic_by_slot(controller.choosen_slot, "crush_damage_protection"),
-        slashing_d_p = e_system.get_characteristic_by_slot(controller.choosen_slot, "slashing_damage_protection"),
-        piercing_d_p = e_system.get_characteristic_by_slot(controller.choosen_slot, "piercing_damage_protection")
+        src = item.icon(itemid),
+        heat_p = equipment.get_equipment_stat(itemid, "heat_preservation"),
+        heat_r = equipment.get_equipment_stat(itemid, "heat_reflection"),
+        crush_d_p = equipment.get_equipment_stat(itemid, "crush_damage_protection"),
+        slashing_d_p = equipment.get_equipment_stat(itemid, "slashing_damage_protection"),
+        piercing_d_p = equipment.get_equipment_stat(itemid, "piercing_damage_protection")
     }))
 end
 
 function show_equipped_item_in_main_menu(slot)
-    local e_system = e_search.get_equipment_system(hud.get_player())
-    local item_in_slot = e_system.get_item_by_slot(slot)
+    local item_in_slot = equipment.get_equipment_by_slot(hud.get_player(), controller.choosen_character, slot)
     if item_in_slot ~= 0 then
         document[slot].src = item.icon(item_in_slot)
     else 
-        document[slot].src = "gui/"..slot
+        document[slot].src = "gui/" .. slot
     end
 end
 
 function on_open()
     controller.choosen_equipment = nil
+    controller.choosen_character = characters.get_choosen_character(hud.get_player())
     close_c_panel()
     close_equipment_menu()
+    document["character_name"].text = gui.str(characters.get_character(hud.get_player(), controller.choosen_character)["character_full_name"])
 
     show_equipped_item_in_main_menu("head")
     show_equipped_item_in_main_menu("helmet")
@@ -154,30 +152,28 @@ function on_open()
     show_equipped_item_in_main_menu("boots")
 end
 
-function equipment_button(value)
-    local e_system = e_search.get_equipment_system(hud.get_player())
-    if value == "equip" then
-        if e_system.get_item_by_slot(controller.choosen_slot) ~= 0 then
-            local equipped_item = e_system.get_item_by_slot(controller.choosen_slot)
+function equipment_button(action)
+    local equipped_item = equipment.get_equipment_by_slot(hud.get_player(), controller.choosen_character, controller.choosen_slot)
+    if action == "equip" then
+        if equipped_item ~= 0 then
             local slot = inventory.find_by_item(player.get_inventory(hud.get_player()), controller.equipment[controller.choosen_equipment])
             inventory.set(player.get_inventory(hud.get_player()), slot, equipped_item, 1)
-            e_system.set_equipment(controller.choosen_slot, controller.equipment[controller.choosen_equipment])
+            equipment.equip(hud.get_player(), controller.choosen_character, controller.choosen_slot, item.name(controller.equipment[controller.choosen_equipment]), action)
         else
             local slot = inventory.find_by_item(player.get_inventory(hud.get_player()), controller.equipment[controller.choosen_equipment])
             inventory.set(player.get_inventory(hud.get_player()), slot, 0, 1)
-            e_system.set_equipment(controller.choosen_slot, controller.equipment[controller.choosen_equipment])
+            equipment.equip(hud.get_player(), controller.choosen_character, controller.choosen_slot, item.name(controller.equipment[controller.choosen_equipment]), action)
         end
     else
-        if e_system.get_item_by_slot(controller.choosen_slot) ~= nil and e_system.get_item_by_slot(controller.choosen_slot) ~= 0 then
+        if equipped_item ~= 0 then
             local slot = inventory.find_by_item(player.get_inventory(hud.get_player()), 0)
             if slot == nil then
                 document["cannot_remove_item"].visible = true
                 return
             end
 
-            local equipped_item = e_system.get_item_by_slot(controller.choosen_slot)
             inventory.set(player.get_inventory(hud.get_player()), slot, equipped_item, 1)
-            e_system.remove_equipment(controller.choosen_slot)
+            equipment.equip(hud.get_player(), controller.choosen_character, controller.choosen_slot, item.name(equipped_item), action)
         end
     end
     controller.choosen_equipment = nil
@@ -192,15 +188,15 @@ end
 function controller:choose_equipment(id)
     document["choosen_item_info"]:clear()
     choose_equipment_xml(id)
-    local e_system = e_search.get_equipment_system(hud.get_player())
+    local itemid = controller.equipment[id]
 
     document["choosen_item_info"]:add(gui.template("choosen_equipment_info", {
-        src = item.icon(controller.equipment[id]),
-        heat_p = e_search.get_equipment_characteristics(controller.equipment[id], controller.choosen_slot, hud.get_player(), "heat_preservation"),
-        heat_r = e_search.get_equipment_characteristics(controller.equipment[id], controller.choosen_slot, hud.get_player(), "heat_reflection"),
-        crush_d_p = e_search.get_equipment_characteristics(controller.equipment[id], controller.choosen_slot, hud.get_player(), "crush_damage_protection"),
-        slashing_d_p = e_search.get_equipment_characteristics(controller.equipment[id], controller.choosen_slot, hud.get_player(), "slashing_damage_protection"),
-        piercing_d_p = e_search.get_equipment_characteristics(controller.equipment[id], controller.choosen_slot, hud.get_player(), "piercing_damage_protection")
+        src = item.icon(itemid),
+        heat_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "heat_preservation"),
+        heat_r = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "heat_reflection"),
+        crush_d_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "crush_damage_protection"),
+        slashing_d_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "slashing_damage_protection"),
+        piercing_d_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "piercing_damage_protection")
     }))
 end
 

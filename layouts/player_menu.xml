@@ -35,12 +35,9 @@
         <container position-func="gui.get_viewport()[1]/2-300, 610" size="600,2" color="#b7fcfc"></container>
 
 
-        <container id="characteristics" position-func="gui.get_viewport()[1]/2-100, 630" size="220,170" color="#00000050">
-            <container size="220,140">
-                <image pos="20,20" size="80" src="gui/standard_body" />
-                <image pos="120,20" size="80" src="gui/standard_soul" />
-                <container pos="0,110" size="110,30"><label gravity="center-center">@Body</label></container>
-                <container pos="110,110" size="110,30"><label gravity="center-center">@Soul</label></container>
+        <container id="characteristics" position-func="gui.get_viewport()[1]/2-100, 630" size="220,80" color="#00000050">
+            <container size="220,50">
+                <container size="180,30" pos="20,10" color="#00000070" tooltip="Choosen character name" tooltip-delay="0.4"><label id="character_name" gravity="center-center">Name</label></container>
             </container>
             <button id="detailed_information" hover-color="050" color="#00000070" size="220,30" gravity="bottom-center" onclick="open_c_panel()">@Characteristics</button>
         </container>
@@ -59,8 +56,8 @@
         <container size="400,30" color="100"><label pos="20,8">@HP</label><label id="max_health" pos="300,8"></label></container>
         <container size="400,30"><label pos="20,8">@Oxygen</label><label id="max_oxygen" pos="300,8"></label></container>
         <container size="400,30" color="100" tooltip="Magical energy" tooltip-delay="0.08"><label pos="20,8">@Archium</label><label id="max_archium" pos="300,8"></label></container>
-        <container size="400,30"><label pos="20,8">@Agility</label><label id="agility" pos="310,8"></label></container>
-        <container size="400,30" color="100"><label pos="20,8">@Accuracy</label><label id="accuracy" pos="310,8"></label></container>
+        <container size="400,30"><label pos="20,8">@Agility</label><label id="agility" pos="300,8"></label></container>
+        <container size="400,30" color="100"><label pos="20,8">@Accuracy</label><label id="accuracy" pos="300,8"></label></container>
 
 
         <container size="400,50"><label gravity="center-center">@Types of protection</label></container>

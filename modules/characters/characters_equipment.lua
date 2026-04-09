@@ -12,15 +12,15 @@ function equipment.equip(pid, character_name, slot, equipment_name, action)
     if not character then return end
 
     if not equipment.is_free_slot(character, slot) and action == "remove" then
-        characters.set_data(pid, character_name, "equipment", slot, nil)
+        characters.set_field(pid, character_name, "equipment", slot, nil)
         equipment.change_stats(pid, character_name, equipment_name, -1)
         return
     elseif not equipment.is_free_slot(character, slot) and action == "equip" then
-        characters.set_data(pid, character_name, "equipment", slot, nil)
+        characters.set_field(pid, character_name, "equipment", slot, nil)
         equipment.change_stats(pid, character_name, equipment_name, -1)
     end
 
-    characters.set_data(pid, character_name, "equipment", slot, equipment_name)
+    characters.set_field(pid, character_name, "equipment", slot, equipment_name)
     equipment.change_stats(pid, character_name, equipment_name, 1)
 end
 
@@ -52,12 +52,55 @@ function equipment.is_free_slot(character, slot)
     return true
 end
 
-function equipment.get_all_equipment_stats(id)
-    return item.properties[id]["newgen:equipment"].protections
+function equipment.get_all_equipment_stats(itemid)
+    return item.properties[itemid]["newgen:equipment"].protections
 end
 
-function equipment.get_equipmennt_stat(id, stat)
-    return item.properties[id]["newgen:equipment"].protections[stat]
+function equipment.get_equipment_stat(itemid, stat)
+    return item.properties[itemid]["newgen:equipment"].protections[stat]
+end
+
+function equipment.get_compared_stat(pid, character_name, slot, itemid, stat)
+    local compare_result = nil
+    local equipment_stat = equipment.get_equipment_stat(itemid, stat)
+    local equipped_item = equipment.get_equipment_by_slot(pid, character_name, slot)
+    local equipped_item_stat = 0
+
+    if equipped_item ~= 0 then 
+        equipped_item_stat = item.properties[equipped_item]["newgen:equipment"].protections[stat]
+    end
+
+    if equipment_stat > equipped_item_stat then
+        return "[#0ee60e]" .. equipment_stat
+    elseif equipment_stat < equipped_item_stat then
+        return "[#e60e0e]" .. equipment_stat
+    else
+        return equipment_stat
+    end
+end
+
+function equipment.get_equipment_by_slot(pid, character_name, slot)
+    local equipments = characters.get_group(pid, character_name, "equipment")
+    if equipments[slot] == nil then
+        return 0
+    end
+    return item.index(equipments[slot])
+end
+
+function equipment.search_equipment_by_tag(invid, tag)
+    -- find equipment in inventory
+    local found = {}
+
+    for i = 0, inventory.size(invid) - 1 do
+        local itemid, _ = inventory.get(invid, i)
+        if itemid ~= 0 then
+            local equipment = item.properties[itemid]["newgen:equipment"]
+            if equipment and equipment.slot == tag then
+                table.insert(found, itemid)
+            end
+        end
+    end
+    return found
 end
 
 return equipment

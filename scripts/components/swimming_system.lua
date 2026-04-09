@@ -17,6 +17,7 @@ local water = block.index("base:water")
 function entity_pos()
     local pos = tsf:get_pos()
     pos[1] = pos[1] - 1
+    pos[3] = pos[3] - 1
     return pos
 end
 
@@ -31,7 +32,8 @@ function head_underwater()
 end
 
 local function body_underwater()
-    return block.get(tsf:get_pos()) == water
+    local pos = entity_pos()
+    return block.get(pos[1], pos[2] + 0.5, pos[3]) == water
 end
 
 local swim_speed = 3.5
@@ -54,9 +56,10 @@ function on_physics_update()
 
         if not hud.is_inventory_open() then
             if input.is_active("movement.jump") then
-                vel[2] = 3
                 if not body_underwater() then
-                    vel[2] = 4
+                    vel[2] = 1
+                else
+                    vel[2] = 1.5
                 end
             end
             if input.is_active("movement.crouch") then

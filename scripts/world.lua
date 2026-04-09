@@ -4,8 +4,10 @@ local base_util = require "base:util"
 local gamemodes = require "gamemodes"
 local world_data = require "world_data"
 local furnaces = require "furnaces"
+local characters = require "characters/characters_main"
 
 local breaking_blocks = {}
+local player_loaded = false
 
 local function get_durability(id)
     local durability = block.properties[id]["base:durability"]
@@ -50,6 +52,9 @@ function on_world_open()
                 "particles:blood_1"
             }
         })
+    end)
+    events.on("newgen:player_death", function()
+        player_loaded = false
     end)
     rules.create("keep-inventory", false)
 
@@ -135,7 +140,19 @@ local function tick_breaking(pid, tps)
     end
 end
 
+local function player_entity_loaded()
+    if player_loaded then return end
+    local pentity = entities.get(player.get_entity(hud.get_player()))
+    if not pentity then return end
+
+    local c_manager = pentity:require_component("newgen:characteristics_manager")
+    c_manager.set_player(hud.get_player(), true)
+    characters.update_survival_ui(hud.get_player(), characters.get_choosen_character(hud.get_player()))
+    player_loaded = true
+end
+
 function on_player_tick(pid, tps)
+    player_entity_loaded()
     tick_breaking(pid, tps)
 end
 
