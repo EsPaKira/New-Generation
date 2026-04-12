@@ -8,4 +8,6 @@ New Generation - контент-пак для [VoxelCore](https://github.com/Mih
 
 Аддон для New Generation: [Project L.A.R.I.X.](https://github.com/EsPaKira/Project-L.A.R.I.X.)
 
+Чтобы поменять режим игры с креатива на выживание, напишите в чате /gamemode survival. В противоположном случае напишите /gamemode creative
+
 *New Generation использует участки кода, находящиеся под лицензией MIT других разработчиков*
