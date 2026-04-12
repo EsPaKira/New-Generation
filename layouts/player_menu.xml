@@ -37,7 +37,7 @@
 
         <container id="characteristics" position-func="gui.get_viewport()[1]/2-100, 630" size="220,80" color="#00000050">
             <container size="220,50">
-                <container size="180,30" pos="20,10" color="#00000070" tooltip="Choosen character name" tooltip-delay="0.4"><label id="character_name" gravity="center-center">Name</label></container>
+                <container size="180,30" pos="20,10" color="#00000070" tooltip="Choosen character name" tooltip-delay="0.4"><label id="character_name" text-align="center" gravity="center-center"></label></container>
             </container>
             <button id="detailed_information" hover-color="050" color="#00000070" size="220,30" gravity="bottom-center" onclick="open_c_panel()">@Characteristics</button>
         </container>
@@ -62,8 +62,8 @@
 
         <container size="400,50"><label gravity="center-center">@Types of protection</label></container>
 
-        <container size="400,30" color="100"><label pos="20,8">@Heat preservation</label><label id="heat_preservation" pos="310,8"></label></container>
-        <container size="400,30"><label pos="20,8">@Heat reflection</label><label id="heat_reflection" pos="310,8"></label></container>
+        <container size="400,30" color="100" tooltip="Protects against cold" tooltip-delay="0.08"><label pos="20,8">@Heat preservation</label><label id="heat_preservation" pos="310,8"></label></container>
+        <container size="400,30" tooltip="Protects from heat" tooltip-delay="0.08"><label pos="20,8">@Heat reflection</label><label id="heat_reflection" pos="310,8"></label></container>
         <container size="400,30" color="100"><label pos="20,8">@Crush damage protection</label><label id="crush_damage_protection" pos="310,8"></label></container>
         <container size="400,30"><label pos="20,8">@Slashing damage protection</label><label id="slashing_damage_protection" pos="310,8"></label></container>
         <container size="400,30" color="100"><label pos="20,8">@Piercing damage protection</label><label id="piercing_damage_protection" pos="310,8"></label></container>

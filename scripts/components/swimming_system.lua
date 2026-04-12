@@ -1,13 +1,15 @@
 -- Original code - NotSurvival by kotisoff
--- Reworked to component
+-- Protected by MIT license
+-- https://github.com/kotisoff/NotSurvival
 
 
 local body = entity.rigidbody
 local tsf = entity.transform
 
 local function is_flight(eid)
-    if eid == hud.get_player() then
-        return player.is_flight(eid) or player.is_noclip(eid)
+    if eid == player.get_entity(hud.get_player()) then
+        local pid = entity:get_player()
+        return player.is_flight(pid) or player.is_noclip(pid)
     end
 end
 
@@ -33,7 +35,7 @@ end
 
 local function body_underwater()
     local pos = entity_pos()
-    return block.get(pos[1], pos[2] + 0.5, pos[3]) == water
+    return block.get(pos[1], pos[2] + 0.4, pos[3]) == water
 end
 
 local swim_speed = 3.5
@@ -57,9 +59,9 @@ function on_physics_update()
         if not hud.is_inventory_open() then
             if input.is_active("movement.jump") then
                 if not body_underwater() then
-                    vel[2] = 1
+                    vel[2] = 7
                 else
-                    vel[2] = 1.5
+                    vel[2] = 2
                 end
             end
             if input.is_active("movement.crouch") then

@@ -1,0 +1,13 @@
+{
+    "texture-faces": [
+        "hay_side",
+        "hay_side",
+        "hay",
+        "hay",
+        "hay_side",
+        "hay_side"
+    ],
+    "material": "base:grass",
+    "rotation": "pipe",
+    "base:durability": 3
+}

@@ -1,5 +1,6 @@
 {
     "icon": "items:malachite",
+    "placing-block": "newgen:malachite_stone",
     "newgen:material": {
         "type": "metal",
         "melting-point": 1085

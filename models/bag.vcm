@@ -1,0 +1,24 @@
+@box from (0.1875, 0, 0.1875) to (0.8125, 0.5, 0.8125) origin (0.25, 0, 0.25) {
+    @part tags (south) texture "blocks:bag" region (0.3125, 0.75, 0.625, 1)
+    @part tags (west) texture "blocks:bag" region (0.3125, 0.5, 0.625, 0.75)
+    @part tags (north) texture "blocks:bag" region (0.3125, 0.25, 0.625, 0.5)
+    @part tags (east) texture "blocks:bag" region (0.3125, 0.125, 0, 0.375)
+    @part tags (top) texture "blocks:bag" region (0, 0.6875, 0.3125, 1)
+    @part tags (bottom) texture "blocks:bag" region (0, 0.375, 0.3125, 0.6875)
+}
+@box from (0.34375, 0.5, 0.34375) to (0.65625, 0.5625, 0.65625) origin (0.40625, 0.5, 0.40625) {
+    @part tags (south) texture "blocks:bag" region (0.78125, 0.59375, 0.9375, 0.625)
+    @part tags (west) texture "blocks:bag" region (0.78125, 0.5625, 0.9375, 0.59375)
+    @part tags (north) texture "blocks:bag" region (0.78125, 0.53125, 0.9375, 0.5625)
+    @part tags (east) texture "blocks:bag" region (0.9375, 0.5, 0.78125, 0.53125)
+    @part tags (top) texture "blocks:bag" region (0.625, 0.46875, 0.78125, 0.625)
+    @part tags (bottom) texture "blocks:bag" region (0.625, 0.3125, 0.78125, 0.46875)
+}
+@box from (0.3125, 0.5625, 0.3125) to (0.6875, 0.6875, 0.6875) origin (0.375, 0.5625, 0.375) {
+    @part tags (south) texture "blocks:bag" region (0.625, 0.25, 0.8125, 0.3125)
+    @part tags (west) texture "blocks:bag" region (0.3125, 0.1875, 0.5, 0.25)
+    @part tags (north) texture "blocks:bag" region (0.5, 0.1875, 0.6875, 0.25)
+    @part tags (east) texture "blocks:bag" region (0.875, 0.1875, 0.6875, 0.25)
+    @part tags (top) texture "blocks:bag" region (0.625, 0.8125, 0.8125, 1)
+    @part tags (bottom) texture "blocks:bag" region (0.625, 0.625, 0.8125, 0.8125)
+}

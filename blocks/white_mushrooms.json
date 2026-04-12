@@ -1,0 +1,12 @@
+{
+    "model": "custom",
+    "model-name": "white_mushrooms",
+    "hitbox": [0.0625, 0, 0.0625, 0.875, 0.25, 0.875],
+    "light-passing": true,
+    "sky-light-passing": true,
+    "material": "base:grass",
+    "grounded": true,
+    "obstacle": false,
+    "rotation": "pane",
+    "base:durability": 0.0
+}

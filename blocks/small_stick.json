@@ -1,14 +1,7 @@
 {
-    "texture-faces": [
-        "transparent",
-        "transparent",
-        "transparent",
-        "stick",
-        "transparent",
-        "transparent"
-    ],
-    "model": "aabb",
-    "hitbox": [0.0, 0.0, 0.0, 1, 0.1, 1],
+    "model": "custom",
+    "model-name": "stick",
+    "hitbox": [0.0625, 0.0, 0.3125, 0.875, 0.125, 0.3125],
     "rotation": "pane",
     "light-passing": true,
     "sky-light-passing": true,

@@ -17,6 +17,8 @@ Soul=Душа
 Oxygen=Кислород
 Archium=Архиум
 Magical energy=Магическая энергия
+Protects against cold=Защищает от холода
+Protects from heat=Защищает от жары
 Agility=Ловкость
 Accuracy=Меткость
 Heat preservation=Сохранение тепла
@@ -35,39 +37,59 @@ Close=Закрыть
 Craft=Создать
 
 # Меню навыков
+
 Research=Исследовать
 
 
 # Предметы
 
 ash=пепел
+bear meat=медвежье мясо
 bear summoning card=карта призыва медведя
 blackberry=черника
 coal=каменный уголь
 copper axe head=медная голова топора
 copper axe=медный топор
 copper ingot=самородок меди
+flax fiber=льняное волокно
 fur cape=меховая накидка
+linen pants=льняные штаны
+linen shirt=льняная рубаха
 malachite ore=малахит
 red brick=красный кирпич
 red clay chunk=кусок красной глины
 slag=шлак
 stick=палка
+stindle=веретено
 stone axe head=каменная голова топора
 stone axe=каменный топор
 stone hammer head=каменная головка молота
 stone hammer=каменный молот
+straw hat=соломенная шляпа
 unknown alloy=неизвестный сплав
+
+
+# Описание предметов
+
+You can make something on a workbench=Можно что-то сделать на верстаке
 
 
 # Блоки
 
+bag=мешок
 blackberry bush=куст черники
+box=ящик
 bush=куст
+calendula=календула
+campfire=костёр
 cattail=камыш
 chalk coal=уголь в мелу
 chalk=мел
+chanterelles=лисички
 clay oven=глиняная печь
+clover=клевер
+daisies=ромашки
+dandelions=одуванчики
 dead bush=мёртвый куст
 dead grass=мёртвая трава
 dead tall grass=мёртвая высокая трава
@@ -77,6 +99,7 @@ dolomite coal=уголь в доломите
 dolomite malachite ore=рудный малахит в доломите
 dolomite stone=камень доломита
 dolomite=доломит
+flax=лён
 gabbro stone=камень габбро
 gabbro=габбро
 glass panel=стеклянная панель
@@ -86,6 +109,9 @@ granite stone=камень гранита
 granite=гранит
 gypsum coal=уголь в гипсе
 gypsum=гипс
+hay=сено
+knapweeds=васильки
+lily=ландыш
 limestone coal=уголь в известняке
 limestone malachite ore=рудный малахит в известняке
 limestone=известняк
@@ -97,12 +123,14 @@ peridotite=перидотит
 primitive forge=примитивная кузница
 red bricks=красные кирпичи
 red clay=красная глина
+sailcloth=парусина
 sandstone coal=уголь в песчанике
 sandstone stone=камень песчаника
 sandstone=песчаник
 spruce leaves=хвоя
 spruce=сосновое бревно
 pot=горшок
+white mushrooms=белые грибы
 workbench=верстак
 
 

@@ -1,3 +1,7 @@
+-- Original code - NotSurvival by kotisoff
+-- Protected by MIT license
+-- https://github.com/kotisoff/NotSurvival
+
 local survival_ui = require "survival_ui"
 local characters = require "characters/characters_main"
 

@@ -18,12 +18,14 @@ plants = [
     {weight=1, block="base:grass"},
     {weight=0.05, block="newgen:dead_grass"},
     {weight=0.03, block="newgen:dead_tall_grass"},
-    {weight=0.03, block="base:flower"},
     {weight=0.03, block="newgen:bush"},
     {weight=0.03, block="newgen:small_stick"},
+    {weight=0.02, block="newgen:lily"},
     {weight=0.01, block="newgen:dead_bush"},
     {weight=0.01, block="newgen:blackberry_bush"},
-    {weight=0.01, block="newgen:moss"}
+    {weight=0.01, block="newgen:moss"},
+    {weight=0.01, block="newgen:white_mushrooms"},
+    {weight=0.01, block="newgen:chanterelles"}
 ]
 structure-chance = 0.032
 structures = [
@@ -32,7 +34,11 @@ structures = [
     {name="tree2", weight=1},
     {name="bush0", weight=0.5},
     {name="bush1", weight=0.5},
-    {name="ruins0", weight=0.01}
+    {name="fallen_tree", weight=0.03},
+    {name="fallen_mossy_tree", weight=0.03},
+    {name="dead_tree", weight=0.02},
+    {name="ruins0", weight=0.01},
+    {name="camp", weight=0.01}
 ]
 
 
@@ -51,28 +57,35 @@ layers = [
 sea-layers = [
     {height=-1, block="base:water"}
 ]
-plant-chance = 0.42
+plant-chance = 0.5
 plants = [
     {weight=1, block="base:grass"},
     {weight=0.05, block="newgen:dead_grass"},
     {weight=0.03, block="newgen:dead_tall_grass"},
-    {weight=0.03, block="base:flower"},
     {weight=0.03, block="newgen:bush"},
     {weight=0.03, block="newgen:small_stick"},
     {weight=0.03, block="newgen:gabbro_stone"},
+    {weight=0.02, block="newgen:lily"},
+    {weight=0.03, block="newgen:clover"},
     {weight=0.01, block="newgen:dead_bush"},
     {weight=0.01, block="newgen:blackberry_bush"},
-    {weight=0.01, block="newgen:moss"}
+    {weight=0.01, block="newgen:moss"},
+    {weight=0.01, block="newgen:white_mushrooms"},
+    {weight=0.01, block="newgen:chanterelles"}
 ]
 structure-chance = 0.01
 structures = [
     {name="spruce0", weight=1},
     {name="spruce1", weight=1},
-    {name = "bush0", weight = 0.5},
-    {name = "bush1", weight = 0.5},
+    {name="bush0", weight=0.5},
+    {name="bush1", weight=0.5},
     {name="gabbro_little_rock", weight=0.1},
+    {name="fallen_spruce_tree", weight=0.03},
+    {name="fallen_mossy_spruce_tree", weight=0.03},
+    {name="dead_spruce_tree", weight=0.02},
     {name="gabbro_big_rock", weight=0.02},
-    {name="ruins0", weight=0.01}
+    {name="ruins0", weight=0.01},
+    {name="camp", weight=0.01}
 ]
 
 
@@ -96,9 +109,10 @@ plants = [
     {weight=0.5, block="newgen:sandstone_stone"},
     {weight=0.05, block="newgen:dead_grass"},
     {weight=0.03, block="newgen:dead_tall_grass"},
-    {weight=0.03, block="newgen:dead_bush"}
+    {weight=0.03, block="newgen:dead_bush"},
+    {weight=0.01, block="newgen:coal_stone"}
 ]
-structure-chance=0.003
+structure-chance=0.01
 structures = [
     {name="sandstone_coal0", weight=0.1},
     {name="sandstone_coal1", weight=1}
@@ -124,12 +138,15 @@ plants = [
     {weight=0.04, block="newgen:marble_stone"},
     {weight=0.03, block="newgen:dead_tall_grass"},
     {weight=0.03, block="newgen:dead_bush"},
-    {weight=0.03, block="newgen:bush"}
+    {weight=0.03, block="newgen:bush"},
+    {weight=0.01, block="newgen:malachite_stone"},
+    {weight=0.01, block="newgen:coal_stone"}
 ]
-structure-chance=0.003
+structure-chance=0.01
 structures = [
     {name="limestone_coal0", weight=0.1},
     {name="limestone_coal1", weight=1},
+    {name="limestone_malachite_ore", weight=0.3},
     {name="marble_little_rock", weight=0.1},
     {name="marble_big_rock", weight=0.02}
 ]
@@ -150,24 +167,33 @@ layers = [
 sea-layers = [
     {height=-1, block="base:water"}
 ]
-plant-chance = 0.35
+plant-chance = 0.45
 plants = [
     {weight=1, block="base:grass"},
     {weight=0.05, block="newgen:dead_grass"},
     {weight=0.03, block="newgen:dead_tall_grass"},
     {weight=0.03, block="newgen:dead_bush"},
-    {weight=0.03, block="base:flower"},
-    {weight=0.03, block="newgen:bush"}
+    {weight=0.03, block="newgen:bush"},
+    {weight=0.02, block="newgen:dandelions"},
+    {weight=0.03, block="newgen:clover"},
+    {weight=0.02, block="newgen:daisies"},
+    {weight=0.02, block="newgen:knapweeds"},
+    {weight=0.01, block="newgen:flax"},
+    {weight=0.01, block="newgen:calendula"}
 ]
 structure-chance=0.005
 structures = [
     {name="tree0", weight=1},
     {name="tree1", weight=1},
-    {name = "bush0", weight = 5},
-    {name = "bush1", weight = 5},
+    {name="bush0", weight=5},
+    {name="bush1", weight=5},
     {name="diorite_little_rock", weight=0.12},
     {name="diorite_big_rock", weight=0.03},
-    {name="ruins0", weight=0.01}
+    {name="fallen_tree", weight=0.03},
+    {name="fallen_mossy_tree", weight=0.03},
+    {name="dead_tree", weight=0.02},
+    {name="ruins0", weight=0.01},
+    {name="camp", weight=0.01}
 ]
 
 [swamp]
@@ -193,15 +219,23 @@ plants = [
     {weight=0.03, block="newgen:dead_grass"},
     {weight=0.03, block="newgen:small_stick"},
     {weight=0.02, block="newgen:dead_tall_grass"},
+    {weight=0.02, block="newgen:daisies"},
     {weight=0.01, block="newgen:dead_bush"},
-    {weight=0.01, block="newgen:dolomite_stone"}
+    {weight=0.01, block="newgen:dolomite_stone"},
+    {weight=0.01, block="newgen:malachite_stone"},
+    {weight=0.01, block="newgen:coal_stone"}
 ]
-structure-chance = 0.02
+structure-chance = 0.03
 structures = [
+    {name="dolomite_coal0", weight=0.05},
+    {name="dolomite_coal1", weight=0.5},
+    {name="dolomite_malachite_ore", weight=0.3},
     {name="spruce0", weight=1},
     {name="spruce1", weight=1},
-    {name = "bush0", weight = 0.5},
-    {name = "bush1", weight = 0.5},
-    {name = "puddle", weight = 0.05},
+    {name="bush0", weight=0.5},
+    {name="bush1", weight=0.5},
+    {name="puddle", weight=0.05},
+    {name="fallen_mossy_spruce_tree", weight=0.03},
+    {name="dead_spruce_tree", weight=0.02},
     {name="ruins0", weight=0.01}
 ]

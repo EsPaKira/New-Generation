@@ -1,0 +1,16 @@
+@box from (0.0625, 0, 0.3125) to (0.9375, 0.125, 0.4375) origin (0.125, 0, 0.375) rotate (0, -10, 0) {
+    @part tags (south) texture "blocks:stick" region (0, 0.875, 0.875, 1)
+    @part tags (west) texture "blocks:stick" region (0.25, 0.25, 0.375, 0.375)
+    @part tags (north) texture "blocks:stick" region (0, 0.75, 0.875, 0.875)
+    @part tags (east) texture "blocks:stick" region (0.5, 0.25, 0.375, 0.375)
+    @part tags (top) texture "blocks:stick" region (0, 0.625, 0.875, 0.75)
+    @part tags (bottom) texture "blocks:stick" region (0, 0.5, 0.875, 0.625)
+}
+@box from (0.5, 0, 0.390625) to (0.625, 0.09375, 0.703125) origin (0.5625, 0, 0.453125) rotate (0, 22.5, 0) {
+    @part tags (south) texture "blocks:stick" region (0.5, 0.25, 0.625, 0.375)
+    @part tags (west) texture "blocks:stick" region (0, 0.375, 0.3125, 0.5)
+    @part tags (north) texture "blocks:stick" region (0.625, 0.375, 0.75, 0.5)
+    @part tags (east) texture "blocks:stick" region (0.625, 0.375, 0.3125, 0.5)
+    @part tags (top) texture "blocks:stick" region (0, 0.0625, 0.125, 0.375)
+    @part tags (bottom) texture "blocks:stick" region (0.125, 0.0625, 0.25, 0.375)
+}

@@ -47,7 +47,7 @@ function furnaces.tick()
             furnaces.remove(f[5])
             events.emit("newgen:furnace.remove")
         end
-        events.emit("newgen:furnace.update", math.round(f[4][2], 1), math.round(f[4][3], 1), {f[1], f[2], f[3]})
+        events.emit("newgen:furnace.update", math.round(f[4][2], 1), math.round(f[4][3], 1), {f[1], f[2], f[3]}, f[5])
     end
 end
 
