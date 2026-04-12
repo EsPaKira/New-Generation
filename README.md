@@ -1,3 +1,11 @@
-# newgen_survival
-Content pack for VoxelCore. Adds survival and GUI mechanics
-The main branch is the most stable version
+![new-generation](icon.png)
+
+New Generation - контент-пак для [VoxelCore](https://github.com/MihailRis/voxelcore)
+
+В этом контент-паке есть базовые механики выживания, свой генератор мира, множество блоков и предметов.
+
+Наиболее стабильная версия контент-пака находится в ветке main. На версиях VoxelCore до 0.31.2 может работать некорректно
+
+Аддон для New Generation: [Project L.A.R.I.X.](https://github.com/EsPaKira/Project-L.A.R.I.X.)
+
+*New Generation использует участки кода, находящиеся под лицензией MIT других разработчиков*
