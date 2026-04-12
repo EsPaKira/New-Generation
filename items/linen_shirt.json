@@ -1,0 +1,14 @@
+{
+    "icon": "items:linen_shirt",
+    "stack-size": 1,
+    "newgen:equipment": {
+        "slot": "body",
+        "protections": {
+            "heat_preservation": 0.5,
+            "heat_reflection": 0.4,
+            "crush_damage_protection": 0.1,
+            "slashing_damage_protection": 0.1,
+            "piercing_damage_protection": 0.1
+        }
+    }
+}

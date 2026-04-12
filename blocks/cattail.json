@@ -7,6 +7,6 @@
     "size": [1, 1, 1],
     "obstacle": false,
     "grounded": true,
-    "hitbox": [0, 0, 0, 1, 1, 1],
+    "hitbox": [0.0625, 0, 0.0625, 0.875, 1, 0.875],
     "base:durability": 3.0
 }

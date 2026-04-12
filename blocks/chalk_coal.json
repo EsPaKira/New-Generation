@@ -2,8 +2,10 @@
     "texture": "chalk_coal",
     "base:durability": 12.0,
     "base:loot": [
-        {"item": "newgen:coal",
-        "min": 1,
-        "max": 4}
-    ]  
+        {
+            "item": "newgen:coal",
+            "min": 1,
+            "max": 4
+        }
+    ]
 }

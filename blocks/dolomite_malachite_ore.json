@@ -8,9 +8,9 @@
             "max": 3
         },
         {
-            "item": "newgen:dolomite_stone",
+            "item": "newgen:dolomite_stone.item",
             "min": 3,
-            "max": 6
+            "max": 7
         }
     ]  
 }

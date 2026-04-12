@@ -8,6 +8,7 @@ function on_interact(x, y, z, pid)
         local furnaces = require "furnaces"
         if furnaces.check(finvid, 1, "fuel") then
             block.set_variant(x, y, z, 1)
+            print("add", finvid)
             furnaces.add(x, y, z, finvid, 300)
             return true
         end

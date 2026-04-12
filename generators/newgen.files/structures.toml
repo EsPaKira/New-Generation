@@ -3,6 +3,12 @@ tree1 = {}
 tree2 = {}
 spruce0 = {}
 spruce1 = {}
+dead_tree = {}
+dead_spruce_tree = {}
+fallen_tree = {lowering=-1}
+fallen_spruce_tree = {lowering=-1}
+fallen_mossy_tree = {lowering=-1}
+fallen_mossy_spruce_tree = {lowering=-1}
 puddle = {lowering=2}
 bush0 = {lowering=-1}
 bush1 = {lowering=-1}
@@ -10,6 +16,10 @@ sandstone_coal0 = {lowering=15}
 sandstone_coal1 = {lowering=10}
 limestone_coal0 = {lowering=15}
 limestone_coal1 = {lowering=10}
+dolomite_coal0 = {lowering=15}
+dolomite_coal1 = {lowering=10}
+dolomite_malachite_ore = {lowering=12}
+limestone_malachite_ore = {lowering=12}
 ruins0 = {lowering=2}
 marble_little_rock = {}
 marble_big_rock = {}
@@ -17,3 +27,4 @@ diorite_little_rock = {}
 diorite_big_rock = {}
 gabbro_little_rock = {}
 gabbro_big_rock = {}
+camp = {}

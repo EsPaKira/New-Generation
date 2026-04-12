@@ -1,4 +1,6 @@
 -- Original code - base_survival by MihailRis
+-- Protected by MIT license
+-- https://github.com/MihailRis/base_survival
 
 local base_util = require "base:util"
 local gamemodes = require "gamemodes"
@@ -34,9 +36,9 @@ function on_world_open()
         end
     end)
     events.on("newgen:death", function(pos)
-        gfx.particles.emit(pos, random.random(20, 30), {
-            lifetime = 5,
-            lifetime_spread = 1,
+        gfx.particles.emit(pos, random.random(40, 70), {
+            lifetime = 10,
+            lifetime_spread = 2.5,
             spawn_interval = 0.001,
             explosion = {4, 4, 4},
             angle_spread = 0.05,

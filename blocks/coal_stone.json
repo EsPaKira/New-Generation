@@ -11,6 +11,9 @@
     "base:durability": 0.1,
     "picking-item": "newgen:coal",
     "base:loot": [
-        {"item": "newgen:coal", "count": 1}
+        {
+            "item": "newgen:coal",
+            "count": 1
+        }
     ]
 }

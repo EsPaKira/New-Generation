@@ -1,0 +1,48 @@
+@box from (0.125, 0, 0.3125) to (0.1875, 0.125, 0.375) origin (0.1875, 0, 0.375) {
+    @part tags (south) texture "blocks:white_mushrooms" region (0.5, 0.375, 0.5625, 0.5)
+    @part tags (west) texture "blocks:white_mushrooms" region (0.5625, 0.75, 0.625, 0.875)
+    @part tags (north) texture "blocks:white_mushrooms" region (0.5625, 0.625, 0.625, 0.75)
+    @part tags (east) texture "blocks:white_mushrooms" region (0.625, 0.5, 0.5625, 0.625)
+    @part tags (top) texture "blocks:white_mushrooms" region (0.625, 0.5, 0.6875, 0.5625)
+    @part tags (bottom) texture "blocks:white_mushrooms" region (0.5, 0.3125, 0.5625, 0.375)
+}
+@box from (0.09375, 0.125, 0.28125) to (0.21875, 0.1875, 0.40625) origin (0.15625, 0.125, 0.34375) {
+    @part tags (south) texture "blocks:white_mushrooms" region (0.5625, 0.4375, 0.6875, 0.5)
+    @part tags (west) texture "blocks:white_mushrooms" region (0.5625, 0.375, 0.6875, 0.4375)
+    @part tags (north) texture "blocks:white_mushrooms" region (0, 0.3125, 0.125, 0.375)
+    @part tags (east) texture "blocks:white_mushrooms" region (0.75, 0.9375, 0.625, 1)
+    @part tags (top) texture "blocks:white_mushrooms" region (0.4375, 0.75, 0.5625, 0.875)
+    @part tags (bottom) texture "blocks:white_mushrooms" region (0.4375, 0.625, 0.5625, 0.75)
+}
+@box from (0.75, 0, 0.6875) to (0.8125, 0.125, 0.75) origin (0.8125, 0, 0.75) {
+    @part tags (south) texture "blocks:white_mushrooms" region (0.625, 0.8125, 0.6875, 0.9375)
+    @part tags (west) texture "blocks:white_mushrooms" region (0.125, 0.25, 0.1875, 0.375)
+    @part tags (north) texture "blocks:white_mushrooms" region (0.1875, 0.25, 0.25, 0.375)
+    @part tags (east) texture "blocks:white_mushrooms" region (0.6875, 0.6875, 0.625, 0.8125)
+    @part tags (top) texture "blocks:white_mushrooms" region (0.5625, 0.3125, 0.625, 0.375)
+    @part tags (bottom) texture "blocks:white_mushrooms" region (0.625, 0.3125, 0.6875, 0.375)
+}
+@box from (0.71875, 0.125, 0.65625) to (0.84375, 0.1875, 0.78125) origin (0.78125, 0.125, 0.71875) {
+    @part tags (south) texture "blocks:white_mushrooms" region (0.25, 0.3125, 0.375, 0.375)
+    @part tags (west) texture "blocks:white_mushrooms" region (0.625, 0.625, 0.75, 0.6875)
+    @part tags (north) texture "blocks:white_mushrooms" region (0.375, 0.3125, 0.5, 0.375)
+    @part tags (east) texture "blocks:white_mushrooms" region (0.75, 0.5625, 0.625, 0.625)
+    @part tags (top) texture "blocks:white_mushrooms" region (0, 0.375, 0.125, 0.5)
+    @part tags (bottom) texture "blocks:white_mushrooms" region (0.125, 0.375, 0.25, 0.5)
+}
+@box from (0.4375, 0, 0.4375) to (0.53125, 0.15625, 0.53125) origin (0.5, 0, 0.5) {
+    @part tags (south) texture "blocks:white_mushrooms" region (0.1875, 0.8125, 0.3125, 1)
+    @part tags (west) texture "blocks:white_mushrooms" region (0.1875, 0.625, 0.3125, 0.8125)
+    @part tags (north) texture "blocks:white_mushrooms" region (0.3125, 0.8125, 0.4375, 1)
+    @part tags (east) texture "blocks:white_mushrooms" region (0.4375, 0.625, 0.3125, 0.8125)
+    @part tags (top) texture "blocks:white_mushrooms" region (0.25, 0.375, 0.375, 0.5)
+    @part tags (bottom) texture "blocks:white_mushrooms" region (0.375, 0.375, 0.5, 0.5)
+}
+@box from (0.40625, 0.125, 0.40625) to (0.5625, 0.25, 0.5625) origin (0.46875, 0.125, 0.46875) {
+    @part tags (south) texture "blocks:white_mushrooms" region (0, 0.5, 0.1875, 0.625)
+    @part tags (west) texture "blocks:white_mushrooms" region (0.1875, 0.5, 0.375, 0.625)
+    @part tags (north) texture "blocks:white_mushrooms" region (0.375, 0.5, 0.5625, 0.625)
+    @part tags (east) texture "blocks:white_mushrooms" region (0.625, 0.875, 0.4375, 1)
+    @part tags (top) texture "blocks:white_mushrooms" region (0, 0.8125, 0.1875, 1)
+    @part tags (bottom) texture "blocks:white_mushrooms" region (0, 0.625, 0.1875, 0.8125)
+}

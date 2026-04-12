@@ -1,4 +1,6 @@
 -- Original code - base_survival by MihailRis
+-- Protected by MIT license
+-- https://github.com/MihailRis/base_survival
 
 local crafting = {}
 

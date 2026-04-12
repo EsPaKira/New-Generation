@@ -204,5 +204,67 @@
         "results": [
             {"id": "newgen:red_bricks.item", "count": 1}
         ]
+    },
+    {
+        "components": [
+            {"id": "newgen:stick", "count": 1},
+            {"id": "newgen:stone_axe", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:stindle", "count": 1},
+            {"id": "newgen:stone_axe", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:stick", "count": 1},
+            {"id": "newgen:copper_axe", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:stindle", "count": 1},
+            {"id": "newgen:copper_axe", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:flax.item", "count": 1},
+            {"id": "newgen:stindle", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:flax_fiber", "count": 1},
+            {"id": "newgen:stindle", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:dead_grass.item", "count": 4}
+        ],
+        "results": [
+            {"id": "newgen:straw_hat", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:dead_tall_grass.item", "count": 2}
+        ],
+        "results": [
+            {"id": "newgen:straw_hat", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:dead_grass.item", "count": 12}
+        ],
+        "results": [
+            {"id": "newgen:hay.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:dead_tall_grass.item", "count": 6}
+        ],
+        "results": [
+            {"id": "newgen:hay.item", "count": 1}
+        ]
     }
 ]
