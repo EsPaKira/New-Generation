@@ -1,14 +1,17 @@
 local furnaces = {
     FURNACES = {}
 }
-furnaces.crafts = file.read_combined_list("crafts/melting_crafts.json")
+local module = {}
 
-function furnaces.open(data)
+module.crafts = file.read_combined_list("crafts/melting_crafts.json")
+
+function module.open(data)
     furnaces.FURNACES = data
 end
 
-function furnaces.tick() 
+function module.tick() 
     for i, f in ipairs(furnaces.FURNACES) do 
+        -- need to check the existence of inventory. There may be an error
         local fuel_itemid, fuel_count = inventory.get(f[5], 1)
 
         -- burns fuel
@@ -34,10 +37,10 @@ function furnaces.tick()
         end
 
         -- melts materials
-        if furnaces.temperature_of_melting(f[5]) and f[4][3] < furnaces.temperature_of_melting(f[5]) then
+        if module.temperature_of_melting(f[5]) and f[4][3] < module.temperature_of_melting(f[5]) then
             f[4][3] = f[4][3] + random.random(2,7) * (0.003 * f[4][2])
         else
-            furnaces.craft(f[5])
+            module.craft(f[5])
             f[4][3] = 0
         end
         
@@ -51,31 +54,34 @@ function furnaces.tick()
     end
 end
 
-function furnaces.add(x, y, z, finvid, f_bonus_temperature) 
+function module.add(x, y, z, finvid, f_bonus_temperature) 
     -- {x, y, z, {fuel_burning_time, temperature, melting_progress}, finvid, f_bonus_temperature, fuel_id}
-    if not furnaces.contains(finvid) then
+    if not module.contains(finvid) then
         table.insert(furnaces.FURNACES, {x, y, z, {0, 0, 0}, finvid, f_bonus_temperature, fuel_id})
     end
 end
 
-function furnaces.remove(finvid)
-    if furnaces.contains(finvid) then
-        table.remove(furnaces.FURNACES, i)
+function module.remove(finvid)
+    local contains, pos = module.contains(finvid)
+    if contains then
+        table.remove(furnaces.FURNACES, pos)
     end
 end
 
-function furnaces.contains(finvid)
+function module.contains(finvid)
     local is_in = false
+    local pos = nil
     for i, f in ipairs(furnaces.FURNACES) do
         if f[5] == finvid then
             is_in = true
+            pos = i
             break
         end
     end
-    return is_in
+    return is_in, pos
 end
 
-function furnaces.check(finvid, slot, type) 
+function module.check(finvid, slot, type) 
     local itemid, count = inventory.get(finvid, slot)
 
     if item.properties[itemid]["newgen:material"] and item.properties[itemid]["newgen:material"].type == type then
@@ -84,12 +90,12 @@ function furnaces.check(finvid, slot, type)
     return false
 end
 
-function furnaces.temperature_of_melting(finvid)
+function module.temperature_of_melting(finvid)
     -- get max melting_temperature in materials
     local material1, _ = inventory.get(finvid, 0)
     -- local material2, _ = inventory.get(finvid, 1)
     -- local material3, _ = inventory.get(finvid, 2)
-    if furnaces.check(finvid, 0, "metal") then
+    if module.check(finvid, 0, "metal") then
         -- if furnaces.check(finvid, 1, "metal") then
         --     if furnaces.check(finvid, 2, "metal") then
         --         return math.max(item.properties[material1]["newgen:material"]["melting-point"], item.properties[material2]["newgen:material"]["melting-point"], item.properties[material3]["newgen:material"]["melting-point"])
@@ -101,14 +107,14 @@ function furnaces.temperature_of_melting(finvid)
     return nil
 end
 
-function furnaces.craft(finvid)
+function module.craft(finvid)
     local material1, count1 = inventory.get(finvid, 0)
     -- local material2, count2 = inventory.get(finvid, 1)
     -- local material3, count3 = inventory.get(finvid, 2)
 
     local materials = {}
 
-    if furnaces.check(finvid, 0, "metal") then
+    if module.check(finvid, 0, "metal") then
         table.insert(materials, {material1, count1})
     end
     -- if furnaces.check(finvid, 1, "metal") then
@@ -118,24 +124,24 @@ function furnaces.craft(finvid)
     --     materials[material3] = count3
     -- end
 
-    furnaces.check_crafts(materials, finvid)
+    module.check_crafts(materials, finvid)
 end
 
-function furnaces.check_crafts(materials, finvid)
+function module.check_crafts(materials, finvid)
     if #materials == 0 then return end 
 
-    for i, craft in ipairs(furnaces.crafts) do
+    for i, craft in ipairs(module.crafts) do
         for j, comp in ipairs(craft.components or {}) do
             local id = item.index(comp.id)
             if id == materials[1][1] then
-                furnaces.melt(finvid, craft)
+                module.melt(finvid, craft)
                 return
             end
         end
     end
 end
 
-function furnaces.melt(finvid, craft)
+function module.melt(finvid, craft)
     local material, mcount = inventory.get(finvid, 0)
     local result, rcount = inventory.get(finvid, 2)
     local craft_result = item.index(craft.results[1].id)
@@ -155,8 +161,8 @@ function furnaces.melt(finvid, craft)
     end
 end
 
-function furnaces.get_all_data()
+function module.get_all_data()
     return furnaces
 end
 
-return furnaces
+return module

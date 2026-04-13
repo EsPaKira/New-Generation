@@ -85,7 +85,9 @@
     "linen_shirt",
     "stindle",
     "straw_hat",
-    "bear_meat"
+    "bear_meat",
+    "base:torch.item",
+    "clay_oven.item"
   ],
   "entities": [
     "base:player",

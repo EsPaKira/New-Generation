@@ -1,5 +1,6 @@
 {
     "icon": "items:malachite",
+    "description": "Can be melted",
     "placing-block": "newgen:malachite_stone",
     "newgen:material": {
         "type": "metal",

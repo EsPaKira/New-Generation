@@ -1,5 +1,6 @@
 {
     "icon": "items:stick",
+    "description": "Fuel",
     "placing-block": "newgen:small_stick",
     "newgen:material": {
         "type": "fuel",

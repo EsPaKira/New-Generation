@@ -1,14 +1,16 @@
+local finvid = nil
+
 function on_interact(x, y, z, pid)
     local pinvid, slot = player.get_inventory(pid)
     local itemid, count = inventory.get(pinvid, slot)
     
     if item.name(itemid) == "base:torch.item" then
-        local finvid = inventory.get_block(x, y, z)
+        finvid = inventory.get_block(x, y, z)
         local fitemid, fcount = inventory.get(finvid, 1)
         local furnaces = require "furnaces"
         if furnaces.check(finvid, 1, "fuel") then
             block.set_variant(x, y, z, 1)
-            print("add", finvid)
+            -- pos, finvid, additional max temperature
             furnaces.add(x, y, z, finvid, 300)
             return true
         end
@@ -17,6 +19,11 @@ function on_interact(x, y, z, pid)
     hud.open_permanent("newgen:player_button")
 
     return true
+end
+
+function on_broken(x, y, z)
+    local furnaces = require "furnaces"
+    furnaces.remove(finvid)
 end
 
 events.on("newgen:furnace.update", function(t, m, pos)

@@ -24,7 +24,7 @@ end
 
 function world_data.save()
     local path = pack.data_file(PACK_ID, "furnaces_data.bjson")
-    file.write_bytes(path, bjson.tobytes(furnaces))
+    file.write_bytes(path, bjson.tobytes(furnaces.get_all_data()))
 
     path = pack.data_file(PACK_ID, "characters_data.json")
     file.write(path, json.tostring(characters.players, true))

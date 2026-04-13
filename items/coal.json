@@ -1,5 +1,6 @@
 {
     "icon": "items:coal",
+    "description": "Fuel",
     "placing-block": "newgen:coal_stone",
     "newgen:material": {
         "type": "fuel",
