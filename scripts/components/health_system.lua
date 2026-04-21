@@ -37,7 +37,7 @@ end
 local function drop_inventory(invid)
     local pos = entity.transform:get_pos()
     local size = inventory.size(invid)
-    for i=0,size-1 do
+    for i = 0, size - 1 do
         local itemid, count = inventory.get(invid, i)
         if itemid ~= 0 then
             local data = inventory.get_all_data(invid, i)

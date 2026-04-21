@@ -3,6 +3,7 @@
 -- https://github.com/MihailRis/base_survival
 
 local crafting = require "crafting"
+local base_util = require "base:util"
 
 local controller = {
     stats = {}, --id: count,...
@@ -36,11 +37,15 @@ local function refresh_crafts(invid)
     local shown_crafts = {}
     for i=0,invsize-1 do
         local id, count = inventory.get(invid, i)
-        stats[id] = (stats[id] or 0) + count
-
         local name = item.name(id)
+        local craft_material = item.properties[id]["newgen:craft-material"]
 
-        local found = crafting.find_all_containing(name)
+        stats[id] = (stats[id] or 0) + count
+        if craft_material then
+            stats[craft_material] = (stats[craft_material] or 0) + count
+        end
+
+        local found = crafting.find_all_containing(name, craft_material)
         for j, craft in ipairs(found) do
             if not table.has(shown_crafts, craft) then
                 table.insert(shown_crafts, craft)
@@ -69,19 +74,19 @@ local function display_components(craft)
     for i, comp in ipairs(craft.components) do
         document["craft_info_components"]:add(gui.template("craft_component", {
             index = i,
-            src = item.icon(item.index(craft.components[i].id)),
-            text = (controller.stats[item.index(craft.components[i].id)] or 0).."/"..craft.components[i].count
+            src = item.icon(item.index(comp.id)) or ("gui/" .. comp.tag) or "gui/error",
+            text = get_items_count(controller.invid, comp) .. "/" .. comp.count
         }))
     end
 end
 
 local function refresh_components(craft)
     for i, comp in ipairs(craft.components) do
-        document["craft_component_text_"..i].text = (controller.stats[item.index(craft.components[i].id)] or 0).."/"..craft.components[i].count
+        document["craft_component_text_"..i].text = get_items_count(controller.invid, comp) .. "/" .. comp.count
     end
 end
 
-function on_items_update(invid, slotid)
+function on_items_update(invid)
     refresh_crafts(invid)
 end
 
@@ -119,7 +124,9 @@ function craft()
     for i, result in ipairs(craft.results) do
         local overflow = inventory.add(controller.invid, item.index(result.id), result.count)
         if overflow > 0 then
-            inventory.add(pinvid, item.index(result.id), overflow)
+            local pos = {player.get_pos(hud.get_player())}
+            local drop = base_util.drop(pos, item.index(result.id), overflow)
+            drop.rigidbody:set_vel(vec3.spherical_rand(8.0))
         end
     end
     refresh_crafts(controller.invid)
@@ -160,4 +167,11 @@ function go_back()
         hud.open_inventory()
         hud.open_permanent("newgen:player_button")
     end
+end
+
+function get_items_count(invid, comp)
+    if comp.id then
+        return (controller.stats[item.index(comp.id)] or 0)
+    end
+    return (controller.stats[comp.tag] or 0)
 end

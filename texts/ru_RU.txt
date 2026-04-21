@@ -74,8 +74,8 @@ unknown alloy=неизвестный сплав
 Can make something on a workbench=Можно что-то сделать на верстаке
 Fuel=Топливо
 Can be melted=Моет быть расплавлено
-Can be fire with torch=Можно разжечь факелом
-Can fire the oven=Может разжечь печь
+Can be ignited with torch=Можно разжечь факелом
+Can ignit the oven=Может разжечь печь
 
 
 # Блоки
