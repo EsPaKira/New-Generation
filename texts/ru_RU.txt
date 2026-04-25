@@ -31,8 +31,11 @@ Choosen character name=Имя выбранного персонажа
 # Меню крафтов
 
 Crafts=Крафты
-Crafts on workbench=Крафты на верстаке
-Crafts on primitive_forge=Крафты на примитивной кузнице
+Crafts on workbench_crafts=Крафты на верстаке
+workbench=Крафты на верстаке
+Crafts on primitive_forge_crafts=Крафты на примитивной кузнице
+primitive_forge_crafts=Крафты на примитивной кузнице
+melting_crafts=Переплавка
 Close=Закрыть
 Craft=Создать
 
@@ -74,8 +77,14 @@ unknown alloy=неизвестный сплав
 Can make something on a workbench=Можно что-то сделать на верстаке
 Fuel=Топливо
 Can be melted=Моет быть расплавлено
-Can be fire with torch=Можно разжечь факелом
-Can fire the oven=Может разжечь печь
+Can be ignited with torch=Можно разжечь факелом
+Can ignit the oven=Может разжечь печь
+
+
+# Материалы(нужны для крафтов)
+
+material=материал
+pebble=камушек
 
 
 # Блоки

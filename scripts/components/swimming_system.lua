@@ -25,7 +25,7 @@ end
 
 local function is_in_water()
     local pos = entity_pos()
-    return block.get(pos[1], pos[2] + 0.1, pos[3]) == water or block.get(pos[1], pos[2] + 1, pos[3]) == water
+    return block.get(pos[1], pos[2] - 0.3, pos[3]) == water or block.get(pos[1], pos[2] + 1, pos[3]) == water
 end
 
 function head_underwater()
@@ -35,7 +35,7 @@ end
 
 local function body_underwater()
     local pos = entity_pos()
-    return block.get(pos[1], pos[2] + 0.4, pos[3]) == water
+    return block.get(pos[1], pos[2], pos[3]) == water
 end
 
 local swim_speed = 3.5
@@ -59,9 +59,9 @@ function on_physics_update()
         if not hud.is_inventory_open() then
             if input.is_active("movement.jump") then
                 if not body_underwater() then
-                    vel[2] = 7
+                    vel[2] = 6
                 else
-                    vel[2] = 2
+                    vel[2] = 3
                 end
             end
             if input.is_active("movement.crouch") then

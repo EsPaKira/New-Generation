@@ -9,15 +9,7 @@
     },
     {
         "components": [
-            {"id": "base:wood.item", "count": 1}
-        ],
-        "results": [
-            {"id": "base:planks.item", "count": 2}
-        ]
-    },
-    {
-        "components": [
-            {"id": "newgen:spruce.item", "count": 1}
+            {"tag": "wood", "count": 1}
         ],
         "results": [
             {"id": "base:planks.item", "count": 2}

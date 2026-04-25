@@ -1,22 +1,25 @@
-<container size="525,70" position-func="gui.get_viewport()[1]/2-262.5,gui.get_viewport()[2]-125" z-index="-1">
+<container size="524,200" position-func="gui.get_viewport()[1]/2 - 262, gui.get_viewport()[2] - 134" z-index="-1">
     <!--  Air  -->
-    <container gravity="top-right" size="240, 22" id="oxygen_bar_root">
-        <container color="#00000090" size="240, 25"/>
-        <container color="#b9f4fa40" size="240, 22" id="oxygen_bar"/>
-        <label gravity="center-center" id="oxygen">20/20</label>
+    <container id="oxygen_bar_root" size="240,28" gravity="top-left">
+        <image size="240,28" src="gui/bar_frame" />
+        <image id="oxygen_bar" size="232,20" pos="4,4" src="gui/oxygen_bar" />
+        <image id="oxygen_bar_curtain" size="0,0" src="gui/curtain" />
+        <label text-align="center" gravity="center-center" id="oxygen">20/20</label>
     </container>
-    <container size="525,45" pos="0, 25">
+    <container size="524,28" pos="0,34">
         <!--  Health  -->
-        <container size="240, 25" gravity="top-left">
-            <container color="#00000090" size="240, 25"/>
-            <container color="#800e13" size="240, 25" id="health_bar"/>
-            <label gravity="center-center" id="health">20/20</label>
+        <container size="240,28" gravity="top-left">
+            <image size="240,28" src="gui/bar_frame" />
+            <image id="health_bar" size="232,20" pos="4,4" src="gui/health_bar" />
+            <image id="health_bar_curtain" size="0,0" src="gui/curtain" />
+            <label text-align="center" gravity="center-center" id="health">20/20</label>
         </container>
         <!--  Stamina  -->
-        <container size="240, 25" gravity="top-right">
-            <container color="#00000090" size="240, 25"/>
-            <container color="#c49102" size="240, 25" id="stamina_bar"/>
-            <label gravity="center-center" id="stamina">20/20</label>
+        <container size="240,28" gravity="top-right">
+            <image size="240,28" src="gui/bar_frame" />
+            <image id="stamina_bar" size="232,20" pos="4,4" src="gui/stamina_bar" />
+            <image id="stamina_bar_curtain" size="0,0" src="gui/curtain" />
+            <label text-align="center" gravity="center-center" id="stamina">20/20</label>
         </container>
     </container>
 </container>
