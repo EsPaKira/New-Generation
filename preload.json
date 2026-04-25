@@ -34,7 +34,12 @@
         "gui/4_skills_from_1_4_active",
         "gui/4_skills_from_1_all_active",
         "gui/active_frame",
-        "gui/unactive_frame"
+        "gui/unactive_frame",
+        "gui/bar_frame",
+        "gui/curtain",
+        "gui/health_bar",
+        "gui/stamina_bar",
+        "gui/oxygen_bar"
     ],
     "post-effects": [
         "death"
