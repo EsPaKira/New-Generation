@@ -10,10 +10,22 @@
     </panel>
 
     <panel id="craft_info" size="300,1000" position-func="gui.get_viewport()[1] - 300, 37" visible="false" color="#00000070">
-        <button onclick="hide_info()" color="050" hover-color="#00000050">@Close</button>
+        <button onclick="hide_info('craft')" color="050" hover-color="#00000050">@Close</button>
         <image id="craft_info_img" src="blocks:transparent" hover-color="400" size="200,200" margin="50" />
         <button id="craft_info_name" interactive="false"></button>
         <panel id="craft_info_components" size="300,800"></panel>
         <button id="craft_info_button" onclick="craft()" hover-color="#023602" color="#0ee60e66">@Craft</button>
+    </panel>
+
+    <panel id="component_info" size="300,1000" position-func="gui.get_viewport()[1] - 610, 37" visible="false" color="#00000070">
+        <button onclick="hide_info('component')" color="050" hover-color="#00000050">@Close</button>
+        <image id="component_info_img" src="blocks:transparent" hover-color="400" size="200,200" margin="50" />
+        <button id="component_info_name" interactive="false"></button>
+        <panel id="component_info_components" size="300,700"></panel>
+        <container id="component_info_switch" size="300,50" color="#00000050" visible="false">
+            <container size="50" pos="10,0" hover-color="050" onclick="move(-1)"><image size="46" pos="2" src="gui/left_arrow" /></container>
+            <container size="190,40" pos="60,0"><label id="component_info_pages" text-align="center" gravity="center-center">0/0</label></container>
+            <container size="50" pos="240,0" hover-color="050" onclick="move(1)"><image size="46" pos="2" src="gui/right_arrow" /></container>
+        </container>
     </panel>
 </container>

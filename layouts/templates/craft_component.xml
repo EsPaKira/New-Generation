@@ -1,5 +1,5 @@
 <container id="craft_component_%{index}" size="168,50">
-    <container size="68,50" color="#00000050">
+    <container size="68,50" color="#00000050" hover-color="050" onclick="DATA:show_component_info(%{index})">
         <image size="48,48" gravity="center-center" src="%{src}"/>
     </container>
     

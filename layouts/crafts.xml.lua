@@ -10,7 +10,12 @@ local controller = {
     invsize = 0,
     max_crafts = 0,
     item_index = 0,
-    type_of_crafts = nil
+    craft_name = nil,
+    count = 0,
+    components = {},
+    component_page = 1,
+    component_pages = {}, -- array[ [type_of_page, data], ... ] <--> type_of_page = "text" or "craft"
+    component_history = {} -- array[ [comp.id or comp.tag, component_page, component_pages], ... ]
 }
 
 local CRAFT_ROWS = 9
@@ -35,7 +40,7 @@ local function refresh_crafts(invid)
     local invsize = inventory.size(invid)
 
     local shown_crafts = {}
-    for i=0,invsize-1 do
+    for i = 0, invsize - 1 do
         local id, count = inventory.get(invid, i)
         local name = item.name(id)
         local craft_material = item.properties[id]["newgen:craft-material"]
@@ -45,7 +50,12 @@ local function refresh_crafts(invid)
             stats[craft_material] = (stats[craft_material] or 0) + count
         end
 
-        local found = crafting.find_all_containing(name, craft_material)
+        local found = {}
+        if controller.craft_name == 0 then
+            found = crafting.find_all_containing(name, craft_material, "primitive_crafts")
+        else
+            found = table.merge(crafting.find_all_containing(name, craft_material, "primitive_crafts"), crafting.find_all_containing(name, craft_material, controller.craft_name))
+        end
         for j, craft in ipairs(found) do
             if not table.has(shown_crafts, craft) then
                 table.insert(shown_crafts, craft)
@@ -57,12 +67,12 @@ local function refresh_crafts(invid)
     controller.shown_crafts = shown_crafts
 
     local shown_crafts_count = math.min(controller.max_crafts, #shown_crafts)
-    for i=0,shown_crafts_count-1 do
+    for i = 0, shown_crafts_count - 1 do
         local craft = shown_crafts[i + 1]
         local craft_button = craft_buttons[i + 1]
         display_craft(craft, craft_button, stats)
     end
-    for i=shown_crafts_count,controller.max_crafts-1 do
+    for i = shown_crafts_count, controller.max_crafts - 1 do
         local craft_button = craft_buttons[i + 1]
         for _, node in ipairs(craft_button) do
             node.visible = false
@@ -70,13 +80,19 @@ local function refresh_crafts(invid)
     end
 end
 
-local function display_components(craft)
+local function display_components(craft, buffer, element)
     for i, comp in ipairs(craft.components) do
-        document["craft_info_components"]:add(gui.template("craft_component", {
-            index = i,
+        controller.count = controller.count + 1
+
+        local component = {}
+        component[controller.count] = comp.id or comp.tag
+        table.insert(controller.components, component)
+
+        document[element]:add(gui.template("craft_component", {
+            index = controller.count,
             src = item.icon(item.index(comp.id)) or ("gui/" .. comp.tag) or "gui/error",
             text = get_items_count(controller.invid, comp) .. "/" .. comp.count
-        }))
+        }), controller)
     end
 end
 
@@ -90,17 +106,23 @@ function on_items_update(invid)
     refresh_crafts(invid)
 end
 
-function on_open(type_of_crafts)
-    crafting.add_workbench_crafts(type_of_crafts)
-    document["crafts_header"].text = type_of_crafts == 0 and gui.str("Crafts") or gui.str("Crafts on " .. type_of_crafts)
-    controller.type_of_crafts = type_of_crafts
+function on_open(craft_name)
+    crafting.update_crafts()
+    document["crafts_header"].text = craft_name == 0 and gui.str("Crafts") or gui.str("Crafts on " .. craft_name)
+
+    controller.count = 0
+    controller.craft_name = craft_name
+    controller.components = {}
+    controller.component_page = 1
+    controller.component_pages = {}
+    controller.component_history = {}
 
     local pid = hud.get_player()
     local pinvid = player.get_inventory(pid)
     controller.invid = pinvid
     if controller.max_crafts == 0 then
-        for row=0, CRAFT_ROWS-1 do
-            for col=0, CRAFT_COLS-1 do
+        for row = 0, CRAFT_ROWS - 1 do
+            for col = 0, CRAFT_COLS - 1 do
                 local index = row * CRAFT_COLS + col
                 document["crafts_table"]:add(gui.template("craft_cell", {
                     x = 5 + col * 75,
@@ -113,7 +135,8 @@ function on_open(type_of_crafts)
         end
     end
     refresh_crafts(pinvid)
-    hide_info()
+    hide_info("craft")
+    hide_info("component")
 end
 
 function craft()
@@ -142,10 +165,11 @@ function controller:show_info(index)
     if not craft then
         return
     end
+    hide_info("component")
     document["craft_info_img"].src = item.icon(item.index(craft.results[1].id))
     document["craft_info_name"].text = gui.str(item.caption(item.index(craft.results[1].id)))
     document["craft_info_components"]:clear()
-    display_components(craft)
+    display_components(craft, 0, "craft_info_components")
     document["craft_info"].visible = true
 
     local is_enough = crafting.is_enough(craft, self.stats)
@@ -155,15 +179,87 @@ function controller:show_info(index)
     controller.item_index = index
 end
 
-function hide_info()
-    document["craft_info"].visible = false
-    document["craft_info_components"]:clear()
+function controller:show_component_info(index)
+    controller.component_page = 1
+
+    for _, comp in ipairs(controller.components) do
+        for key, value in pairs(comp) do
+            if tonumber(key) == index then
+                display_component_info(value)
+            end
+        end
+    end
+end
+
+function display_component_info(name)
+    controller.component_page = 1
+    controller.component_pages = {}
+    local is_item = string.find(name, ":")
+
+    document["component_info"].visible = true
+
+    if not is_item then
+        document["component_info_img"].src = "gui/" .. name
+        document["component_info_name"].text = gui.str("material") .. ": " .. gui.str(name)
+
+        local path = file.find("materials/" .. name .. ".txt")
+        if path then
+            local data = file.read(path)
+            table.insert(controller.component_pages, {"text", data})
+        end
+    else
+        document["component_info_img"].src = item.icon(item.index(name))
+        document["component_info_name"].text = gui.str(item.caption(item.index(name)))
+        local all_crafts = crafting.find_all_results(name) 
+
+        for _, craft in ipairs(all_crafts) do
+            table.insert(controller.component_pages, {"craft", craft[1], craft[2]})
+        end
+    end
+    refresh_component_info()
+end
+
+function refresh_component_info()
+    if #controller.component_pages > 1 then
+        document["component_info_switch"].visible = true 
+        document["component_info_pages"].text = controller.component_page .. "/" .. #controller.component_pages
+    else
+        document["component_info_switch"].visible = false
+    end
+
+    document["component_info_components"]:clear()
+    local data = controller.component_pages[controller.component_page] or {}
+    if data[1] == "text" then
+        document["component_info_components"]:add("<container size='300,200'><label pos='8,4' multiline='true' text-wrap='true'>" .. gui.str(data[2]) .."</label></container>")
+    elseif data[1] == "craft" then
+        if data[2] ~= "primitive_crafts" then
+            document["component_info_components"]:add("<container size='300,25'><label text-align='center' gravity='center-center' color='#8b8b8b'>" .. gui.str(data[2]) .."</label></container>")
+        end
+        display_components(data[3], 1000, "component_info_components")
+    end
+end
+
+function move(number)
+    controller.component_page = controller.component_page + number
+
+    if controller.component_page > #controller.component_pages then
+        controller.component_page = 1
+    elseif controller.component_page == 0 then
+        controller.component_page = #controller.component_pages
+    end
+
+    refresh_component_info()
+end
+
+function hide_info(id)
+    document[id .. "_info"].visible = false
+    document[id .. "_info_components"]:clear()
 end
 
 function go_back()
     hud.close("newgen:crafts")
 
-    if controller.type_of_crafts == 0 then
+    if controller.craft_name == 0 then
         hud.open_inventory()
         hud.open_permanent("newgen:player_button")
     end

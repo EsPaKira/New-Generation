@@ -14,6 +14,8 @@
         "gui/standard_body",
         "gui/standard_soul",
         "gui/crafting",
+        "gui/right_arrow",
+        "gui/left_arrow",
         "gui/wood",
         "gui/pebble",
         "gui/clay_oven",

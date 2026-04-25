@@ -2,20 +2,27 @@
 -- Protected by MIT license
 -- https://github.com/MihailRis/base_survival
 
-local crafting = {}
+local crafting = {
+    crafts = {}
+}
 
-function crafting.add_workbench_crafts(name)
-    crafting.crafts = nil
-    crafting.crafts = file.read_combined_list("crafts/primitive_crafts.json")
-    if name ~= 0 then
-        table.merge(crafting.crafts, file.read_combined_list("crafts/" .. name .. "_crafts.json"))
+function crafting.update_crafts()
+    local all_crafts = file.list_all_res("crafts")
+    for i, craft in ipairs(all_crafts) do
+        -- craft = PACK_ID:crafts/file_name.json
+
+        local craft_name = craft:match("([^/]+)$"):match("^(.*)%.") -- get file_name
+        if not crafting.crafts[craft_name] then
+            crafting.crafts[craft_name] = file.read_combined_list(craft:match("([^:]+)$"))
+        end
     end
 end
 
-function crafting.find_all_containing(id, craft_material)
+function crafting.find_all_containing(id, craft_material, craft_name)
+    -- находит все совпадения в компонентах крафта по ID предмета или по материалу
     local found = {}
-    for i, craft in ipairs(crafting.crafts) do
-        for j, comp in ipairs(craft.components or {}) do
+    for _, craft in ipairs(crafting.crafts[craft_name]) do
+        for _, comp in ipairs(craft.components or {}) do
             if craft_material and comp.tag ~= nil then
                 if craft_material == comp.tag then
                     table.insert(found, craft)
@@ -25,6 +32,22 @@ function crafting.find_all_containing(id, craft_material)
             if comp.id == id then
                 table.insert(found, craft)
                 break
+            end
+        end
+    end
+    return found
+end
+
+function crafting.find_all_results(id)
+    -- находит все совпадения в результатах всех зашруженных крафтов по ID предмета
+    local found = {}
+    for key, craft_group in pairs(crafting.crafts) do
+        for _, craft in ipairs(craft_group) do
+            for _, results in ipairs(craft.results or {}) do
+                if results.id == id then
+                    table.insert(found, {key, craft})
+                    break
+                end
             end
         end
     end

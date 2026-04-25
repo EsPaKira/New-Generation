@@ -1,0 +1,1 @@
+Pebbles can be found on the ground by exploring the world. It also drops from ore blocks.
