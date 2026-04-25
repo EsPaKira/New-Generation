@@ -24,8 +24,9 @@
         <panel id="component_info_components" size="300,700"></panel>
         <container id="component_info_switch" size="300,50" color="#00000050" visible="false">
             <container size="50" pos="10,0" hover-color="050" onclick="move(-1)"><image size="46" pos="2" src="gui/left_arrow" /></container>
-            <container size="190,40" pos="60,0"><label id="component_info_pages" text-align="center" gravity="center-center">0/0</label></container>
+            <container size="190,50" pos="60,0"><label id="component_info_pages" text-align="center" gravity="center-center">0/0</label></container>
             <container size="50" pos="240,0" hover-color="050" onclick="move(1)"><image size="46" pos="2" src="gui/right_arrow" /></container>
         </container>
+        <button id="component_go_back" onclick="component_go_back()">@Back</button>
     </panel>
 </container>

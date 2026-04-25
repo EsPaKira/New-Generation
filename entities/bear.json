@@ -23,12 +23,19 @@
                         "item": "newgen:fur_cape",
                         "min": 1,
                         "max": 2
+                    },
+                    {
+                        "item": "newgen:bear_meat",
+                        "min": 2,
+                        "max": 5
                     }
                 ]
                     
             }
         },
+        "newgen:swimming_system",
         "newgen:health_system",
+        "newgen:oxygen_system",
         "newgen:bear"
     ],
     "hitbox": [1, 1.875, 1],

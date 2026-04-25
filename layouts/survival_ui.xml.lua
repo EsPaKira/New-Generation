@@ -3,7 +3,6 @@
 -- https://github.com/kotisoff/NotSurvival
 
 local survival_ui = require "survival_ui"
-local characters = require "characters/characters_main"
 
 local function calculate_width(max_width, value, max)
     return math.floor(max_width * value / max);

@@ -2,6 +2,10 @@
 
 New Generation - контент-пак для [VoxelCore](https://github.com/MihailRis/voxelcore) (находится в beta-версии)
 
+[Скачать последнюю версию](https://github.com/EsPaKira/New-Generation/releases/latest)
+
+[Документация](https://github.com/EsPaKira/New-Generation/blob/main/doc/main_page.md)
+
 В этом контент-паке есть базовые механики выживания, свой генератор мира, множество блоков и предметов.
 
 Наиболее стабильная версия контент-пака находится в ветке main. На версиях VoxelCore до 0.31.2 может работать некорректно

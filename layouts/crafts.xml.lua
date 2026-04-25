@@ -14,8 +14,8 @@ local controller = {
     count = 0,
     components = {},
     component_page = 1,
-    component_pages = {}, -- array[ [type_of_page, data], ... ] <--> type_of_page = "text" or "craft"
-    component_history = {} -- array[ [comp.id or comp.tag, component_page, component_pages], ... ]
+    component_pages = {}, -- array[ [type_of_page, craft_group, data], ... ] <--> type_of_page = "text" or "craft"
+    component_history = {} -- array[ [comp.id or comp.tag, component_page], ... ]
 }
 
 local CRAFT_ROWS = 9
@@ -166,6 +166,7 @@ function controller:show_info(index)
         return
     end
     hide_info("component")
+
     document["craft_info_img"].src = item.icon(item.index(craft.results[1].id))
     document["craft_info_name"].text = gui.str(item.caption(item.index(craft.results[1].id)))
     document["craft_info_components"]:clear()
@@ -185,15 +186,15 @@ function controller:show_component_info(index)
     for _, comp in ipairs(controller.components) do
         for key, value in pairs(comp) do
             if tonumber(key) == index then
-                display_component_info(value)
+                display_component_info(value, true, nil)
             end
         end
     end
 end
 
-function display_component_info(name)
-    controller.component_page = 1
-    controller.component_pages = {}
+function display_component_info(name, save, page)
+    controller.component_page = page or 1
+    local component_pages = {}
     local is_item = string.find(name, ":")
 
     document["component_info"].visible = true
@@ -205,7 +206,7 @@ function display_component_info(name)
         local path = file.find("materials/" .. name .. ".txt")
         if path then
             local data = file.read(path)
-            table.insert(controller.component_pages, {"text", data})
+            table.insert(component_pages, {"text", data})
         end
     else
         document["component_info_img"].src = item.icon(item.index(name))
@@ -213,9 +214,20 @@ function display_component_info(name)
         local all_crafts = crafting.find_all_results(name) 
 
         for _, craft in ipairs(all_crafts) do
-            table.insert(controller.component_pages, {"craft", craft[1], craft[2]})
+            table.insert(component_pages, {"craft", craft[1], craft[2]})
         end
     end
+    controller.component_pages = component_pages
+    if save then
+        table.insert(controller.component_history, {name, controller.component_page})
+    end
+
+    if #controller.component_history < 2 then
+        document["component_go_back"].visible = false
+    else
+        document["component_go_back"].visible = true
+    end
+
     refresh_component_info()
 end
 
@@ -228,14 +240,19 @@ function refresh_component_info()
     end
 
     document["component_info_components"]:clear()
+    document["component_info_components"].visible = true
+
     local data = controller.component_pages[controller.component_page] or {}
     if data[1] == "text" then
-        document["component_info_components"]:add("<container size='300,200'><label pos='8,4' multiline='true' text-wrap='true'>" .. gui.str(data[2]) .."</label></container>")
+        document["component_info_components"]:add("<container size='300,200'><textbox id='component_info_description' size='284,196' pos='8,4' multiline='true' text-wrap='true'></textbox></container>")
+        document["component_info_description"].text = gui.str(data[2])
     elseif data[1] == "craft" then
         if data[2] ~= "primitive_crafts" then
             document["component_info_components"]:add("<container size='300,25'><label text-align='center' gravity='center-center' color='#8b8b8b'>" .. gui.str(data[2]) .."</label></container>")
         end
         display_components(data[3], 1000, "component_info_components")
+    else
+        document["component_info_components"].visible = false
     end
 end
 
@@ -248,12 +265,17 @@ function move(number)
         controller.component_page = #controller.component_pages
     end
 
+    controller.component_history[#controller.component_history][2] = controller.component_page
     refresh_component_info()
 end
 
 function hide_info(id)
     document[id .. "_info"].visible = false
     document[id .. "_info_components"]:clear()
+
+    if id == "component" then
+        controller.component_history = {}
+    end
 end
 
 function go_back()
@@ -263,6 +285,11 @@ function go_back()
         hud.open_inventory()
         hud.open_permanent("newgen:player_button")
     end
+end
+
+function component_go_back()
+    table.remove(controller.component_history)
+    display_component_info(controller.component_history[#controller.component_history][1], false, controller.component_history[#controller.component_history][2])
 end
 
 function get_items_count(invid, comp)
