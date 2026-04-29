@@ -3,8 +3,11 @@ tree1 = {}
 tree2 = {}
 spruce0 = {}
 spruce1 = {}
+spruce_snow0 = {}
+spruce_snow1 = {}
 dead_tree = {}
 dead_spruce_tree = {}
+dead_spruce_tree_snow = {}
 fallen_tree = {lowering=-1}
 fallen_spruce_tree = {lowering=-1}
 fallen_mossy_tree = {lowering=-1}

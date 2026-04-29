@@ -1,0 +1,32 @@
+@box from (0, -0.234375, 0.40625) to (1, 0.203125, 1.15625) origin (0.9375, -0.109375, 1.03125) rotate (0.13052619222, 0, 0, 0.991444861374) {
+    @part tags (south) texture "blocks:hay_roof" region (0.25, 0.890625, 0.5, 1)
+    @part tags (west) texture "blocks:hay_roof" region (0, 0.515625, 0.1875, 0.625)
+    @part tags (north) texture "blocks:hay_roof" region (0.25, 0.78125, 0.5, 0.890625)
+    @part tags (east) texture "blocks:hay_roof" region (0.59375, 0.546875, 0.40625, 0.65625)
+    @part tags (top) texture "blocks:hay_roof" region (0.1875, 0.203125, 0.4375, 0.390625)
+    @part tags (bottom) texture "blocks:hay_roof" region (0.1875, 0.203125, 0.4375, 0.390625)
+}
+@box from (-0.000625, -0.234375, -0.125) to (1.000625, 0.203125, 0.625) origin (0.9375, -0.109375, 0) rotate (-0.13052619222, 0, 0, 0.991444861374) {
+    @part tags (south) texture "blocks:hay_roof" region (0.5, 0.78125, 0.25, 0.890625)
+    @part tags (west) texture "blocks:hay_roof" region (0.1875, 0.515625, 0, 0.625)
+    @part tags (north) texture "blocks:hay_roof" region (0.5, 0.890625, 0.25, 1)
+    @part tags (east) texture "blocks:hay_roof" region (0.40625, 0.546875, 0.59375, 0.65625)
+    @part tags (top) texture "blocks:hay_roof" region (0.1875, 0.390625, 0.4375, 0.203125)
+    @part tags (bottom) texture "blocks:hay_roof" region (0.1875, 0.390625, 0.4375, 0.203125)
+}
+@box from (0.34375, 0.0625, -0.21875) to (0.65625, 0.3125, 1.15625) origin (0.59375, 0.0625, 0.71875) rotate (0.382683432365, 0, 0, 0.923879532511) {
+    @part tags (south) texture "blocks:hay_roof" region (0.40625, 0.484375, 0.484375, 0.546875)
+    @part tags (west) texture "blocks:hay_roof" region (0.40625, 0.71875, 0.75, 0.78125)
+    @part tags (north) texture "blocks:hay_roof" region (0, 0.453125, 0.078125, 0.515625)
+    @part tags (east) texture "blocks:hay_roof" region (0.75, 0.65625, 0.40625, 0.71875)
+    @part tags (top) texture "blocks:hay_roof" region (0.328125, 0.4375, 0.40625, 0.78125)
+    @part tags (bottom) texture "blocks:hay_roof" region (0.328125, 0.4375, 0.40625, 0.78125)
+}
+@box from (0.343125, 0.0625, -0.15625) to (0.656875, 0.3125, 1.21875) origin (0.59375, 0.0625, 0.28125) rotate (-0.382683432365, 0, 0, 0.923879532511) {
+    @part tags (south) texture "blocks:hay_roof" region (0.078125, 0.453125, 0, 0.515625)
+    @part tags (west) texture "blocks:hay_roof" region (0.75, 0.71875, 0.40625, 0.78125)
+    @part tags (north) texture "blocks:hay_roof" region (0.484375, 0.484375, 0.40625, 0.546875)
+    @part tags (east) texture "blocks:hay_roof" region (0.40625, 0.65625, 0.75, 0.71875)
+    @part tags (top) texture "blocks:hay_roof" region (0.328125, 0.78125, 0.40625, 0.4375)
+    @part tags (bottom) texture "blocks:hay_roof" region (0.328125, 0.78125, 0.40625, 0.4375)
+}

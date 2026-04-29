@@ -1,0 +1,12 @@
+{
+    "icon": "items:copper_pickaxe",
+    "uses": 67,
+    "newgen:tool": {
+        "type": "breaker",
+        "materials": {
+            "base:stone": {
+                "speed": 3.3
+            }
+        }
+    }
+}

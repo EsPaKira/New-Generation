@@ -50,10 +50,16 @@ ash=пепел
 bear meat=медвежье мясо
 bear summoning card=карта призыва медведя
 blackberry=черника
+bone needle=костяная игла
+bone=кость
+clay tile=глиняный черепок
 coal=каменный уголь
 copper axe head=медная голова топора
 copper axe=медный топор
 copper ingot=самородок меди
+copper pickaxe head=медная голова кирки
+copper pickaxe=медная кирка
+cowberry=брусника
 flax fiber=льняное волокно
 fur cape=меховая накидка
 linen pants=льняные штаны
@@ -66,19 +72,23 @@ stick=палка
 stindle=веретено
 stone axe head=каменная голова топора
 stone axe=каменный топор
+stone blade=каменное лезвие
 stone hammer head=каменная головка молота
 stone hammer=каменный молот
+stone knife=каменный нож
 straw hat=соломенная шляпа
 unknown alloy=неизвестный сплав
+wooden hammer=деревянный молот
 
 
 # Описание предметов
 
 Can make something on a workbench=Можно что-то сделать на верстаке
 Fuel=Топливо
-Can be melted=Моет быть расплавлено
+Can be melted=Может быть расплавлено
 Can be ignited with torch=Можно разжечь факелом
 Can ignit the oven=Может разжечь печь
+Use to change the shape of the roof=Используй, чтобы изменить вид крыши
 
 
 # Материалы(нужны для крафтов)
@@ -101,6 +111,7 @@ chalk=мел
 chanterelles=лисички
 clay oven=глиняная печь
 clover=клевер
+cowberry bush=куст брусники
 daisies=ромашки
 dandelions=одуванчики
 dead bush=мёртвый куст
@@ -122,6 +133,7 @@ granite stone=камень гранита
 granite=гранит
 gypsum coal=уголь в гипсе
 gypsum=гипс
+hay_roof=соломенная крыша
 hay=сено
 knapweeds=васильки
 lily=ландыш
@@ -140,6 +152,8 @@ sailcloth=парусина
 sandstone coal=уголь в песчанике
 sandstone stone=камень песчаника
 sandstone=песчаник
+snow pile=сугроб
+snow=снег
 spruce leaves=хвоя
 spruce=сосновое бревно
 pot=горшок
