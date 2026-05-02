@@ -1,0 +1,24 @@
+[
+    {
+        "item": "newgen:coal",
+        "min": 3,
+        "max": 11,
+        "max-slots": 3
+    },
+    {
+        "item": "newgen:red_brick",
+        "min": 0,
+        "max": 6,
+        "max-slots": 2
+    },
+    {
+        "item": "newgen:linen_shirt",
+        "min": 0,
+        "max": 1
+    },
+    {
+        "item": "newgen:linen_pants",
+        "min": 0,
+        "max": 1
+    }
+]

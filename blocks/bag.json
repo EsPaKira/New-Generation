@@ -6,5 +6,16 @@
     "light-passing": true,
     "ui-layout": "newgen:bag",
     "inventory-size": 8,
+    "newgen:have-loot": true,
+    "state-based": {
+        "offset": 0,
+        "bits": 4,
+        "variants": [
+            {
+                "model": "custom",
+                "model-name": "bag"
+            }
+        ]
+    },
     "base:durability": 4.0
 }

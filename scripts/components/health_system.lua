@@ -3,7 +3,7 @@
 -- https://github.com/MihailRis/base_survival
 
 local gamemodes = require "gamemodes"
-local base_util = require "base:util"
+local DI = require "drop_inventory"
 local characters = require "characters/characters_main"
 
 
@@ -34,20 +34,6 @@ function set_health(value)
     end
 end
 
-local function drop_inventory(invid)
-    local pos = entity.transform:get_pos()
-    local size = inventory.size(invid)
-    for i = 0, size - 1 do
-        local itemid, count = inventory.get(invid, i)
-        if itemid ~= 0 then
-            local data = inventory.get_all_data(invid, i)
-            local drop = base_util.drop(pos, itemid, count, data)
-            drop.rigidbody:set_vel(vec3.spherical_rand(8.0))
-            inventory.set(invid, i, 0)
-        end
-    end
-end
-
 function die()
     local tsf = entity.transform
     events.emit("newgen:death", tsf:get_pos())
@@ -64,7 +50,7 @@ function die()
 
     events.emit("newgen:player_death", entity:get_player(), true)
     if not rules.get("keep-inventory") then
-        drop_inventory(player.get_inventory(pid))
+        DI.drop_inventory(player.get_inventory(pid), entity.transform:get_pos(), 8)
     end
     entity:despawn()
     player.set_entity(pid, 0)

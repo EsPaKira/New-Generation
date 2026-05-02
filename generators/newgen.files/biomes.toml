@@ -100,7 +100,7 @@ layers = [
     {below-sea-level=false, height=1, block="newgen:snow"},
     {height=7, block="base:dirt"},
     {height=3, block="newgen:red_clay"},
-    {height=-1, block="newgen:gabbro"}
+    {height=-1, block="newgen:peridotite"}
 ]
 sea-layers = [
     {height=1, block="base:ice"},

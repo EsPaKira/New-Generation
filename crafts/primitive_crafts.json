@@ -61,6 +61,15 @@
     },
     {
         "components": [
+            {"tag": "wood", "count": 1},
+            {"id": "newgen:stick", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:wooden_hammer", "count": 1}
+        ]
+    },
+    {
+        "components": [
             {"tag": "wood", "count": 2},
             {"id": "newgen:stone_axe", "count": 1}
         ],
@@ -167,6 +176,14 @@
         ],
         "results": [
             {"id": "newgen:hay.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:hay.item", "count": 1}
+        ],
+        "results": [
+            {"id": "hay_roof", "count": 1}
         ]
     }
 ]

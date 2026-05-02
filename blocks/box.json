@@ -10,5 +10,23 @@
     "material": "base:wood",
     "ui-layout": "newgen:box",
     "inventory-size": 18,
+    "newgen:have-loot": true,
+    "state-based": {
+        "offset": 0,
+        "bits": 4,
+        "variants": [
+            {
+                "model": "block",
+                "texture-faces": [
+                    "box_side",
+                    "box_side",
+                    "box",
+                    "box",
+                    "box_side",
+                    "box_side"
+                ]
+            }
+        ]
+    },
     "base:durability": 4.7
 }

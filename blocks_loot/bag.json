@@ -1,0 +1,19 @@
+[
+    {
+        "item": "newgen:flax_fiber",
+        "min": 2,
+        "max": 8,
+        "max-slots": 3
+    },
+    {
+        "item": "newgen:stindle",
+        "min": 0,
+        "max": 1
+    },
+    {
+        "item": "newgen:copper_ingot",
+        "min": 1,
+        "max": 3,
+        "max-slots": 2
+    }
+]

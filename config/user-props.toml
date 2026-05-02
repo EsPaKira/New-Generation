@@ -3,3 +3,4 @@
 "newgen:equipment" = {}
 "newgen:material" = {}
 "newgen:craft-material" = ""
+"newgen:have-loot" = boolean
