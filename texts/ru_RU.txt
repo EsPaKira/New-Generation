@@ -44,6 +44,11 @@ Craft=Создать
 Research=Исследовать
 
 
+# Чат
+
+New spawnpoint at=Новая точка спавна на
+
+
 # Предметы
 
 ash=пепел
@@ -89,6 +94,8 @@ Can be melted=Может быть расплавлено
 Can be ignited with torch=Можно разжечь факелом
 Can ignit the oven=Может разжечь печь
 Use to change the shape of the roof=Используй, чтобы изменить вид крыши
+It can be slept on=На нём можно спать
+Saves spawnpoint=Сохраняет точку спавна
 
 
 # Материалы(нужны для крафтов)
@@ -156,6 +163,7 @@ snow pile=сугроб
 snow=снег
 spruce leaves=хвоя
 spruce=сосновое бревно
+straw bedding=соломенный настил
 pot=горшок
 white mushrooms=белые грибы
 workbench=верстак

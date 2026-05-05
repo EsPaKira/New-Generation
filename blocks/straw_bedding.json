@@ -1,0 +1,9 @@
+{
+    "model": "custom",
+    "model-name": "straw_bedding",
+    "size": [1, 1, 2],
+    "hitbox": [0, 0, 0, 1, 0.1875, 2],
+    "material": "base:grass",
+    "rotation": "pane",
+    "base:durability": 4
+}

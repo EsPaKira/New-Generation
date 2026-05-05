@@ -1,0 +1,8 @@
+@box from (0, 0, 0) to (1, 0.1875, 2) origin (0.0625, 0, 1.9375) {
+    @part tags (south) texture "blocks:straw_bedding" region (0.75, 0.859375, 0.5, 0.90625)
+    @part tags (west) texture "blocks:straw_bedding" region (0.5, 0.453125, 0, 0.5)
+    @part tags (north) texture "blocks:straw_bedding" region (0.75, 0.90625, 0.5, 0.953125)
+    @part tags (east) texture "blocks:straw_bedding" region (0.5, 0.953125, 1, 1)
+    @part tags (top) texture "blocks:straw_bedding" region (0, 1, 0.25, 0.5)
+    @part tags (bottom) texture "blocks:straw_bedding" region (0.25, 1, 0.5, 0.5)
+}

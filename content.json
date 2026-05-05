@@ -63,7 +63,8 @@
     "cowberry_bush",
     "hay_roof",
     "snow",
-    "snow_pile"
+    "snow_pile",
+    "straw_bedding"
   ],
   "items": [
     "fur_cape",
@@ -108,7 +109,8 @@
     "stone_blade",
     "stone_knife",
     "wooden_hammer",
-    "bone_needle"
+    "bone_needle",
+    "straw_bedding.item"
   ],
   "entities": [
     "base:player",
