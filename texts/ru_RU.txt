@@ -102,6 +102,9 @@ Saves spawnpoint=Сохраняет точку спавна
 
 material=материал
 pebble=камушек
+Any logs.=Любые брёвна.
+Pebbles can be found on the ground. It also drops from ore blocks.=Камни могут быть найдены на поверхности. Так же они выпадают из блоков руды.
+Almost all stone blocks.=Почти все блоки камня
 
 
 # Блоки

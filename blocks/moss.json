@@ -15,5 +15,5 @@
     "obstacle": false,
     "sky-light-passing": true,
     "light-passing": true,
-    "base:durability": 1.0
+    "base:durability": 0.5
 }

@@ -18,6 +18,7 @@
         "gui/left_arrow",
         "gui/wood",
         "gui/pebble",
+        "gui/stone",
         "gui/clay_oven",
         "gui/fire",
         "gui/fire_active",

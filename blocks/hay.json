@@ -9,5 +9,5 @@
     ],
     "material": "base:grass",
     "rotation": "pipe",
-    "base:durability": 3
+    "base:durability": 1.5
 }

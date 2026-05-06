@@ -110,7 +110,14 @@
     "stone_knife",
     "wooden_hammer",
     "bone_needle",
-    "straw_bedding.item"
+    "straw_bedding.item",
+    "base:bazalt.item",
+    "granite.item",
+    "peridotite.item",
+    "diorite.item",
+    "dolomite.item",
+    "gabbro.item",
+    "marble.item"
   ],
   "entities": [
     "base:player",

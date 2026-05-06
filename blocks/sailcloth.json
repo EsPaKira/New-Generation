@@ -1,5 +1,5 @@
 {
     "texture": "sailcloth",
     "material": "base:carpet",
-    "base:durability": 4.0
+    "base:durability": 1.5
 }

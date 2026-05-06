@@ -7,5 +7,5 @@
     "obstacle": false,
     "grounded": true,
     "hitbox": [0.0625, 0, 0.0625, 0.875, 2.875, 0.875],
-    "base:durability": 3.0
+    "base:durability": 1.5
 }

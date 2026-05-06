@@ -4,6 +4,7 @@
 
 local gamemodes = require "gamemodes"
 local survival_ui = require "survival_ui"
+local weather = require "weather"
 
 local death_ambient
 local isdead = false
@@ -12,6 +13,7 @@ local health_effect
 local hit_timer = 0
 
 function on_hud_open()
+    weather.start()
     health_effect = gfx.posteffects.index("newgen:death")
 
     events.on("newgen:gamemodes.set", function(playerid, name)

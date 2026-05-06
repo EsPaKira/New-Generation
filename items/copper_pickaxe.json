@@ -1,6 +1,6 @@
 {
     "icon": "items:copper_pickaxe",
-    "uses": 67,
+    "uses": 167,
     "newgen:tool": {
         "type": "breaker",
         "materials": {

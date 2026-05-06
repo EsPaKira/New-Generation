@@ -7,6 +7,7 @@ local DI = require "drop_inventory"
 local gamemodes = require "gamemodes"
 local world_data = require "world_data"
 local furnaces = require "furnaces"
+local weather = require "weather"
 local characters = require "characters/characters_main"
 
 local breaking_blocks = {}
@@ -68,6 +69,7 @@ end
 function on_world_tick() 
     -- tick newgen modules
     furnaces.tick()
+    weather.tick()
 end
 
 function on_world_quit()

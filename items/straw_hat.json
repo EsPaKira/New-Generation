@@ -2,7 +2,7 @@
     "icon": "items:straw_hat",
     "stack-size": 1,
     "newgen:equipment": {
-        "slot": "head",
+        "slot": "helmet",
         "protections": {
             "heat_preservation": 0,
             "heat_reflection": 1,

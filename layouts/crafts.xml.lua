@@ -98,7 +98,7 @@ end
 
 local function refresh_components(craft)
     for i, comp in ipairs(craft.components) do
-        document["craft_component_text_"..i].text = get_items_count(controller.invid, comp) .. "/" .. comp.count
+        document["craft_component_text_" .. i].text = get_items_count(controller.invid, comp) .. "/" .. comp.count
     end
 end
 
@@ -165,6 +165,7 @@ function controller:show_info(index)
     if not craft then
         return
     end
+    controller.count = 0
     hide_info("component")
 
     document["craft_info_img"].src = item.icon(item.index(craft.results[1].id))

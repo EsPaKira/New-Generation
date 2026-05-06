@@ -4,6 +4,8 @@ local module = {}
 
 
 function module.drop_inventory(invid, pos, power)
+    if invid == 0 then return end
+
     local size = inventory.size(invid)
     for i = 0, size - 1 do
         local itemid, count = inventory.get(invid, i)
