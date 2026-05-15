@@ -1,0 +1,45 @@
+{
+    "components": [
+        "core:pathfinding",
+        {
+            "name": "core:mob",
+            "args": {
+                "jump_force": 8.0,
+                "movement_speed": 130
+            }
+        },
+        {
+            "name": "newgen:characteristics_manager",
+            "args": {
+                "health": 6,
+                "max_health": 6
+            }
+        },
+        {
+            "name": "newgen:loot",
+            "args": {
+                "loot_table": [
+                    {   
+                        "item": "newgen:fur_cape",
+                        "min": 1,
+                        "max": 2
+                    },
+                    {
+                        "item": "newgen:bear_meat",
+                        "min": 2,
+                        "max": 5
+                    }
+                ]
+                    
+            }
+        },
+        "newgen:swimming_system",
+        "newgen:health_system",
+        "newgen:oxygen_system",
+        "newgen:weaver"
+    ],
+    "hitbox": [1, 0.7, 1],
+    "skeleton-name": "newgen:weaver",
+    "step-height": 1,
+    "solid": true
+}
