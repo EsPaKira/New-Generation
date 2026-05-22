@@ -83,6 +83,7 @@ stone hammer=каменный молот
 stone knife=каменный нож
 straw hat=соломенная шляпа
 unknown alloy=неизвестный сплав
+weaver summoning card=карта призыва ткача
 wooden hammer=деревянный молот
 
 
@@ -93,9 +94,14 @@ Fuel=Топливо
 Can be melted=Может быть расплавлено
 Can be ignited with torch=Можно разжечь факелом
 Can ignit the oven=Может разжечь печь
-Use to change the shape of the roof=Используй, чтобы изменить вид крыши
+Use to change the shape of the roof\n1 crush damage=Используй, чтобы изменить вид крыши\n1 дробящего урона
 It can be slept on=На нём можно спать
 Saves spawnpoint=Сохраняет точку спавна
+3 slashing damage=3 рубящего урона
+2 slashing damage=2 рубящего урона
+3 piercing damage=3 колющего урона
+2 piercing damage=2 колющего урона
+2 crush damage=2 дробящего урона
 
 
 # Материалы(нужны для крафтов)
@@ -143,7 +149,7 @@ granite stone=камень гранита
 granite=гранит
 gypsum coal=уголь в гипсе
 gypsum=гипс
-hay_roof=соломенная крыша
+hay roof=соломенная крыша
 hay=сено
 knapweeds=васильки
 lily=ландыш
@@ -168,6 +174,8 @@ spruce leaves=хвоя
 spruce=сосновое бревно
 straw bedding=соломенный настил
 pot=горшок
+weavers cocoon=кокон ткачей
+web=паутина
 white mushrooms=белые грибы
 workbench=верстак
 

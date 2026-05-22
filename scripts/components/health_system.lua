@@ -60,22 +60,30 @@ function heal(points)
     set_health(math.min(health + points, max_health))
 end
 
-function damage(points)
+local function calculate_damage(points, type)
+    if type == "falling" then return end
+    local protection = c_manager["get_" .. type .. "_damage_protection"]()
+    return math.max(0, math.floor(points - protection))
+end
+
+function damage(points, type)
+    if points == 0 then return end
     local pid = entity:get_player()
     if pid and gamemodes.get(pid).current == "creative" then
         return
     end
-    if points > 0 and pid then
+    if pid then
         events.emit("newgen:player_damage", pid, points)
     end
-    set_health(health - points)
+    local end_damage = calculate_damage(points, type)
+    set_health(health - end_damage)
     if health == 0 then
         die()
-        characters.set_field(pid, characters.get_choosen_character(pid), "stats", "health", characters.get_field(pid, characters.get_choosen_character(pid), "stats", "max_health"))
+        characters.set_field(pid, characters.get_choosen_character(pid), "stats", "health", characters.get_field(pid, characters.get_choosen_character(pid), "stats", "max_health")) -- set health after death
     end
 end
 
 function on_grounded(force)
     local dmg = math.floor((force - 12) * 1.1)
-    damage(math.max(0, math.floor(dmg)))
+    damage(math.max(0, math.floor(dmg)), "falling")
 end

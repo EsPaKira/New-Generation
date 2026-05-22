@@ -31,3 +31,4 @@ diorite_big_rock = {}
 gabbro_little_rock = {}
 gabbro_big_rock = {}
 camp = {}
+weavers_cocoon = {lowering=4}

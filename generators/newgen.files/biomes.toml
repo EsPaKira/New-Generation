@@ -38,7 +38,8 @@ structures = [
     {name="fallen_mossy_tree", weight=0.03},
     {name="dead_tree", weight=0.02},
     {name="ruins0", weight=0.01},
-    {name="camp", weight=0.01}
+    {name="camp", weight=0.01},
+    {name="weavers_cocoon", weight=0.015}
 ]
 
 
@@ -86,7 +87,8 @@ structures = [
     {name="dead_spruce_tree", weight=0.02},
     {name="gabbro_big_rock", weight=0.02},
     {name="ruins0", weight=0.01},
-    {name="camp", weight=0.01}
+    {name="camp", weight=0.01},
+    {name="weavers_cocoon", weight=0.015}
 ]
 
 
@@ -179,7 +181,8 @@ structures = [
     {name="limestone_coal1", weight=1},
     {name="limestone_malachite_ore", weight=0.3},
     {name="marble_little_rock", weight=0.1},
-    {name="marble_big_rock", weight=0.02}
+    {name="marble_big_rock", weight=0.02},
+    {name="weavers_cocoon", weight=0.015}
 ]
 
 
@@ -224,7 +227,8 @@ structures = [
     {name="fallen_mossy_tree", weight=0.03},
     {name="dead_tree", weight=0.02},
     {name="ruins0", weight=0.01},
-    {name="camp", weight=0.01}
+    {name="camp", weight=0.01},
+    {name="weavers_cocoon", weight=0.015}
 ]
 
 [swamp]

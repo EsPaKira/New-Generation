@@ -7,11 +7,13 @@ local controller = {
 local SKILLS_IN_THIS_TREE = {"accuracy", "agility", "bigger_lungs", "body_skill", "survivability"}
 
 function go_back()
+    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
     hud.close("newgen:body_tree")
     document["skill_info"].visible = false
 end
 
 function toggle_skill_info(skill_name)
+    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
     if skill_name == controller.skill.id and document["skill_info"].visible then
         document["skill_info"].visible = false
         return
@@ -29,6 +31,7 @@ function toggle_skill_info(skill_name)
 end
 
 function close_skill_info()
+    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
     document["skill_info"].visible = false
 end
 
@@ -38,7 +41,10 @@ function research_skill()
     document["skill_name"].text = gui.str(controller.skill.name) .. "  " .. character_skill_level .. "/" .. controller.skill["max-level"]
 
     if result then
+        audio.play_sound_2d("ui/upgrade", 1, 1, "ui")
         update_ui(controller.skill.id, skill["active-path"])
+    else
+        audio.play_sound_2d("ui/button_click", 1, 1, "ui")
     end
 end
 

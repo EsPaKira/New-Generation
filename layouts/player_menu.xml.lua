@@ -9,6 +9,7 @@ local controller = {
 }
 
 function go_back()
+    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
     hud.close("newgen:player_menu")
     close_c_panel()
     close_equipment_menu()
@@ -20,7 +21,7 @@ function open_c_panel()
         close_c_panel()
         return
     end
-
+    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
     document["c_panel"].visible = true
     document["close_c_panel"].visible = true
     local stats = characters.get_group(hud.get_player(), controller.choosen_character, "stats")
@@ -34,11 +35,13 @@ function open_c_panel()
 end
 
 function close_c_panel()
+    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
     document["c_panel"].visible = false
     document["close_c_panel"].visible = false
 end
 
 function open_equipment_menu(slot)
+    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
     choose_equipment_slot(slot)
     close_c_panel()
     document["first_menu"].visible = false
@@ -46,12 +49,14 @@ function open_equipment_menu(slot)
 end
 
 function close_equipment_menu()
+    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
     document["equipment_menu"].visible = false
     document["equipment_list"].visible = false
     document["first_menu"].visible = true
 end
 
 function choose_equipment_slot(new_slot)
+    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
     if new_slot == controller.choosen_slot then
         open_equipment_list()
         return
@@ -68,6 +73,7 @@ function choose_equipment_slot(new_slot)
 end
 
 function choose_equipment_xml(new_equipment)
+    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
     if new_equipment == controller.choosen_equipment then
         return
     end
@@ -153,6 +159,7 @@ function on_open()
 end
 
 function equipment_button(action)
+    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
     local equipped_item = equipment.get_equipment_by_slot(hud.get_player(), controller.choosen_character, controller.choosen_slot)
     if action == "equip" then
         if equipped_item ~= 0 then
@@ -201,5 +208,6 @@ function controller:choose_equipment(id)
 end
 
 function open_tree(tree)
+    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
     hud.open_permanent("newgen:" .. tree .. "_tree")
 end

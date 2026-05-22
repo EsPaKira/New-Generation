@@ -1,4 +1,10 @@
 {
     "icon": "items:wooden_hammer",
-    "description": "Use to change the shape of the roof"
+    "newgen:tool": {
+        "type": "weapon",
+        "damage": [
+            {"type": "crush", "count": 1}
+        ]
+    },
+    "description": "Use to change the shape of the roof\n1 crush damage"
 }

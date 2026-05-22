@@ -135,11 +135,12 @@ function on_open(craft_name)
         end
     end
     refresh_crafts(pinvid)
-    hide_info("craft")
-    hide_info("component")
+    hide_info("craft", true)
+    hide_info("component", true)
 end
 
 function craft()
+    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
     local pid = hud.get_player()
     local pinvid = player.get_inventory(pid)
     local craft = controller.shown_crafts[controller.item_index + 1]
@@ -163,6 +164,7 @@ end
 function controller:show_info(index)
     local craft = self.shown_crafts[index + 1]
     if not craft then
+        audio.play_sound_2d("ui/button_click", 1, 1, "ui")
         return
     end
     controller.count = 0
@@ -182,6 +184,7 @@ function controller:show_info(index)
 end
 
 function controller:show_component_info(index)
+    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
     controller.component_page = 1
 
     for _, comp in ipairs(controller.components) do
@@ -258,6 +261,7 @@ function refresh_component_info()
 end
 
 function move(number)
+    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
     controller.component_page = controller.component_page + number
 
     if controller.component_page > #controller.component_pages then
@@ -270,7 +274,10 @@ function move(number)
     refresh_component_info()
 end
 
-function hide_info(id)
+function hide_info(id, should_play_sound)
+    if not should_play_sound then
+        audio.play_sound_2d("ui/button_click", 1, 1, "ui")
+    end
     document[id .. "_info"].visible = false
     document[id .. "_info_components"]:clear()
 
@@ -280,6 +287,7 @@ function hide_info(id)
 end
 
 function go_back()
+    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
     hud.close("newgen:crafts")
 
     if controller.craft_name == 0 then
@@ -289,6 +297,7 @@ function go_back()
 end
 
 function component_go_back()
+    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
     table.remove(controller.component_history)
     display_component_info(controller.component_history[#controller.component_history][1], false, controller.component_history[#controller.component_history][2])
 end
