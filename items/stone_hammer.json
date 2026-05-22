@@ -7,6 +7,10 @@
             "base:stone": {
                 "speed": 3
             }
-        }
-    }
+        },
+        "damage": [
+            {"type": "crush", "count": 2}
+        ]
+    },
+    "description": "2 crush damage"
 }

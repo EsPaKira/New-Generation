@@ -1,0 +1,24 @@
+@box from (-0.000625, -0.046875, 0.484375) to (1.000625, 0.390625, 1.234375) origin (0.9375, 0.078125, 1.109375) rotate (0.258819045103, 0, 0, 0.965925826289) {
+    @part tags (south) texture "blocks:hay_roof" region (0.25, 0.890625, 0.5, 1)
+    @part tags (west) texture "blocks:hay_roof" region (0, 0.515625, 0.1875, 0.625)
+    @part tags (north) texture "blocks:hay_roof" region (0.25, 0.78125, 0.5, 0.890625)
+    @part tags (east) texture "blocks:hay_roof" region (0.59375, 0.546875, 0.40625, 0.65625)
+    @part tags (top) texture "blocks:hay_roof" region (0.1875, 0.203125, 0.4375, 0.390625)
+    @part tags (bottom) texture "blocks:hay_roof" region (0.1875, 0.203125, 0.4375, 0.390625)
+}
+@box from (0, 0.484375, -0.046875) to (1, 0.921875, 0.703125) origin (0.9375, 0.609375, 0.578125) rotate (0.216439613938, 0, 0, 0.97629600712) {
+    @part tags (south) texture "blocks:hay_roof" region (0.5, 0.890625, 0.25, 1)
+    @part tags (west) texture "blocks:hay_roof" region (0.1875, 0.515625, 0, 0.625)
+    @part tags (north) texture "blocks:hay_roof" region (0.5, 0.78125, 0.25, 0.890625)
+    @part tags (east) texture "blocks:hay_roof" region (0.40625, 0.546875, 0.59375, 0.65625)
+    @part tags (top) texture "blocks:hay_roof" region (0.4375, 0.390625, 0.1875, 0.203125)
+    @part tags (bottom) texture "blocks:hay_roof" region (0.1875, 0.1875, 0.4375, 0.375)
+}
+@box from (0.34375, 0.0625, -0.21875) to (0.65625, 0.3125, 1.15625) origin (0.59375, 0.0625, 0.71875) rotate (0.382683432365, 0, 0, 0.923879532511) {
+    @part tags (south) texture "blocks:hay_roof" region (0.40625, 0.484375, 0.484375, 0.546875)
+    @part tags (west) texture "blocks:hay_roof" region (0.40625, 0.71875, 0.75, 0.78125)
+    @part tags (north) texture "blocks:hay_roof" region (0, 0.453125, 0.078125, 0.515625)
+    @part tags (east) texture "blocks:hay_roof" region (0.75, 0.65625, 0.40625, 0.71875)
+    @part tags (top) texture "blocks:hay_roof" region (0.328125, 0.4375, 0.40625, 0.78125)
+    @part tags (bottom) texture "blocks:hay_roof" region (0.328125, 0.4375, 0.40625, 0.78125)
+}

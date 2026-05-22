@@ -1,0 +1,8 @@
+{
+    "model": "custom",
+    "model-name": "weavers_cocoon",
+    "material": "base:carpet",
+    "size": [1, 2, 1],
+    "hitbox": [0, 0, 0, 1, 2, 1],
+    "rotation": "pane"
+}

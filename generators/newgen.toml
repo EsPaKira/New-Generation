@@ -1,5 +1,6 @@
 # 1 - temperature
 # 2 - humidity
+# 3 - height
 biome-parameters = 3
 sea-level = 64
 heightmap-inputs = [1]

@@ -1,6 +1,6 @@
 {
     "texture": "red_clay",
-    "base:durability": 5,
+    "base:durability": 4,
     "base:loot": [
         {
             "item": "newgen:red_clay_chunk",

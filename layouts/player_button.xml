@@ -1,4 +1,4 @@
-<container size="108" position-func="gui.get_viewport()[1]/2-318,gui.get_viewport()[2]/2-110">
+<container size="52,108" position-func="gui.get_viewport()[1]/2-318,gui.get_viewport()[2]/2-110">
     <container size="52" hover-color="100" color="#0000009a" onclick="open_player_menu()">
         <image size="52" src="gui/head" />
     </container>

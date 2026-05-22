@@ -1,0 +1,16 @@
+{
+    "icon": "items:copper_pickaxe",
+    "uses": 167,
+    "newgen:tool": {
+        "type": "breaker",
+        "materials": {
+            "base:stone": {
+                "speed": 3.3
+            }
+        },
+        "damage": [
+            {"type": "piercing", "count": 3}
+        ]
+    },
+    "description": "3 piercing damage"
+}

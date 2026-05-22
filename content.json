@@ -1,7 +1,8 @@
 {
   "entities": [
     "base:player",
-    "bear"
+    "bear",
+    "weaver"
   ],
   "items": [
     "fur_cape",
@@ -37,7 +38,25 @@
     "gneiss_stone.item",
     "granite_stone.item",
     "marble_stone.item",
-    "peridotite_stone.item"
+    "peridotite_stone.item",
+    "cowberry",
+    "bone",
+    "clay_tile",
+    "copper_pickaxe",
+    "copper_pickaxe_head",
+    "stone_blade",
+    "stone_knife",
+    "wooden_hammer",
+    "bone_needle",
+    "straw_bedding.item",
+    "base:bazalt.item",
+    "granite.item",
+    "peridotite.item",
+    "diorite.item",
+    "dolomite.item",
+    "gabbro.item",
+    "marble.item",
+    "weaver_summoning_card"
   ],
   "blocks": [
     "bush",
@@ -99,6 +118,13 @@
     "malachite_stone",
     "knapweeds",
     "hay",
-    "flax"
+    "flax",
+    "cowberry_bush",
+    "hay_roof",
+    "snow",
+    "snow_pile",
+    "straw_bedding",
+    "weavers_cocoon",
+    "web"
   ]
 }

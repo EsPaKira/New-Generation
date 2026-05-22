@@ -11,7 +11,9 @@ end
 
 function module.tick() 
     for i, f in ipairs(furnaces.FURNACES) do 
-        -- need to check the existence of inventory. There may be an error
+        local finvid = inventory.get_block(f[1], f[2], f[3])
+        if finvid == 0 then goto continue end
+
         local fuel_itemid, fuel_count = inventory.get(f[5], 1)
 
         -- burns fuel
@@ -47,10 +49,11 @@ function module.tick()
         -- remove furnace from furnaces if all processes are completed
         if f[4][1] <= 0 and f[4][2] <= 100 and f[4][3] <= 100 then
             block.set_variant(f[1], f[2], f[3], 0)
-            furnaces.remove(f[5])
+            module.remove(f[5])
             events.emit("newgen:furnace.remove")
         end
         events.emit("newgen:furnace.update", math.round(f[4][2], 1), math.round(f[4][3], 1), {f[1], f[2], f[3]}, f[5])
+        ::continue::
     end
 end
 

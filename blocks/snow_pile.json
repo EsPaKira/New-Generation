@@ -1,0 +1,19 @@
+{
+    "material": "base:snow",
+    "texture-faces": [
+        "snow_pile_side",
+        "snow_pile_side",
+        "snow",
+        "snow",
+        "snow_pile_side",
+        "snow_pile_side"
+    ],
+    "model": "aabb",
+    "hitbox": [0, 0, 0, 1, 0.1875, 1],
+    "grounded": true,
+    "replaceable": true,
+    "obstacle": false,
+    "sky-light-passing": true,
+    "light-passing": true,
+    "base:durability": 1.0
+}

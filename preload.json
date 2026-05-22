@@ -18,6 +18,7 @@
         "gui/left_arrow",
         "gui/wood",
         "gui/pebble",
+        "gui/stone",
         "gui/clay_oven",
         "gui/fire",
         "gui/fire_active",
@@ -40,6 +41,15 @@
         "gui/health_bar",
         "gui/stamina_bar",
         "gui/oxygen_bar"
+    ],
+    "sounds": [
+        "ui/button_click",
+        "ui/upgrade",
+        "entities/spider",
+        "entities/spider_damage",
+        "entities/spider_attack",
+        "entities/bear_breath",
+        "entities/damage"
     ],
     "post-effects": [
         "death"

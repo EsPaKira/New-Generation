@@ -4,6 +4,7 @@
 
 local gamemodes = require "gamemodes"
 local survival_ui = require "survival_ui"
+local weather = require "weather"
 
 local death_ambient
 local isdead = false
@@ -12,6 +13,7 @@ local health_effect
 local hit_timer = 0
 
 function on_hud_open()
+    weather.start()
     health_effect = gfx.posteffects.index("newgen:death")
 
     events.on("newgen:gamemodes.set", function(playerid, name)
@@ -131,8 +133,10 @@ function on_hud_open()
         if pid ~= hud.get_player() then
             return
         end
-        local x, y, z = player.get_rot(pid)
-        player.set_rot(pid, x, y, math.random() < 0.5 and 13 or -13)
+        local rx, ry, _ = player.get_rot(pid)
+        local x, y, z = player.get_pos(pid)
+        audio.play_sound("entities/damage", x, y, z, random.random(), 1)
+        player.set_rot(pid, rx, ry, math.random() < 0.5 and 13 or -13)
     end)
 
     local prev_hand_controller = hud.hand_controller or hud.default_hand_controller

@@ -44,16 +44,27 @@ Craft=Создать
 Research=Исследовать
 
 
+# Чат
+
+New spawnpoint at=Новая точка спавна на
+
+
 # Предметы
 
 ash=пепел
 bear meat=медвежье мясо
 bear summoning card=карта призыва медведя
 blackberry=черника
+bone needle=костяная игла
+bone=кость
+clay tile=глиняный черепок
 coal=каменный уголь
 copper axe head=медная голова топора
 copper axe=медный топор
 copper ingot=самородок меди
+copper pickaxe head=медная голова кирки
+copper pickaxe=медная кирка
+cowberry=брусника
 flax fiber=льняное волокно
 fur cape=меховая накидка
 linen pants=льняные штаны
@@ -66,25 +77,40 @@ stick=палка
 stindle=веретено
 stone axe head=каменная голова топора
 stone axe=каменный топор
+stone blade=каменное лезвие
 stone hammer head=каменная головка молота
 stone hammer=каменный молот
+stone knife=каменный нож
 straw hat=соломенная шляпа
 unknown alloy=неизвестный сплав
+weaver summoning card=карта призыва ткача
+wooden hammer=деревянный молот
 
 
 # Описание предметов
 
 Can make something on a workbench=Можно что-то сделать на верстаке
 Fuel=Топливо
-Can be melted=Моет быть расплавлено
+Can be melted=Может быть расплавлено
 Can be ignited with torch=Можно разжечь факелом
 Can ignit the oven=Может разжечь печь
+Use to change the shape of the roof\n1 crush damage=Используй, чтобы изменить вид крыши\n1 дробящего урона
+It can be slept on=На нём можно спать
+Saves spawnpoint=Сохраняет точку спавна
+3 slashing damage=3 рубящего урона
+2 slashing damage=2 рубящего урона
+3 piercing damage=3 колющего урона
+2 piercing damage=2 колющего урона
+2 crush damage=2 дробящего урона
 
 
 # Материалы(нужны для крафтов)
 
 material=материал
 pebble=камушек
+Any logs.=Любые брёвна.
+Pebbles can be found on the ground. It also drops from ore blocks.=Камни могут быть найдены на поверхности. Так же они выпадают из блоков руды.
+Almost all stone blocks.=Почти все блоки камня
 
 
 # Блоки
@@ -101,6 +127,7 @@ chalk=мел
 chanterelles=лисички
 clay oven=глиняная печь
 clover=клевер
+cowberry bush=куст брусники
 daisies=ромашки
 dandelions=одуванчики
 dead bush=мёртвый куст
@@ -122,6 +149,7 @@ granite stone=камень гранита
 granite=гранит
 gypsum coal=уголь в гипсе
 gypsum=гипс
+hay roof=соломенная крыша
 hay=сено
 knapweeds=васильки
 lily=ландыш
@@ -140,9 +168,14 @@ sailcloth=парусина
 sandstone coal=уголь в песчанике
 sandstone stone=камень песчаника
 sandstone=песчаник
+snow pile=сугроб
+snow=снег
 spruce leaves=хвоя
 spruce=сосновое бревно
+straw bedding=соломенный настил
 pot=горшок
+weavers cocoon=кокон ткачей
+web=паутина
 white mushrooms=белые грибы
 workbench=верстак
 

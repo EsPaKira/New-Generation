@@ -1,0 +1,9 @@
+{
+    "model": "X",
+    "texture": "web",
+    "material": "base:carpet",
+    "draw-group": 1,
+    "light-passing": true,
+    "obstacle": false,
+    "replaceable": true
+}

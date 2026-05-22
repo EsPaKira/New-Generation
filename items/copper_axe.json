@@ -16,6 +16,10 @@
             "base:grass_block": {
                 "speed": 1.2
             }
-        }
-    }
+        },
+        "damage": [
+            {"type": "slashing", "count": 3}
+        ]
+    },
+    "description": "3 slashing damage"
 }

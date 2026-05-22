@@ -1,0 +1,32 @@
+@box from (0.0625, 0, 0.1875) to (0.9375, 2.8125, 0.1875) origin (0.125, 0, 0.25) {
+    @part tags (south) texture "blocks:cattail" region (0, 0.6484375, 0.109375, 1)
+    @part tags (west) texture "blocks:cattail" region (0, 0.6484375, 0, 1)
+    @part tags (north) texture "blocks:cattail" region (0, 0.6484375, 0.109375, 1)
+    @part tags (east) texture "blocks:cattail" region (0, 0.6484375, 0, 1)
+    @part tags (top) texture "blocks:cattail" region (0, 1, 0.109375, 1)
+    @part tags (bottom) texture "blocks:cattail" region (0, 1, 0.109375, 1)
+}
+@box from (0.0625, 0, 0.8125) to (0.9375, 2.8125, 0.8125) origin (0.125, 0, 0.875) {
+    @part tags (south) texture "blocks:cattail" region (0, 0.6484375, 0.109375, 1)
+    @part tags (west) texture "blocks:cattail" region (0, 0.6484375, 0, 1)
+    @part tags (north) texture "blocks:cattail" region (0, 0.6484375, 0.109375, 1)
+    @part tags (east) texture "blocks:cattail" region (0, 0.6484375, 0, 1)
+    @part tags (top) texture "blocks:cattail" region (0, 1, 0.109375, 1)
+    @part tags (bottom) texture "blocks:cattail" region (0, 1, 0.109375, 1)
+}
+@box from (0.1875, 0, 0.0625) to (0.1875, 2.8125, 0.9375) origin (0.25, 0, 0.125) {
+    @part tags (south) texture "blocks:cattail" region (0, 0.6484375, 0, 1)
+    @part tags (west) texture "blocks:cattail" region (0, 0.6484375, 0.109375, 1)
+    @part tags (north) texture "blocks:cattail" region (0, 0.6484375, 0, 1)
+    @part tags (east) texture "blocks:cattail" region (0.109375, 0.6484375, 0, 1)
+    @part tags (top) texture "blocks:cattail" region (0, 0.890625, 0, 1)
+    @part tags (bottom) texture "blocks:cattail" region (0, 0.890625, 0, 1)
+}
+@box from (0.8125, 0, 0.0625) to (0.8125, 2.8125, 0.9375) origin (0.875, 0, 0.125) {
+    @part tags (south) texture "blocks:cattail" region (0, 0.6484375, 0, 1)
+    @part tags (west) texture "blocks:cattail" region (0, 0.6484375, 0.109375, 1)
+    @part tags (north) texture "blocks:cattail" region (0, 0.6484375, 0, 1)
+    @part tags (east) texture "blocks:cattail" region (0.109375, 0.6484375, 0, 1)
+    @part tags (top) texture "blocks:cattail" region (0, 0.890625, 0, 1)
+    @part tags (bottom) texture "blocks:cattail" region (0, 0.890625, 0, 1)
+}

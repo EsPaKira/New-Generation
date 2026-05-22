@@ -3,9 +3,11 @@
 -- https://github.com/MihailRis/base_survival
 
 local base_util = require "base:util"
+local DI = require "drop_inventory"
 local gamemodes = require "gamemodes"
 local world_data = require "world_data"
 local furnaces = require "furnaces"
+local weather = require "weather"
 local characters = require "characters/characters_main"
 
 local breaking_blocks = {}
@@ -67,6 +69,7 @@ end
 function on_world_tick() 
     -- tick newgen modules
     furnaces.tick()
+    weather.tick()
 end
 
 function on_world_quit()
@@ -130,6 +133,7 @@ local function tick_breaking(pid, tps)
         target.power = power
         target.tick = target.tick + 1
         if target.progress >= 1.0 then
+            DI.drop_inventory(inventory.get_block(x, y, z), {x, y, z}, 1)
             block.destruct(x, y, z, pid)
             if not player.is_infinite_items(pid) then
                 inventory.use(invid, slot)

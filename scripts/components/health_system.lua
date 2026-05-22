@@ -3,7 +3,7 @@
 -- https://github.com/MihailRis/base_survival
 
 local gamemodes = require "gamemodes"
-local base_util = require "base:util"
+local DI = require "drop_inventory"
 local characters = require "characters/characters_main"
 
 
@@ -34,20 +34,6 @@ function set_health(value)
     end
 end
 
-local function drop_inventory(invid)
-    local pos = entity.transform:get_pos()
-    local size = inventory.size(invid)
-    for i = 0, size - 1 do
-        local itemid, count = inventory.get(invid, i)
-        if itemid ~= 0 then
-            local data = inventory.get_all_data(invid, i)
-            local drop = base_util.drop(pos, itemid, count, data)
-            drop.rigidbody:set_vel(vec3.spherical_rand(8.0))
-            inventory.set(invid, i, 0)
-        end
-    end
-end
-
 function die()
     local tsf = entity.transform
     events.emit("newgen:death", tsf:get_pos())
@@ -64,7 +50,7 @@ function die()
 
     events.emit("newgen:player_death", entity:get_player(), true)
     if not rules.get("keep-inventory") then
-        drop_inventory(player.get_inventory(pid))
+        DI.drop_inventory(player.get_inventory(pid), entity.transform:get_pos(), 8)
     end
     entity:despawn()
     player.set_entity(pid, 0)
@@ -74,22 +60,30 @@ function heal(points)
     set_health(math.min(health + points, max_health))
 end
 
-function damage(points)
+local function calculate_damage(points, type)
+    if type == "falling" then return end
+    local protection = c_manager["get_" .. type .. "_damage_protection"]()
+    return math.max(0, math.floor(points - protection))
+end
+
+function damage(points, type)
+    if points == 0 then return end
     local pid = entity:get_player()
     if pid and gamemodes.get(pid).current == "creative" then
         return
     end
-    if points > 0 and pid then
+    if pid then
         events.emit("newgen:player_damage", pid, points)
     end
-    set_health(health - points)
+    local end_damage = calculate_damage(points, type)
+    set_health(health - end_damage)
     if health == 0 then
         die()
-        characters.set_field(pid, characters.get_choosen_character(pid), "stats", "health", characters.get_field(pid, characters.get_choosen_character(pid), "stats", "max_health"))
+        characters.set_field(pid, characters.get_choosen_character(pid), "stats", "health", characters.get_field(pid, characters.get_choosen_character(pid), "stats", "max_health")) -- set health after death
     end
 end
 
 function on_grounded(force)
     local dmg = math.floor((force - 12) * 1.1)
-    damage(math.max(0, math.floor(dmg)))
+    damage(math.max(0, math.floor(dmg)), "falling")
 end
