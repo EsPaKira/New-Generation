@@ -20,7 +20,7 @@ function toggle_skill_info(skill_name)
     end
     document["skill_info"].visible = true
 
-    local character_skill_level, skill = skill_trees.get_skill_data(hud.get_player(), characters.get_choosen_character(hud.get_player()), "body", skill_name)
+    local character_skill_level, skill = skill_trees.get_skill_data(hud.get_player(), characters.get_choosen_character(hud.get_player()), skill_name)
 
     document["skill_image"].src = "gui/" .. skill_name
     document["skill_frame"].src = "gui/unactive_frame"
@@ -36,8 +36,8 @@ function close_skill_info()
 end
 
 function research_skill()
-    local result = skill_trees.levelup(hud.get_player(), characters.get_choosen_character(hud.get_player()), "body", controller.skill.id)
-    local character_skill_level, skill = skill_trees.get_skill_data(hud.get_player(), characters.get_choosen_character(hud.get_player()), "body", controller.skill.id)
+    local result = skill_trees.levelup(hud.get_player(), characters.get_choosen_character(hud.get_player()), controller.skill.id)
+    local character_skill_level, skill = skill_trees.get_skill_data(hud.get_player(), characters.get_choosen_character(hud.get_player()), controller.skill.id)
     document["skill_name"].text = gui.str(controller.skill.name) .. "  " .. character_skill_level .. "/" .. controller.skill["max-level"]
 
     if result then

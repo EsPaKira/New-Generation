@@ -45,15 +45,17 @@ function on_interact(x, y, z, pid)
 
     hud.open_block(x, y, z)
     hud.open_permanent("newgen:player_button")
-    block.set_variant(x, y, z, 1)
+    block.set_variant(x, y, z, 1) -- делает недоступным генерацию лута после открытия
     return true
 end
 
 function on_placed(x, y, z)
-    block.set_variant(x, y, z, 1)
+    block.set_variant(x, y, z, 1) -- делает недоступным генерацю лута после установки
 end
 ```
 
 В GL.generate_loot() вторым аргументом передается название json-файла из blocks_loot.
 
 *Рекомендую полностью копировать пример кода.*
+
+[Назад](main_page.md)

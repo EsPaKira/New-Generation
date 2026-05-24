@@ -129,7 +129,7 @@ function on_hud_open()
         gfx.posteffects.set_intensity(health_effect, 1.0)
     end)
 
-    events.on("newgen:player_damage", function(pid, points)
+    events.on("newgen:player_damage", function(pid)
         if pid ~= hud.get_player() then
             return
         end

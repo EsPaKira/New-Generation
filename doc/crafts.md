@@ -9,7 +9,7 @@
 *Крафты для печек объявляются только в melting_crafts.json*
 
 
-Шаблон для json-файла крафтов:
+## Шаблон для json-файла крафтов:
 
 ```json
 [
@@ -27,3 +27,17 @@
 Так же доступны крафты по материалам(сейчас в New Generation всего 3 вида материалов: wood, pebble и stone). в таком случае в components вместо "id": "ID_контент-пака:ID_предмета" пишется "tag": "название_tag", где название_tag - wood, pebble или ваш материал.
 
 Чтобы добавить свой материал, в json-файле предмета добавьте поле "newgen:craft-material": "ваш_материал"
+
+
+## Шаблон скрипта для блока-верстака
+Блок-верстак - любой блок, при [ПКМ] по которому открывается меню крафтов
+
+```lua
+function on_interact(x, y, z, pid)
+    -- crafts_id - название файла с крафтами без "crafts/" и ".json"
+    -- для "crafts/workbench_crafts.json" crafts_id будет "workbench_crafts"
+    hud.show_overlay("newgen:crafts", false, {crafts_id})
+end
+```
+
+[Назад](main_page.md)

@@ -183,5 +183,13 @@
         "results": [
             {"id": "newgen:hay_roof.item", "count": 1}
         ]
+    },
+    {
+       "components": [
+            {"id": "newgen:hay.item", "count": 2}
+        ],
+        "results": [
+            {"id": "newgen:straw_bedding.item", "count": 1}
+        ] 
     }
 ]

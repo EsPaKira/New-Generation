@@ -3,8 +3,8 @@ local characters = require "characters/characters_main"
 local skill_trees = {}
 
 
-function skill_trees.levelup(pid, character_name, skill_tree_name, skill_name)
-    local character_skill_level, skill, character = skill_trees.get_skill_data(pid, character_name, skill_tree_name, skill_name)
+function skill_trees.levelup(pid, character_name, skill_name)
+    local character_skill_level, skill, character = skill_trees.get_skill_data(pid, character_name, skill_name)
     -- if no data about character then character_skill_level == false
     if not character_skill_level then return false end
 
@@ -26,11 +26,11 @@ function skill_trees.check_requirements(character, skill, character_skill_level)
     return true
 end
 
-function skill_trees.get_skill_data(pid, character_name, skill_tree_name, skill_name)
+function skill_trees.get_skill_data(pid, character_name, skill_name)
     local character = characters.get_character(pid, character_name)
     if not character then return false end
 
-    local skill = file.read_combined_object("skills/" .. skill_tree_name .. "/" .. skill_name .. ".json")
+    local skill = file.read_combined_object("skills/" .. skill_name .. ".json")
     local character_skill_level = characters.get_field(pid, character_name, "skills", skill_name)
 
     if not character_skill_level then

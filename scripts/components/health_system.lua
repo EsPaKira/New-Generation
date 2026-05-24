@@ -61,7 +61,7 @@ function heal(points)
 end
 
 local function calculate_damage(points, type)
-    if type == "falling" then return end
+    if type == "falling" then return points end
     local protection = c_manager["get_" .. type .. "_damage_protection"]()
     return math.max(0, math.floor(points - protection))
 end
@@ -73,7 +73,7 @@ function damage(points, type)
         return
     end
     if pid then
-        events.emit("newgen:player_damage", pid, points)
+        events.emit("newgen:player_damage", pid)
     end
     local end_damage = calculate_damage(points, type)
     set_health(health - end_damage)
