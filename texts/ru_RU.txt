@@ -43,6 +43,17 @@ Craft=Создать
 
 Research=Исследовать
 
+# Настройки New Generation
+
+New Generation settings=Настройки New Generation
+These settings are necessary for recalculating characters stats and for changing the gamemode=Эти настройки нужны для перерассчёта характеристик персонажей и для смены gamemode
+Change gamemode=Сменить gamemode
+Survival=Выживание
+Creative=Творческий
+Recalculate characteristics=Перерассчитать характеристики
+Recalculate=Перерассчитать
+Recalculate stats for all available characters=Перерассчитывает характеристики для всех доступных персонажей
+
 
 # Чат
 

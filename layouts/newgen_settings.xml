@@ -1,0 +1,22 @@
+<container size-func="gui.get_viewport()[1],gui.get_viewport()[2]">
+    <image size-func="gui.get_viewport()[1], gui.get_viewport()[2]" src="gui/space" />
+    <button hover-color="050" color="100" gravity="top-right" onclick="go_back()">@Back</button>
+    <container id="settings_header" size="755,40" position-func="gui.get_viewport()[1]/2 - 377.5, 0" color="#00000050" tooltip="These settings are necessary for recalculating characters stats and for changing the gamemode" tooltip-delay="0.08">
+        <label gravity="center-center">@New Generation settings</label>
+    </container>
+
+    <container id="gamemodes" size="400,60" color="#00000050" position-func="gui.get_viewport()[1]/2 - 200, 150">
+        <container size="160,40" color="#00000050" pos="15,10"><label gravity="center-center">@Change gamemode</label></container>
+        <select id="gamemode_select" size="140,40" onselect="function(opt) select(opt) end" pos="245,10" onclick="play_sound()">
+            <option value="survival">@Survival</option>
+            <option value="creative">@Creative</option>
+        </select>
+    </container>
+
+    <container id="characters_recalculation" size="400,120" color="#00000050" position-func="gui.get_viewport()[1]/2 - 200, 250">
+        <container size="250,40" color="#00000050" pos="75,10" tooltip="Recalculate stats for all available characters" tooltip-delay="0.08">
+            <label gravity="center-center">@Recalculate characteristics</label>
+        </container>
+        <button size="150,35" pos="125,75" onclick="recalculate()">@Recalculate</button>
+    </container>
+</container>

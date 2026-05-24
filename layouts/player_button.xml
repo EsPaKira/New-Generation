@@ -1,9 +1,13 @@
-<container size="52,108" position-func="gui.get_viewport()[1]/2-318,gui.get_viewport()[2]/2-110">
+<container size="52,164" position-func="gui.get_viewport()[1]/2-318,gui.get_viewport()[2]/2-110">
     <container size="52" hover-color="100" color="#0000009a" onclick="open_player_menu()">
         <image size="52" src="gui/head" />
     </container>
     
-    <container size="52" hover-color="100" color="#0000009a" gravity="bottom-left" onclick="open_crafting_menu()">
+    <container size="52" hover-color="100" color="#0000009a" gravity="center-center" onclick="open_crafting_menu()">
         <image size="52" src="gui/crafting" />
+    </container>
+
+    <container size="52" hover-color="100" color="#0000009a" gravity="bottom-left" onclick="open_settings_menu()">
+        <image size="52" src="gui/settings_icon" />
     </container>
 </container>

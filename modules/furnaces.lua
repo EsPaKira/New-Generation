@@ -11,6 +11,7 @@ end
 
 function module.tick() 
     for i, f in ipairs(furnaces.FURNACES) do 
+        -- check that furnace is exixts
         local finvid = inventory.get_block(f[1], f[2], f[3])
         if finvid == 0 then goto continue end
 
