@@ -63,7 +63,7 @@ function attack(pid)
     if gamemodes.get(pid).current == "creative" then
         return
     end
-    local target = entities.get(pid)
+    local target = entities.get(player.get_entity(pid))
     if target then
         target:get_component("newgen:health_system").damage(3, "slashing")
     end

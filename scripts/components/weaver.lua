@@ -17,7 +17,7 @@ function on_update(tps)
         pathfinding.set_target({px, py, pz})
         pathfinding.set_refresh_interval(5)
         mob.look_at({px, py + 1, pz}, true)
-        if vec3.distance(pos, {px, py, pz}) < 3 then
+        if vec3.distance(pos, {px, py, pz}) < 2 then
             atack_timer = atack_timer + 1 / tps * speed_of_attack
             if atack_timer >= 1 then 
                 atack_timer = 0
@@ -63,7 +63,7 @@ function attack(pid)
     if gamemodes.get(pid).current == "creative" then
         return
     end
-    local target = entities.get(pid)
+    local target = entities.get(player.get_entity(pid))
     if target then
         local pos = tsf:get_pos()
         audio.play_sound("entities/spider_attack", pos[1], pos[2], pos[3], random.random(), 1)
