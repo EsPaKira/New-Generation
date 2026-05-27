@@ -4,6 +4,7 @@
 
 local crafting = require "crafting"
 local base_util = require "base:util"
+local api = require "api/api_main"
 
 local controller = {
     stats = {}, --id: count,...
@@ -106,6 +107,10 @@ function on_items_update(invid)
     refresh_crafts(invid)
 end
 
+function load_bg()
+    document["background"].src = api.get_background()
+end
+
 function on_open(craft_name)
     crafting.update_crafts()
     document["crafts_header"].text = craft_name == 0 and gui.str("Crafts") or gui.str("Crafts on " .. craft_name)
@@ -137,6 +142,7 @@ function on_open(craft_name)
     refresh_crafts(pinvid)
     hide_info("craft", true)
     hide_info("component", true)
+    load_bg()
 end
 
 function craft()

@@ -1,5 +1,5 @@
 <container size-func="gui.get_viewport()[1],gui.get_viewport()[2]">
-    <image size-func="gui.get_viewport()[1], gui.get_viewport()[2]" src="gui/space" />
+    <image id="background" size-func="gui.get_viewport()[1], gui.get_viewport()[2]" />
     <button hover-color="050" color="100" gravity="top-right" onclick="go_back()">@Back</button>
     <container id="settings_header" size="755,40" position-func="gui.get_viewport()[1]/2 - 377.5, 0" color="#00000050" tooltip="These settings are necessary for recalculating characters stats and for changing the gamemode" tooltip-delay="0.08">
         <label gravity="center-center">@New Generation settings</label>
@@ -18,5 +18,12 @@
             <label gravity="center-center">@Recalculate characteristics</label>
         </container>
         <button size="150,35" pos="125,75" onclick="recalculate()">@Recalculate</button>
+    </container>
+
+    <container id="select_bg" size="400,60" color="#00000050" position-func="gui.get_viewport()[1]/2 - 200, 410">
+        <container size="160,40" color="#00000050" pos="15,10"><label gravity="center-center">@Select background</label></container>
+        <select id="bg_select" size="140,40" onselect="function(opt) select_bg(opt) end" pos="245,10" onclick="play_sound()">
+            <!-- content is generated in script -->
+        </select>
     </container>
 </container>

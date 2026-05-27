@@ -1,5 +1,5 @@
 <container size-func="gui.get_viewport()[1], gui.get_viewport()[2]" color="#0a060c">
-    <image size-func="gui.get_viewport()[1], gui.get_viewport()[2]" src="gui/space" />
+    <image id="background" size-func="gui.get_viewport()[1], gui.get_viewport()[2]" />
     
     <container id="first_menu" size-func="gui.get_viewport()[1], gui.get_viewport()[2]">
         <button hover-color="050" color="100" gravity="top-right" onclick="go_back()">@Back</button>

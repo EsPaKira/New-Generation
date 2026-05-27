@@ -1,5 +1,6 @@
 local characters = require "characters/characters_main"
 local skill_trees = require "characters/characters_skill_trees"
+local api = require "api/api_main"
 
 local controller = {
     skill = {}
@@ -57,6 +58,10 @@ function update_ui(skill_id, skill_path)
     end
 end
 
+function load_bg()
+    document["background"].src = api.get_background()
+end
+
 function on_open()
     local all_skills = characters.get_group(hud.get_player(), characters.get_choosen_character(hud.get_player()), "skills")
     local found = {}
@@ -69,4 +74,5 @@ function on_open()
             end
         end
     end
+    load_bg()
 end

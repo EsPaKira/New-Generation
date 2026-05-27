@@ -1,5 +1,6 @@
 local characters = require "characters/characters_main"
 local equipment = require "characters/characters_equipment"
+local api = require "api/api_main"
 
 local controller = {
     equipment = nil,
@@ -139,6 +140,10 @@ function show_equipped_item_in_main_menu(slot)
     end
 end
 
+function load_bg()
+    document["background"].src = api.get_background()
+end
+
 function on_open()
     controller.choosen_equipment = nil
     controller.choosen_character = characters.get_choosen_character(hud.get_player())
@@ -156,6 +161,8 @@ function on_open()
     show_equipped_item_in_main_menu("greaves")
     show_equipped_item_in_main_menu("belt")
     show_equipped_item_in_main_menu("boots")
+
+    load_bg()
 end
 
 function equipment_button(action)
