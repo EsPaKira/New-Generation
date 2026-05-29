@@ -3,12 +3,12 @@ local characters = require "characters/characters_main"
 local skill_trees = {}
 
 
-function skill_trees.levelup(pid, character_name, skill_name)
+function skill_trees.levelup(pid, character_name, skill_name, ignore_requirements)
     local character_skill_level, skill, character = skill_trees.get_skill_data(pid, character_name, skill_name)
     -- if no data about character then character_skill_level == false
     if not character_skill_level then return false end
 
-    if skill_trees.check_requirements(character, skill, character_skill_level) then
+    if skill_trees.check_requirements(character, skill, character_skill_level, ignore_requirements) then
         characters.set_field(pid, character_name, "skills", skill_name, (character_skill_level + 1))
         skill_trees.set_skill_buffs(pid, character_name, skill)
         return true
@@ -16,7 +16,9 @@ function skill_trees.levelup(pid, character_name, skill_name)
     return false
 end
 
-function skill_trees.check_requirements(character, skill, character_skill_level)
+function skill_trees.check_requirements(character, skill, character_skill_level, ignore_requirements)
+    if ignore_requirements then return true end
+
     if (character_skill_level + 1) > skill["max-level"] then return false end
     if not skill["required-skills"] then return true end
 

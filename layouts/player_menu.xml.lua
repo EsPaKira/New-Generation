@@ -149,7 +149,7 @@ function on_open()
     controller.choosen_character = characters.get_choosen_character(hud.get_player())
     close_c_panel()
     close_equipment_menu()
-    document["character_name"].text = gui.str(characters.get_character(hud.get_player(), controller.choosen_character)["character_full_name"])
+    document["character_name"].text = gui.str(characters.get_character(hud.get_player(), controller.choosen_character)["full-name"])
 
     show_equipped_item_in_main_menu("head")
     show_equipped_item_in_main_menu("helmet")

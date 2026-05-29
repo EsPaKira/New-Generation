@@ -1,6 +1,8 @@
 {
     "textures": [
         "gui/space",
+        "gui/gunmetal",
+        "gui/total_black",
         "gui/head",
         "gui/helmet",
         "gui/gloves",

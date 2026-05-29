@@ -17,7 +17,7 @@
         <container size="250,40" color="#00000050" pos="75,10" tooltip="Recalculate stats for all available characters" tooltip-delay="0.08">
             <label gravity="center-center">@Recalculate characteristics</label>
         </container>
-        <button size="150,35" pos="125,75" onclick="recalculate()">@Recalculate</button>
+        <button size="150,35" pos="125,75" onclick="recalculate_button()">@Recalculate</button>
     </container>
 
     <container id="select_bg" size="400,60" color="#00000050" position-func="gui.get_viewport()[1]/2 - 200, 410">

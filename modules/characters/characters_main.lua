@@ -1,5 +1,4 @@
 local survival_ui = require "survival_ui"
-local config = require "api/config"
 
 local characters = {
     players = {}
@@ -69,8 +68,7 @@ end
 function characters.get_player_data(pid)
     if characters.players[tostring(pid)] == nil then
         characters.players[tostring(pid)] = {
-            choosen_character = nil,
-            current_version = config.get_current_v()
+            choosen_character = nil
         }
     end
     return characters.players[tostring(pid)]

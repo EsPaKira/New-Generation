@@ -50,13 +50,16 @@ These settings are necessary for recalculating characters stats and for changing
 Change gamemode=Сменить gamemode
 Survival=Выживание
 Creative=Творческий
-Recalculate characteristics=Перерассчитать характеристики
-Recalculate=Перерассчитать
-Recalculate stats for all available characters=Перерассчитывает характеристики для всех доступных персонажей
+Recalculate characteristics=Перерасчитать характеристики
+Recalculate=Перерасчитать
+Recalculate stats for all available characters=Перерасчитывает характеристики для всех доступных персонажей
+Select background=Выбрать фон
 
 # Фоны
 
 gui/space=Космос
+gui/gunmetal=Оружейная сталь
+gui/total_black=Абсолютно чёрный
 
 
 # Чат
