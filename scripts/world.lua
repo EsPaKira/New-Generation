@@ -77,12 +77,15 @@ function on_world_quit()
     world_data.save()
 end
 
-local function tick_breaking(pid, tps)
+local function tick_breaking(pid, tps, breaking)
     if player.get_entity(pid) == 0 then
         return -- dead
     end
     local gamemode = gamemodes.get(pid).current
     if gamemode ~= "survival" then
+        if not breaking then return end
+        local x, y, z = player.get_selected_block(pid)
+        DI.drop_inventory(inventory.get_block(x, y, z), {x, y, z}, 1)
         return
     end
     local target = breaking_blocks[pid]
@@ -165,7 +168,7 @@ end
 function on_block_breaking(id, x, y, z, pid)
     local target = breaking_blocks[pid]
     if not target or not target.breaking then
-        tick_breaking(pid, 20)
+        tick_breaking(pid, 20, true)
     end
 end
 
