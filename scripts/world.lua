@@ -9,9 +9,10 @@ local world_data = require "world_data"
 local furnaces = require "furnaces"
 local weather = require "weather"
 local characters = require "characters/characters_main"
+local recalculate = require "characters/characters_recalculate"
 
 local breaking_blocks = {}
-local player_loaded = false
+local player_loaded = false -- NEVER USE THIS
 
 local function get_durability(id)
     local durability = block.properties[id]["base:durability"]
@@ -153,6 +154,8 @@ local function player_entity_loaded()
     if player_loaded then return end
     local pentity = entities.get(player.get_entity(hud.get_player()))
     if not pentity then return end
+
+    recalculate.auto_load(characters.players)
 
     local c_manager = pentity:require_component("newgen:characteristics_manager")
     c_manager.set_player(hud.get_player(), true)

@@ -6,7 +6,7 @@ newgen предоставляет несколько компонентов дл
 
 Этот компонент самый главный для работы сущностей. Он управляет всем, что связано с характеристиками.
 
-Можно указать любые характеристики сущности из списка: health, max_health, oxygen, max_oxygen, crush_damage_protection, piercing_damage_protection, slashing_damage_protection.
+Можно указать любые характеристики сущности из списка: health, max_health, oxygen, max_oxygen, crushing_damage_protection, piercing_damage_protection, slashing_damage_protection.
 
 **Требуется почти во всех остальных компонентах.**
 

@@ -43,11 +43,11 @@ function on_attacked(eid, pid)
     local invid, slot = player.get_inventory(pid)
     local itemid, _ = inventory.get(invid, slot)
     local tool = item.properties[itemid]["newgen:tool"]
-    local type_of_damage = "crush"
-    local total_damage = 0
+    local type_of_damage = "crushing"
+    local total_damage = 2
     if tool then
         type_of_damage = tool.damage[1].type
-        total_damage = tool.damage[1].count
+        total_damage = total_damage + tool.damage[1].count
     end
 
     local c_manager = entities.get(eid):require_component("newgen:characteristics_manager")
@@ -67,6 +67,6 @@ function attack(pid)
     if target then
         local pos = tsf:get_pos()
         audio.play_sound("entities/spider_attack", pos[1], pos[2], pos[3], random.random(), 1)
-        target:get_component("newgen:health_system").damage(1, "piercing")
+        target:get_component("newgen:health_system").damage(10, "piercing")
     end
 end

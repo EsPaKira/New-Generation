@@ -2,7 +2,6 @@ local furnaces = require "furnaces"
 local characters = require "characters/characters_main"
 local api = require "api/api_main"
 local config = require "api/config"
-local recalculate = require "characters/characters_recalculate"
 
 local world_data = {}
 
@@ -24,7 +23,6 @@ function world_data.open()
     if file.exists(path) then
         local data = file.read(path)
         world_data.load(json.parse(data), characters)
-        recalculate.auto_load(characters.players)
     else
         -- player_id, character_name, character_id
         -- character_id will be needed for all characters preview 

@@ -3,8 +3,8 @@
     "newgen:tool": {
         "type": "weapon",
         "damage": [
-            {"type": "piercing", "count": 2}
+            {"type": "piercing", "count": 10}
         ]
     },
-    "description": "2 piercing damage"
+    "description": "10 piercing damage"
 }

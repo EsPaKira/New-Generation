@@ -125,7 +125,7 @@ function show_equipped_item()
         src = item.icon(itemid),
         heat_p = equipment.get_equipment_stat(itemid, "heat_preservation"),
         heat_r = equipment.get_equipment_stat(itemid, "heat_reflection"),
-        crush_d_p = equipment.get_equipment_stat(itemid, "crush_damage_protection"),
+        crushing_d_p = equipment.get_equipment_stat(itemid, "crushing_damage_protection"),
         slashing_d_p = equipment.get_equipment_stat(itemid, "slashing_damage_protection"),
         piercing_d_p = equipment.get_equipment_stat(itemid, "piercing_damage_protection")
     }))
@@ -208,7 +208,7 @@ function controller:choose_equipment(id)
         src = item.icon(itemid),
         heat_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "heat_preservation"),
         heat_r = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "heat_reflection"),
-        crush_d_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "crush_damage_protection"),
+        crushing_d_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "crushing_damage_protection"),
         slashing_d_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "slashing_damage_protection"),
         piercing_d_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "piercing_damage_protection")
     }))

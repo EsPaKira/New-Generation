@@ -8,14 +8,12 @@ local max_oxygen = c_manager:get_max_oxygen()
 
 
 function load_oxygen()
-    if c_manager.is_player() then
-        oxygen = c_manager:get_oxygen()
-        max_oxygen = c_manager:get_max_oxygen()
-    end
+    c_manager.is_player() -- update all stats if this entity is player
+    oxygen = c_manager:get_oxygen()
+    max_oxygen = c_manager:get_max_oxygen()
 end
 
 function set_oxygen(value)
-    load_oxygen()
     oxygen = math.min(math.max(0, value), max_oxygen)
     local is_player, character_name = c_manager.is_player()
     if is_player then
@@ -38,6 +36,8 @@ function on_update(tps)
         local health = entity:get_component("newgen:health_system")
         local swimming = entity:get_component("newgen:swimming_system")
         local is_head_in_water = swimming.head_underwater(entity:get_uid())
+
+        load_oxygen()
         if is_head_in_water then
             set_oxygen(oxygen - 1)
         else 

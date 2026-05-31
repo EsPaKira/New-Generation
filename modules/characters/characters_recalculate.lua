@@ -30,8 +30,8 @@ local function recalculate_equipment(pid, character_name, equipment_table)
 end
 
 function recalculate.recalculate(players)
-    for pid, player in pairs(players) do
-        for key, character in pairs(player) do
+    for pid, player_data in pairs(players) do
+        for key, character in pairs(player_data) do
             if key ~= "current_version" and key ~= "choosen_character" then
                 local skills = character["skills"]
                 character["skills"] = {}
@@ -44,6 +44,12 @@ function recalculate.recalculate(players)
                 
                 recalculate_skills(pid, key, skills)
                 recalculate_equipment(pid, key, equipment_table)
+            end
+        end
+        if pid ~= "-1" then
+            local c_manager = entities.get(player.get_entity(tonumber(pid))):get_component("newgen:characteristics_manager")
+            if c_manager then
+                c_manager.set_player(tonumber(pid))
             end
         end
     end

@@ -14,15 +14,13 @@ local max_health = c_manager:get_max_health()
 
 
 function load_health()
-    if c_manager.is_player() then
-        health = c_manager:get_health()
-        max_health = c_manager:get_max_health()
-    end
+    c_manager.is_player() -- update all stats if this entity is player
+    health = c_manager:get_health()
+    max_health = c_manager:get_max_health()
 end
 
 function set_health(value)
     if value == health then return end
-    load_health()
     health = math.min(math.max(0, value), max_health)
     local is_player, character_name = c_manager.is_player()
 
@@ -76,6 +74,8 @@ function damage(points, type)
         events.emit("newgen:player_damage", pid)
     end
     local end_damage = calculate_damage(points, type)
+
+    load_health()
     set_health(health - end_damage)
     if health == 0 then
         die()

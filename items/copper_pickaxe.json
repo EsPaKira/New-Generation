@@ -9,8 +9,8 @@
             }
         },
         "damage": [
-            {"type": "piercing", "count": 3}
+            {"type": "piercing", "count": 10}
         ]
     },
-    "description": "3 piercing damage"
+    "description": "10 piercing damage"
 }

@@ -18,8 +18,8 @@
             }
         },
         "damage": [
-            {"type": "slashing", "count": 3}
+            {"type": "slashing", "count": 10}
         ]
     },
-    "description": "3 slashing damage"
+    "description": "10 slashing damage"
 }

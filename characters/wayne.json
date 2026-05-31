@@ -4,8 +4,8 @@
     "stats": {
         "body_level": 1,
         "soul_level": 1,
-        "health": 20,
-        "max_health": 20,
+        "health": 100,
+        "max_health": 100,
         "oxygen": 20,
         "max_oxygen": 20,
         "archium": 5,
@@ -14,7 +14,7 @@
         "accuracy": 1,
         "heat_preservation": 0,
         "heat_reflection": 0,
-        "crush_damage_protection": 0,
+        "crushing_damage_protection": 0,
         "slashing_damage_protection": 0,
         "piercing_damage_protection": 0
     }

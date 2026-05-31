@@ -64,7 +64,7 @@
 
         <container size="400,30" color="100" tooltip="Protects against cold" tooltip-delay="0.08"><label pos="20,8">@Heat preservation</label><label id="heat_preservation" pos="310,8"></label></container>
         <container size="400,30" tooltip="Protects from heat" tooltip-delay="0.08"><label pos="20,8">@Heat reflection</label><label id="heat_reflection" pos="310,8"></label></container>
-        <container size="400,30" color="100"><label pos="20,8">@Crush damage protection</label><label id="crush_damage_protection" pos="310,8"></label></container>
+        <container size="400,30" color="100"><label pos="20,8">@Crushing damage protection</label><label id="crushing_damage_protection" pos="310,8"></label></container>
         <container size="400,30"><label pos="20,8">@Slashing damage protection</label><label id="slashing_damage_protection" pos="310,8"></label></container>
         <container size="400,30" color="100"><label pos="20,8">@Piercing damage protection</label><label id="piercing_damage_protection" pos="310,8"></label></container>
     </panel>
