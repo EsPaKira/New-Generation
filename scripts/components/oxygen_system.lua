@@ -1,5 +1,6 @@
 local gamemodes = require "gamemodes"
 local characters = require "characters/characters_main"
+local config = require "api/config"
 
 local c_manager = entity:require_component("newgen:characteristics_manager")
 
@@ -44,7 +45,7 @@ function on_update(tps)
             set_oxygen(oxygen + 1)
         end
         if oxygen == 0 then
-            health.die()
+            health.damage(config.get_suffocation_damage(), "suffocation")
         end
         time_under_water = 0
     end

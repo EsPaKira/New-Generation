@@ -60,6 +60,7 @@ end
 
 local function calculate_damage(points, type)
     if type == "falling" then return points end
+    if type == "suffocation" then return points end
     local protection = c_manager["get_" .. type .. "_damage_protection"]()
     return math.max(0, math.floor(points - protection))
 end
@@ -84,6 +85,6 @@ function damage(points, type)
 end
 
 function on_grounded(force)
-    local dmg = math.floor((force - 12) * 1.1)
+    local dmg = math.floor((force - 13) * 5)
     damage(math.max(0, math.floor(dmg)), "falling")
 end

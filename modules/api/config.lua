@@ -8,6 +8,10 @@ function config.get_current_v()
     return config.newgen["newgen-version"]
 end
 
+function config.get_suffocation_damage()
+    return config.newgen["suffocation-damage"]
+end
+
 function config.get_backgrounds()
     return config.newgen_backgrounds
 end
