@@ -6,9 +6,10 @@
         "protections": {
             "heat_preservation": 0.5,
             "heat_reflection": 0.4,
-            "crushing_damage_protection": 0.1,
-            "slashing_damage_protection": 0.1,
-            "piercing_damage_protection": 0.1
+            "absolute_damage_protection": 0.2,
+            "crushing_damage_protection": 0.02,
+            "slashing_damage_protection": 0.02,
+            "piercing_damage_protection": 0.02
         }
     }
 }

@@ -8,6 +8,6 @@
     </container>
 
     <container size="52" hover-color="100" color="#0000009a" gravity="bottom-left" onclick="open_settings_menu()">
-        <image size="52" src="gui/settings_icon" />
+        <image size="52" src="gui/newgen_settings_icon" />
     </container>
 </container>

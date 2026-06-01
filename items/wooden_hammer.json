@@ -3,8 +3,8 @@
     "newgen:tool": {
         "type": "weapon",
         "damage": [
-            {"type": "crushing", "count": 5}
+            {"type": "crushing", "count": 1}
         ]
     },
-    "description": "Use to change the shape of the roof\n5 crushing damage"
+    "description": "Use to change the shape of the roof\n1 crushing damage"
 }

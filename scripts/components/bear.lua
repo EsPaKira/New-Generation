@@ -44,7 +44,7 @@ function on_attacked(eid, pid)
     local itemid, _ = inventory.get(invid, slot)
     local tool = item.properties[itemid]["newgen:tool"]
     local type_of_damage = "crushing"
-    local total_damage = 2
+    local total_damage = 0
     if tool then
         type_of_damage = tool.damage[1].type
         total_damage = total_damage + tool.damage[1].count
@@ -65,6 +65,6 @@ function attack(pid)
     end
     local target = entities.get(player.get_entity(pid))
     if target then
-        target:get_component("newgen:health_system").damage(15, "slashing")
+        target:get_component("newgen:health_system").damage(3, "slashing")
     end
 end

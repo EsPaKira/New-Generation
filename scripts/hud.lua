@@ -135,7 +135,7 @@ function on_hud_open()
         end
         local rx, ry, _ = player.get_rot(pid)
         local x, y, z = player.get_pos(pid)
-        audio.play_sound("entities/damage", x, y, z, random.random(), 1)
+        audio.play_sound("entities/damage", x, y, z, (random.random(5,10) / 10), 1)
         player.set_rot(pid, rx, ry, math.random() < 0.5 and 13 or -13)
     end)
 

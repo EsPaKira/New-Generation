@@ -16,6 +16,7 @@
         "gui/standard_body",
         "gui/standard_soul",
         "gui/crafting",
+        "gui/newgen_settings_icon",
         "gui/right_arrow",
         "gui/left_arrow",
         "gui/wood",

@@ -47,7 +47,7 @@
     <panel id="c_panel" size-func="400, gui.get_viewport()[2]" orientation="vertical" color="#00000070" visible="false">
         <container size="400,50"><label gravity="center-center">@Main characteristics</label></container>
 
-        <container size="400,30" color="100"><label pos="30,8">@Body</label><label id="body_level" pos="310,8"></label></container>
+        <container size="400,30" color="100" tooltip="Physical damage depends on the body level" tooltip-delay="0.08"><label pos="30,8">@Body</label><label id="body_level" pos="310,8"></label></container>
         <container size="400,30"><label pos="30,8">@Soul</label><label id="soul_level" pos="310,8"></label></container>
 
 
@@ -64,9 +64,10 @@
 
         <container size="400,30" color="100" tooltip="Protects against cold" tooltip-delay="0.08"><label pos="20,8">@Heat preservation</label><label id="heat_preservation" pos="310,8"></label></container>
         <container size="400,30" tooltip="Protects from heat" tooltip-delay="0.08"><label pos="20,8">@Heat reflection</label><label id="heat_reflection" pos="310,8"></label></container>
-        <container size="400,30" color="100"><label pos="20,8">@Crushing damage protection</label><label id="crushing_damage_protection" pos="310,8"></label></container>
-        <container size="400,30"><label pos="20,8">@Slashing damage protection</label><label id="slashing_damage_protection" pos="310,8"></label></container>
-        <container size="400,30" color="100"><label pos="20,8">@Piercing damage protection</label><label id="piercing_damage_protection" pos="310,8"></label></container>
+        <container size="400,30" color="100" tooltip="Absolute damage protection doesn't protect from falling and suffocation damage" tooltip-delay="0.08"><label pos="20,8">@Absolute damage protection</label><label id="absolute_damage_protection" pos="310,8"></label></container>
+        <container size="400,30"><label pos="20,8">@Crushing damage protection</label><label id="crushing_damage_protection" pos="310,8"></label></container>
+        <container size="400,30" color="100"><label pos="20,8">@Slashing damage protection</label><label id="slashing_damage_protection" pos="310,8"></label></container>
+        <container size="400,30"><label pos="20,8">@Piercing damage protection</label><label id="piercing_damage_protection" pos="310,8"></label></container>
     </panel>
     <button id="close_c_panel" hover-color="050" color="100" pos="400,0" visible="false" onclick="close_c_panel()">@Close characteristics</button>
 
@@ -93,14 +94,14 @@
         </panel>
         
 
-        <container id="equipped_item_info" size="300,571" position-func="gui.get_viewport()[1] - 300, 37">
+        <container id="equipped_item_info" size="300,601" position-func="gui.get_viewport()[1] - 300, 37">
             <!-- content is generated in script -->
         </container>
         <container id="cannot_remove_item" size="300,35" position-func="gui.get_viewport()[1] - 300, 613" hover-color="#00000070" color="#33020250" onclick="hide_error_info()" visible="false">
             <label gravity="center-center">@No free slot in inventory</label>
         </container>
 
-        <container id="choosen_item_info" size="300,571" position-func="gui.get_viewport()[1] - 625, 37">
+        <container id="choosen_item_info" size="300,601" position-func="gui.get_viewport()[1] - 625, 37">
             <!-- content is generated in script -->
         </container>     
     </container>

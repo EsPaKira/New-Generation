@@ -60,23 +60,28 @@ function equipment.get_equipment_stat(itemid, stat)
     return item.properties[itemid]["newgen:equipment"].protections[stat]
 end
 
-function equipment.get_compared_stat(pid, character_name, slot, itemid, stat)
+function equipment.get_compared_stat(pid, character_name, slot, itemid, stat, is_percent)
     local compare_result = nil
     local equipment_stat = equipment.get_equipment_stat(itemid, stat)
     local equipped_item = equipment.get_equipment_by_slot(pid, character_name, slot)
     local equipped_item_stat = 0
+    local result_color = ""
 
     if equipped_item ~= 0 then 
         equipped_item_stat = item.properties[equipped_item]["newgen:equipment"].protections[stat]
     end
 
     if equipment_stat > equipped_item_stat then
-        return "[#0ee60e]" .. equipment_stat
+        result_color = "[#0ee60e]"
     elseif equipment_stat < equipped_item_stat then
-        return "[#e60e0e]" .. equipment_stat
-    else
-        return equipment_stat
+        result_color = "[#e60e0e]"
     end
+
+    if is_percent then
+        equipment_stat = equipment_stat * 100 .. "%"
+    end
+
+    return result_color .. equipment_stat
 end
 
 function equipment.get_equipment_by_slot(pid, character_name, slot)

@@ -29,6 +29,8 @@ function open_c_panel()
     for key, value in pairs(stats) do
         if key == "health" or key == "oxygen" or key == "archium" then
             document["max_".. key].text = value .. "/" .. stats["max_" .. key]
+        elseif key == "crushing_damage_protection" or key == "slashing_damage_protection" or key == "piercing_damage_protection" then
+            document[key].text = value * 100 .. "%"
         elseif key ~= "max_health" and key ~= "max_oxygen" and key ~= "max_archium" then
             document[key].text = tostring(value)
         end
@@ -125,9 +127,10 @@ function show_equipped_item()
         src = item.icon(itemid),
         heat_p = equipment.get_equipment_stat(itemid, "heat_preservation"),
         heat_r = equipment.get_equipment_stat(itemid, "heat_reflection"),
-        crushing_d_p = equipment.get_equipment_stat(itemid, "crushing_damage_protection"),
-        slashing_d_p = equipment.get_equipment_stat(itemid, "slashing_damage_protection"),
-        piercing_d_p = equipment.get_equipment_stat(itemid, "piercing_damage_protection")
+        absolute_d_p = equipment.get_equipment_stat(itemid, "absolute_damage_protection"),
+        crushing_d_p = equipment.get_equipment_stat(itemid, "crushing_damage_protection") * 100 .. "%",
+        slashing_d_p = equipment.get_equipment_stat(itemid, "slashing_damage_protection") * 100 .. "%",
+        piercing_d_p = equipment.get_equipment_stat(itemid, "piercing_damage_protection") * 100 .. "%"
     }))
 end
 
@@ -208,9 +211,10 @@ function controller:choose_equipment(id)
         src = item.icon(itemid),
         heat_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "heat_preservation"),
         heat_r = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "heat_reflection"),
-        crushing_d_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "crushing_damage_protection"),
-        slashing_d_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "slashing_damage_protection"),
-        piercing_d_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "piercing_damage_protection")
+        absolute_d_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "absolute_damage_protection"),
+        crushing_d_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "crushing_damage_protection", true),
+        slashing_d_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "slashing_damage_protection", true),
+        piercing_d_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "piercing_damage_protection", true)
     }))
 end
 
