@@ -1,8 +1,8 @@
 local gamemodes = require "gamemodes"
 local api = require "api/api_main"
 local config = require "api/config"
-local characters = require "characters/characters_main"
-local recalculate = require "characters/characters_recalculate"
+local characters = require "characters/main"
+local recalculate = require "characters/recalculate"
 
 function go_back()
     audio.play_sound_2d("ui/button_click", 1, 1, "ui")

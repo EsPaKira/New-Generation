@@ -4,7 +4,7 @@
 
 local gamemodes = require "gamemodes"
 local DI = require "drop_inventory"
-local characters = require "characters/characters_main"
+local characters = require "characters/main"
 
 
 local c_manager = entity:require_component("newgen:characteristics_manager")

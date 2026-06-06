@@ -1,4 +1,4 @@
-local characters = require "characters/characters_main"
+local characters = require "characters/main"
 
 local skill_trees = {}
 

@@ -2,16 +2,18 @@
 
 New Generation - контент-пак для [VoxelCore](https://github.com/MihailRis/voxelcore) (находится в beta-версии)
 
+[Подробнее про NewGen](https://github.com/EsPaKira/New-Generation/blob/main/doc/about.md)
+
 [Скачать последнюю версию](https://github.com/EsPaKira/New-Generation/releases/latest)
 
-[Документация](https://github.com/EsPaKira/New-Generation/blob/dev0.4.0-beta/doc/main_page.md)
+[Документация](https://github.com/EsPaKira/New-Generation/blob/main/doc/main_page.md)
 
 В этом контент-паке есть базовые механики выживания, свой генератор мира, множество блоков и предметов.
 
-Наиболее стабильная версия контент-пака находится в ветке main. На версиях VoxelCore до 0.31.2 может работать некорректно
+Наиболее стабильная версия контент-пака находится в ветке main. На версиях VoxelCore до 0.31.2 может работать некорректно.
 
 Аддон для New Generation: [Project L.A.R.I.X.](https://github.com/EsPaKira/Project-L.A.R.I.X.)
 
-Чтобы поменять режим игры с креатива на выживание, напишите в чате /gamemode survival. В противоположном случае напишите /gamemode creative
+Чтобы поменять режим игры с креатива на выживание, напишите в чате /gamemode survival. В противоположном случае напишите /gamemode creative. Так же режим игры можно поменять в настройках New Generation (открываются через инвентарь).
 
 *New Generation использует участки кода, находящиеся под лицензией MIT других разработчиков*

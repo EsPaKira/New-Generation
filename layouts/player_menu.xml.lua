@@ -1,5 +1,5 @@
-local characters = require "characters/characters_main"
-local equipment = require "characters/characters_equipment"
+local characters = require "characters/main"
+local equipment = require "characters/equipment"
 local api = require "api/api_main"
 
 local controller = {

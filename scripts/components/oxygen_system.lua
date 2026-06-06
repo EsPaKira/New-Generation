@@ -1,5 +1,5 @@
 local gamemodes = require "gamemodes"
-local characters = require "characters/characters_main"
+local characters = require "characters/main"
 local config = require "api/config"
 
 local c_manager = entity:require_component("newgen:characteristics_manager")

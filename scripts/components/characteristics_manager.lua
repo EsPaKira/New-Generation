@@ -1,4 +1,4 @@
-local characters = require "characters/characters_main"
+local characters = require "characters/main"
 local characteristics = {}
 
 local function def_characteristics(name, def_value)

@@ -8,8 +8,8 @@ local gamemodes = require "gamemodes"
 local world_data = require "world_data"
 local furnaces = require "furnaces"
 local weather = require "weather"
-local characters = require "characters/characters_main"
-local recalculate = require "characters/characters_recalculate"
+local characters = require "characters/main"
+local recalculate = require "characters/recalculate"
 
 local breaking_blocks = {}
 local player_loaded = false -- NEVER USE THIS

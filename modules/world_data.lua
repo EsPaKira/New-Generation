@@ -1,5 +1,5 @@
 local furnaces = require "furnaces"
-local characters = require "characters/characters_main"
+local characters = require "characters/main"
 local api = require "api/api_main"
 local config = require "api/config"
 

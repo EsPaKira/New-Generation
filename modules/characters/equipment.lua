@@ -1,4 +1,4 @@
-local characters = require "characters/characters_main"
+local characters = require "characters/main"
 
 local equipment = {}
 local EQUIPMENT_SLOTS = {"head", "helmet", "body", "chestplate", "cloak", "gloves", "belt", "legs", "greaves", "boots"}

@@ -11,7 +11,7 @@
 ### Пример *config/newgen.json*:
 ```json
 {
-    "suffocation-damage": 10
+    "suffocation-damage": 10 --наносит 10 урона в секунду, когда закончится кислород
 }
 ```
 

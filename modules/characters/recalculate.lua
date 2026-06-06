@@ -1,6 +1,6 @@
 local config = require "api/config"
-local equipment = require "characters/characters_equipment"
-local skill_trees = require "characters/characters_skill_trees"
+local equipment = require "characters/equipment"
+local skill_trees = require "characters/skill_trees"
 
 local recalculate = {}
 
