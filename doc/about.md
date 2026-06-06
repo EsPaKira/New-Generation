@@ -12,6 +12,6 @@
 
 Напоследок хочу сказать спасибо комьюнити VoxelCore
 
-Спасибо Zellrus за VoxelWorld, Xertis за Neutron и Penrose, kotisoff за NotSurvival, Dave за RetroComputers, AlexMurev за JustBlocks и WTHIT, Onran0 за voxelbench, RomanDonw за SCP Foundation и остальным мододелам, которых не упомянул. В особенности спасибо MihailRis за VoxelCore, ведь если бы не он, то всего этого не было бы. Своим примером вы вдохновляете и мотивируете меня развивать New Generation дальше.
+Спасибо Zellrus за VoxelWorld, Xertis за Neutron и Penrose, kotisoff за NotSurvival, Dave за RetroComputers, AlexMurev за JustBlocks и WTHIT, Onran0 за voxelbench, MegaShield за MegaBlocks и крутые карты, RomanDonw за SCP Foundation и остальным мододелам, которых не упомянул. В особенности спасибо MihailRis за VoxelCore, ведь если бы не он, то всего этого не было бы. Своим примером вы вдохновляете и мотивируете меня развивать New Generation дальше.
 
 [Назад](main_page.md)
