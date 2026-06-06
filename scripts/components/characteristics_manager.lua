@@ -1,9 +1,11 @@
-local characters = require "characters/characters_main"
+local characters = require "characters/main"
 local characteristics = {}
 
 local function def_characteristics(name, def_value)
     characteristics[name] = SAVED_DATA[name] or ARGS[name] or def_value
-    this["get_"..name] = function() return characteristics[name] or SAVED_DATA[name] or ARGS[name] or def_value end
+    this["get_" .. name] = function()
+        return characteristics[name] or SAVED_DATA[name] or ARGS[name] or def_value
+    end
 end
 
 -- base values
@@ -19,7 +21,8 @@ def_characteristics("agility", 1)
 def_characteristics("accuracy", 1)
 def_characteristics("heat_preservation", 0)
 def_characteristics("heat_reflection", 0)
-def_characteristics("crush_damage_protection", 0)
+def_characteristics("absolute_damage_protection", 0)
+def_characteristics("crushing_damage_protection", 0)
 def_characteristics("slashing_damage_protection", 0)
 def_characteristics("piercing_damage_protection", 0)
 
@@ -43,6 +46,7 @@ function set_player(pid, value)
 end
 
 function is_player()
+    -- update all stats if this entity is player
     local pid = entity:get_player()
     if pid ~= -1 then
         set_player_characteristics(pid, ARGS.name)

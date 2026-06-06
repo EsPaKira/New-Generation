@@ -14,7 +14,8 @@
         "accuracy": 1,
         "heat_preservation": 0,
         "heat_reflection": 0,
-        "crush_damage_protection": 0,
+        "absolute_damage_protection": 0,
+        "crushing_damage_protection": 0,
         "slashing_damage_protection": 0,
         "piercing_damage_protection": 0
     }

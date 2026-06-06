@@ -8,10 +8,11 @@ local gamemodes = require "gamemodes"
 local world_data = require "world_data"
 local furnaces = require "furnaces"
 local weather = require "weather"
-local characters = require "characters/characters_main"
+local characters = require "characters/main"
+local recalculate = require "characters/recalculate"
 
 local breaking_blocks = {}
-local player_loaded = false
+local player_loaded = false -- NEVER USE THIS
 
 local function get_durability(id)
     local durability = block.properties[id]["base:durability"]
@@ -77,12 +78,15 @@ function on_world_quit()
     world_data.save()
 end
 
-local function tick_breaking(pid, tps)
+local function tick_breaking(pid, tps, breaking)
     if player.get_entity(pid) == 0 then
         return -- dead
     end
     local gamemode = gamemodes.get(pid).current
     if gamemode ~= "survival" then
+        if not breaking then return end
+        local x, y, z = player.get_selected_block(pid)
+        DI.drop_inventory(inventory.get_block(x, y, z), {x, y, z}, 1)
         return
     end
     local target = breaking_blocks[pid]
@@ -151,6 +155,8 @@ local function player_entity_loaded()
     local pentity = entities.get(player.get_entity(hud.get_player()))
     if not pentity then return end
 
+    recalculate.auto_load(characters.players)
+
     local c_manager = pentity:require_component("newgen:characteristics_manager")
     c_manager.set_player(hud.get_player(), true)
     characters.update_survival_ui(hud.get_player(), characters.get_choosen_character(hud.get_player()))
@@ -165,7 +171,7 @@ end
 function on_block_breaking(id, x, y, z, pid)
     local target = breaking_blocks[pid]
     if not target or not target.breaking then
-        tick_breaking(pid, 20)
+        tick_breaking(pid, 20, true)
     end
 end
 

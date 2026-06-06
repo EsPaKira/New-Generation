@@ -1,5 +1,5 @@
 <container id="body_tree" size-func="gui.get_viewport()[1],gui.get_viewport()[2]">
-    <image size-func="gui.get_viewport()[1], gui.get_viewport()[2]" src="gui/space" />
+    <image id="background" size-func="gui.get_viewport()[1], gui.get_viewport()[2]" />
     <button hover-color="050" color="100" gravity="top-right" onclick="go_back()">@Back</button>
     <container size="1000,30" position-func="gui.get_viewport()[1]/2-500, 15" color="#000000">
         <label gravity="center-center">@Body</label>

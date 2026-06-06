@@ -120,7 +120,7 @@ function on_hud_open()
             player.set_pos(pid, player.get_spawnpoint(pid))
             player.set_rot(pid, 0, 0, 0)
             player.set_entity(pid, -1)
-            print("Player ID, entity ID: ", pid, player.get_entity(pid), "is dead")
+            console.log("Player ID:", pid, "is dead")
             menu:reset()
             isdead = false
             gfx.posteffects.set_intensity(health_effect, 0.0)
@@ -129,13 +129,13 @@ function on_hud_open()
         gfx.posteffects.set_intensity(health_effect, 1.0)
     end)
 
-    events.on("newgen:player_damage", function(pid, points)
+    events.on("newgen:player_damage", function(pid)
         if pid ~= hud.get_player() then
             return
         end
         local rx, ry, _ = player.get_rot(pid)
         local x, y, z = player.get_pos(pid)
-        audio.play_sound("entities/damage", x, y, z, random.random(), 1)
+        audio.play_sound("entities/damage", x, y, z, (random.random(5,10) / 10), 1)
         player.set_rot(pid, rx, ry, math.random() < 0.5 and 13 or -13)
     end)
 

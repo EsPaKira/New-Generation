@@ -13,6 +13,7 @@ Main characteristics=Основные характеристики
 Other characteristics=Остальные характеристики
 Types of protection=Виды защиты
 Body=Тело
+Physical damage depends on the body level=Физический урон зависит от уровня тела
 Soul=Душа
 Oxygen=Кислород
 Archium=Архиум
@@ -23,7 +24,9 @@ Agility=Ловкость
 Accuracy=Меткость
 Heat preservation=Сохранение тепла
 Heat reflection=Отражение тепла
-Crush damage protection=Защита от дробящего урона
+Absolute damage protection=Абсолютная защита
+Absolute damage protection doesn't protect from falling and suffocation damage=Абсолютная защита не защиащет от урона при падении и удушье
+Crushing damage protection=Защита от дробящего урона
 Slashing damage protection=Защита от рубящего урона
 Piercing damage protection=Защита от колющего урона
 Choosen character name=Имя выбранного персонажа
@@ -43,6 +46,24 @@ Craft=Создать
 
 Research=Исследовать
 
+# Настройки New Generation
+
+New Generation settings=Настройки New Generation
+These settings are necessary for recalculating characters stats and for changing the gamemode=Эти настройки нужны для перерасчёта характеристик персонажей и для смены gamemode
+Change gamemode=Сменить gamemode
+Survival=Выживание
+Creative=Творческий
+Recalculate characteristics=Перерасчитать характеристики
+Recalculate=Перерасчитать
+Recalculate stats for all available characters=Перерасчитывает характеристики для всех доступных персонажей
+Select background=Выбрать фон
+
+# Фоны
+
+gui/space=Космос
+gui/gunmetal=Оружейная сталь
+gui/total_black=Абсолютно чёрный
+
 
 # Чат
 
@@ -57,6 +78,7 @@ bear summoning card=карта призыва медведя
 blackberry=черника
 bone needle=костяная игла
 bone=кость
+chest loot activator=активатор хранилищ
 clay tile=глиняный черепок
 coal=каменный уголь
 copper axe head=медная голова топора
@@ -94,14 +116,15 @@ Fuel=Топливо
 Can be melted=Может быть расплавлено
 Can be ignited with torch=Можно разжечь факелом
 Can ignit the oven=Может разжечь печь
-Use to change the shape of the roof\n1 crush damage=Используй, чтобы изменить вид крыши\n1 дробящего урона
+Activate loot generation after use on block=Активирует генерацию лута в хранилище
+Use to change the shape of the roof\n1 crushing damage=Используй, чтобы изменить вид крыши\n1 дробящего урона
 It can be slept on=На нём можно спать
 Saves spawnpoint=Сохраняет точку спавна
 3 slashing damage=3 рубящего урона
 2 slashing damage=2 рубящего урона
 3 piercing damage=3 колющего урона
 2 piercing damage=2 колющего урона
-2 crush damage=2 дробящего урона
+2 crushing damage=2 дробящего урона
 
 
 # Материалы(нужны для крафтов)

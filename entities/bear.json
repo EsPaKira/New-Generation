@@ -11,8 +11,8 @@
         {
             "name": "newgen:characteristics_manager",
             "args": {
-                "health": 8,
-                "max_health": 8
+                "health": 12,
+                "max_health": 12
             }
         },
         {

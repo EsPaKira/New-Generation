@@ -39,6 +39,7 @@ structures = [
     {name="dead_tree", weight=0.02},
     {name="ruins0", weight=0.01},
     {name="camp", weight=0.01},
+    {name="old_obelisk", weight=0.015},
     {name="weavers_cocoon", weight=0.015}
 ]
 
@@ -88,6 +89,7 @@ structures = [
     {name="gabbro_big_rock", weight=0.02},
     {name="ruins0", weight=0.01},
     {name="camp", weight=0.01},
+    {name="old_obelisk", weight=0.02},
     {name="weavers_cocoon", weight=0.015}
 ]
 
@@ -228,6 +230,7 @@ structures = [
     {name="dead_tree", weight=0.02},
     {name="ruins0", weight=0.01},
     {name="camp", weight=0.01},
+    {name="old_obelisk", weight=0.02},
     {name="weavers_cocoon", weight=0.015}
 ]
 

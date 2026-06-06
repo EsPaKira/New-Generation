@@ -4,7 +4,7 @@
 
 local gamemodes = require "gamemodes"
 local DI = require "drop_inventory"
-local characters = require "characters/characters_main"
+local characters = require "characters/main"
 
 
 local c_manager = entity:require_component("newgen:characteristics_manager")
@@ -12,17 +12,18 @@ local c_manager = entity:require_component("newgen:characteristics_manager")
 local health = c_manager:get_health()
 local max_health = c_manager:get_max_health()
 
+local health_regen_timer = 0
+local in_battle_timer = 0
+
 
 function load_health()
-    if c_manager.is_player() then
-        health = c_manager:get_health()
-        max_health = c_manager:get_max_health()
-    end
+    c_manager.is_player() -- update all stats if this entity is player
+    health = c_manager:get_health()
+    max_health = c_manager:get_max_health()
 end
 
 function set_health(value)
     if value == health then return end
-    load_health()
     health = math.min(math.max(0, value), max_health)
     local is_player, character_name = c_manager.is_player()
 
@@ -61,9 +62,10 @@ function heal(points)
 end
 
 local function calculate_damage(points, type)
-    if type == "falling" then return end
+    if type == "falling" then return points end
+    if type == "suffocation" then return points end
     local protection = c_manager["get_" .. type .. "_damage_protection"]()
-    return math.max(0, math.floor(points - protection))
+    return math.round(math.max(0, (points - c_manager:get_absolute_damage_protection()) * (1 - protection)))
 end
 
 function damage(points, type)
@@ -72,10 +74,15 @@ function damage(points, type)
     if pid and gamemodes.get(pid).current == "creative" then
         return
     end
+
+    in_battle_timer = 10
+
     if pid then
-        events.emit("newgen:player_damage", pid, points)
+        events.emit("newgen:player_damage", pid)
     end
     local end_damage = calculate_damage(points, type)
+
+    load_health()
     set_health(health - end_damage)
     if health == 0 then
         die()
@@ -83,7 +90,17 @@ function damage(points, type)
     end
 end
 
+function on_update(tps)
+    if health_regen_timer >= 1 and in_battle_timer == 0 then
+        heal(1)
+        health_regen_timer = 0
+    end
+
+    health_regen_timer = health_regen_timer + 1 / tps
+    in_battle_timer = math.max(0, in_battle_timer - 1 / tps)
+end
+
 function on_grounded(force)
-    local dmg = math.floor((force - 12) * 1.1)
+    local dmg = math.floor((force - 13) * 1.1)
     damage(math.max(0, math.floor(dmg)), "falling")
 end

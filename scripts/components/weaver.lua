@@ -17,7 +17,7 @@ function on_update(tps)
         pathfinding.set_target({px, py, pz})
         pathfinding.set_refresh_interval(5)
         mob.look_at({px, py + 1, pz}, true)
-        if vec3.distance(pos, {px, py, pz}) < 3 then
+        if vec3.distance(pos, {px, py, pz}) < 2 then
             atack_timer = atack_timer + 1 / tps * speed_of_attack
             if atack_timer >= 1 then 
                 atack_timer = 0
@@ -43,11 +43,11 @@ function on_attacked(eid, pid)
     local invid, slot = player.get_inventory(pid)
     local itemid, _ = inventory.get(invid, slot)
     local tool = item.properties[itemid]["newgen:tool"]
-    local type_of_damage = "crush"
+    local type_of_damage = "crushing"
     local total_damage = 0
     if tool then
         type_of_damage = tool.damage[1].type
-        total_damage = tool.damage[1].count
+        total_damage = total_damage + tool.damage[1].count
     end
 
     local c_manager = entities.get(eid):require_component("newgen:characteristics_manager")
@@ -63,10 +63,10 @@ function attack(pid)
     if gamemodes.get(pid).current == "creative" then
         return
     end
-    local target = entities.get(pid)
+    local target = entities.get(player.get_entity(pid))
     if target then
         local pos = tsf:get_pos()
         audio.play_sound("entities/spider_attack", pos[1], pos[2], pos[3], random.random(), 1)
-        target:get_component("newgen:health_system").damage(1, "piercing")
+        target:get_component("newgen:health_system").damage(2, "piercing")
     end
 end

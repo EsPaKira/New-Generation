@@ -1,7 +1,14 @@
-#Crafts menu
+# Crafts menu
 
 Crafts on workbench_crafts=Crafts on workbench
 workbench=Crafts on workbench
 Crafts on primitive_forge_crafts=Crafts on primitive forge
 primitive_forge_crafts=Crafts on primitive forge
 melting_crafts=Smelting
+
+
+# Backgrounds
+
+gui/space=Space
+gui/gunmetal=Gunmetal
+gui/total_black=Total black

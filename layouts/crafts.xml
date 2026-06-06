@@ -1,5 +1,5 @@
 <container size-func="gui.get_viewport()[1], gui.get_viewport()[2]">
-    <image size-func="gui.get_viewport()[1], gui.get_viewport()[2]" src="gui/space" />
+    <image id="background" size-func="gui.get_viewport()[1], gui.get_viewport()[2]" />
     <button hover-color="050" color="100" gravity="top-right" onclick="go_back()">@Back</button>
 
     <button id="crafts_header" size="755,30" z-index="2" interactive="false" position-func="gui.get_viewport()[1]/2 - 377.5, 0">@Crafts</button>

@@ -1,0 +1,4 @@
+{
+    "icon": "items:chest_loot_activator",
+    "description": "Activate loot generation after use on block"
+}

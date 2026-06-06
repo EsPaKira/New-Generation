@@ -9,8 +9,8 @@
             }
         },
         "damage": [
-            {"type": "crush", "count": 2}
+            {"type": "crushing", "count": 2}
         ]
     },
-    "description": "2 crush damage"
+    "description": "2 crushing damage"
 }

@@ -43,11 +43,11 @@ function on_attacked(eid, pid)
     local invid, slot = player.get_inventory(pid)
     local itemid, _ = inventory.get(invid, slot)
     local tool = item.properties[itemid]["newgen:tool"]
-    local type_of_damage = "crush"
+    local type_of_damage = "crushing"
     local total_damage = 0
     if tool then
         type_of_damage = tool.damage[1].type
-        total_damage = tool.damage[1].count
+        total_damage = total_damage + tool.damage[1].count
     end
 
     local c_manager = entities.get(eid):require_component("newgen:characteristics_manager")
@@ -63,7 +63,7 @@ function attack(pid)
     if gamemodes.get(pid).current == "creative" then
         return
     end
-    local target = entities.get(pid)
+    local target = entities.get(player.get_entity(pid))
     if target then
         target:get_component("newgen:health_system").damage(3, "slashing")
     end
