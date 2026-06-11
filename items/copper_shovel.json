@@ -1,25 +1,25 @@
 {
-    "icon": "items:copper_axe",
+    "icon": "items:copper_shovel",
     "uses": 167,
     "newgen:tool": {
         "type": "breaker",
         "materials": {
             "base:stone": {
-                "speed": 1.2
+                "speed": 1
             },
             "base:wood": {
-                "speed": 2
+                "speed": 1
             },
             "base:ground": {
-                "speed": 1.2
+                "speed": 2
             },
             "base:grass_block": {
-                "speed": 1.1
+                "speed": 1.8
             }
         },
         "damage": [
-            {"type": "slashing", "count": 3}
+            {"type": "slashing", "count": 2}
         ]
     },
-    "description": "3 slashing damage"
+    "description": "2 slashing damage"
 }

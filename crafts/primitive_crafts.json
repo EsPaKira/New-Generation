@@ -26,6 +26,14 @@
     },
     {
         "components": [
+            {"tag": "pebble", "count": 2}
+        ],
+        "results": [
+            {"id": "newgen:stone_shovel_blade", "count": 1}
+        ]
+    },
+    {
+        "components": [
             {"tag": "pebble", "count": 4}
         ],
         "results": [
@@ -43,11 +51,29 @@
     },
     {
         "components": [
+            {"id": "newgen:stone_shovel_blade", "count": 1},
+            {"id": "newgen:stick", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:stone_shovel", "count": 1}
+        ]
+    },
+    {
+        "components": [
             {"id": "newgen:copper_axe_head", "count": 1},
             {"id": "newgen:stick", "count": 1}
         ],
         "results": [
             {"id": "newgen:copper_axe", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:copper_shovel_blade", "count": 1},
+            {"id": "newgen:stick", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:copper_shovel", "count": 1}
         ]
     },
     {
@@ -85,6 +111,38 @@
         "results": [
             {"id": "newgen:workbench.item", "count": 1},
             {"id": "newgen:stone_axe", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"tag": "wood", "count": 2},
+            {"id": "newgen:copepr_axe", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:workbench.item", "count": 1},
+            {"id": "newgen:copper_axe", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"tag": "wood", "count": 2},
+            {"id": "newgen:stone_axe", "count": 1},
+            {"id": "newgen:coal", "count": 2}
+        ],
+        "results": [
+            {"id": "newgen:campfire.item", "count": 1},
+            {"id": "newgen:stone_axe", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"tag": "wood", "count": 2},
+            {"id": "newgen:copper_axe", "count": 1},
+            {"id": "newgen:coal", "count": 2}
+        ],
+        "results": [
+            {"id": "newgen:campfire.item", "count": 1},
+            {"id": "newgen:copper_axe", "count": 1}
         ]
     },
     {

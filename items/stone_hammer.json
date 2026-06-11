@@ -6,6 +6,9 @@
         "materials": {
             "base:stone": {
                 "speed": 3
+            },
+            "base:wood": {
+                "speed": 1
             }
         },
         "damage": [

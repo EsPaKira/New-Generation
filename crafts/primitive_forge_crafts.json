@@ -11,6 +11,16 @@
     },
     {
         "components": [
+            {"id": "newgen:copper_ingot", "count": 9},
+            {"id": "newgen:stone_hammer", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:copper_shovel_blade", "count": 1},
+            {"id": "newgen:stone_hammer", "count": 1}
+        ]
+    },
+    {
+        "components": [
             {"id": "newgen:copper_ingot", "count": 12},
             {"id": "newgen:stone_hammer", "count": 1}
         ],

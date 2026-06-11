@@ -121,7 +121,11 @@
     "gabbro.item",
     "marble.item",
     "weaver_summoning_card",
-    "chest_loot_activator"
+    "chest_loot_activator",
+    "copper_shovel",
+    "stone_shovel",
+    "stone_shovel_blade",
+    "copper_shovel_blade"
   ],
   "entities": [
     "base:player",
