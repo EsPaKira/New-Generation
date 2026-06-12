@@ -68,6 +68,7 @@ gui/total_black=Абсолютно чёрный
 # Чат
 
 New spawnpoint at=Новая точка спавна на
+found=обнаружено
 
 
 # Предметы
@@ -83,6 +84,8 @@ clay tile=глиняный черепок
 coal=каменный уголь
 copper axe head=медная голова топора
 copper axe=медный топор
+copper geological hammer head=медная голова геологического молотка
+copper geological hammer=медный геологический молоток
 copper ingot=самородок меди
 copper pickaxe head=медная голова кирки
 copper pickaxe=медная кирка
@@ -122,6 +125,7 @@ Can be ignited with torch=Можно разжечь факелом
 Can ignit the oven=Может разжечь печь
 Activate loot generation after use on block=Активирует генерацию лута в хранилище
 Use to change the shape of the roof\n1 crushing damage=Используй, чтобы изменить вид крыши\n1 дробящего урона
+Use on block\n3 crushing damage=Используй по блоку\n3 дробящего урона
 It can be slept on=На нём можно спать
 Saves spawnpoint=Сохраняет точку спавна
 3 slashing damage=3 рубящего урона

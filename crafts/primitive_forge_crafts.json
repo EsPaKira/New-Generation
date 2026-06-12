@@ -28,5 +28,15 @@
             {"id": "newgen:copper_pickaxe_head", "count": 1},
             {"id": "newgen:stone_hammer", "count": 1}
         ]
+    },
+    {
+        "components": [
+            {"id": "newgen:copper_ingot", "count": 9},
+            {"id": "newgen:stone_hammer", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:copper_geological_hammer_head", "count": 1},
+            {"id": "newgen:stone_hammer", "count": 1}
+        ]
     }
 ]

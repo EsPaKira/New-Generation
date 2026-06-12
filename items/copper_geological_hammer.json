@@ -1,14 +1,14 @@
 {
-    "icon": "items:stone_hammer",
-    "uses": 52,
+    "icon": "items:copper_geological_hammer",
+    "uses": 242,
     "newgen:tool": {
         "type": "breaker",
         "materials": {
             "base:stone": {
-                "speed": 2.7
+                "speed": 2
             },
             "base:wood": {
-                "speed": 1
+                "speed": 1.1
             },
             "base:ground": {
                 "speed": 1.2
@@ -18,8 +18,8 @@
             }
         },
         "damage": [
-            {"type": "crushing", "count": 2}
+            {"type": "crushing", "count": 3}
         ]
     },
-    "description": "2 crushing damage"
+    "description": "Use on block\n3 crushing damage"
 }
