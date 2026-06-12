@@ -2,6 +2,7 @@ local furnaces = require "furnaces"
 local characters = require "characters/main"
 local api = require "api/api_main"
 local config = require "api/config"
+local spawners = require "spawners"
 
 local world_data = {}
 
@@ -34,6 +35,12 @@ function world_data.open()
         local data = file.read(path)
         world_data.load(json.parse(data), api)
     end
+
+    path = pack.data_file(PACK_ID, "spawners.json")
+    if file.exists(path) then
+        local data = file.read(path)
+        world_data.load(json.parse(data).data, spawners)
+    end
 end
 
 function world_data.save()
@@ -48,6 +55,9 @@ function world_data.save()
 
     path = pack.data_file(PACK_ID, "config.json")
     file.write(path, json.tostring(config.get_all_data(), true))
+
+    path = pack.data_file(PACK_ID, "spawners.json")
+    file.write(path, json.tostring(spawners.get_all_data(), true))
 end
 
 function world_data.load(data, module)

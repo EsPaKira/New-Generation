@@ -120,7 +120,7 @@ function on_hud_open()
             player.set_pos(pid, player.get_spawnpoint(pid))
             player.set_rot(pid, 0, 0, 0)
             player.set_entity(pid, -1)
-            console.log("Player ID:", pid, "is dead")
+            console.chat("Player ID:" .. " " ..  pid .. " " .. "is dead")
             menu:reset()
             isdead = false
             gfx.posteffects.set_intensity(health_effect, 0.0)

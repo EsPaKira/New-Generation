@@ -37,7 +37,7 @@ end
 
 function die()
     local tsf = entity.transform
-    events.emit("newgen:death", tsf:get_pos())
+    events.emit("newgen:death", tsf:get_pos(), entity)
 
     local pid = entity:get_player()
     if pid == -1 then
