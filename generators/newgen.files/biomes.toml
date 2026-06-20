@@ -114,8 +114,7 @@ plant-chance = 0.65
 plants = [
     {weight=1, block="newgen:snow_pile"},
     {weight=0.05, block="newgen:dead_white_bush"},
-    {weight=0.05, block="newgen:dead_grass"},
-    {weight=0.03, block="newgen:dead_tall_grass"}
+    {weight=0.08, block="newgen:snow_grass"}
 ]
 structure-chance = 0.01
 structures = [

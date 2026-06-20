@@ -38,19 +38,11 @@
     @part tags (top) texture "blocks:campfire" region (0.625, 0.9375, 0.6875, 1)
     @part tags (bottom) texture "blocks:campfire" region (0.625, 0.875, 0.6875, 0.9375)
 }
-@box from (0.484375, 0, 0.296875) to (0.484375, 0.625, 0.671875) origin (0.546875, 0, 0.359375) {
-    @part tags (south) texture "blocks:campfire" region (0, 0.6875, 0, 1)
+@box from (0.484375, 0, 0.296875) to (0.484375, 0.625, 0.671875) origin (0.546875, 0, 0.359375) delete (top, bottom, north, south) {
     @part tags (west) texture "blocks:campfire" region (0, 0.6875, 0.1875, 1)
-    @part tags (north) texture "blocks:campfire" region (0, 0.6875, 0, 1)
     @part tags (east) texture "blocks:campfire" region (0.375, 0.6875, 0.1875, 1)
-    @part tags (top) texture "blocks:campfire" region (0, 0.8125, 0, 1)
-    @part tags (bottom) texture "blocks:campfire" region (0, 0.8125, 0, 1)
 }
-@box from (0.296875, 0, 0.5) to (0.671875, 0.625, 0.5) origin (0.359375, 0, 0.5625) {
+@box from (0.296875, 0, 0.5) to (0.671875, 0.625, 0.5) origin (0.359375, 0, 0.5625) delete (top, bottom, east, west) {
     @part tags (south) texture "blocks:campfire" region (0, 0.6875, 0.1875, 1)
-    @part tags (west) texture "blocks:campfire" region (0, 0.6875, 0, 1)
     @part tags (north) texture "blocks:campfire" region (0.1875, 0.6875, 0.375, 1)
-    @part tags (east) texture "blocks:campfire" region (0, 0.6875, 0, 1)
-    @part tags (top) texture "blocks:campfire" region (0, 1, 0.1875, 1)
-    @part tags (bottom) texture "blocks:campfire" region (0.1875, 1, 0, 1)
 }

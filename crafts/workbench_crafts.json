@@ -9,7 +9,15 @@
     },
     {
         "components": [
-            {"tag": "wood", "count": 1}
+            {"id": "newgen:spruce_planks.item", "count": 2}
+        ],
+        "results": [
+            {"id": "base:wooden_door.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "base:wood.item", "count": 1}
         ],
         "results": [
             {"id": "base:planks.item", "count": 2}
@@ -17,7 +25,23 @@
     },
     {
         "components": [
+            {"id": "newgen:spruce.item", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:spruce_planks.item", "count": 2}
+        ]
+    },
+    {
+        "components": [
             {"id": "base:planks.item", "count": 3}
+        ],
+        "results": [
+            {"id": "newgen:box.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:spruce_planks.item", "count": 3}
         ],
         "results": [
             {"id": "newgen:box.item", "count": 1}

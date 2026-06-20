@@ -125,7 +125,7 @@
     {
         "components": [
             {"tag": "wood", "count": 2},
-            {"id": "newgen:copepr_axe", "count": 1}
+            {"id": "newgen:copper_axe", "count": 1}
         ],
         "results": [
             {"id": "newgen:workbench.item", "count": 1},

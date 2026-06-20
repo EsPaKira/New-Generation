@@ -132,6 +132,8 @@
     "snow_pile",
     "straw_bedding",
     "weavers_cocoon",
-    "web"
+    "web",
+    "spruce_planks",
+    "snow_grass"
   ]
 }
