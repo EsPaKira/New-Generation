@@ -2,5 +2,6 @@
 "newgen:food" = {}
 "newgen:equipment" = {}
 "newgen:material" = {}
-"newgen:craft-material" = ""
+"newgen:craft-material" = {}
 "newgen:have-loot" = {}
+"newgen:placed_particles" = {}

@@ -134,6 +134,20 @@
     "weavers_cocoon",
     "web",
     "spruce_planks",
-    "snow_grass"
+    "snow_grass",
+    "stairs_template",
+    "sandstone_stairs",
+    "limestone_stairs",
+    "marble_stairs",
+    "sailcloth_stairs",
+    "dolomite_stairs",
+    "peridotite_stairs",
+    "mossy_red_bricks",
+    "mossy_red_brick_stairs",
+    "red_brick_stairs",
+    "base:sand",
+    "base:leaves",
+    "planks_stairs",
+    "spruce_planks_stairs"
   ]
 }

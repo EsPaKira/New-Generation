@@ -1,0 +1,7 @@
+{
+    "material": "base:stone",
+    "parent": "newgen:stairs_template",
+    "texture": "red_bricks",
+    "caption": "red brick stairs",
+    "hidden" : false
+}

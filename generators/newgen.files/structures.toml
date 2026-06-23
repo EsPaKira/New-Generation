@@ -30,6 +30,8 @@ diorite_little_rock = {}
 diorite_big_rock = {}
 gabbro_little_rock = {}
 gabbro_big_rock = {}
+sandstone_rock = {}
+sandstone_pillar = {lowering=3}
 camp = {}
 weavers_cocoon = {lowering=4}
-old_obelisk = {}
+old_obelisk = {lowering=1}

@@ -19,8 +19,12 @@
         "max_angular_vel": 2.0,
         "lighting": true,
         "frames": [
-            "particles:leaf_0"
+            "particles:spruce_needle_0"
         ]
     },
+    "script-name": "block_particles",
+    "newgen:placed_particles": [
+        "particles:spruce_needle_0"
+    ],
     "base:durability": 0.7
 }

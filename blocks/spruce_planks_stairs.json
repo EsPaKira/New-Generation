@@ -1,0 +1,6 @@
+{
+    "parent": "newgen:stairs_template",
+    "texture": "spruce_planks",
+    "caption": "spruce planks stairs",
+    "hidden" : false
+}

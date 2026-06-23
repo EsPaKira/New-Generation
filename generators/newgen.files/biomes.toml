@@ -146,10 +146,12 @@ plants = [
     {weight=0.03, block="newgen:dead_bush"},
     {weight=0.01, block="newgen:coal_stone"}
 ]
-structure-chance=0.01
+structure-chance=0.005
 structures = [
     {name="sandstone_coal0", weight=0.1},
-    {name="sandstone_coal1", weight=1}
+    {name="sandstone_coal1", weight=0.5},
+    {name="sandstone_pillar", weight=0.5},
+    {name="sandstone_rock", weight=1}
 ]
 
 [mountains]

@@ -1,0 +1,7 @@
+{
+    "material": "base:stone",
+    "parent": "newgen:stairs_template",
+    "texture": "peridotite",
+    "caption": "peridotite stairs",
+    "hidden" : false
+}

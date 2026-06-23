@@ -1,0 +1,7 @@
+{
+    "material": "base:stone",
+    "parent": "newgen:stairs_template",
+    "texture": "marble",
+    "caption": "marble stairs",
+    "hidden" : false
+}

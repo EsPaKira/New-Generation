@@ -1,0 +1,7 @@
+{
+    "material": "base:stone",
+    "parent": "newgen:stairs_template",
+    "texture": "mossy_red_bricks",
+    "caption": "mossy red brick stairs",
+    "hidden" : false
+}
