@@ -13,7 +13,7 @@
             {"id": "newgen:stick", "count": 1}
         ],
         "results": [
-            {"id": "base:torch.item", "count": 1}
+            {"id": "base:torch.item", "count": 4}
         ]
     },
     {
@@ -134,24 +134,11 @@
     },
     {
         "components": [
-            {"tag": "wood", "count": 2},
-            {"id": "newgen:stone_axe", "count": 1},
+            {"id": "newgen:stick", "count": 6},
             {"id": "newgen:coal", "count": 2}
         ],
         "results": [
-            {"id": "newgen:campfire.item", "count": 1},
-            {"id": "newgen:stone_axe", "count": 1}
-        ]
-    },
-    {
-        "components": [
-            {"tag": "wood", "count": 2},
-            {"id": "newgen:copper_axe", "count": 1},
-            {"id": "newgen:coal", "count": 2}
-        ],
-        "results": [
-            {"id": "newgen:campfire.item", "count": 1},
-            {"id": "newgen:copper_axe", "count": 1}
+            {"id": "newgen:campfire.item", "count": 1}
         ]
     },
     {
@@ -221,6 +208,14 @@
     },
     {
         "components": [
+            {"id": "base:grass.item", "count": 4}
+        ],
+        "results": [
+            {"id": "newgen:straw_hat", "count": 1}
+        ]
+    },
+    {
+        "components": [
             {"id": "newgen:dead_tall_grass.item", "count": 2}
         ],
         "results": [
@@ -230,6 +225,14 @@
     {
         "components": [
             {"id": "newgen:dead_grass.item", "count": 12}
+        ],
+        "results": [
+            {"id": "newgen:hay.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "base:grass.item", "count": 12}
         ],
         "results": [
             {"id": "newgen:hay.item", "count": 1}
@@ -258,5 +261,21 @@
         "results": [
             {"id": "newgen:straw_bedding.item", "count": 1}
         ] 
+    },
+    {
+        "components": [
+            {"tag": "flower", "count": 5}
+        ],
+        "results": [
+            {"id": "newgen:wreath", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"tag": "flower", "count": 9}
+        ],
+        "results": [
+            {"id": "newgen:hay.item", "count": 1}
+        ]
     }
 ]

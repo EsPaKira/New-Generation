@@ -16,12 +16,9 @@ sea-layers = [
 plant-chance = 0.42
 plants = [
     {weight=1, block="base:grass"},
-    {weight=0.05, block="newgen:dead_grass"},
-    {weight=0.03, block="newgen:dead_tall_grass"},
     {weight=0.03, block="newgen:bush"},
     {weight=0.03, block="newgen:small_stick"},
     {weight=0.02, block="newgen:lily"},
-    {weight=0.01, block="newgen:dead_bush"},
     {weight=0.01, block="newgen:blackberry_bush"},
     {weight=0.01, block="newgen:moss"},
     {weight=0.01, block="newgen:white_mushrooms"},
@@ -62,14 +59,11 @@ sea-layers = [
 plant-chance = 0.5
 plants = [
     {weight=1, block="base:grass"},
-    {weight=0.05, block="newgen:dead_grass"},
-    {weight=0.03, block="newgen:dead_tall_grass"},
     {weight=0.03, block="newgen:bush"},
     {weight=0.03, block="newgen:small_stick"},
     {weight=0.03, block="newgen:gabbro_stone"},
     {weight=0.02, block="newgen:lily"},
     {weight=0.03, block="newgen:clover"},
-    {weight=0.01, block="newgen:dead_bush"},
     {weight=0.01, block="newgen:blackberry_bush"},
     {weight=0.01, block="newgen:cowberry_bush"},
     {weight=0.01, block="newgen:moss"},
@@ -207,9 +201,6 @@ sea-layers = [
 plant-chance = 0.45
 plants = [
     {weight=1, block="base:grass"},
-    {weight=0.05, block="newgen:dead_grass"},
-    {weight=0.03, block="newgen:dead_tall_grass"},
-    {weight=0.03, block="newgen:dead_bush"},
     {weight=0.03, block="newgen:bush"},
     {weight=0.02, block="newgen:dandelions"},
     {weight=0.03, block="newgen:clover"},
@@ -255,11 +246,8 @@ plants = [
     {weight=1, block="base:grass"},
     {weight=0.05, block="newgen:cattail"},
     {weight=0.05, block="newgen:bush"},
-    {weight=0.03, block="newgen:dead_grass"},
     {weight=0.03, block="newgen:small_stick"},
-    {weight=0.02, block="newgen:dead_tall_grass"},
     {weight=0.02, block="newgen:daisies"},
-    {weight=0.01, block="newgen:dead_bush"},
     {weight=0.01, block="newgen:dolomite_stone"},
     {weight=0.01, block="newgen:malachite_stone"},
     {weight=0.01, block="newgen:coal_stone"}

@@ -1,0 +1,8 @@
+{
+    "parent": "newgen:slab_template",
+    "texture": "peridotite",
+    "caption": "peridotite slab",
+    "hidden": false,
+    "picking-item": "newgen:peridotite_slab.item",
+    "newgen:full-block": "newgen:peridotite"
+}

@@ -1,0 +1,9 @@
+{
+    "parent": "newgen:slab_template",
+    "material": "base:wood",
+    "texture": "planks",
+    "caption": "planks slab",
+    "hidden": false,
+    "picking-item": "newgen:planks_slab.item",
+    "newgen:full-block": "base:planks"
+}

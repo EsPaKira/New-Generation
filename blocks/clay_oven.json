@@ -8,7 +8,7 @@
     "inventory-size": 3,
     "state-based": {
         "offset": 0,
-        "bits": 4,
+        "bits": 1,
         "variants": [
             {
                 "model": "custom",

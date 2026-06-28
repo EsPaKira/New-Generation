@@ -3,5 +3,6 @@
     "parent": "newgen:stairs_template",
     "texture": "sandstone",
     "caption": "sandstone stairs",
-    "hidden" : false
+    "hidden" : false,
+    "picking-item": "newgen:sandstone_stairs.item"
 }

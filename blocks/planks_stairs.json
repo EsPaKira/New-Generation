@@ -2,5 +2,6 @@
     "parent": "newgen:stairs_template",
     "texture": "planks",
     "caption": "planks stairs",
-    "hidden" : false
+    "hidden" : false,
+    "picking-item": "newgen:planks_stairs.item"
 }

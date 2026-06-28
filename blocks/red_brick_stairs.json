@@ -3,5 +3,6 @@
     "parent": "newgen:stairs_template",
     "texture": "red_bricks",
     "caption": "red brick stairs",
-    "hidden" : false
+    "hidden" : false,
+    "picking-item": "newgen:red_brick_stairs.item"
 }

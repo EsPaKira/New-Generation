@@ -33,10 +33,42 @@
     },
     {
         "components": [
+            {"id": "base:planks.item", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:planks_slab.item", "count": 2}
+        ]
+    },
+    {
+        "components": [
+            {"id": "base:planks.item", "count": 3}
+        ],
+        "results": [
+            {"id": "newgen:planks_stairs.item", "count": 4}
+        ]
+    },
+    {
+        "components": [
             {"id": "base:planks.item", "count": 3}
         ],
         "results": [
             {"id": "newgen:box.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:spruce_planks.item", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:spruce_planks_slab.item", "count": 2}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:spruce_planks.item", "count": 3}
+        ],
+        "results": [
+            {"id": "newgen:spruce_planks_stairs.item", "count": 4}
         ]
     },
     {
@@ -77,6 +109,22 @@
         ],
         "results": [
             {"id": "newgen:linen_shirt", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:sailcloth.item", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:sailcloth_slab.item", "count": 2}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:sailcloth.item", "count": 3}
+        ],
+        "results": [
+            {"id": "newgen:sailcloth_stairs.item", "count": 4}
         ]
     }
 ]

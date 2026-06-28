@@ -1,0 +1,8 @@
+{
+    "parent": "newgen:slab_template",
+    "texture": "marble",
+    "caption": "marble slab",
+    "hidden": false,
+    "picking-item": "newgen:marble_slab.item",
+    "newgen:full-block": "newgen:marble"
+}

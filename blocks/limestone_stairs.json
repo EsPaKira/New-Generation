@@ -3,5 +3,6 @@
     "parent": "newgen:stairs_template",
     "texture": "limestone",
     "caption": "limestone stairs",
-    "hidden" : false
+    "hidden" : false,
+    "picking-item": "newgen:limestone_stairs.item"
 }

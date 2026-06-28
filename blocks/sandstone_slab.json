@@ -1,0 +1,8 @@
+{
+    "parent": "newgen:slab_template",
+    "texture": "sandstone",
+    "caption": "sandstone slab",
+    "hidden": false,
+    "picking-item": "newgen:sandstone_slab.item",
+    "newgen:full-block": "newgen:sandstone"
+}

@@ -22,6 +22,7 @@
         "gui/wood",
         "gui/pebble",
         "gui/stone",
+        "gui/flower",
         "gui/clay_oven",
         "gui/fire",
         "gui/fire_active",
