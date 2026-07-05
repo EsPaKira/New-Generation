@@ -1,0 +1,10 @@
+{
+    "material": "base:glass",
+    "model": "custom",
+    "model-name": "jug",
+    "light-passing": true,
+    "rotation": "pane",
+    "script-name": "take_on_interact",
+    "hitbox": [0.34375, 0, 0.34375, 0.3125, 0.625, 0.3125],
+    "base:durability": 1
+}

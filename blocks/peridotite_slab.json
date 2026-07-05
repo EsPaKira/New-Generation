@@ -4,5 +4,6 @@
     "caption": "peridotite slab",
     "hidden": false,
     "picking-item": "newgen:peridotite_slab.item",
-    "newgen:full-block": "newgen:peridotite"
+    "newgen:full-block": "newgen:peridotite",
+    "base:durability": 6
 }

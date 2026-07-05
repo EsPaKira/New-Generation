@@ -3,5 +3,6 @@
     "texture": "planks",
     "caption": "planks stairs",
     "hidden" : false,
-    "picking-item": "newgen:planks_stairs.item"
+    "picking-item": "newgen:planks_stairs.item",
+    "base:durability": 4.5
 }

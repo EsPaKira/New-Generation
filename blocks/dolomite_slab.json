@@ -4,5 +4,6 @@
     "caption": "dolomite slab",
     "hidden": false,
     "picking-item": "newgen:dolomite_slab.item",
-    "newgen:full-block": "newgen:dolomite"
+    "newgen:full-block": "newgen:dolomite",
+    "base:durability": 6
 }

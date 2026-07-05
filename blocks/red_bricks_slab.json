@@ -4,5 +4,6 @@
     "caption": "red bricks slab",
     "hidden": false,
     "picking-item": "newgen:red_bricks_slab.item",
-    "newgen:full-block": "newgen:red_bricks"
+    "newgen:full-block": "newgen:red_bricks",
+    "base:durability": 6
 }

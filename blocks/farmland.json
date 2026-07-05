@@ -1,0 +1,42 @@
+{
+    "material": "base:ground",
+    "model": "custom",
+    "model-name": "farmland",
+    "texture-faces": [
+        "dirt",
+        "dirt",
+        "farmland",
+        "dirt",
+        "dirt",
+        "dirt"
+    ],
+    "hitbox": [0, 0, 0, 1, 0.9375, 1],
+    "fields": {
+        "humidity": {"type": "int8"}
+    },
+    "state-based": {
+        "offset": 0,
+        "bits": 1,
+        "variants": [
+            {
+                "model": "custom",
+                "model-name": "farmland",
+                "texture-faces": [
+                    "dirt_wet",
+                    "dirt_wet",
+                    "farmland_wet",
+                    "dirt",
+                    "dirt_wet",
+                    "dirt_wet"
+                ]
+            }
+        ]
+    },
+    "base:durability": 3,
+    "base:loot": [
+        {
+            "item": "base:dirt.item",
+            "count": 1
+        }
+    ]
+}

@@ -4,5 +4,6 @@
     "texture": "mud_bricks",
     "caption": "mud brick stairs",
     "hidden" : false,
-    "picking-item": "newgen:mud_brick_stairs.item"
+    "picking-item": "newgen:mud_brick_stairs.item",
+    "base:durability": 6
 }

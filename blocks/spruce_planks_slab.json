@@ -5,5 +5,6 @@
     "caption": "spruce planks slab",
     "hidden": false,
     "picking-item": "newgen:spruce_planks_slab.item",
-    "newgen:full-block": "newgen:spruce_planks"
+    "newgen:full-block": "newgen:spruce_planks",
+    "base:durability": 3
 }

@@ -1,3 +1,4 @@
 {
-    "texture": "mud_bricks"
+    "texture": "mud_bricks",
+    "base:durability": 8
 }

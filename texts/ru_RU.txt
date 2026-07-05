@@ -93,7 +93,10 @@ copper shovel blade=медное полотно лопаты
 copper shovel=медная лопата
 cowberry=брусника
 flax fiber=льняное волокно
+flax seeds=семена льна
 fur cape=меховая накидка
+jug of water=кувшин с водой
+jug=кувшин
 linen pants=льняные штаны
 linen shirt=льняная рубаха
 malachite ore=малахит
@@ -113,6 +116,8 @@ stone shovel=каменная лопата
 straw hat=соломенная шляпа
 unknown alloy=неизвестный сплав
 weaver summoning card=карта призыва ткача
+wooden bucket of water=деревянное ведро с водой
+wooden bucket=деревянное ведро
 wooden hammer=деревянный молот
 wreath=венок
 
@@ -149,6 +154,7 @@ Almost all stone blocks.=Почти все блоки камня
 # Блоки
 
 bag=мешок
+birch=берёзовое бревно
 blackberry bush=куст черники
 box=ящик
 bush=куст
@@ -174,6 +180,8 @@ dolomite slab=плита из доломита
 dolomite stairs=ступеньки из доломита
 dolomite stone=камень доломита
 dolomite=доломит
+farmland=пашня
+flax crop=лён
 flax=лён
 gabbro stone=камень габбро
 gabbro=габбро

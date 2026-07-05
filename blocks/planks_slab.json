@@ -5,5 +5,6 @@
     "caption": "planks slab",
     "hidden": false,
     "picking-item": "newgen:planks_slab.item",
-    "newgen:full-block": "base:planks"
+    "newgen:full-block": "base:planks",
+    "base:durability": 3
 }

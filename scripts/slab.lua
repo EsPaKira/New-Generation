@@ -3,10 +3,10 @@
 local SLAB_BOTTOM = 4
 local SLAB_TOP = 5
 
-local function get_clicked_half(x, y, z, playerid)
-    local cam = cameras.get(player.get_camera(playerid))
+local function get_clicked_half(x, y, z, pid)
+    local cam = cameras.get(player.get_camera(pid))
     local camPos = cam:get_pos()
-    local dir = player.get_dir(playerid)
+    local dir = player.get_dir(pid)
     local raycast = block.raycast(camPos, dir, 100, {})
     if raycast then
         return (raycast.endpoint[2] - raycast.iendpoint[2]) > 0.5 and "top" or "bottom"
@@ -14,9 +14,9 @@ local function get_clicked_half(x, y, z, playerid)
     return nil
 end
 
-function on_use_on_block(x, y, z, playerid, normal)
-    local inv, slot = player.get_inventory(playerid)
-    local itemid = inventory.get(inv, slot)
+function on_use_on_block(x, y, z, pid, normal)
+    local pinvid, slot = player.get_inventory(pid)
+    local itemid = inventory.get(pinvid, slot)
     local placing_block = item.placing_block(itemid)
 
     if block.is_replaceable_at(x, y, z) then
@@ -61,9 +61,13 @@ function on_use_on_block(x, y, z, playerid, normal)
     elseif normal[2] < 0 then
         rotation = SLAB_TOP
     else
-        rotation = (get_clicked_half(x, y, z, playerid) == "top") and SLAB_TOP or SLAB_BOTTOM
+        rotation = (get_clicked_half(x, y, z, pid) == "top") and SLAB_TOP or SLAB_BOTTOM
     end
 
     block.place(place_x, place_y, place_z, placing_block, rotation)
+
+    if not player.is_infinite_items(pid) then
+        inventory.decrement(pinvid, slot, 1)
+    end
     return true
 end

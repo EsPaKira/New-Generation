@@ -4,5 +4,6 @@
     "texture": "limestone",
     "caption": "limestone stairs",
     "hidden" : false,
-    "picking-item": "newgen:limestone_stairs.item"
+    "picking-item": "newgen:limestone_stairs.item",
+    "base:durability": 9
 }

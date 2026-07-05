@@ -86,7 +86,7 @@ local function tick_breaking(pid, tps, breaking)
     if gamemode ~= "survival" then
         if not breaking then return end
         local x, y, z = player.get_selected_block(pid)
-        DI.drop_inventory(inventory.get_block(x, y, z), {x, y, z}, 1)
+        DI.drop_inventory(inventory.get_block(x, y, z), {x, y, z}, 1, pid)
         return
     end
     local target = breaking_blocks[pid]
@@ -137,7 +137,7 @@ local function tick_breaking(pid, tps, breaking)
         target.power = power
         target.tick = target.tick + 1
         if target.progress >= 1.0 then
-            DI.drop_inventory(inventory.get_block(x, y, z), {x, y, z}, 1)
+            DI.drop_inventory(inventory.get_block(x, y, z), {x, y, z}, 1, pid)
             block.destruct(x, y, z, pid)
             if not player.is_infinite_items(pid) then
                 inventory.use(invid, slot)
@@ -182,6 +182,13 @@ function on_block_broken(id, x, y, z, pid)
     if gamemodes.get(pid).current ~= "survival" then
         return
     end
+
+    local block_model = block.properties[id]["model-name"]
+    local block_script = block.properties[id]["script-name"]
+    if block_model == "crop" or block_script == "bucket_block" or block_script == "take_on_interact" then
+        return -- crops or buckets drop managment in modules/drop_inventory 
+    end
+
     local loot_table = base_util.block_loot(id)
     for _, loot in ipairs(loot_table) do
         base_util.drop({x + 0.5, y + 0.5, z + 0.5}, loot.item, loot.count, loot.data)

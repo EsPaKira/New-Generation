@@ -4,5 +4,6 @@
     "texture": "sailcloth",
     "caption": "sailcloth stairs",
     "hidden" : false,
-    "picking-item": "newgen:sailcloth_stairs.item"
+    "picking-item": "newgen:sailcloth_stairs.item",
+    "base:durability": 1.25
 }

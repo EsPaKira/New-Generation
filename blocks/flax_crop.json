@@ -1,0 +1,35 @@
+{
+    "material": "base:grass",
+    "model": "custom",
+    "model-name": "crop",
+    "texture": "flax_0",
+    "light-passing": true,
+    "sky-light-passing": true,
+    "obstacle": false,
+    "hitbox": [0.125, 0, 0.125, 0.75, 0.875, 0.75],
+    "script-name": "crop",
+    "state-based": {
+        "offset": 0,
+        "bits": 2,
+        "variants": [
+            {
+                "texture": "flax_1"
+            },
+            {
+                "texture": "flax"
+            }
+        ]
+    },
+    "base:durability": 1,
+    "base:loot": [
+        {
+            "item": "newgen:flax_fiber",
+            "count": 1
+        },
+        {
+            "item": "newgen:flax_seeds",
+            "min": 1,
+            "max": 2
+        }
+    ]
+}

@@ -4,5 +4,6 @@
     "texture": "sandstone",
     "caption": "sandstone stairs",
     "hidden" : false,
-    "picking-item": "newgen:sandstone_stairs.item"
+    "picking-item": "newgen:sandstone_stairs.item",
+    "base:durability": 9
 }

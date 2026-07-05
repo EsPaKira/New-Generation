@@ -4,5 +4,6 @@
     "caption": "limestone slab",
     "picking-item": "newgen:limestone_slab.item",
     "hidden": false,
-    "newgen:full-block": "newgen:limestone"
+    "newgen:full-block": "newgen:limestone",
+    "base:durability": 6
 }

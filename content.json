@@ -97,7 +97,14 @@
     "base:grass",
     "mud_bricks",
     "mud_bricks_slab",
-    "mud_brick_stairs"
+    "mud_brick_stairs",
+    "farmland",
+    "flax_crop",
+    "birch",
+    "wooden_bucket",
+    "wooden_bucket_of_water",
+    "jug",
+    "jug_of_water"
   ],
   "items": [
     "fur_cape",
@@ -176,7 +183,16 @@
     "daisies.item",
     "dandelions.item",
     "lily.item",
-    "knapweeds.item"
+    "knapweeds.item",
+    "flax_seeds",
+    "wooden_bucket.item",
+    "wooden_bucket_of_water.item",
+    "jug.item",
+    "jug_of_water.item",
+    "copper_hoe",
+    "copper_hoe_head",
+    "stone_hoe",
+    "stone_hoe_head"
   ],
   "entities": [
     "base:player",

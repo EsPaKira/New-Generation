@@ -4,5 +4,6 @@
     "caption": "mossy red bricks slab",
     "hidden": false,
     "picking-item": "newgen:mossy_red_bricks_slab.item",
-    "newgen:full-block": "newgen:mossy_red_bricks"
+    "newgen:full-block": "newgen:mossy_red_bricks",
+    "base:durability": 6
 }
