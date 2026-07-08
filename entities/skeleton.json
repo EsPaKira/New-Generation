@@ -1,0 +1,37 @@
+{
+    "components": [
+        "core:pathfinding",
+        {
+            "name": "core:mob",
+            "args": {
+                "jump_force": 8.0,
+                "movement_speed": 130
+            }
+        },
+        {
+            "name": "newgen:characteristics_manager",
+            "args": {
+                "health": 12,
+                "max_health": 12
+            }
+        },
+        {
+            "name": "newgen:loot",
+            "args": {
+                "loot_table": [
+                    {   
+                        "item": "newgen:bone",
+                        "min": 1,
+                        "max": 3
+                    }
+                ]
+                    
+            }
+        },
+        "newgen:health_system",
+        "newgen:skeleton"
+    ],
+    "hitbox": [0.6, 1.875, 0.6],
+    "skeleton-name": "vestured_skeleton",
+    "solid": true
+}

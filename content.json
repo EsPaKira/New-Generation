@@ -104,7 +104,11 @@
     "wooden_bucket",
     "wooden_bucket_of_water",
     "jug",
-    "jug_of_water"
+    "jug_of_water",
+    "base:grass_block",
+    "birch_leaves",
+    "willow",
+    "willow_leaves"
   ],
   "items": [
     "fur_cape",
@@ -192,11 +196,13 @@
     "copper_hoe",
     "copper_hoe_head",
     "stone_hoe",
-    "stone_hoe_head"
+    "stone_hoe_head",
+    "skeleton_summoning_card"
   ],
   "entities": [
     "base:player",
     "bear",
-    "weaver"
+    "weaver",
+    "skeleton"
   ]
 }

@@ -33,6 +33,8 @@ structures = [
     {name="bush1", weight=0.5},
     {name="fallen_tree", weight=0.03},
     {name="fallen_mossy_tree", weight=0.03},
+    {name="birch0", weight=0.03},
+    {name="birch1", weight=0.03},
     {name="dead_tree", weight=0.02},
     {name="ruins0", weight=0.01},
     {name="camp", weight=0.01},
@@ -216,14 +218,16 @@ structures = [
     {name="bush0", weight=5},
     {name="bush1", weight=5},
     {name="diorite_little_rock", weight=0.12},
+        {name="birch0", weight=0.5},
+    {name="birch1", weight=0.5},
     {name="diorite_big_rock", weight=0.03},
     {name="fallen_tree", weight=0.03},
     {name="fallen_mossy_tree", weight=0.03},
     {name="dead_tree", weight=0.02},
     {name="ruins0", weight=0.01},
-    {name="camp", weight=0.01},
-    {name="old_obelisk", weight=0.02},
-    {name="weavers_cocoon", weight=0.015}
+    {name="camp", weight=0.03},
+    {name="old_obelisk", weight=0.03},
+    {name="weavers_cocoon", weight=0.03}
 ]
 
 [swamp]
@@ -252,13 +256,13 @@ plants = [
     {weight=0.01, block="newgen:malachite_stone"},
     {weight=0.01, block="newgen:coal_stone"}
 ]
-structure-chance = 0.03
+structure-chance = 0.025
 structures = [
-    {name="dolomite_coal0", weight=0.05},
-    {name="dolomite_coal1", weight=0.5},
-    {name="dolomite_malachite_ore", weight=0.3},
-    {name="spruce0", weight=1},
-    {name="spruce1", weight=1},
+    {name="dolomite_coal0", weight=0.06},
+    {name="dolomite_coal1", weight=0.55},
+    {name="dolomite_malachite_ore", weight=0.35},
+    {name="willow0", weight=1},
+    {name="willow1", weight=1},
     {name="bush0", weight=0.5},
     {name="bush1", weight=0.5},
     {name="puddle", weight=0.05},

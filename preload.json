@@ -44,7 +44,10 @@
         "gui/curtain",
         "gui/health_bar",
         "gui/stamina_bar",
-        "gui/oxygen_bar"
+        "gui/oxygen_bar",
+        "entities/skeleton",
+        "entities/mossy_skeleton",
+        "entities/vestured_skeleton"
     ],
     "sounds": [
         "ui/button_click",

@@ -35,10 +35,12 @@ local function is_take_on_interact(pos)
 end
 
 function module.drop_inventory(invid, pos, power, pid)
-    if invid == 0 and gamemodes.get(pid).current == "survival" then
-        is_crop(pos)
-        is_bucket(pos)
-        is_take_on_interact(pos)
+    if invid == 0 then
+        if gamemodes.get(pid).current == "survival" then
+            is_crop(pos)
+            is_bucket(pos)
+            is_take_on_interact(pos)
+        end
         return
     end
 

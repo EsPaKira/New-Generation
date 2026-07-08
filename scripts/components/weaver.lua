@@ -25,7 +25,7 @@ function on_update(tps)
             end
         end
     else
-        pathfinding.set_target(vec3.add(pos, {math.random(-5*3, 5*3), math.random(-2, 2), math.random(-5*3, 5*3)})) 
+        pathfinding.set_target(vec3.add(pos, {math.random(-6, 6), math.random(-2, 2), math.random(-6, 6)})) 
         pathfinding.set_refresh_interval(300)
         atack_timer = 0
     end

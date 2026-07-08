@@ -16,6 +16,7 @@ function on_broken(x, y, z)
 end
 
 function on_block_tick(x, y, z, tps)
+    if block.get(x, y, z) == -1 then return end
     if block.is_segment(x, y, z) then return end
 
     timer = timer + 1 / tps

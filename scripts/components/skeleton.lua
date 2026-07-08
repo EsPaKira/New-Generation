@@ -7,7 +7,7 @@ local gamemodes = require "gamemodes"
 local speed_of_attack = 1
 local atack_timer = 0
 local sound_timer = 0
-local rand_sound = (random.random(25, 50)/10)
+local rand_sound = (random.random(30, 60)/10)
 
 function on_update(tps)
     local pos = tsf:get_pos()
@@ -16,8 +16,8 @@ function on_update(tps)
     if nearest_p and vec3.distance(pos, {px, py, pz}) < 20 then
         pathfinding.set_target({px, py, pz})
         pathfinding.set_refresh_interval(5)
-        mob.look_at({px, py + 1, pz}, true)
-        if vec3.distance(pos, {px, py, pz}) < 3 then
+        --mob.look_at({px, py + 1, pz}, true) -- doesn`t work correct
+        if vec3.distance(pos, {px, py, pz}) < 2 then
             atack_timer = atack_timer + 1 / tps * speed_of_attack
             if atack_timer >= 1 then 
                 atack_timer = 0
@@ -25,16 +25,16 @@ function on_update(tps)
             end
         end
     else
-        pathfinding.set_target(vec3.add(pos, {math.random(-6, 6), math.random(-2, 2), math.random(-6, 6)}))  
+        pathfinding.set_target(vec3.add(pos, {math.random(-6, 6), math.random(-2, 2), math.random(-6, 6)})) 
         pathfinding.set_refresh_interval(300)
         atack_timer = 0
     end
 
     sound_timer = sound_timer + 1 / tps
     if sound_timer >= rand_sound then
-        audio.play_sound("entities/bear_breath", pos[1], pos[2], pos[3], random.random(), 1)
+        --audio.play_sound("entities/spider", pos[1], pos[2], pos[3], random.random(), 1)
         sound_timer = 0
-        rand_sound = (random.random(25, 50)/10)
+        rand_sound = (random.random(30, 60)/10)
     end
     mob.follow_waypoints()
 end
@@ -54,7 +54,7 @@ function on_attacked(eid, pid)
     total_damage = total_damage + c_manager:get_body_level()
 
     local pos = tsf:get_pos()
-    audio.play_sound("entities/damage", pos[1], pos[2], pos[3], random.random(), 1)
+    audio.play_sound("entities/spider_damage", pos[1], pos[2], pos[3], random.random(), 1)
 
     health_system.damage(total_damage, type_of_damage)
 end
@@ -65,6 +65,8 @@ function attack(pid)
     end
     local target = entities.get(player.get_entity(pid))
     if target then
-        target:get_component("newgen:health_system").damage(3, "slashing")
+        local pos = tsf:get_pos()
+        audio.play_sound("entities/spider_attack", pos[1], pos[2], pos[3], random.random(), 1)
+        target:get_component("newgen:health_system").damage(2, "piercing")
     end
 end

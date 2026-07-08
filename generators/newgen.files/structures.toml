@@ -5,6 +5,10 @@ spruce0 = {}
 spruce1 = {}
 spruce_snow0 = {}
 spruce_snow1 = {}
+birch0 = {}
+birch1 = {}
+willow0 = {lowering=1}
+willow1 = {lowering=1}
 dead_tree = {}
 dead_spruce_tree = {}
 dead_spruce_tree_snow = {}
