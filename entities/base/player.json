@@ -11,6 +11,7 @@
                 "name": "wayne"
             }
         },
+        "newgen:hunger_system",
         "newgen:health_system",
         "newgen:oxygen_system"
     ]

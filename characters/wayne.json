@@ -1,6 +1,6 @@
 {
     "full-name": "VoxelCore player",
-    "comment": "Wayne - name for the future character with a different model",
+    "comment": "Wayne - name for the future character with a different model. He will be moved into Project L.A.R.I.X.",
     "stats": {
         "body_level": 1,
         "soul_level": 1,
@@ -10,6 +10,8 @@
         "max_oxygen": 20,
         "archium": 5,
         "max_archium": 5,
+        "hunger": 0,
+        "max_hunger": 20,
         "agility": 1,
         "accuracy": 1,
         "heat_preservation": 0,

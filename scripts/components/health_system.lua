@@ -58,7 +58,12 @@ function die()
 end
 
 function heal(points)
+    if health == max_health then return end
     set_health(math.min(health + points, max_health))
+
+    if entity:get_player() ~= -1 then
+        events.emit("newgen:heal")
+    end
 end
 
 local function calculate_damage(points, type)
@@ -92,6 +97,7 @@ end
 
 function on_update(tps)
     if health_regen_timer >= 1 and in_battle_timer == 0 then
+        load_health()
         heal(1)
         health_regen_timer = 0
     end

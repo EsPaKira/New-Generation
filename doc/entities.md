@@ -6,7 +6,10 @@ newgen предоставляет несколько компонентов дл
 
 Этот компонент самый главный для работы сущностей. Он управляет всем, что связано с характеристиками.
 
-Можно указать любые характеристики сущности из списка: health, max_health, oxygen, max_oxygen, crushing_damage_protection, piercing_damage_protection, slashing_damage_protection.
+> [!WARNING]
+> Обязателен в использовании со всеми остальными компонентами.
+
+Можно указать любые характеристики сущности из списка: health, max_health, oxygen, max_oxygen, hunger, max_hunger, crushing_damage_protection, piercing_damage_protection, slashing_damage_protection.
 
 **Требуется почти во всех остальных компонентах.**
 
@@ -20,9 +23,13 @@ newgen предоставляет несколько компонентов дл
 
 Этот компонент отвечает за здоровье и смерть сущности.
 
+## newgen:hunger_system
+
+Этот компонент отвечает за голод сущности (рекомендуется использовать только для сущности игрока).
+
 ## newgen:swimming_system
 
-Этот компонент позволяет плавать сущностям, находящимся под управлением игрока.
+Этот компонент позволяет плавать сущностям, находящимся под управлением игрока. Если сущность (не обязательно сущность игрока) должна задыхаться под водой, то необходимо использовать этот компонент.
 
 **Не требует для работы newgen:characteristics_manager**
 
@@ -78,6 +85,8 @@ newgen предоставляет несколько компонентов дл
 ]
 ```
 
-**Чтобы компоненты работали корректно, необходимо добавлять их в правильном порядке: *newgen:characteristics_manager и newgen:swimming_system > newgen:health_system > newgen:oxygen_system и newgen:loot***
+>[!IMPORTANT]
+> *Чтобы компоненты работали корректно, необходимо добавлять их в правильном порядке:*
+> newgen:characteristics_manager, newgen:swimming_system, newgen:hunger_system и newgen:loot > newgen:health_system > newgen:oxygen_system
 
 [Назад](main_page.md)

@@ -1,0 +1,10 @@
+{
+    "parent": "newgen:slab_template",
+    "material": "base:wood",
+    "texture": "willow_planks",
+    "caption": "willow planks slab",
+    "hidden": false,
+    "picking-item": "newgen:willow_planks_slab.item",
+    "newgen:full-block": "newgen:willow_planks",
+    "base:durability": 3
+}

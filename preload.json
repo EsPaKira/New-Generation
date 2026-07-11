@@ -45,6 +45,7 @@
         "gui/health_bar",
         "gui/stamina_bar",
         "gui/oxygen_bar",
+        "gui/hunger",
         "entities/skeleton",
         "entities/mossy_skeleton",
         "entities/vestured_skeleton"

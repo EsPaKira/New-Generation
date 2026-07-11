@@ -40,6 +40,5 @@
     ],
     "hitbox": [1, 0.7, 1],
     "skeleton-name": "newgen:weaver",
-    "step-height": 1,
     "solid": true
 }

@@ -67,6 +67,6 @@ function attack(pid)
     if target then
         local pos = tsf:get_pos()
         audio.play_sound("entities/spider_attack", pos[1], pos[2], pos[3], random.random(), 1)
-        target:get_component("newgen:health_system").damage(2, "piercing")
+        target:get_component("newgen:health_system").damage(2, "crushing")
     end
 end

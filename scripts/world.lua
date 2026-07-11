@@ -36,6 +36,7 @@ function on_world_open()
         if entity then
             entity:set_enabled("newgen:health_system", name == "survival")
             entity:set_enabled("newgen:oxygen_system", name == "survival")
+            entity:set_enabled("newgen:hunger_system", name == "survival")
         end
     end)
     events.on("newgen:death", function(pos)
