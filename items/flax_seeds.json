@@ -2,5 +2,8 @@
     "icon": "items:flax_seeds",
     "stack-size": 128,
     "script-name": "seeds",
-    "newgen:crop": "newgen:flax_crop"
+    "newgen:crop": "newgen:flax_crop",
+    "newgen:food": {
+        "saturation": 1
+    }
 }

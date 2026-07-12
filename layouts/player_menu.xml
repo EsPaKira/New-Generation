@@ -56,8 +56,9 @@
         <container size="400,30" color="100"><label pos="20,8">@HP</label><label id="max_health" pos="300,8"></label></container>
         <container size="400,30"><label pos="20,8">@Oxygen</label><label id="max_oxygen" pos="300,8"></label></container>
         <container size="400,30" color="100" tooltip="Magical energy" tooltip-delay="0.08"><label pos="20,8">@Archium</label><label id="max_archium" pos="300,8"></label></container>
-        <container size="400,30"><label pos="20,8">@Agility</label><label id="agility" pos="300,8"></label></container>
-        <container size="400,30" color="100"><label pos="20,8">@Accuracy</label><label id="accuracy" pos="300,8"></label></container>
+        <container size="400,30"><label pos="20,8">@Hunger</label><label id="max_hunger" pos="300,8"></label></container>
+        <container size="400,30" color="100"><label pos="20,8">@Agility</label><label id="agility" pos="300,8"></label></container>
+        <container size="400,30"><label pos="20,8">@Accuracy</label><label id="accuracy" pos="300,8"></label></container>
 
 
         <container size="400,50"><label gravity="center-center">@Types of protection</label></container>

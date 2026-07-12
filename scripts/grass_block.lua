@@ -3,7 +3,7 @@ local mob_name = "newgen:skeleton"
 local variants = {
     {name = "skeleton", weight = 0.5},
     {name = "mossy_skeleton", weight = 0.5},
-    {name = "vestured_skeleton", weight = 0.7},
+    {name = "vestured_skeleton", weight = 0.5},
 }
 
 function on_random_update(x, y, z)

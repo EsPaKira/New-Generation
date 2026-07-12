@@ -9,7 +9,7 @@ newgen предоставляет несколько компонентов дл
 > [!WARNING]
 > Обязателен в использовании со всеми остальными компонентами.
 
-Можно указать любые характеристики сущности из списка: health, max_health, oxygen, max_oxygen, hunger, max_hunger, crushing_damage_protection, piercing_damage_protection, slashing_damage_protection.
+Можно указать любые характеристики сущности из списка: `health, max_health, oxygen, max_oxygen, hunger, max_hunger, crushing_damage_protection, piercing_damage_protection, slashing_damage_protection`.
 
 **Требуется почти во всех остальных компонентах.**
 
@@ -87,6 +87,6 @@ newgen предоставляет несколько компонентов дл
 
 >[!IMPORTANT]
 > *Чтобы компоненты работали корректно, необходимо добавлять их в правильном порядке:*
-> newgen:characteristics_manager, newgen:swimming_system, newgen:hunger_system и newgen:loot > newgen:health_system > newgen:oxygen_system
+> `newgen:characteristics_manager, newgen:swimming_system, newgen:hunger_system и newgen:loot > newgen:health_system > newgen:oxygen_system`
 
 [Назад](main_page.md)

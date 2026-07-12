@@ -61,7 +61,7 @@ Select background=Выбрать фон
 # Фоны
 
 gui/space=Космос
-gui/gunmetal=Оружейная сталь
+gui/total_gray=Абсолютно серый
 gui/total_black=Абсолютно чёрный
 
 

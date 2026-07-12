@@ -1,0 +1,8 @@
+{
+    "icon": "items:cassiterite",
+    "description": "Can be melted",
+    "newgen:material": {
+        "type": "metal",
+        "melting-point": 232
+    }
+}

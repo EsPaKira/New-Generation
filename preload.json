@@ -1,7 +1,7 @@
 {
     "textures": [
         "gui/space",
-        "gui/gunmetal",
+        "gui/total_gray",
         "gui/total_black",
         "gui/head",
         "gui/helmet",

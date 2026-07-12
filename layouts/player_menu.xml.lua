@@ -27,11 +27,11 @@ function open_c_panel()
     document["close_c_panel"].visible = true
     local stats = characters.get_group(hud.get_player(), controller.choosen_character, "stats")
     for key, value in pairs(stats) do
-        if key == "health" or key == "oxygen" or key == "archium" then
+        if key == "health" or key == "oxygen" or key == "archium" or key == "hunger" then
             document["max_".. key].text = value .. "/" .. stats["max_" .. key]
         elseif key == "crushing_damage_protection" or key == "slashing_damage_protection" or key == "piercing_damage_protection" then
             document[key].text = value * 100 .. "%"
-        elseif key ~= "max_health" and key ~= "max_oxygen" and key ~= "max_archium" then
+        elseif key ~= "max_health" and key ~= "max_oxygen" and key ~= "max_archium" and key ~= "max_hunger" then
             document[key].text = tostring(value)
         end
     end

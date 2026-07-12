@@ -34,12 +34,19 @@ function on_update(tps)
     hunger_progress = hunger_progress + 1 / tps
 end
 
-events.on("newgen:heal", function()
+function get_hunger()
+    load_hunger()
+    return hunger, max_hunger
+end
+
+events.on("newgen:heal", function(pid)
+    if pid ~= entity:get_player() then return end
     load_hunger()
     set_hunger(hunger + 1)
 end)
 
-events.on("newgen:eat", function(hunger_restored)
+events.on("newgen:eat", function(saturation, pid)
+    if pid ~= entity:get_player() then return end
     load_hunger()
-    set_hunger(hunger - hunger_restored)
+    set_hunger(hunger - saturation)
 end)

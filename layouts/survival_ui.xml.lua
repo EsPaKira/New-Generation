@@ -42,17 +42,17 @@ local hunger_at_25 = {248, 179, 36, 255}
 local hunger_at_0 = {59, 97, 15, 255}
 
 function survival_ui.set_hunger(hunger, max_hunger)
-    local res = (hunger / max_hunger * 100)
+    local ratio = hunger / max_hunger * 100
 
-    document["hunger_tooltip"].tooltip = "Hunger: " .. res .. "%"
+    document["hunger_tooltip"].tooltip = "Hunger: " .. ratio .. "%"
 
-    if res == 100 then
+    if ratio == 100 then
         document["hunger"].color = hunger_at_100
-    elseif res >= 75 then
+    elseif ratio >= 75 then
         document["hunger"].color = hunger_at_75
-    elseif res >= 50 then
+    elseif ratio >= 50 then
         document["hunger"].color = hunger_at_50
-    elseif res >= 25 then
+    elseif ratio >= 25 then
         document["hunger"].color = hunger_at_25
     else
         document["hunger"].color = hunger_at_0

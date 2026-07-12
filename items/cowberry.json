@@ -1,4 +1,8 @@
 {
     "icon": "items:cowberry",
-    "stack-size": 256
+    "stack-size": 256,
+    "script-name": "food",
+    "newgen:food": {
+        "saturation": 1
+    }
 }
