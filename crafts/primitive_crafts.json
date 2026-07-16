@@ -42,6 +42,15 @@
     },
     {
         "components": [
+            {"tag": "wood", "count": 1},
+            {"id": "newgen:stick", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:wooden_hammer", "count": 1}
+        ]
+    },
+    {
+        "components": [
             {"id": "newgen:stone_axe_head", "count": 1},
             {"id": "newgen:stick", "count": 1}
         ],
@@ -56,6 +65,24 @@
         ],
         "results": [
             {"id": "newgen:stone_shovel", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:stone_hammer_head", "count": 1},
+            {"id": "newgen:stick", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:stone_hammer", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:stone_hoe_head", "count": 1},
+            {"id": "newgen:stick", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:stone_hoe", "count": 1}
         ]
     },
     {
@@ -78,24 +105,6 @@
     },
     {
         "components": [
-            {"id": "newgen:stone_hammer_head", "count": 1},
-            {"id": "newgen:stick", "count": 1}
-        ],
-        "results": [
-            {"id": "newgen:stone_hammer", "count": 1}
-        ]
-    },
-    {
-        "components": [
-            {"tag": "wood", "count": 1},
-            {"id": "newgen:stick", "count": 1}
-        ],
-        "results": [
-            {"id": "newgen:wooden_hammer", "count": 1}
-        ]
-    },
-    {
-        "components": [
             {"id": "newgen:copper_pickaxe_head", "count": 1},
             {"id": "newgen:stick", "count": 1}
         ],
@@ -110,6 +119,60 @@
         ],
         "results": [
             {"id": "newgen:copper_geological_hammer", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:copper_hoe_head", "count": 1},
+            {"id": "newgen:stick", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:copper_hoe", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:tin_bronze_axe_head", "count": 1},
+            {"id": "newgen:stick", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:tin_bronze_axe", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:tin_bronze_shovel_blade", "count": 1},
+            {"id": "newgen:stick", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:tin_bronze_shovel", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:tin_bronze_pickaxe_head", "count": 1},
+            {"id": "newgen:stick", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:tin_bronze_pickaxe", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:tin_bronze_geological_hammer_head", "count": 1},
+            {"id": "newgen:stick", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:tin_bronze_geological_hammer", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:tin_bronze_hoe_head", "count": 1},
+            {"id": "newgen:stick", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:tin_bronze_hoe", "count": 1}
         ]
     },
     {
@@ -186,6 +249,16 @@
         "results": [
             {"id": "newgen:stindle", "count": 1},
             {"id": "newgen:copper_axe", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:stick", "count": 1},
+            {"id": "newgen:bronze_axe", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:stindle", "count": 1},
+            {"id": "newgen:bronze_axe", "count": 1}
         ]
     },
     {

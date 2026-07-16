@@ -207,7 +207,17 @@
     "skeleton_summoning_card",
     "birch_planks_slab.item",
     "willow_planks_slab.item",
-    "cassiterite_ore"
+    "cassiterite_ore",
+    "tin_bronze_axe_head",
+    "tin_bronze_geological_hammer_head",
+    "tin_bronze_hoe_head",
+    "tin_bronze_pickaxe_head",
+    "tin_bronze_shovel_blade",
+    "tin_bronze_axe",
+    "tin_bronze_geological_hammer",
+    "tin_bronze_hoe",
+    "tin_bronze_pickaxe",
+    "tin_bronze_shovel"
   ],
   "entities": [
     "base:player",

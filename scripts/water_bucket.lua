@@ -1,5 +1,7 @@
+local farmlandid = block.index("newgen:farmland")
+
 local function watering(x, y, z, pid)
-    if block.get(x, y, z) == block.index("newgen:farmland") then
+    if block.get(x, y, z) == farmlandid then
         block.set_field(x, y, z, "humidity", 4)
         block.set_variant(x, y, z, 1)
     end

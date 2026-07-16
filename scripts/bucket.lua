@@ -1,10 +1,12 @@
+local waterid = block.index("base:water")
+
 function on_use(pid)
     local cam = cameras.get(player.get_camera(pid))
     local camPos = cam:get_pos()
     local dir = player.get_dir(pid)
     local raycast = block.raycast(camPos, dir, 100, {}, {}, true)
     if raycast then
-        if raycast.block == block.index("base:water") then
+        if raycast.block == waterid then
             local pinvid, slot = player.get_inventory(pid)
             local itemid, count = inventory.get(pinvid, slot)
             if count > 1 then

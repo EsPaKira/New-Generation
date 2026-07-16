@@ -1,3 +1,5 @@
+local farmlandid = block.index("newgen:farmland")
+
 function on_use(pid)
     local pinvid, slot = player.get_inventory()
     local itemid = inventory.get(pinvid, slot)
@@ -7,7 +9,7 @@ function on_use(pid)
 end
 
 function on_use_on_block(x, y, z, pid)
-    if block.get(x, y, z) ~= block.index("newgen:farmland") then return end
+    if block.get(x, y, z) ~= farmlandid then return end
     local pinvid, slot = player.get_inventory(pid)
     local itemid = inventory.get(pinvid, slot)
     block.place(x, y + 1, z, block.index(item.properties[itemid]["newgen:crop"]), 0, pid)

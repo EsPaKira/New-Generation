@@ -20,14 +20,9 @@
             "args": {
                 "loot_table": [
                     {   
-                        "item": "newgen:fur_cape",
+                        "item": "newgen:web.item",
                         "min": 1,
                         "max": 2
-                    },
-                    {
-                        "item": "newgen:bear_meat",
-                        "min": 2,
-                        "max": 5
                     }
                 ]
                     

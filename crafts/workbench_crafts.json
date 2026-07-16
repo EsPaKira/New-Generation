@@ -17,6 +17,22 @@
     },
     {
         "components": [
+            {"id": "newgen:birch_planks.item", "count": 2}
+        ],
+        "results": [
+            {"id": "base:wooden_door.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:willow_planks.item", "count": 2}
+        ],
+        "results": [
+            {"id": "base:wooden_door.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
             {"id": "base:wood.item", "count": 1}
         ],
         "results": [
@@ -29,6 +45,22 @@
         ],
         "results": [
             {"id": "newgen:spruce_planks.item", "count": 2}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:birch.item", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:birch_planks.item", "count": 2}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:willow.item", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:willow_planks.item", "count": 2}
         ]
     },
     {
@@ -74,6 +106,54 @@
     {
         "components": [
             {"id": "newgen:spruce_planks.item", "count": 3}
+        ],
+        "results": [
+            {"id": "newgen:box.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:birch_planks.item", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:birch_planks_slab.item", "count": 2}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:birch_planks.item", "count": 3}
+        ],
+        "results": [
+            {"id": "newgen:birch_planks_stairs.item", "count": 4}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:birch_planks.item", "count": 3}
+        ],
+        "results": [
+            {"id": "newgen:box.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:willow_planks.item", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:willow_planks_slab.item", "count": 2}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:willow_planks.item", "count": 3}
+        ],
+        "results": [
+            {"id": "newgen:willow_planks_stairs.item", "count": 4}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:willow_planks.item", "count": 3}
         ],
         "results": [
             {"id": "newgen:box.item", "count": 1}
