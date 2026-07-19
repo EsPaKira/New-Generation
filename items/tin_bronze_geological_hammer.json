@@ -22,5 +22,6 @@
         ]
     },
     "script-name": "geological_hammer",
+    "newgen:geological-hammer-depth": 20,
     "description": "Use on block\n4 crushing damage"
 }

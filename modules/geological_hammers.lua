@@ -7,6 +7,7 @@ ores.GYPSUM_COAL = block.index("newgen:gypsum_coal")
 ores.LIMESTONE_COAL = block.index("newgen:limestone_coal")
 ores.LIMESTONE_MALACHITE = block.index("newgen:dolomite_limestone_ore")
 ores.SANDSTONE_COAL = block.index("newgen:sandstone_coal")
+ores.GRANITE_CASSITERITE = block.index("newgen:granite_cassiterite_ore")
 
 
 function module.find_ores(x, y, z, depth)

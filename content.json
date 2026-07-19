@@ -115,7 +115,8 @@
     "birch_planks_stairs",
     "willow_planks_slab",
     "willow_planks_stairs",
-    "granite_cassiterite_ore"
+    "granite_cassiterite_ore",
+    "crystal_of_archium"
   ],
   "items": [
     "fur_cape",
@@ -217,7 +218,9 @@
     "tin_bronze_geological_hammer",
     "tin_bronze_hoe",
     "tin_bronze_pickaxe",
-    "tin_bronze_shovel"
+    "tin_bronze_shovel",
+    "shard_of_archium",
+    "crystal_of_archium.item"
   ],
   "entities": [
     "base:player",
