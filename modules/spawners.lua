@@ -11,9 +11,31 @@ function module.open(data)
     spawners.data = data
 end
 
-function module.add_spawner(x, y, z)
+function module.tick()
+    for _, s in ipairs(spawners.data.SPAWNERS) do
+        local x, y, z = s[1], s[2], s[3]
+        if block.get(x, y, z) == -1 then return end
+
+        s[7] = s[7] + 0.05 -- 1 / tps
+        if s[7] >= s[6] then
+            s[7] = 0
+            if #s[4] < s[5] then
+                local rx = math.random()
+                local offset_x = rx * 2 + (rx < 0.5 and -1.5 or 0)
+
+                local rz = math.random()
+                local offset_z = rz * 2 + (rz < 0.5 and -1.5 or 0)
+
+                local entity = entities.spawn("newgen:weaver", {x + offset_x, y, z + offset_z})
+                module.add_entity(x, y, z, entity:get_uid())
+            end
+        end
+    end
+end
+
+function module.add_spawner(x, y, z, limit, spawn_time)
     if not module.is_spawner_exists(x, y, z) then
-        table.insert(spawners.data.SPAWNERS, {x, y, z, {} })
+        table.insert(spawners.data.SPAWNERS, {x, y, z, {}, limit, spawn_time, 0 })
     end
 end
 

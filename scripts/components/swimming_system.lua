@@ -18,8 +18,8 @@ local water = block.index("base:water")
 
 function entity_pos()
     local pos = tsf:get_pos()
-    pos[1] = pos[1] - 1
-    pos[3] = pos[3] - 1
+    pos[1] = math.floor(pos[1])
+    pos[3] = math.floor(pos[3])
     return pos
 end
 
