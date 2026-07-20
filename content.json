@@ -127,7 +127,6 @@
     "red_clay_chunk",
     "malachite_ore",
     "ash",
-    "copper_ingot",
     "slag",
     "unknown_alloy",
     "stone_hammer",
@@ -220,7 +219,10 @@
     "tin_bronze_pickaxe",
     "tin_bronze_shovel",
     "shard_of_archium",
-    "crystal_of_archium.item"
+    "crystal_of_archium.item",
+    "copper_nugget",
+    "tin_nugget",
+    "tin_bronze_nugget"
   ],
   "entities": [
     "base:player",

@@ -1,52 +1,91 @@
 [
     {
         "components": [
-            {"id": "newgen:copper_ingot", "count": 7},
-            {"id": "newgen:stone_hammer", "count": 1}
+            {"id": "newgen:copper_nugget", "count": 7}
         ],
         "results": [
-            {"id": "newgen:copper_axe_head", "count": 1},
-            {"id": "newgen:stone_hammer", "count": 1}
+            {"id": "newgen:copper_axe_head", "count": 1}
         ]
     },
     {
         "components": [
-            {"id": "newgen:copper_ingot", "count": 9},
-            {"id": "newgen:stone_hammer", "count": 1}
+            {"id": "newgen:copper_nugget", "count": 9}
         ],
         "results": [
-            {"id": "newgen:copper_shovel_blade", "count": 1},
-            {"id": "newgen:stone_hammer", "count": 1}
+            {"id": "newgen:copper_shovel_blade", "count": 1}
         ]
     },
     {
         "components": [
-            {"id": "newgen:copper_ingot", "count": 12},
-            {"id": "newgen:stone_hammer", "count": 1}
+            {"id": "newgen:copper_nugget", "count": 12}
         ],
         "results": [
-            {"id": "newgen:copper_pickaxe_head", "count": 1},
-            {"id": "newgen:stone_hammer", "count": 1}
+            {"id": "newgen:copper_pickaxe_head", "count": 1}
         ]
     },
     {
         "components": [
-            {"id": "newgen:copper_ingot", "count": 9},
-            {"id": "newgen:stone_hammer", "count": 1}
+            {"id": "newgen:copper_nugget", "count": 9}
         ],
         "results": [
-            {"id": "newgen:copper_geological_hammer_head", "count": 1},
-            {"id": "newgen:stone_hammer", "count": 1}
+            {"id": "newgen:copper_geological_hammer_head", "count": 1}
         ]
     },
     {
         "components": [
-            {"id": "newgen:copper_ingot", "count": 7},
-            {"id": "newgen:stone_hammer", "count": 1}
+            {"id": "newgen:copper_nugget", "count": 7}
         ],
         "results": [
-            {"id": "newgen:copper_hoe_head", "count": 1},
-            {"id": "newgen:stone_hammer", "count": 1}
+            {"id": "newgen:copper_hoe_head", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:tin_bronze_nugget", "count": 7}
+        ],
+        "results": [
+            {"id": "newgen:tin_bronze_axe_head", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:tin_bronze_nugget", "count": 9}
+        ],
+        "results": [
+            {"id": "newgen:tin_bronze_shovel_blade", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:tin_bronze_nugget", "count": 12}
+        ],
+        "results": [
+            {"id": "newgen:tin_bronze_pickaxe_head", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:tin_bronze_nugget", "count": 9}
+        ],
+        "results": [
+            {"id": "newgen:tin_bronze_geological_hammer_head", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:tin_bronze_nugget", "count": 7}
+        ],
+        "results": [
+            {"id": "newgen:tin_bronze_hoe_head", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:copper_nugget", "count": 7},
+            {"id": "newgen:tin_nugget", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:tin_bronze_nugget", "count": 8}
         ]
     }
 ]

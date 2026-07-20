@@ -211,8 +211,7 @@
             {"id": "newgen:stone_hammer", "count": 1}
         ],
         "results": [
-            {"id": "newgen:primitive_forge.item", "count": 1},
-            {"id": "newgen:stone_hammer", "count": 1}
+            {"id": "newgen:primitive_forge.item", "count": 1}
         ]
     },
     {
