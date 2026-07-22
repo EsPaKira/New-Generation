@@ -5,5 +5,5 @@
     "caption": "mud brick stairs",
     "hidden" : false,
     "picking-item": "newgen:mud_brick_stairs.item",
-    "base:durability": 6
+    "base:durability": 3
 }

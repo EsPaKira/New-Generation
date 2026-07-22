@@ -5,5 +5,5 @@
     "hidden": false,
     "picking-item": "newgen:mud_bricks_slab.item",
     "newgen:full-block": "newgen:mud_bricks",
-    "base:durability": 4
+    "base:durability": 2
 }

@@ -1,6 +1,6 @@
 function on_placed(x, y, z, pid)
     local pinvid, slot = player.get_inventory(pid)
-    uses = inventory.get_data(pinvid, slot, "uses") or 1 -- не работает в выживании, т.к. предмет исчезает до установки блока
+    uses = inventory.get_data(pinvid, slot, "uses") or 1 -- не работает, т.к. предмет исчезает из инвентаря до установки блока
 
     block.set_field(x, y, z, "uses", uses)
 end

@@ -177,6 +177,21 @@
     },
     {
         "components": [
+            {"id": "newgen:flax_fiber", "count": 6}
+        ],
+        "results": [
+            {"id": "newgen:sailcloth_stairs.item", "count": 1}
+        ]
+    },{
+        "components": [
+            {"id": "newgen:flax_fiber", "count": 4}
+        ],
+        "results": [
+            {"id": "newgen:sailcloth_slab.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
             {"id": "newgen:flax_fiber", "count": 5}
         ],
         "results": [
@@ -189,22 +204,6 @@
         ],
         "results": [
             {"id": "newgen:linen_shirt", "count": 1}
-        ]
-    },
-    {
-        "components": [
-            {"id": "newgen:sailcloth.item", "count": 1}
-        ],
-        "results": [
-            {"id": "newgen:sailcloth_slab.item", "count": 2}
-        ]
-    },
-    {
-        "components": [
-            {"id": "newgen:sailcloth.item", "count": 3}
-        ],
-        "results": [
-            {"id": "newgen:sailcloth_stairs.item", "count": 4}
         ]
     }
 ]

@@ -6,5 +6,11 @@
     "obstacle": false,
     "light-passing": true,
     "replaceable": true,
-    "material": "base:grass"
+    "material": "base:grass",
+    "base:loot": [
+        {
+            "item": "newgen:straw",
+            "count": 1
+        }
+    ]
 }

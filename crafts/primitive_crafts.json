@@ -197,6 +197,16 @@
     },
     {
         "components": [
+            {"tag": "wood", "count": 2},
+            {"id": "newgen:tin_bronze_axe", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:workbench.item", "count": 1},
+            {"id": "newgen:tin_bronze_axe", "count": 1}
+        ]
+    },
+    {
+        "components": [
             {"id": "newgen:stick", "count": 6},
             {"id": "newgen:coal", "count": 2}
         ],
@@ -232,6 +242,22 @@
     },
     {
         "components": [
+            {"id": "newgen:red_brick", "count": 6}
+        ],
+        "results": [
+            {"id": "newgen:red_brick_stairs.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:red_brick", "count": 4}
+        ],
+        "results": [
+            {"id": "newgen:red_bricks_slab.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
             {"id": "newgen:stick", "count": 1},
             {"id": "newgen:stone_axe", "count": 1}
         ],
@@ -257,7 +283,7 @@
         ],
         "results": [
             {"id": "newgen:stindle", "count": 1},
-            {"id": "newgen:bronze_axe", "count": 1}
+            {"id": "newgen:tin_bronze_axe", "count": 1}
         ]
     },
     {
@@ -272,7 +298,7 @@
     },
     {
         "components": [
-            {"id": "newgen:dead_grass.item", "count": 4}
+            {"id": "newgen:straw", "count": 4}
         ],
         "results": [
             {"id": "newgen:straw_hat", "count": 1}
@@ -280,39 +306,7 @@
     },
     {
         "components": [
-            {"id": "base:grass.item", "count": 4}
-        ],
-        "results": [
-            {"id": "newgen:straw_hat", "count": 1}
-        ]
-    },
-    {
-        "components": [
-            {"id": "newgen:dead_tall_grass.item", "count": 2}
-        ],
-        "results": [
-            {"id": "newgen:straw_hat", "count": 1}
-        ]
-    },
-    {
-        "components": [
-            {"id": "newgen:dead_grass.item", "count": 12}
-        ],
-        "results": [
-            {"id": "newgen:hay.item", "count": 1}
-        ]
-    },
-    {
-        "components": [
-            {"id": "base:grass.item", "count": 12}
-        ],
-        "results": [
-            {"id": "newgen:hay.item", "count": 1}
-        ]
-    },
-    {
-        "components": [
-            {"id": "newgen:dead_tall_grass.item", "count": 6}
+            {"id": "newgen:straw", "count": 12}
         ],
         "results": [
             {"id": "newgen:hay.item", "count": 1}
@@ -336,6 +330,38 @@
     },
     {
         "components": [
+            {"id": "base:dirt.item", "count": 1},
+            {"id": "newgen:straw", "count": 8}
+        ],
+        "results": [
+            {"id": "newgen:mud_brick", "count": 8}
+        ]
+    },{
+        "components": [
+            {"id": "newgen:mud_brick", "count": 8}
+        ],
+        "results": [
+            {"id": "newgen:mud_bricks.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:mud_brick", "count": 6}
+        ],
+        "results": [
+            {"id": "newgen:mud_brick_stairs.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:mud_brick", "count": 4}
+        ],
+        "results": [
+            {"id": "newgen:mud_bricks_slab.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
             {"tag": "flower", "count": 5}
         ],
         "results": [
@@ -348,6 +374,16 @@
         ],
         "results": [
             {"id": "newgen:hay.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:stick", "count": 3},
+            {"id": "newgen:hay.item", "count": 1},
+            {"id": "newgen:straw_hat", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:scarecrow.item", "count": 1}
         ]
     }
 ]

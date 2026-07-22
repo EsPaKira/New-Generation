@@ -1,7 +1,7 @@
 {
     "base:loot": [
         {
-            "item": "base:grass.item",
+            "item": "newgen:straw",
             "count": 1
         }
     ]
