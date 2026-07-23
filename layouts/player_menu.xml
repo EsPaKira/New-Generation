@@ -1,7 +1,7 @@
-<container size-func="gui.get_viewport()[1], gui.get_viewport()[2]" color="#0a060c">
-    <image id="background" size-func="gui.get_viewport()[1], gui.get_viewport()[2]" />
+<container size-func="unpack(gui.get_viewport())" color="#0a060c">
+    <image id="background" size-func="unpack(gui.get_viewport())" />
     
-    <container id="first_menu" size-func="gui.get_viewport()[1], gui.get_viewport()[2]">
+    <container id="first_menu" size-func="unpack(gui.get_viewport())">
         <button hover-color="050" color="100" gravity="top-right" onclick="go_back()">@Back</button>
 
         <container id="skills_trees" position-func="gui.get_viewport()[1]/2-300, 30" size="600,50" color="#00000070">
@@ -73,7 +73,7 @@
     <button id="close_c_panel" hover-color="050" color="100" pos="400,0" visible="false" onclick="close_c_panel()">@Close characteristics</button>
 
     <!-- equipment menu -->
-    <container id="equipment_menu" size-func="gui.get_viewport()[1], gui.get_viewport()[2]" visible="false">
+    <container id="equipment_menu" size-func="unpack(gui.get_viewport())" visible="false">
         <button hover-color="050" color="100" gravity="top-right" onclick="close_equipment_menu()">@Back</button>
 
         <container size="558,40" color="#00000070">

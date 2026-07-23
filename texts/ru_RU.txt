@@ -48,6 +48,24 @@ Craft=Создать
 
 Research=Исследовать
 
+# Деревья навыков(названия навыков)
+
+Survivability=Живучесть
+Bigger lungs=Большие легкие
+Bigger stomach=Большой желудок
+Endurance reserve=Запас выносливости
+
+
+# Деревья навыков(описание навыков)
+
+Increases maximum HP for 2.=Увеличивает максимальный запас HP на 2.
+Increases all physical damage dealt.=Увеличивает весь наносимый физический урон.
+Increases maximum oxygen for 2.=Увеличивает максимальный запас кислорода на 2.
+Increases agility for 1%.=Увеличивает ловкость на 1%.
+Increases accuracy for 1%.=Увеличивает меткость на 1%.
+Increases maximum hunger limit for 2.=Увеличивает максимальный предел голода на 2.
+Increases maximum stamina for 2. Will be work after combat update.=Увеличивает максимальный запас выносливости на 2. Будет работать после боевого обновления.
+
 # Настройки New Generation
 
 New Generation settings=Настройки New Generation
@@ -295,23 +313,3 @@ willow=ивовое бревно
 wooden bucket of water=деревянное ведро с водой
 wooden bucket=деревянное ведро
 workbench=верстак
-
-
-# Персонажи
-
-Wayne=Уэйн
-
-
-# Деревья навыков(названия навыков)
-
-Survivability=Живучесть
-Bigger lungs=Большие легкие
-
-
-# Деревья навыков(описание навыков)
-
-Increases maximum HP for 2.=Увеличивает максимальный запас HP на 2.
-Increases all physical damage dealt.=Увеличивает весь наносимый физический урон.
-Increases maximum oxygen for 2.=Увеличивает максимальный запас кислорода на 2.
-Increases agility for 1%.=Увеличивает ловкость на 1%.
-Increases accuracy for 1%.=Увеличивает меткость на 1%.

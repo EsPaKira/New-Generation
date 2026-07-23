@@ -5,7 +5,7 @@ local api = require "api/api_main"
 local controller = {
     skill = {}
 }
-local SKILLS_IN_THIS_TREE = {"accuracy", "agility", "bigger_lungs", "body_skill", "survivability"}
+local SKILLS_IN_THIS_TREE = {"accuracy", "agility", "bigger_lungs", "body_skill", "survivability", "bigger_stomach", "endurance_reserve"}
 
 function go_back()
     audio.play_sound_2d("ui/button_click", 1, 1, "ui")
@@ -68,7 +68,7 @@ function on_open()
     for researched_skill, value in pairs(all_skills) do
         for _, base_skill in ipairs(SKILLS_IN_THIS_TREE) do
             if researched_skill == base_skill then
-                local _, skill = skill_trees.get_skill_data(hud.get_player(), characters.get_choosen_character(hud.get_player()), "body", researched_skill)
+                local _, skill = skill_trees.get_skill_data(hud.get_player(), characters.get_choosen_character(hud.get_player()), researched_skill)
                 update_ui(researched_skill, skill["active-path"])
                 break
             end
