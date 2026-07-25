@@ -1,8 +1,9 @@
-local farmlandid = block.index("newgen:farmland")
+local farmland_id = block.index("newgen:farmland")
+local MAX_HUMIDITY = 5
 
 local function watering(x, y, z, pid)
-    if block.get(x, y, z) == farmlandid then
-        block.set_field(x, y, z, "humidity", 4)
+    if block.get(x, y, z) == farmland_id then
+        block.set_field(x, y, z, "humidity", MAX_HUMIDITY)
         block.set_variant(x, y, z, 1)
     end
 
@@ -23,8 +24,8 @@ end
 
 function on_use_on_block(x, y, z, pid)
     local blockid = block.get(x, y, z)
-    local block_model = block.properties[blockid]["model-name"]
-    if block_model == "crop" then
+    local block_script = block.properties[blockid]["script-name"]
+    if block_script == "crop" then
         watering(x, y - 1, z, pid)
         return true
     end

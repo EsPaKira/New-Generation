@@ -5,20 +5,22 @@ local variants = {
     {name = "mossy_skeleton", weight = 0.5},
     {name = "vestured_skeleton", weight = 0.5},
 }
-local dirtid = block.index('base:dirt')
-local grass_blockid = block.index('base:grass_block')
-local waterid = block.index("base:water")
+local dirt_id = block.index("base:dirt")
+local grass_block_id = block.index("base:grass_block")
+local water_id = block.index("base:water")
+local farmland_id = block.index("newgen:farmland")
 
 function on_random_update(x, y, z)
-    if block.is_solid_at(x, y + 1, z) then
-        block.set(x, y, z, dirtid, 0)
+    if block.is_solid_at(x, y + 1, z) or block.get(x, y + 1, z) == farmland_id then
+        block.set(x, y, z, dirt_id, 0)
     else
         for lx = -1, 1 do
             for ly = -1, 1 do
                 for lz = -1, 1 do
-                    if block.get(x + lx, y + ly, z + lz) == dirtid then
-                        if not block.is_solid_at(x + lx, y + ly + 1, z + lz) and block.get(x + lx, y + ly + 1, z + lz) ~= waterid then
-                            block.set(x + lx, y + ly, z + lz, grass_blockid, 0)
+                    if block.get(x + lx, y + ly, z + lz) == dirt_id then
+                        local top_block = block.get(x + lx, y + ly + 1, z + lz)
+                        if not block.is_solid_at(x + lx, y + ly + 1, z + lz) and top_block ~= water_id and top_block ~= farmland_id then
+                            block.set(x + lx, y + ly, z + lz, grass_block_id, 0)
                             return
                         end
                     end

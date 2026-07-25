@@ -39,7 +39,15 @@
             }
         },
         "newgen:swimming_system",
-        "newgen:health_system",
+        {
+            "name": "newgen:health_system",
+            "args": {
+                "particles": [
+                    "particles:blood_0",
+                    "particles:blood_1"
+                ]
+            }
+        },
         "newgen:oxygen_system",
         "newgen:bear"
     ],

@@ -1,9 +1,11 @@
+local MAX_HUMIDITY = 5
+
 function on_random_update(x, y, z)
     local current_weather = gfx.weather.get_current()
     local hum = block.get_field(x, y, z, "humidity") or 0
 
     if current_weather == "rain" or current_weather == "thunder" then
-        hum = math.min(hum + 1, 4)
+        hum = math.min(hum + 1, MAX_HUMIDITY)
         block.set_field(x, y, z, "humidity", hum)
     else
         hum = math.max(hum - 1, 0)

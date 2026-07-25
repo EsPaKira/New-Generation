@@ -23,6 +23,8 @@ newgen предоставляет несколько компонентов дл
 
 Этот компонент отвечает за здоровье и смерть сущности.
 
+В args можно указать частицы, появляющиеся после смерти сущности. См. пример ниже.
+
 ## newgen:hunger_system
 
 Этот компонент отвечает за голод сущности (рекомендуется использовать только для сущности игрока).
@@ -37,11 +39,11 @@ newgen предоставляет несколько компонентов дл
 
 Этот компонент позволяет добавлять лут, который выпадет после смерти сущности.
 
-Лут указывается в таблице args
+Лут указывается в таблице args.
 
 **Требует для работы newgen:health_system**
 
-## Пример массива components из newgen:entities/bear.json:
+## Пример components из newgen:entities/bear.json:
 
 ```json
 "components": [
@@ -79,7 +81,15 @@ newgen предоставляет несколько компонентов дл
         }
     },
     "newgen:swimming_system",
-    "newgen:health_system",
+    {
+            "name": "newgen:health_system",
+            "args": {
+                "particles": [
+                    "particles:blood_0",
+                    "particles:blood_1"
+                ]
+            }
+        },
     "newgen:oxygen_system",
     "newgen:bear"
 ]

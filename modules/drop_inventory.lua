@@ -6,8 +6,8 @@ local module = {}
 
 local function is_crop(pos)
     local blockid = block.get(pos[1], pos[2], pos[3])
-    local block_model = block.properties[blockid]["model-name"]
-    if block_model == "crop" then
+    local block_script = block.properties[blockid]["script-name"]
+    if block_script == "crop" then
         local block_v = block.get_variant(pos[1], pos[2], pos[3])
         if block_v == 2 then
             local loot_table = base_util.block_loot(blockid)

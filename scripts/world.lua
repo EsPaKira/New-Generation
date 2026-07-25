@@ -40,7 +40,8 @@ function on_world_open()
             entity:set_enabled("newgen:hunger_system", name == "survival")
         end
     end)
-    events.on("newgen:death", function(pos)
+    events.on("newgen:death", function(pos, entity, particles)
+        if not particles then return end
         gfx.particles.emit(pos, random.random(40, 70), {
             lifetime = 10,
             lifetime_spread = 2.5,
@@ -54,10 +55,7 @@ function on_world_open()
             spawn_spread = {0.5, 0.5, 0.5},
             lighting = true,
             collision = true,
-            frames = {
-                "particles:blood_0",
-                "particles:blood_1"
-            }
+            frames = particles
         })
     end)
     events.on("newgen:player_death", function()
@@ -179,16 +177,12 @@ function on_block_breaking(id, x, y, z, pid)
 end
 
 function on_block_broken(id, x, y, z, pid)
-    if pid == -1 then
-        return
-    end
     if gamemodes.get(pid).current ~= "survival" then
         return
     end
 
-    local block_model = block.properties[id]["model-name"]
     local block_script = block.properties[id]["script-name"]
-    if block_model == "crop" or block_script == "bucket_block" or block_script == "take_on_interact" then
+    if block_script == "crop" or block_script == "bucket_block" or block_script == "take_on_interact" then
         return -- crops or buckets drop managment in modules/drop_inventory 
     end
 

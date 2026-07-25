@@ -1,0 +1,36 @@
+{
+    "material": "base:grass",
+    "model": "custom",
+    "model-name": "cabbage_0",
+    "light-passing": true,
+    "sky-light-passing": true,
+    "obstacle": false,
+    "hitbox": [0.125, 0, 0.125, 0.75, 0.5, 0.75],
+    "script-name": "crop",
+    "state-based": {
+        "offset": 0,
+        "bits": 2,
+        "variants": [
+            {
+                "model": "custom",
+                "model-name": "cabbage_1"
+            },
+            {
+                "model": "custom",
+                "model-name": "cabbage_2"
+            }
+        ]
+    },
+    "base:durability": 1,
+    "base:loot": [
+        {
+           "item": "newgen:cabbage",
+           "count": 1
+        },
+        {
+            "item": "newgen:cabbage_seeds",
+            "min": 2,
+            "max": 4
+        }
+    ]
+}

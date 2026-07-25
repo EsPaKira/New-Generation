@@ -8,7 +8,8 @@ layers = [
     {below-sea-level=false, height=1, block="base:grass_block"},
     {height=7, block="base:dirt"},
     {height=3, block="newgen:red_clay"},
-    {height=-1, block="base:bazalt"}
+    {height=-1, block="base:bazalt"},
+    {height=1, block="newgen:mantle"}
 ]
 sea-layers = [
     {height=-1, block="base:water"}
@@ -31,6 +32,7 @@ structures = [
     {name="tree2", weight=1},
     {name="bush0", weight=0.5},
     {name="bush1", weight=0.5},
+    {name="archium_geode", weight=0.1},
     {name="fallen_tree", weight=0.03},
     {name="fallen_mossy_tree", weight=0.03},
     {name="birch0", weight=0.03},
@@ -53,7 +55,8 @@ layers = [
     {below-sea-level=false, height=1, block="base:grass_block"},
     {height=7, block="base:dirt"},
     {height=3, block="newgen:red_clay"},
-    {height=-1, block="newgen:gabbro"}
+    {height=-1, block="newgen:gabbro"},
+    {height=1, block="newgen:mantle"}
 ]
 sea-layers = [
     {height=-1, block="base:water"}
@@ -79,6 +82,7 @@ structures = [
     {name="bush0", weight=0.5},
     {name="bush1", weight=0.5},
     {name="gabbro_little_rock", weight=0.1},
+    {name="archium_geode", weight=0.1},
     {name="fallen_spruce_tree", weight=0.03},
     {name="fallen_mossy_spruce_tree", weight=0.03},
     {name="dead_spruce_tree", weight=0.02},
@@ -100,7 +104,8 @@ layers = [
     {below-sea-level=false, height=1, block="newgen:snow"},
     {height=7, block="base:dirt"},
     {height=3, block="newgen:red_clay"},
-    {height=-1, block="newgen:peridotite"}
+    {height=-1, block="newgen:peridotite"},
+    {height=1, block="newgen:mantle"}
 ]
 sea-layers = [
     {height=1, block="base:ice"},
@@ -116,6 +121,7 @@ structure-chance = 0.01
 structures = [
     {name="spruce_snow0", weight=1},
     {name="spruce_snow1", weight=1},
+    {name="archium_geode", weight=0.1},
     {name="dead_spruce_tree_snow", weight=0.02}
 ]
 
@@ -129,7 +135,8 @@ layers = [
     {height=6, block="base:sand"},
     {height=20, block="newgen:sandstone"},
     {height=25, block="newgen:gneiss"},
-    {height=-1, block="newgen:granite"}
+    {height=-1, block="newgen:granite"},
+    {height=1, block="newgen:mantle"}
 ]
 sea-layers = [
     {height=-1, block="base:water"}
@@ -147,7 +154,9 @@ structures = [
     {name="sandstone_coal0", weight=0.1},
     {name="sandstone_coal1", weight=0.5},
     {name="sandstone_pillar", weight=0.5},
-    {name="sandstone_rock", weight=1}
+    {name="sandstone_rock", weight=1},
+    {name="granite_cassiterite0", weight=0.5},
+    {name="archium_geode", weight=0.1}
 ]
 
 [mountains]
@@ -158,7 +167,8 @@ parameters = [
 ]
 layers = [
     {height=20, block="newgen:limestone"},
-    {height=-1, block="newgen:marble"}
+    {height=-1, block="newgen:marble"},
+    {height=1, block="newgen:mantle"}
 ]
 sea-layers = [
     {height=-1, block="base:water"}
@@ -180,6 +190,7 @@ structures = [
     {name="limestone_coal1", weight=1},
     {name="limestone_malachite_ore", weight=0.3},
     {name="marble_little_rock", weight=0.1},
+    {name="archium_geode", weight=0.1},
     {name="marble_big_rock", weight=0.02},
     {name="weavers_cocoon", weight=0.015}
 ]
@@ -195,7 +206,8 @@ layers = [
     {below-sea-level=false, height=1, block="base:grass_block"},
     {height=6, block="base:dirt"},
     {height=5, block="newgen:red_clay"},
-    {height=-1, block="newgen:diorite"}
+    {height=-1, block="newgen:diorite"},
+    {height=1, block="newgen:mantle"}
 ]
 sea-layers = [
     {height=-1, block="base:water"}
@@ -218,8 +230,9 @@ structures = [
     {name="bush0", weight=5},
     {name="bush1", weight=5},
     {name="diorite_little_rock", weight=0.12},
-        {name="birch0", weight=0.5},
+    {name="birch0", weight=0.5},
     {name="birch1", weight=0.5},
+    {name="archium_geode", weight=0.1},
     {name="diorite_big_rock", weight=0.03},
     {name="fallen_tree", weight=0.03},
     {name="fallen_mossy_tree", weight=0.03},
@@ -240,7 +253,8 @@ layers = [
     {below-sea-level=false, height=1, block="base:grass_block"},
     {height=30, block="base:dirt"},
     {height=7, block="newgen:red_clay"},
-    {height=-1, block="newgen:dolomite"}
+    {height=-1, block="newgen:dolomite"},
+    {height=1, block="newgen:mantle"}
 ]
 sea-layers = [
     {height=-1, block="base:water"}
@@ -265,6 +279,7 @@ structures = [
     {name="willow1", weight=1},
     {name="bush0", weight=0.5},
     {name="bush1", weight=0.5},
+    {name="archium_geode", weight=0.1},
     {name="puddle", weight=0.05},
     {name="fallen_mossy_spruce_tree", weight=0.03},
     {name="dead_spruce_tree", weight=0.02},
