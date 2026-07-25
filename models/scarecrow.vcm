@@ -1,0 +1,74 @@
+@box from (0.40625, 0, 0.40625) to (0.59375, 1.75, 0.59375) origin (0.46875, 0, 0.46875) delete (top) {
+    @part tags (south) texture "blocks:scarecrow" region (0.1875, 0.5625, 0.234375, 1)
+    @part tags (west) texture "blocks:scarecrow" region (0.234375, 0.5625, 0.28125, 1)
+    @part tags (north) texture "blocks:scarecrow" region (0.28125, 0.5625, 0.328125, 1)
+    @part tags (east) texture "blocks:scarecrow" region (0.375, 0.5625, 0.328125, 1)
+    @part tags (bottom) texture "blocks:scarecrow" region (0.515625, 0.234375, 0.5625, 0.28125)
+}
+@box from (0.25, 1.5, 0.375) to (0.75, 2.125, 0.625) origin (0.3125, 1.5, 0.4375) {
+    @part tags (south) texture "blocks:scarecrow" region (0, 0.46875, 0.125, 0.625)
+    @part tags (west) texture "blocks:scarecrow" region (0.359375, 0.328125, 0.421875, 0.484375)
+    @part tags (north) texture "blocks:scarecrow" region (0.375, 0.84375, 0.5, 1)
+    @part tags (east) texture "blocks:scarecrow" region (0.484375, 0.328125, 0.421875, 0.484375)
+    @part tags (top) texture "blocks:scarecrow" region (0.609375, 0.9375, 0.734375, 1)
+    @part tags (bottom) texture "blocks:scarecrow" region (0.609375, 0.875, 0.734375, 0.9375)
+}
+@box from (0.25, 1.0625, 0.375) to (0.75, 1.5, 0.625) origin (0.3125, 1.0625, 0.4375) delete (top, bottom) {
+    @part tags (south) texture "blocks:scarecrow" region (0.375, 0.484375, 0.5, 0.59375)
+    @part tags (west) texture "blocks:scarecrow" region (0.28125, 0.34375, 0.34375, 0.453125)
+    @part tags (north) texture "blocks:scarecrow" region (0.125, 0.453125, 0.25, 0.5625)
+    @part tags (east) texture "blocks:scarecrow" region (0.703125, 0.375, 0.640625, 0.484375)
+}
+@box from (-0.3125, 1.6875, 0.5) to (0.25, 1.9375, 0.5) origin (-0.25, 1.6875, 0.5625) delete (east, west, top, bottom) {
+    @part tags (south) texture "blocks:scarecrow" region (0, 0.390625, 0.140625, 0.453125)
+    @part tags (north) texture "blocks:scarecrow" region (0.140625, 0.390625, 0.28125, 0.453125)
+}
+@box from (0.75, 1.6875, 0.5) to (1.3125, 1.9375, 0.5) origin (0.8125, 1.6875, 0.5625) delete (east, west, top, bottom) {
+    @part tags (south) texture "blocks:scarecrow" region (0.484375, 0.390625, 0.625, 0.453125)
+    @part tags (north) texture "blocks:scarecrow" region (0, 0.328125, 0.140625, 0.390625)
+}
+@box from (0.75, 1.9375, 0.40625) to (1.375, 2.125, 0.59375) origin (0.8125, 1.9375, 0.46875) delete (east, west) {
+    @part tags (south) texture "blocks:scarecrow" region (0.609375, 0.765625, 0.765625, 0.8125)
+    @part tags (north) texture "blocks:scarecrow" region (0.609375, 0.71875, 0.765625, 0.765625)
+    @part tags (top) texture "blocks:scarecrow" region (0.609375, 0.671875, 0.765625, 0.71875)
+    @part tags (bottom) texture "blocks:scarecrow" region (0.609375, 0.625, 0.765625, 0.671875)
+}
+@box from (-0.375, 1.9375, 0.40625) to (0.25, 2.125, 0.59375) origin (-0.3125, 1.9375, 0.46875) delete (east, west) {
+    @part tags (south) texture "blocks:scarecrow" region (0.609375, 0.578125, 0.765625, 0.625)
+    @part tags (north) texture "blocks:scarecrow" region (0.609375, 0.53125, 0.765625, 0.578125)
+    @part tags (top) texture "blocks:scarecrow" region (0.609375, 0.484375, 0.765625, 0.53125)
+    @part tags (bottom) texture "blocks:scarecrow" region (0.484375, 0.34375, 0.640625, 0.390625)
+}
+@box from (0.75, 1.99375, 0.4375) to (1.375, 2.11875, 0.5625) origin (0.8125, 1.99375, 0.5) delete (east) {
+    @part tags (south) texture "blocks:scarecrow" region (0.640625, 0.34375, 0.796875, 0.375)
+    @part tags (west) texture "blocks:scarecrow" region (0.609375, 0.453125, 0.640625, 0.484375)
+    @part tags (north) texture "blocks:scarecrow" region (0.484375, 0.3125, 0.640625, 0.34375)
+    @part tags (top) texture "blocks:scarecrow" region (0.640625, 0.3125, 0.796875, 0.34375)
+    @part tags (bottom) texture "blocks:scarecrow" region (0, 0.296875, 0.15625, 0.328125)
+}
+@box from (-0.375, 1.99375, 0.4375) to (0.25, 2.11875, 0.5625) origin (-0.3125, 1.99375, 0.5) delete (west) {
+    @part tags (south) texture "blocks:scarecrow" region (0.15625, 0.296875, 0.3125, 0.328125)
+    @part tags (north) texture "blocks:scarecrow" region (0.3125, 0.296875, 0.46875, 0.328125)
+    @part tags (east) texture "blocks:scarecrow" region (0.625, 0.25, 0.59375, 0.28125)
+    @part tags (top) texture "blocks:scarecrow" region (0.46875, 0.28125, 0.625, 0.3125)
+    @part tags (bottom) texture "blocks:scarecrow" region (0.625, 0.28125, 0.78125, 0.3125)
+}
+@box from (0.125, 2.5625, 0.125) to (0.875, 2.5625, 0.875) origin (0.1875, 2.5625, 0.1875) delete (east, west, north, south) {
+    @part tags (top) texture "blocks:scarecrow" region (0, 0.8125, 0.1875, 1)
+    @part tags (bottom) texture "blocks:scarecrow" region (0, 0.625, 0.1875, 0.8125)
+}
+@box from (0.25, 2.563125, 0.25) to (0.75, 2.688125, 0.75) origin (0.3125, 2.5625, 0.3125) delete (bottom) {
+    @part tags (south) texture "blocks:scarecrow" region (0, 0.265625, 0.125, 0.296875)
+    @part tags (west) texture "blocks:scarecrow" region (0.125, 0.265625, 0.25, 0.296875)
+    @part tags (north) texture "blocks:scarecrow" region (0.25, 0.265625, 0.375, 0.296875)
+    @part tags (east) texture "blocks:scarecrow" region (0.828125, 0.453125, 0.703125, 0.484375)
+    @part tags (top) texture "blocks:scarecrow" region (0.375, 0.71875, 0.5, 0.84375)
+}
+@box from (0.28125, 2.125, 0.28125) to (0.71875, 2.5625, 0.71875) origin (0.34375, 2.125, 0.34375) {
+    @part tags (south) texture "blocks:scarecrow" region (0.25, 0.453125, 0.359375, 0.5625)
+    @part tags (west) texture "blocks:scarecrow" region (0.5, 0.890625, 0.609375, 1)
+    @part tags (north) texture "blocks:scarecrow" region (0.5, 0.78125, 0.609375, 0.890625)
+    @part tags (east) texture "blocks:scarecrow" region (0.609375, 0.671875, 0.5, 0.78125)
+    @part tags (top) texture "blocks:scarecrow" region (0.5, 0.5625, 0.609375, 0.671875)
+    @part tags (bottom) texture "blocks:scarecrow" region (0.5, 0.453125, 0.609375, 0.5625)
+}

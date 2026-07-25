@@ -28,13 +28,26 @@
                         "item": "newgen:bear_meat",
                         "min": 2,
                         "max": 5
+                    },
+                    {   
+                        "item": "newgen:bone",
+                        "min": 1,
+                        "max": 2
                     }
                 ]
                     
             }
         },
         "newgen:swimming_system",
-        "newgen:health_system",
+        {
+            "name": "newgen:health_system",
+            "args": {
+                "particles": [
+                    "particles:blood_0",
+                    "particles:blood_1"
+                ]
+            }
+        },
         "newgen:oxygen_system",
         "newgen:bear"
     ],

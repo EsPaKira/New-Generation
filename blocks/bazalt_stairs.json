@@ -1,0 +1,9 @@
+{
+    "material": "base:stone",
+    "parent": "newgen:stairs_template",
+    "texture": "bazalt",
+    "caption": "bazalt stairs",
+    "hidden" : false,
+    "picking-item": "newgen:bazalt_stairs.item",
+    "base:durability": 9
+}

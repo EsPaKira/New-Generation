@@ -87,6 +87,10 @@ function characters.update_survival_ui(pid, character_name)
     local oxygen = characters.get_field(pid, character_name, "stats", "oxygen")
     local max_oxygen = characters.get_field(pid, character_name, "stats", "max_oxygen")
     survival_ui.set_oxygen(oxygen, max_oxygen)
+
+    local hunger = characters.get_field(pid, character_name, "stats", "hunger")
+    local max_hunger = characters.get_field(pid, character_name, "stats", "max_hunger")
+    survival_ui.set_hunger(hunger, max_hunger)
 end
 
 function characters.open(data)

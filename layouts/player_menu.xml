@@ -1,7 +1,7 @@
-<container size-func="gui.get_viewport()[1], gui.get_viewport()[2]" color="#0a060c">
-    <image id="background" size-func="gui.get_viewport()[1], gui.get_viewport()[2]" />
+<container size-func="unpack(gui.get_viewport())" color="#0a060c">
+    <image id="background" size-func="unpack(gui.get_viewport())" />
     
-    <container id="first_menu" size-func="gui.get_viewport()[1], gui.get_viewport()[2]">
+    <container id="first_menu" size-func="unpack(gui.get_viewport())">
         <button hover-color="050" color="100" gravity="top-right" onclick="go_back()">@Back</button>
 
         <container id="skills_trees" position-func="gui.get_viewport()[1]/2-300, 30" size="600,50" color="#00000070">
@@ -56,8 +56,9 @@
         <container size="400,30" color="100"><label pos="20,8">@HP</label><label id="max_health" pos="300,8"></label></container>
         <container size="400,30"><label pos="20,8">@Oxygen</label><label id="max_oxygen" pos="300,8"></label></container>
         <container size="400,30" color="100" tooltip="Magical energy" tooltip-delay="0.08"><label pos="20,8">@Archium</label><label id="max_archium" pos="300,8"></label></container>
-        <container size="400,30"><label pos="20,8">@Agility</label><label id="agility" pos="300,8"></label></container>
-        <container size="400,30" color="100"><label pos="20,8">@Accuracy</label><label id="accuracy" pos="300,8"></label></container>
+        <container size="400,30"><label pos="20,8">@Hunger</label><label id="max_hunger" pos="300,8"></label></container>
+        <container size="400,30" color="100"><label pos="20,8">@Agility</label><label id="agility" pos="300,8"></label></container>
+        <container size="400,30"><label pos="20,8">@Accuracy</label><label id="accuracy" pos="300,8"></label></container>
 
 
         <container size="400,50"><label gravity="center-center">@Types of protection</label></container>
@@ -72,7 +73,7 @@
     <button id="close_c_panel" hover-color="050" color="100" pos="400,0" visible="false" onclick="close_c_panel()">@Close characteristics</button>
 
     <!-- equipment menu -->
-    <container id="equipment_menu" size-func="gui.get_viewport()[1], gui.get_viewport()[2]" visible="false">
+    <container id="equipment_menu" size-func="unpack(gui.get_viewport())" visible="false">
         <button hover-color="050" color="100" gravity="top-right" onclick="close_equipment_menu()">@Back</button>
 
         <container size="558,40" color="#00000070">

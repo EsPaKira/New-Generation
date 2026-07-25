@@ -1,0 +1,7 @@
+{
+    "icon": "items:turnip",
+    "script-name": "food",
+    "newgen:food": {
+        "saturation": 2
+    }
+}

@@ -4,7 +4,23 @@
             {"id": "newgen:malachite_ore", "count": 1}
         ],
         "results": [
-            {"id": "newgen:copper_ingot", "count": 1}
+            {"id": "newgen:copper_nugget", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:cassiterite_ore", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:tin_nugget", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:cassiterite_ore", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:fur_cape", "count": 1}
         ]
     },
     {

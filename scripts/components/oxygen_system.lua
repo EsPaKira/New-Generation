@@ -27,12 +27,6 @@ end
 
 local time_under_water = 0
 function on_update(tps)
-    if entity:get_player() then
-        if gamemodes.get(entity:get_uid()).current ~= "survival" then
-            return
-        end
-    end
-
     if time_under_water >= 1 then
         local health = entity:get_component("newgen:health_system")
         local swimming = entity:get_component("newgen:swimming_system")

@@ -1,0 +1,27 @@
+{
+    "icon": "items:tin_bronze_geological_hammer",
+    "uses": 552,
+    "newgen:tool": {
+        "type": "breaker",
+        "materials": {
+            "base:stone": {
+                "speed": 2.5
+            },
+            "base:wood": {
+                "speed": 1.1
+            },
+            "base:ground": {
+                "speed": 1.2
+            },
+            "base:grass_block": {
+                "speed": 1.1
+            }
+        },
+        "damage": [
+            {"type": "crushing", "count": 4}
+        ]
+    },
+    "script-name": "geological_hammer",
+    "newgen:geological-hammer-depth": 20,
+    "description": "Use on block\n4 crushing damage"
+}

@@ -7,7 +7,7 @@
     "shadeless": true,
     "obstacle": false,
     "grounded": true,
-    "rotation": "pipe",
+    "rotation": "pane",
     "material": "base:wood",
     "particles": {
         "lifetime": 7.0,

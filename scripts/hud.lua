@@ -37,6 +37,10 @@ function on_hud_open()
         survival_ui.set_oxygen(oxygen, max_oxygen)
     end)
 
+    events.on("newgen:player_hunger.set", function(eid, hunger, max_hunger)
+        survival_ui.set_hunger(hunger, max_hunger)
+    end)
+
     console.add_command("gamemode player:sel=$obj.id name:str=''", 
     "Set game mode",
     function (args, kwargs)
@@ -120,7 +124,7 @@ function on_hud_open()
             player.set_pos(pid, player.get_spawnpoint(pid))
             player.set_rot(pid, 0, 0, 0)
             player.set_entity(pid, -1)
-            console.log("Player ID:", pid, "is dead")
+            console.chat("Player ID:" .. " " ..  pid .. " " .. "is dead")
             menu:reset()
             isdead = false
             gfx.posteffects.set_intensity(health_effect, 0.0)

@@ -1,0 +1,10 @@
+{
+    "parent": "newgen:slab_template",
+    "material": "base:carpet",
+    "texture": "sailcloth",
+    "caption": "sailcloth slab",
+    "hidden": false,
+    "picking-item": "newgen:sailcloth_slab.item",
+    "newgen:full-block": "newgen:sailcloth",
+    "base:durability": 1
+}

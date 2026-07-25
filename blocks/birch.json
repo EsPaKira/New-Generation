@@ -1,0 +1,13 @@
+{
+    "material": "base:wood",
+    "texture-faces": [
+        "birch",
+        "birch",
+        "birch_top",
+        "birch_top",
+        "birch",
+        "birch"
+    ],
+    "rotation": "pipe",
+    "base:durability": 6.0
+}

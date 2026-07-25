@@ -1,0 +1,2 @@
+This folder is needed for descriptions of materials in Craft Menu.
+Эта папка нужна для описаний материалов в Меню Крафтов.

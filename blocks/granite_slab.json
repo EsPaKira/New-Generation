@@ -1,0 +1,9 @@
+{
+    "parent": "newgen:slab_template",
+    "texture": "granite",
+    "caption": "granite slab",
+    "hidden": false,
+    "picking-item": "newgen:granite_slab.item",
+    "newgen:full-block": "newgen:granite",
+    "base:durability": 6
+}

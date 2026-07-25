@@ -1,6 +1,6 @@
 {
     "root": {
-        "name": "body",
+        "name": "weaver",
         "model": "weaver",
         "offset": [0, -0.34, 0]
     }

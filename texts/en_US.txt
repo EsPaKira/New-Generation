@@ -10,5 +10,10 @@ melting_crafts=Smelting
 # Backgrounds
 
 gui/space=Space
-gui/gunmetal=Gunmetal
+gui/total_gray=Total gray
 gui/total_black=Total black
+
+
+# Blocks
+
+skeleton block=skeleton

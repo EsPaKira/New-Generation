@@ -32,7 +32,6 @@ end
 
 function load_variants_bg()
     local bgs = config.get_backgrounds()
-    document["bg_select"]:clear()
 
     local options = {}
     for _, bg in ipairs(bgs) do
@@ -42,12 +41,12 @@ function load_variants_bg()
         }
         table.insert(options, option)
     end
-    document["bg_select"].options = options -- document["bg_select"]:add(<option />) not supported
+    document["bg_select"].options = options
 end
 
 function load_bg()
     local bg = api.get_background()
-    document["bg_select"].value = bg -- doesn't work
+    document["bg_select"].value = bg
     document["background"].src = bg
 end
 

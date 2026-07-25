@@ -1,0 +1,13 @@
+{
+    "id": "bigger_stomach",
+    "name": "Bigger stomach",
+    "description": "Increases maximum hunger limit for 2.",
+    "stats-buffs": [
+        {"id": "max_hunger", "value": 2}
+    ],
+    "max-level": 5,
+    "required-skills": [
+        {"id": "survivability", "level": 1}
+    ],
+    "active-path": "gui/2_skills_from_2_1_active"
+}

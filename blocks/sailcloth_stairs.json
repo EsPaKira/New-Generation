@@ -1,0 +1,9 @@
+{
+    "material": "base:carpet",
+    "parent": "newgen:stairs_template",
+    "texture": "sailcloth",
+    "caption": "sailcloth stairs",
+    "hidden" : false,
+    "picking-item": "newgen:sailcloth_stairs.item",
+    "base:durability": 1.25
+}

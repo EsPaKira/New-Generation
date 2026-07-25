@@ -1,0 +1,25 @@
+{
+    "icon": "items:tin_bronze_axe",
+    "uses": 505,
+    "newgen:tool": {
+        "type": "breaker",
+        "materials": {
+            "base:stone": {
+                "speed": 1.2
+            },
+            "base:wood": {
+                "speed": 3
+            },
+            "base:ground": {
+                "speed": 1.2
+            },
+            "base:grass_block": {
+                "speed": 1.1
+            }
+        },
+        "damage": [
+            {"type": "slashing", "count": 5}
+        ]
+    },
+    "description": "5 slashing damage"
+}

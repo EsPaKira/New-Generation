@@ -7,5 +7,6 @@
     "material": "base:grass",
     "grounded": true,
     "obstacle": false,
-    "rotation": "pane"
+    "rotation": "pane",
+    "base:durability": 0.1
 }

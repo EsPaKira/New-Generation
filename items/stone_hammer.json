@@ -5,7 +5,16 @@
         "type": "breaker",
         "materials": {
             "base:stone": {
-                "speed": 3
+                "speed": 2.7
+            },
+            "base:wood": {
+                "speed": 1
+            },
+            "base:ground": {
+                "speed": 1.2
+            },
+            "base:grass_block": {
+                "speed": 1.1
             }
         },
         "damage": [

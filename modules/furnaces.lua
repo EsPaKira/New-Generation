@@ -96,37 +96,21 @@ end
 
 function module.temperature_of_melting(finvid)
     -- get max melting_temperature in materials
-    local material1, _ = inventory.get(finvid, 0)
-    -- local material2, _ = inventory.get(finvid, 1)
-    -- local material3, _ = inventory.get(finvid, 2)
+    local material, _ = inventory.get(finvid, 0)
     if module.check(finvid, 0, "metal") then
-        -- if furnaces.check(finvid, 1, "metal") then
-        --     if furnaces.check(finvid, 2, "metal") then
-        --         return math.max(item.properties[material1]["newgen:material"]["melting-point"], item.properties[material2]["newgen:material"]["melting-point"], item.properties[material3]["newgen:material"]["melting-point"])
-        --     end
-        --     return math.max(item.properties[material1]["newgen:material"]["melting-point"], item.properties[material2]["newgen:material"]["melting-point"])
-        -- end
-        return item.properties[material1]["newgen:material"]["melting-point"]
+        return item.properties[material]["newgen:material"]["melting-point"]
     end
     return nil
 end
 
 function module.craft(finvid)
-    local material1, count1 = inventory.get(finvid, 0)
-    -- local material2, count2 = inventory.get(finvid, 1)
-    -- local material3, count3 = inventory.get(finvid, 2)
+    local material, count = inventory.get(finvid, 0)
 
     local materials = {}
 
     if module.check(finvid, 0, "metal") then
-        table.insert(materials, {material1, count1})
+        table.insert(materials, {material, count})
     end
-    -- if furnaces.check(finvid, 1, "metal") then
-    --     materials[material2] = count2
-    -- end
-    -- if furnaces.check(finvid, 2, "metal") then
-    --     materials[material3] = count3
-    -- end
 
     module.check_crafts(materials, finvid)
 end

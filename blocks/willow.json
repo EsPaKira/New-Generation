@@ -1,0 +1,13 @@
+{
+    "material": "base:wood",
+    "texture-faces": [
+        "willow",
+        "willow",
+        "willow_top",
+        "willow_top",
+        "willow",
+        "willow"
+    ],
+    "rotation": "pipe",
+    "base:durability": 6.0
+}

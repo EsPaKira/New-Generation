@@ -1,48 +1,66 @@
-<container id="body_tree" size-func="gui.get_viewport()[1],gui.get_viewport()[2]">
-    <image id="background" size-func="gui.get_viewport()[1], gui.get_viewport()[2]" />
+<container id="body_tree" size-func="unpack(gui.get_viewport())">
+    <image id="background" size-func="unpack(gui.get_viewport())" />
     <button hover-color="050" color="100" gravity="top-right" onclick="go_back()">@Back</button>
-    <container size="1000,30" position-func="gui.get_viewport()[1]/2-500, 15" color="#000000">
+    <container size="1000,30" position-func="gui.get_viewport()[1]/2 - 500, 15" color="#000000">
         <label gravity="center-center">@Body</label>
     </container>
     
-    <container position-func="gui.get_viewport()[1]/2-550, 60" size="1100,2" color="#b7fcfc"></container>
+    <container position-func="gui.get_viewport()[1]/2 - 550, 60" size="1100,2" color="#b7fcfc"></container>
 
     <panel size-func="1000, gui.get_viewport()[2]" position-func="gui.get_viewport()[1]/2 - 500, 67">
-        <container size="1000,400" scrollable="true">
-            <container size="108" pos="449, 32">
+        <container size="1000,700" scrollable="true">
+            <container size="108" pos="446,32">
                 <image size="96" pos="6" src="gui/body_skill" />
                 <image id="body_skill_frame" size="108" src="gui/unactive_frame" />
                 <container id="body_skill_shadow" size="96" pos="6" hover-color="#10101070" color="#101010bb" onclick="toggle_skill_info('body_skill')"></container>
             </container>
 
             <!-- second layer -->
-            <container id="body2_4_skills_from_1" size="624,64" pos="188,140">
-                <image size="624,64" src="gui/4_skills_from_1" />
-                <image id="survivability_path" size="624,64" src="blocks:transparent" />
-                <image id="bigger_lungs_path" size="624,64" src="blocks:transparent" />
-                <image id="agility_path" size="624,64" src="blocks:transparent" />
-                <image id="accuracy_path" size="624,64" src="blocks:transparent" />
+            <container id="body2_4_skills_from_1" size="576,72" pos="212,140">
+                <image size="576,72" src="gui/4_skills_from_1" />
+                <image id="survivability_path" size="576,72" src="blocks:transparent" />
+                <image id="bigger_lungs_path" size="576,72" src="blocks:transparent" />
+                <image id="agility_path" size="576,72" src="blocks:transparent" />
+                <image id="accuracy_path" size="576,72" src="blocks:transparent" />
             </container>
 
-            <container size="108" pos="188, 204">
+            <container size="108" pos="212,212">
                 <image size="96" pos="6" src="gui/survivability" />
                 <image id="survivability_frame" size="108" src="gui/unactive_frame" />
                 <container id="survivability_shadow" size="96" pos="6" hover-color="#10101070" color="#101010bb" onclick="toggle_skill_info('survivability')"></container>
             </container>
-            <container size="108" pos="360, 204">
+            <container size="108" pos="368,212">
                 <image size="96" pos="6" src="gui/bigger_lungs" />
                 <image id="bigger_lungs_frame" size="108" src="gui/unactive_frame" />
                 <container id="bigger_lungs_shadow" size="96" pos="6" hover-color="#10101070" color="#101010bb" onclick="toggle_skill_info('bigger_lungs')"></container>
             </container>
-            <container size="108" pos="532, 204">
+            <container size="108" pos="524,212">
                 <image size="96" pos="6" src="gui/agility" />
                 <image id="agility_frame" size="108" src="gui/unactive_frame" />
                 <container id="agility_shadow" size="96" pos="6" hover-color="#10101070" color="#101010bb" onclick="toggle_skill_info('agility')"></container>
             </container>
-            <container size="108" pos="704, 204">
+            <container size="108" pos="680,212">
                 <image size="96" pos="6" src="gui/accuracy" />
                 <image id="accuracy_frame" size="108" src="gui/unactive_frame" />
                 <container id="accuracy_shadow" size="96" pos="6" hover-color="#10101070" color="#101010bb" onclick="toggle_skill_info('accuracy')"></container>
+            </container>
+
+            <!-- third layer -->
+            <container id="body3_2_skills_from_2" size="342,72" pos="134,320">
+                <image size="342,72" src="gui/2_skills_from_2" />
+                <image id="bigger_stomach_path" size="342,72" src="blocks:transparent" />
+                <image id="endurance_reserve_path" size="342,72" src="blocks:transparent" />
+            </container>
+
+            <container size="108" pos="134,392">
+                <image size="96" pos="6" src="gui/bigger_stomach" />
+                <image id="bigger_stomach_frame" size="108" src="gui/unactive_frame" />
+                <container id="bigger_stomach_shadow" size="96" pos="6" hover-color="#10101070" color="#101010bb" onclick="toggle_skill_info('bigger_stomach')"></container>
+            </container>
+            <container size="108" pos="290,392">
+                <image size="96" pos="6" src="gui/endurance_reserve" />
+                <image id="endurance_reserve_frame" size="108" src="gui/unactive_frame" />
+                <container id="endurance_reserve_shadow" size="96" pos="6" hover-color="#10101070" color="#101010bb" onclick="toggle_skill_info('endurance_reserve')"></container>
             </container>
         </container>
     </panel>

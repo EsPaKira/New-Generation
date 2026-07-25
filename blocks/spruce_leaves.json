@@ -4,7 +4,7 @@
     "draw-group": 5,
     "culling": "optional",
     "particles": {
-        "lifetime": 4.0,
+        "lifetime": 5.5,
         "spawn_interval": 1000.0,
         "acceleration": [0, -0.1, 0],
         "velocity": [0.2, -2.5, 0.3],
@@ -19,8 +19,12 @@
         "max_angular_vel": 2.0,
         "lighting": true,
         "frames": [
-            "particles:leaf_0"
+            "particles:spruce_needle_0"
         ]
     },
+    "script-name": "block_particles",
+    "newgen:placed_particles": [
+        "particles:spruce_needle_0"
+    ],
     "base:durability": 0.7
 }

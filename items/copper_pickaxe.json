@@ -6,6 +6,15 @@
         "materials": {
             "base:stone": {
                 "speed": 3.3
+            },
+            "base:wood": {
+                "speed": 1.2
+            },
+            "base:ground": {
+                "speed": 1.2
+            },
+            "base:grass_block": {
+                "speed": 1.1
             }
         },
         "damage": [

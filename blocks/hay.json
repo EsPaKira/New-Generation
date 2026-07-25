@@ -9,5 +9,9 @@
     ],
     "material": "base:grass",
     "rotation": "pipe",
+    "script-name": "block_particles",
+    "newgen:placed_particles": [
+        "particles:straw_0"
+    ],
     "base:durability": 1.5
 }

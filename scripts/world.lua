@@ -7,6 +7,7 @@ local DI = require "drop_inventory"
 local gamemodes = require "gamemodes"
 local world_data = require "world_data"
 local furnaces = require "furnaces"
+local spawners = require "spawners"
 local weather = require "weather"
 local characters = require "characters/main"
 local recalculate = require "characters/recalculate"
@@ -36,9 +37,11 @@ function on_world_open()
         if entity then
             entity:set_enabled("newgen:health_system", name == "survival")
             entity:set_enabled("newgen:oxygen_system", name == "survival")
+            entity:set_enabled("newgen:hunger_system", name == "survival")
         end
     end)
-    events.on("newgen:death", function(pos)
+    events.on("newgen:death", function(pos, entity, particles)
+        if not particles then return end
         gfx.particles.emit(pos, random.random(40, 70), {
             lifetime = 10,
             lifetime_spread = 2.5,
@@ -52,10 +55,7 @@ function on_world_open()
             spawn_spread = {0.5, 0.5, 0.5},
             lighting = true,
             collision = true,
-            frames = {
-                "particles:blood_0",
-                "particles:blood_1"
-            }
+            frames = particles
         })
     end)
     events.on("newgen:player_death", function()
@@ -70,6 +70,7 @@ end
 function on_world_tick() 
     -- tick newgen modules
     furnaces.tick()
+    spawners.tick()
     weather.tick()
 end
 
@@ -86,7 +87,7 @@ local function tick_breaking(pid, tps, breaking)
     if gamemode ~= "survival" then
         if not breaking then return end
         local x, y, z = player.get_selected_block(pid)
-        DI.drop_inventory(inventory.get_block(x, y, z), {x, y, z}, 1)
+        DI.drop_inventory(inventory.get_block(x, y, z), {x, y, z}, 1, pid)
         return
     end
     local target = breaking_blocks[pid]
@@ -137,7 +138,7 @@ local function tick_breaking(pid, tps, breaking)
         target.power = power
         target.tick = target.tick + 1
         if target.progress >= 1.0 then
-            DI.drop_inventory(inventory.get_block(x, y, z), {x, y, z}, 1)
+            DI.drop_inventory(inventory.get_block(x, y, z), {x, y, z}, 1, pid)
             block.destruct(x, y, z, pid)
             if not player.is_infinite_items(pid) then
                 inventory.use(invid, slot)
@@ -176,12 +177,15 @@ function on_block_breaking(id, x, y, z, pid)
 end
 
 function on_block_broken(id, x, y, z, pid)
-    if pid == -1 then
-        return
-    end
     if gamemodes.get(pid).current ~= "survival" then
         return
     end
+
+    local block_script = block.properties[id]["script-name"]
+    if block_script == "crop" or block_script == "bucket_block" or block_script == "take_on_interact" then
+        return -- crops or buckets drop managment in modules/drop_inventory 
+    end
+
     local loot_table = base_util.block_loot(id)
     for _, loot in ipairs(loot_table) do
         base_util.drop({x + 0.5, y + 0.5, z + 0.5}, loot.item, loot.count, loot.data)

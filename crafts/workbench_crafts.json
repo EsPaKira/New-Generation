@@ -9,7 +9,31 @@
     },
     {
         "components": [
-            {"tag": "wood", "count": 1}
+            {"id": "newgen:spruce_planks.item", "count": 2}
+        ],
+        "results": [
+            {"id": "base:wooden_door.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:birch_planks.item", "count": 2}
+        ],
+        "results": [
+            {"id": "base:wooden_door.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:willow_planks.item", "count": 2}
+        ],
+        "results": [
+            {"id": "base:wooden_door.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "base:wood.item", "count": 1}
         ],
         "results": [
             {"id": "base:planks.item", "count": 2}
@@ -17,7 +41,119 @@
     },
     {
         "components": [
+            {"id": "newgen:spruce.item", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:spruce_planks.item", "count": 2}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:birch.item", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:birch_planks.item", "count": 2}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:willow.item", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:willow_planks.item", "count": 2}
+        ]
+    },
+    {
+        "components": [
+            {"id": "base:planks.item", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:planks_slab.item", "count": 2}
+        ]
+    },
+    {
+        "components": [
             {"id": "base:planks.item", "count": 3}
+        ],
+        "results": [
+            {"id": "newgen:planks_stairs.item", "count": 4}
+        ]
+    },
+    {
+        "components": [
+            {"id": "base:planks.item", "count": 3}
+        ],
+        "results": [
+            {"id": "newgen:box.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:spruce_planks.item", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:spruce_planks_slab.item", "count": 2}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:spruce_planks.item", "count": 3}
+        ],
+        "results": [
+            {"id": "newgen:spruce_planks_stairs.item", "count": 4}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:spruce_planks.item", "count": 3}
+        ],
+        "results": [
+            {"id": "newgen:box.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:birch_planks.item", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:birch_planks_slab.item", "count": 2}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:birch_planks.item", "count": 3}
+        ],
+        "results": [
+            {"id": "newgen:birch_planks_stairs.item", "count": 4}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:birch_planks.item", "count": 3}
+        ],
+        "results": [
+            {"id": "newgen:box.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:willow_planks.item", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:willow_planks_slab.item", "count": 2}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:willow_planks.item", "count": 3}
+        ],
+        "results": [
+            {"id": "newgen:willow_planks_stairs.item", "count": 4}
+        ]
+    },
+    {
+        "components": [
+            {"id": "newgen:willow_planks.item", "count": 3}
         ],
         "results": [
             {"id": "newgen:box.item", "count": 1}
@@ -41,6 +177,21 @@
     },
     {
         "components": [
+            {"id": "newgen:flax_fiber", "count": 6}
+        ],
+        "results": [
+            {"id": "newgen:sailcloth_stairs.item", "count": 1}
+        ]
+    },{
+        "components": [
+            {"id": "newgen:flax_fiber", "count": 4}
+        ],
+        "results": [
+            {"id": "newgen:sailcloth_slab.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
             {"id": "newgen:flax_fiber", "count": 5}
         ],
         "results": [
@@ -53,6 +204,14 @@
         ],
         "results": [
             {"id": "newgen:linen_shirt", "count": 1}
+        ]
+    },
+    {
+        "components": [
+            {"tag": "wood", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:wooden_bucket.item", "count": 2}
         ]
     }
 ]

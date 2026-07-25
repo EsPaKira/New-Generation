@@ -8,12 +8,14 @@ local characters = require "characters/main"
 
 
 local c_manager = entity:require_component("newgen:characteristics_manager")
+local hunger_system = entity:get_component("newgen:hunger_system")
 
 local health = c_manager:get_health()
 local max_health = c_manager:get_max_health()
 
 local health_regen_timer = 0
 local in_battle_timer = 0
+local hunger_timer = 0
 
 
 function load_health()
@@ -37,7 +39,7 @@ end
 
 function die()
     local tsf = entity.transform
-    events.emit("newgen:death", tsf:get_pos())
+    events.emit("newgen:death", tsf:get_pos(), entity, ARGS.particles)
 
     local pid = entity:get_player()
     if pid == -1 then
@@ -58,12 +60,16 @@ function die()
 end
 
 function heal(points)
+    if health == max_health then return end
     set_health(math.min(health + points, max_health))
+
+    local pid = entity:get_player()
+    if pid == -1 then return end
+    events.emit("newgen:heal", pid)
 end
 
 local function calculate_damage(points, type)
-    if type == "falling" then return points end
-    if type == "suffocation" then return points end
+    if type == "falling" or type == "suffocation" or type == "hunger" then return points end
     local protection = c_manager["get_" .. type .. "_damage_protection"]()
     return math.round(math.max(0, (points - c_manager:get_absolute_damage_protection()) * (1 - protection)))
 end
@@ -90,14 +96,31 @@ function damage(points, type)
     end
 end
 
+local function should_heal()
+    local hunger, max_hunger = hunger_system.get_hunger()
+
+    if hunger < max_hunger then return true end
+    return false
+end
+
 function on_update(tps)
-    if health_regen_timer >= 1 and in_battle_timer == 0 then
+    if health_regen_timer >= 1 and in_battle_timer <= 0 then
+        load_health()
+
+        if hunger_system then -- will be moved into effect system in the future
+            if not should_heal() then
+                health_regen_timer = 0
+                damage(1, "hunger")
+                return
+            end
+        end
+
         heal(1)
         health_regen_timer = 0
     end
 
     health_regen_timer = health_regen_timer + 1 / tps
-    in_battle_timer = math.max(0, in_battle_timer - 1 / tps)
+    in_battle_timer = in_battle_timer - 1 / tps
 end
 
 function on_grounded(force)

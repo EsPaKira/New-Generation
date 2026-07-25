@@ -5,6 +5,10 @@ spruce0 = {}
 spruce1 = {}
 spruce_snow0 = {}
 spruce_snow1 = {}
+birch0 = {}
+birch1 = {}
+willow0 = {lowering=1}
+willow1 = {lowering=1}
 dead_tree = {}
 dead_spruce_tree = {}
 dead_spruce_tree_snow = {}
@@ -17,6 +21,7 @@ bush0 = {lowering=-1}
 bush1 = {lowering=-1}
 sandstone_coal0 = {lowering=15}
 sandstone_coal1 = {lowering=10}
+granite_cassiterite0 = {lowering=50}
 limestone_coal0 = {lowering=15}
 limestone_coal1 = {lowering=10}
 dolomite_coal0 = {lowering=15}
@@ -30,6 +35,9 @@ diorite_little_rock = {}
 diorite_big_rock = {}
 gabbro_little_rock = {}
 gabbro_big_rock = {}
+sandstone_rock = {}
+sandstone_pillar = {lowering=3}
 camp = {}
 weavers_cocoon = {lowering=4}
-old_obelisk = {}
+old_obelisk = {lowering=1}
+archium_geode = {lowering=40}

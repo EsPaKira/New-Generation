@@ -6,13 +6,6 @@ local gamemodes = {
     players = {}
 }
 
-function gamemodes.get_characteristics_manager(playerid)
-    local entity = entities.get(player.get_entity(playerid))
-    if entity == nil then
-        return nil
-    end
-    return entity:get_component("newgen:characteristics_manager")
-end
 
 function gamemodes.is_dead(playerid)
     return player.get_entity(playerid) == 0

@@ -16,7 +16,9 @@ Body=Тело
 Physical damage depends on the body level=Физический урон зависит от уровня тела
 Soul=Душа
 Oxygen=Кислород
+Stamina=Выносливость
 Archium=Архиум
+Hunger=Голод
 Magical energy=Магическая энергия
 Protects against cold=Защищает от холода
 Protects from heat=Защищает от жары
@@ -46,6 +48,24 @@ Craft=Создать
 
 Research=Исследовать
 
+# Деревья навыков(названия навыков)
+
+Survivability=Живучесть
+Bigger lungs=Большие легкие
+Bigger stomach=Большой желудок
+Endurance reserve=Запас выносливости
+
+
+# Деревья навыков(описание навыков)
+
+Increases maximum HP for 2.=Увеличивает максимальный запас HP на 2.
+Increases all physical damage dealt.=Увеличивает весь наносимый физический урон.
+Increases maximum oxygen for 2.=Увеличивает максимальный запас кислорода на 2.
+Increases agility for 1%.=Увеличивает ловкость на 1%.
+Increases accuracy for 1%.=Увеличивает меткость на 1%.
+Increases maximum hunger limit for 2.=Увеличивает максимальный предел голода на 2.
+Increases maximum stamina for 2. Will be work after combat update.=Увеличивает максимальный запас выносливости на 2. Будет работать после боевого обновления.
+
 # Настройки New Generation
 
 New Generation settings=Настройки New Generation
@@ -61,13 +81,14 @@ Select background=Выбрать фон
 # Фоны
 
 gui/space=Космос
-gui/gunmetal=Оружейная сталь
+gui/total_gray=Абсолютно серый
 gui/total_black=Абсолютно чёрный
 
 
 # Чат
 
 New spawnpoint at=Новая точка спавна на
+found=обнаружено
 
 
 # Предметы
@@ -76,24 +97,39 @@ ash=пепел
 bear meat=медвежье мясо
 bear summoning card=карта призыва медведя
 blackberry=черника
+bone meal=костная мука
 bone needle=костяная игла
 bone=кость
+cabbage seeds=семена капусты
+cabbage=капуста
+cassiterite ore=касситерит
 chest loot activator=активатор хранилищ
 clay tile=глиняный черепок
 coal=каменный уголь
 copper axe head=медная голова топора
 copper axe=медный топор
-copper ingot=самородок меди
+copper geological hammer head=медная голова геологического молотка
+copper geological hammer=медный геологический молоток
+copper hoe head=медная голова мотыги
+copper hoe=медная мотыга
+copper nugget=самородок меди
 copper pickaxe head=медная голова кирки
 copper pickaxe=медная кирка
+copper shovel blade=медное полотно лопаты
+copper shovel=медная лопата
 cowberry=брусника
 flax fiber=льняное волокно
+flax seeds=семена льна
 fur cape=меховая накидка
 linen pants=льняные штаны
 linen shirt=льняная рубаха
 malachite ore=малахит
+mud brick=саманный кирпич
+potato=картошка
 red brick=красный кирпич
 red clay chunk=кусок красной глины
+shard of archium=осколок архиума
+skeleton summoning card=карта призыва скелета
 slag=шлак
 stick=палка
 stindle=веретено
@@ -102,11 +138,32 @@ stone axe=каменный топор
 stone blade=каменное лезвие
 stone hammer head=каменная головка молота
 stone hammer=каменный молот
+stone hoe head=каменная голова мотыги
+stone hoe=каменная мотыга
 stone knife=каменный нож
+stone shovel blade=каменное полотно лопаты
+stone shovel=каменная лопата
 straw hat=соломенная шляпа
+straw=солома
+tin bronze axe head=голова топора из оловянной бронзы
+tin bronze axe=топор из оловянной бронзы
+tin bronze geological hammer head=голова геологического молота из оловянной бронзы
+tin bronze geological hammer=геологический молот из оловянной бронзы
+tin bronze hoe head=голова мотыги из оловянной бронзы
+tin bronze hoe=мотыга из оловянной бронзы
+tin bronze nugget=самородок оловянной бронзы
+tin bronze pickaxe head=голова кирки из оловянной бронзы
+tin bronze pickaxe=кирка из оловянной бронзы
+tin bronze shovel blade=лезвие лопаты из оловянной бронзы
+tin bronze shovel=лопата из оловянной бронзы
+tin nugget=самородок олова
+turnip seeds=семена репы
+turnip=репа
 unknown alloy=неизвестный сплав
 weaver summoning card=карта призыва ткача
+wheat seeds=семена пшеницы
 wooden hammer=деревянный молот
+wreath=венок
 
 
 # Описание предметов
@@ -117,11 +174,20 @@ Can be melted=Может быть расплавлено
 Can be ignited with torch=Можно разжечь факелом
 Can ignit the oven=Может разжечь печь
 Activate loot generation after use on block=Активирует генерацию лута в хранилище
+A fragment of the power of the dead God of Harmony is contained in this crystal=Фрагмент силы умершего Бога Гармонии содержится в этом кристалле
+Contains a fragment of divine power=Содержит частицу божественной силы
+Use to accelerate plant growth=Используй, чтобы ускорить рост растения
 Use to change the shape of the roof\n1 crushing damage=Используй, чтобы изменить вид крыши\n1 дробящего урона
+Use on block\n3 crushing damage=Используй по блоку\n3 дробящего урона
+Use on block\n4 crushing damage=Используй по блоку\n4 дробящего урона
 It can be slept on=На нём можно спать
 Saves spawnpoint=Сохраняет точку спавна
+5 slashing damage=5 рубящего урона
+4 slashing damage=4 рубящего урона
 3 slashing damage=3 рубящего урона
 2 slashing damage=2 рубящего урона
+1 slashing damage=1 рубящего урона
+5 piercing damage=5 колющего урона
 3 piercing damage=3 колющего урона
 2 piercing damage=2 колющего урона
 2 crushing damage=2 дробящего урона
@@ -130,18 +196,27 @@ Saves spawnpoint=Сохраняет точку спавна
 # Материалы(нужны для крафтов)
 
 material=материал
+Any flower.=Любой цветок.
 pebble=камушек
 Any logs.=Любые брёвна.
 Pebbles can be found on the ground. It also drops from ore blocks.=Камни могут быть найдены на поверхности. Так же они выпадают из блоков руды.
-Almost all stone blocks.=Почти все блоки камня
+Almost all stone blocks.=Почти все блоки камня.
 
 
 # Блоки
 
 bag=мешок
+bazalt slab=плита из базальта
+bazalt stairs=ступеньки из базальта
+birch leaves=берёзовая листва
+birch planks slab=плита из берёзовых досок
+birch planks stairs=ступеньки из берёзовых досок
+birch planks=берёзовые доски
+birch=берёзовое бревно
 blackberry bush=куст черники
 box=ящик
 bush=куст
+cabbage crop=капуста
 calendula=календула
 campfire=костёр
 cattail=камыш
@@ -151,6 +226,7 @@ chanterelles=лисички
 clay oven=глиняная печь
 clover=клевер
 cowberry bush=куст брусники
+crystal of archium=кристалл архиума
 daisies=ромашки
 dandelions=одуванчики
 dead bush=мёртвый куст
@@ -160,64 +236,90 @@ dead white bush=мёртвый бледный куст
 diorite=диорит
 dolomite coal=уголь в доломите
 dolomite malachite ore=рудный малахит в доломите
+dolomite slab=плита из доломита
+dolomite stairs=ступеньки из доломита
 dolomite stone=камень доломита
 dolomite=доломит
+farmland=пашня
+flax crop=лён
 flax=лён
 gabbro stone=камень габбро
 gabbro=габбро
 glass panel=стеклянная панель
 gneiss stone=камень гнейса
 gneiss=гнейс
+granite cassiterite ore=рудный касситерит в граните
+granite slab=плита из гранита
+granite stairs=ступеньки из гранита
 granite stone=камень гранита
 granite=гранит
 gypsum coal=уголь в гипсе
 gypsum=гипс
 hay roof=соломенная крыша
 hay=сено
+jug of water=кувшин с водой
+jug=кувшин
 knapweeds=васильки
 lily=ландыш
 limestone coal=уголь в известняке
 limestone malachite ore=рудный малахит в известняке
+limestone slab=плита из известняка
+limestone stairs=ступеньки из известняка
 limestone=известняк
+mantle=мантия
+marble slab=плита из мрамора
+marble stairs=ступеньки из мрамора
 marble stone=камень мрамора
 marble=мрамор
 moss=мох
+mossy red brick stairs=замшелые ступеньки из красного кирпича
+mossy red bricks slab=замшелая плита из красного кирпича
+mossy red bricks=замшелые красные кирпичи
+mud brick stairs=ступеньки из саманных кирпичей
+mud bricks slab=плита из саманных кирпичей
+mud bricks=саманные кирпичи
+peridotite slab=плита из перидотита
+peridotite stairs=ступеньки из перидотита
 peridotite stone=камень перидотита
 peridotite=перидотит
+planks slab=плита из досок
+planks stairs=ступеньки из досок
+potato crop=картофель
 primitive forge=примитивная кузница
+red brick stairs=ступеньки из красного кирпича
+red bricks slab=плита из красного кирпича
 red bricks=красные кирпичи
 red clay=красная глина
+sailcloth slab=плита из парусины
+sailcloth stairs=ступеньки из парусины
 sailcloth=парусина
 sandstone coal=уголь в песчанике
+sandstone slab=плита из песчаника
+sandstone stairs=ступеньки из песчаника
 sandstone stone=камень песчаника
 sandstone=песчаник
+scarecrow=пугало
+skeleton block=скелет
+snow grass=снежная трава
 snow pile=сугроб
 snow=снег
 spruce leaves=хвоя
+spruce planks slab=плита из сосновых досок
+spruce planks stairs=ступеньки из сосновых досок
+spruce planks=сосновые доски
 spruce=сосновое бревно
 straw bedding=соломенный настил
+turnip crop=репа
 pot=горшок
 weavers cocoon=кокон ткачей
 web=паутина
+wheat crop=пшеница
 white mushrooms=белые грибы
+willow leaves=ивовая листва
+willow planks slab=плита из ивовых досок
+willow planks stairs=ступеньки из ивовых досок
+willow planks=ивовые доски
+willow=ивовое бревно
+wooden bucket of water=деревянное ведро с водой
+wooden bucket=деревянное ведро
 workbench=верстак
-
-
-# Персонажи
-
-Wayne=Уэйн
-
-
-# Деревья навыков(названия навыков)
-
-Survivability=Живучесть
-Bigger lungs=Большие легкие
-
-
-# Деревья навыков(описание навыков)
-
-Increases maximum HP for 2.=Увеличивает максимальный запас HP на 2.
-Increases all physical damage dealt.=Увеличивает весь наносимый физический урон.
-Increases maximum oxygen for 2.=Увеличивает максимальный запас кислорода на 2.
-Increases agility for 1%.=Увеличивает ловкость на 1%.
-Increases accuracy for 1%.=Увеличивает меткость на 1%.

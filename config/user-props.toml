@@ -1,6 +1,11 @@
 "newgen:tool" = {}
 "newgen:food" = {}
+"newgen:berries"= {}
 "newgen:equipment" = {}
 "newgen:material" = {}
-"newgen:craft-material" = ""
+"newgen:craft-material" = {}
 "newgen:have-loot" = {}
+"newgen:placed_particles" = {}
+"newgen:full-block" = {}
+"newgen:crop" = {}
+"newgen:geological-hammer-depth" = {}

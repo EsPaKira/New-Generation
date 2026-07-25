@@ -254,7 +254,7 @@ function refresh_component_info()
 
     local data = controller.component_pages[controller.component_page] or {}
     if data[1] == "text" then
-        document["component_info_components"]:add("<container size='300,200'><textbox id='component_info_description' size='284,196' pos='8,4' multiline='true' text-wrap='true'></textbox></container>")
+        document["component_info_components"]:add("<container size='300,200'><label id='component_info_description' size='284,196' pos='8,4' multiline='true' text-wrap='true'></label></container>")
         document["component_info_description"].text = gui.str(data[2])
     elseif data[1] == "craft" then
         if data[2] ~= "primitive_crafts" then

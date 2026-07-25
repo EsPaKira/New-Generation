@@ -13,7 +13,7 @@ function on_update(tps)
     local pos = tsf:get_pos()
     local nearest_p = player.get_nearest(pos)
     local px, py, pz = player.get_pos(nearest_p)
-    if nearest_p and vec3.distance(pos, {px, py, pz}) < 20 then
+    if nearest_p and vec3.distance(pos, {px, py, pz}) < 20 and gamemodes.get(nearest_p).current ~= "creative" then
         pathfinding.set_target({px, py, pz})
         pathfinding.set_refresh_interval(5)
         mob.look_at({px, py + 1, pz}, true)
@@ -25,7 +25,7 @@ function on_update(tps)
             end
         end
     else
-        pathfinding.set_target(vec3.add(pos, {math.random(-5*3, 5*3), math.random(-2, 2), math.random(-5*3, 5*3)})) 
+        pathfinding.set_target(vec3.add(pos, {math.random(-6, 6), math.random(-2, 2), math.random(-6, 6)}))  
         pathfinding.set_refresh_interval(300)
         atack_timer = 0
     end

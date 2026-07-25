@@ -1,25 +1,31 @@
-<container size="524,200" position-func="gui.get_viewport()[1]/2 - 262, gui.get_viewport()[2] - 134" z-index="-1">
-    <!--  Air  -->
-    <container id="oxygen_bar_root" size="240,28" gravity="top-left">
-        <image size="240,28" src="gui/bar_frame" />
-        <image id="oxygen_bar" size="232,20" pos="4,4" src="gui/oxygen_bar" />
-        <image id="oxygen_bar_curtain" size="0,0" src="gui/curtain" />
-        <label text-align="center" gravity="center-center" id="oxygen">20/20</label>
+<container size-func="unpack(gui.get_viewport())" z-index="-1">
+    <container id="bars" size="524,200" position-func="gui.get_viewport()[1]/2 - 262, gui.get_viewport()[2] - 134">
+        <container id="oxygen_bar_root" size="240,28" gravity="top-left" tooltip="Oxygen" tooltip-delay="0.08">
+            <!--  Air  -->
+            <image size="240,28" src="gui/bar_frame" />
+            <image id="oxygen_bar" size="232,20" pos="4,4" src="gui/oxygen_bar" />
+            <image id="oxygen_bar_curtain" size="0,0" src="gui/curtain" />
+            <label text-align="center" gravity="center-center" id="oxygen">20/20</label>
+        </container>
+        <container size="524,28" pos="0,34">
+            <!--  Health  -->
+            <container size="240,28" gravity="top-left" tooltip="HP" tooltip-delay="0.08">
+                <image size="240,28" src="gui/bar_frame" />
+                <image id="health_bar" size="232,20" pos="4,4" src="gui/health_bar" />
+                <image id="health_bar_curtain" size="0,0" src="gui/curtain" />
+                <label text-align="center" gravity="center-center" id="health">20/20</label>
+            </container>
+            <!--  Stamina  -->
+            <container size="240,28" gravity="top-right" tooltip="Stamina" tooltip-delay="0.08">
+                <image size="240,28" src="gui/bar_frame" />
+                <image id="stamina_bar" size="232,20" pos="4,4" src="gui/stamina_bar" />
+                <image id="stamina_bar_curtain" size="0,0" src="gui/curtain" />
+                <label text-align="center" gravity="center-center" id="stamina">20/20</label>
+            </container>
+        </container>
     </container>
-    <container size="524,28" pos="0,34">
-        <!--  Health  -->
-        <container size="240,28" gravity="top-left">
-            <image size="240,28" src="gui/bar_frame" />
-            <image id="health_bar" size="232,20" pos="4,4" src="gui/health_bar" />
-            <image id="health_bar_curtain" size="0,0" src="gui/curtain" />
-            <label text-align="center" gravity="center-center" id="health">20/20</label>
-        </container>
-        <!--  Stamina  -->
-        <container size="240,28" gravity="top-right">
-            <image size="240,28" src="gui/bar_frame" />
-            <image id="stamina_bar" size="232,20" pos="4,4" src="gui/stamina_bar" />
-            <image id="stamina_bar_curtain" size="0,0" src="gui/curtain" />
-            <label text-align="center" gravity="center-center" id="stamina">20/20</label>
-        </container>
+
+    <container id="hunger_tooltip" size="55" position-func="gui.get_viewport()[1]/2 + 272, gui.get_viewport()[2] - 65" tooltip-delay="0.08" z-index="-1">
+        <image id="hunger" size="55" src="gui/hunger" />
     </container>
 </container>

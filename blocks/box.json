@@ -13,7 +13,7 @@
     "newgen:have-loot": true,
     "state-based": {
         "offset": 0,
-        "bits": 4,
+        "bits": 1,
         "variants": [
             {
                 "model": "block",

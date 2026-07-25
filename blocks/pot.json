@@ -6,12 +6,17 @@
     "grounded": true,
     "base:loot": [
         {
-            "item": "newgen:flax_fiber",
+            "item": "newgen:wheat_seeds",
             "min": 2,
             "max": 5
         },
         {
-            "item": "newgen:dead_tall_grass.item",
+            "item": "newgen:cabbage_seeds",
+            "min": 0,
+            "max": 1
+        },
+        {
+            "item": "newgen:straw",
             "min": 1,
             "max": 4
         }

@@ -1,0 +1,8 @@
+{
+    "parent": "newgen:stairs_template",
+    "texture": "planks",
+    "caption": "planks stairs",
+    "hidden" : false,
+    "picking-item": "newgen:planks_stairs.item",
+    "base:durability": 4.5
+}

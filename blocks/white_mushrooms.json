@@ -8,5 +8,5 @@
     "grounded": true,
     "obstacle": false,
     "rotation": "pane",
-    "base:durability": 0.0
+    "base:durability": 0.1
 }
