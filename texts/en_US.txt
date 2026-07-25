@@ -12,3 +12,8 @@ melting_crafts=Smelting
 gui/space=Space
 gui/total_gray=Total gray
 gui/total_black=Total black
+
+
+# Blocks
+
+skeleton block=skeleton

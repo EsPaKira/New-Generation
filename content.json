@@ -126,7 +126,8 @@
     "granite_stairs",
     "mantle",
     "turnip_crop",
-    "cabbage_crop"
+    "cabbage_crop",
+    "skeleton_block"
   ],
   "items": [
     "fur_cape",

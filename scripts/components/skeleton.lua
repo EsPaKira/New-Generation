@@ -6,14 +6,13 @@ local gamemodes = require "gamemodes"
 
 local speed_of_attack = 1
 local atack_timer = 0
-local sound_timer = 0
-local rand_sound = (random.random(30, 60)/10)
 
 function on_update(tps)
     local pos = tsf:get_pos()
     local nearest_p = player.get_nearest(pos)
     local px, py, pz = player.get_pos(nearest_p)
-    if nearest_p and vec3.distance(pos, {px, py, pz}) < 20 then
+
+    if nearest_p and vec3.distance(pos, {px, py, pz}) < 20 and gamemodes.get(nearest_p).current ~= "creative" then
         pathfinding.set_target({px, py, pz})
         pathfinding.set_refresh_interval(5)
         --mob.look_at({px, py + 1, pz}, true) -- doesn`t work correct
@@ -30,12 +29,6 @@ function on_update(tps)
         atack_timer = 0
     end
 
-    sound_timer = sound_timer + 1 / tps
-    if sound_timer >= rand_sound then
-        --audio.play_sound("entities/spider", pos[1], pos[2], pos[3], random.random(), 1)
-        sound_timer = 0
-        rand_sound = (random.random(30, 60)/10)
-    end
     mob.follow_waypoints()
 end
 
@@ -54,7 +47,7 @@ function on_attacked(eid, pid)
     total_damage = total_damage + c_manager:get_body_level()
 
     local pos = tsf:get_pos()
-    audio.play_sound("entities/spider_damage", pos[1], pos[2], pos[3], random.random(), 1)
+    audio.play_sound("entities/skeleton_damage", pos[1], pos[2], pos[3], random.random(), 0.7)
 
     health_system.damage(total_damage, type_of_damage)
 end

@@ -205,5 +205,13 @@
         "results": [
             {"id": "newgen:linen_shirt", "count": 1}
         ]
+    },
+    {
+        "components": [
+            {"tag": "wood", "count": 1}
+        ],
+        "results": [
+            {"id": "newgen:wooden_bucket.item", "count": 2}
+        ]
     }
 ]

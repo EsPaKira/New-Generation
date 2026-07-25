@@ -1,14 +1,15 @@
 [
     {
-        "item": "newgen:flax_fiber",
+        "item": "newgen:potato",
         "min": 2,
         "max": 8,
         "max-slots": 3
     },
     {
-        "item": "newgen:stindle",
-        "min": 0,
-        "max": 1
+        "item": "newgen:turnip",
+        "min": 2,
+        "max": 8,
+        "max-slots": 3
     },
     {
         "item": "newgen:copper_nugget",

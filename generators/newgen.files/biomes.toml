@@ -23,7 +23,8 @@ plants = [
     {weight=0.01, block="newgen:blackberry_bush"},
     {weight=0.01, block="newgen:moss"},
     {weight=0.01, block="newgen:white_mushrooms"},
-    {weight=0.01, block="newgen:chanterelles"}
+    {weight=0.01, block="newgen:chanterelles"},
+    {weight=0.005, block="newgen:skeleton_block"}
 ]
 structure-chance = 0.032
 structures = [
@@ -73,7 +74,8 @@ plants = [
     {weight=0.01, block="newgen:cowberry_bush"},
     {weight=0.01, block="newgen:moss"},
     {weight=0.01, block="newgen:white_mushrooms"},
-    {weight=0.01, block="newgen:chanterelles"}
+    {weight=0.01, block="newgen:chanterelles"},
+    {weight=0.005, block="newgen:skeleton_block"}
 ]
 structure-chance = 0.01
 structures = [
@@ -268,7 +270,8 @@ plants = [
     {weight=0.02, block="newgen:daisies"},
     {weight=0.01, block="newgen:dolomite_stone"},
     {weight=0.01, block="newgen:malachite_stone"},
-    {weight=0.01, block="newgen:coal_stone"}
+    {weight=0.01, block="newgen:coal_stone"},
+    {weight=0.005, block="newgen:skeleton_block"}
 ]
 structure-chance = 0.025
 structures = [

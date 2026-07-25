@@ -258,6 +258,14 @@
     },
     {
         "components": [
+            {"id": "newgen:red_brick", "count": 3}
+        ],
+        "results": [
+            {"id": "newgen:jug.item", "count": 1}
+        ]
+    },
+    {
+        "components": [
             {"id": "newgen:stick", "count": 1},
             {"id": "newgen:stone_axe", "count": 1}
         ],

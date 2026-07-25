@@ -50,16 +50,17 @@
         "gui/stamina_bar",
         "gui/oxygen_bar",
         "gui/hunger",
-        "entities/skeleton",
         "entities/mossy_skeleton",
         "entities/vestured_skeleton"
     ],
     "sounds": [
         "ui/button_click",
         "ui/upgrade",
+        "ambient/water_splash",
         "entities/spider",
         "entities/spider_damage",
         "entities/spider_attack",
+        "entities/skeleton_damage",
         "entities/bear_breath",
         "entities/damage"
     ],

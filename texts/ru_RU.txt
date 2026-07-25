@@ -299,6 +299,7 @@ sandstone stairs=ступеньки из песчаника
 sandstone stone=камень песчаника
 sandstone=песчаник
 scarecrow=пугало
+skeleton block=скелет
 snow grass=снежная трава
 snow pile=сугроб
 snow=снег

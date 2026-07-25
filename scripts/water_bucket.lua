@@ -2,6 +2,7 @@ local farmland_id = block.index("newgen:farmland")
 local MAX_HUMIDITY = 5
 
 local function watering(x, y, z, pid)
+    audio.play_sound("ambient/water_splash", x, y, z, 1, 1)
     if block.get(x, y, z) == farmland_id then
         block.set_field(x, y, z, "humidity", MAX_HUMIDITY)
         block.set_variant(x, y, z, 1)
