@@ -9,57 +9,168 @@ local controller = {
     choosen_character = nil
 }
 
-function go_back()
-    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
-    hud.close("newgen:player_menu")
-    close_c_panel()
+
+function on_open()
+    controller.choosen_equipment = nil
+    controller.choosen_character = characters.get_choosen_character(hud.get_player())
+    document["character_name"].text = gui.str(characters.get_character(hud.get_player(), controller.choosen_character)["full-name"])
+    
+    hide_characteristics()
     close_equipment_menu()
+
+    show_equipped_item_in_main_menu("head")
+    show_equipped_item_in_main_menu("helmet")
+    show_equipped_item_in_main_menu("cloak")
+    show_equipped_item_in_main_menu("body")
+    show_equipped_item_in_main_menu("chestplate")
+    show_equipped_item_in_main_menu("gloves")
+    show_equipped_item_in_main_menu("legs")
+    show_equipped_item_in_main_menu("greaves")
+    show_equipped_item_in_main_menu("belt")
+    show_equipped_item_in_main_menu("boots")
+
+    load_bg()
+end
+
+function load_bg()
+    document["background"].src = api.get_background()
+end
+
+function click_sound()
+    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
+end
+
+function go_back()
+    click_sound()
+    hud.close("newgen:player_menu")
+
+    hide_characteristics()
+
     hud.open_inventory()
 end
 
-function open_c_panel()
-    if document["c_panel"].visible == true then
-        close_c_panel()
+function open_tree(tree)
+    click_sound()
+    hud.open_permanent("newgen:" .. tree .. "_tree")
+end
+
+
+
+-- #################### --
+-- CHARACTERISTICS MENU --
+-- #################### --
+
+local MAX_STATS_CACHE = {
+    health = "max_health",
+    oxygen = "max_oxygen",
+    archium = "max_archium",
+    hunger = "max_hunger"
+}
+
+local PERCENT_STATS_CACHE = {
+    crushing_damage_protection = true,
+    slashing_damage_protection = true,
+    piercing_damage_protection = true
+}
+
+local animation_data = {
+    current_x = -400,
+    target_x = 0,
+    speed = 25,
+    width = 400
+}
+
+-- functions --
+
+function open_characteristics()
+    if animation_data.target_x == 0 and animation_data.current_x == 0 then
+        close_characteristics()
+        return
+    elseif animation_data.target_x == -animation_data.width and animation_data.current_x ~= -animation_data.width then
         return
     end
-    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
-    document["c_panel"].visible = true
+
+    click_sound()
+
     document["close_c_panel"].visible = true
+    start_characteristics_panel_animation(0)
+
     local stats = characters.get_group(hud.get_player(), controller.choosen_character, "stats")
+
     for key, value in pairs(stats) do
-        if key == "health" or key == "oxygen" or key == "archium" or key == "hunger" then
-            document["max_".. key].text = value .. "/" .. stats["max_" .. key]
-        elseif key == "crushing_damage_protection" or key == "slashing_damage_protection" or key == "piercing_damage_protection" then
-            document[key].text = value * 100 .. "%"
-        elseif key ~= "max_health" and key ~= "max_oxygen" and key ~= "max_archium" and key ~= "max_hunger" then
+        if MAX_STATS_CACHE[key] then
+            document[MAX_STATS_CACHE[key]].text = string.format("%d/%d", value, stats[MAX_STATS_CACHE[key]])
+        elseif PERCENT_STATS_CACHE[key] then
+            document[key].text = string.format("%d%%", value * 100)
+        elseif key:sub(1, 4) ~= "max_" then
             document[key].text = tostring(value)
         end
     end
 end
 
-function close_c_panel()
-    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
-    document["c_panel"].visible = false
+function close_characteristics()
+    click_sound()
+    document["close_c_panel"].visible = false
+    start_characteristics_panel_animation(-animation_data.width)
+end
+
+function hide_characteristics()
+    document["c_panel"].pos = {-400, 0}
     document["close_c_panel"].visible = false
 end
 
+function start_characteristics_panel_animation(target_x) -- КОСТЫЛЬ. Потом заменить на :clearInterval()
+    if animation_data.target_x == target_x and document["characteristics_animation"].exists then return end
+
+    animation_data.target_x = target_x
+
+    if document["characteristics_animation"].exists then
+        document["characteristics_animation"]:destruct()
+    end
+
+    document["animation_manager"]:add("<container id='characteristics_animation'></container>")
+    document["characteristics_animation"]:setInterval(10, move_characteristics_panel)
+end
+
+function move_characteristics_panel()
+    if animation_data.current_x < animation_data.target_x then
+        animation_data.current_x = math.min(animation_data.current_x + animation_data.speed, animation_data.target_x)
+    else
+        animation_data.current_x = math.max(animation_data.current_x - animation_data.speed, animation_data.target_x)
+    end
+
+    document["c_panel"].pos = {animation_data.current_x, 0}
+
+    if animation_data.current_x == animation_data.target_x then
+        document["characteristics_animation"]:destruct()
+    end
+end
+
+
+
+-- ############## --
+-- EQUIPMENT MENU --
+-- ############## --
+
 function open_equipment_menu(slot)
-    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
+    click_sound()
     choose_equipment_slot(slot)
-    close_c_panel()
+
+    hide_characteristics()
+
     document["first_menu"].visible = false
     document["equipment_menu"].visible = true
 end
 
 function close_equipment_menu()
-    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
+    click_sound()
     document["equipment_menu"].visible = false
     document["equipment_list"].visible = false
     document["first_menu"].visible = true
 end
 
 function choose_equipment_slot(new_slot)
-    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
+    click_sound()
     if new_slot == controller.choosen_slot then
         open_equipment_list()
         return
@@ -75,37 +186,25 @@ function choose_equipment_slot(new_slot)
     open_equipment_list()
 end
 
-function choose_equipment_xml(new_equipment)
-    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
-    if new_equipment == controller.choosen_equipment then
-        return
-    end
-    if new_equipment ~= nil then
-        document["equipment_cell_" .. new_equipment].color = {100, 100, 100, 100}
-    end
-    if controller.choosen_equipment ~= nil then
-        document["equipment_cell_" .. controller.choosen_equipment].color = {255, 255, 255, 0}
-        document["equipment_cell_" .. controller.choosen_equipment].hoverColor = {100, 100, 100, 100}
-    end
-    controller.choosen_equipment = new_equipment
-end
-
 function open_equipment_list()
     document["equipment_list"]:clear()
     document["equipment_list"].visible = true
+
     show_equipped_item()
     document["choosen_item_info"]:clear()
 
     controller.equipment = equipment.search_equipment_by_tag(player.get_inventory(hud.get_player()), controller.choosen_slot)
+
+    if #controller.equipment == 0 then return end
+
     local e_cols = math.ceil(#controller.equipment / 5)
 
     local index = 0
     for col = 0, e_cols - 1 do
         for row = 0, 4 do
             index = index + 1
-            if index > #controller.equipment then
-                return
-            end
+            if index > #controller.equipment then return end
+
             document["equipment_list"]:add(gui.template("equipment_cell", {
                 x = 3 + row * 111,
                 y = 3 + col * 111,
@@ -118,7 +217,9 @@ end
 
 function show_equipped_item()
     document["equipped_item_info"]:clear()
+
     local itemid = equipment.get_equipment_by_slot(hud.get_player(), controller.choosen_character, controller.choosen_slot)
+
     if itemid == 0 then
         document["equipped_item_info"]:add(gui.template("no_equipment_info"))
         return
@@ -143,48 +244,20 @@ function show_equipped_item_in_main_menu(slot)
     end
 end
 
-function load_bg()
-    document["background"].src = api.get_background()
-end
-
-function on_open()
-    controller.choosen_equipment = nil
-    controller.choosen_character = characters.get_choosen_character(hud.get_player())
-    close_c_panel()
-    close_equipment_menu()
-    document["character_name"].text = gui.str(characters.get_character(hud.get_player(), controller.choosen_character)["full-name"])
-
-    show_equipped_item_in_main_menu("head")
-    show_equipped_item_in_main_menu("helmet")
-    show_equipped_item_in_main_menu("cloak")
-    show_equipped_item_in_main_menu("body")
-    show_equipped_item_in_main_menu("chestplate")
-    show_equipped_item_in_main_menu("gloves")
-    show_equipped_item_in_main_menu("legs")
-    show_equipped_item_in_main_menu("greaves")
-    show_equipped_item_in_main_menu("belt")
-    show_equipped_item_in_main_menu("boots")
-
-    load_bg()
-end
-
 function equipment_button(action)
-    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
+    click_sound()
     local equipped_item = equipment.get_equipment_by_slot(hud.get_player(), controller.choosen_character, controller.choosen_slot)
     if action == "equip" then
-        if equipped_item ~= 0 then
-            local slot = inventory.find_by_item(player.get_inventory(hud.get_player()), controller.equipment[controller.choosen_equipment])
-            inventory.set(player.get_inventory(hud.get_player()), slot, equipped_item, 1)
-            equipment.equip(hud.get_player(), controller.choosen_character, controller.choosen_slot, item.name(controller.equipment[controller.choosen_equipment]), action)
-        else
-            local slot = inventory.find_by_item(player.get_inventory(hud.get_player()), controller.equipment[controller.choosen_equipment])
-            inventory.set(player.get_inventory(hud.get_player()), slot, 0, 1)
-            equipment.equip(hud.get_player(), controller.choosen_character, controller.choosen_slot, item.name(controller.equipment[controller.choosen_equipment]), action)
-        end
+        local slot = inventory.find_by_item(player.get_inventory(hud.get_player()), controller.equipment[controller.choosen_equipment])
+
+        local new_item = equipped_item ~= 0 and equipped_item or 0
+
+        inventory.set(player.get_inventory(hud.get_player()), slot, new_item, 1)
+        equipment.equip(hud.get_player(), controller.choosen_character, controller.choosen_slot, item.name(controller.equipment[controller.choosen_equipment]), action)
     else
         if equipped_item ~= 0 then
             local slot = inventory.find_by_item(player.get_inventory(hud.get_player()), 0)
-            if slot == nil then
+            if not slot then
                 document["cannot_remove_item"].visible = true
                 return
             end
@@ -193,6 +266,7 @@ function equipment_button(action)
             equipment.equip(hud.get_player(), controller.choosen_character, controller.choosen_slot, item.name(equipped_item), action)
         end
     end
+
     controller.choosen_equipment = nil
     open_equipment_list()
     show_equipped_item_in_main_menu(controller.choosen_slot)
@@ -218,7 +292,17 @@ function controller:choose_equipment(id)
     }))
 end
 
-function open_tree(tree)
-    audio.play_sound_2d("ui/button_click", 1, 1, "ui")
-    hud.open_permanent("newgen:" .. tree .. "_tree")
+function choose_equipment_xml(new_equipment)
+    click_sound()
+    if new_equipment == controller.choosen_equipment then
+        return
+    end
+    if new_equipment then
+        document["equipment_cell_" .. new_equipment].color = {100, 100, 100, 100}
+    end
+    if controller.choosen_equipment then
+        document["equipment_cell_" .. controller.choosen_equipment].color = {255, 255, 255, 0}
+        document["equipment_cell_" .. controller.choosen_equipment].hoverColor = {100, 100, 100, 100}
+    end
+    controller.choosen_equipment = new_equipment
 end
