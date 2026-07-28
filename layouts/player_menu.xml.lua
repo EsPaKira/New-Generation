@@ -75,18 +75,19 @@ local PERCENT_STATS_CACHE = {
 
 local animation_data = {
     current_x = -400,
-    target_x = 0,
-    speed = 25,
+    target_x = nil,
+    speed = 20,
     width = 400
 }
 
 -- functions --
 
 function open_characteristics()
+    if animation_data.current_x ~= -animation_data.width and animation_data.current_x ~= 0 then
+        return
+    end
     if animation_data.target_x == 0 and animation_data.current_x == 0 then
         close_characteristics()
-        return
-    elseif animation_data.target_x == -animation_data.width and animation_data.current_x ~= -animation_data.width then
         return
     end
 
@@ -109,6 +110,9 @@ function open_characteristics()
 end
 
 function close_characteristics()
+    if animation_data.current_x ~= 0 then
+        return
+    end
     click_sound()
     document["close_c_panel"].visible = false
     start_characteristics_panel_animation(-animation_data.width)
@@ -117,10 +121,11 @@ end
 function hide_characteristics()
     document["c_panel"].pos = {-400, 0}
     document["close_c_panel"].visible = false
+    animation_data.target_x = nil
 end
 
 function start_characteristics_panel_animation(target_x) -- КОСТЫЛЬ. Потом заменить на :clearInterval()
-    if animation_data.target_x == target_x and document["characteristics_animation"].exists then return end
+    if animation_data.target_x == target_x or document["characteristics_animation"].exists then return end
 
     animation_data.target_x = target_x
 
