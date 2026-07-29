@@ -1,4 +1,4 @@
-<container size-func="unpack(gui.get_viewport())" color="#0a060c">
+<container size-func="unpack(gui.get_viewport())">
     <image id="background" size-func="unpack(gui.get_viewport())" />
     
     <container id="first_menu" size-func="unpack(gui.get_viewport())">
