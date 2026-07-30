@@ -7,10 +7,9 @@ local body = entity.rigidbody
 local tsf = entity.transform
 
 local function is_flight(eid)
-    if eid == player.get_entity(hud.get_player()) then
-        local pid = entity:get_player()
-        return player.is_flight(pid) or player.is_noclip(pid)
-    end
+    local pid = entity:get_player()
+    if pid == -1 then return false end
+    return player.is_flight(pid) or player.is_noclip(pid)
 end
 
 local water = block.index("base:water")

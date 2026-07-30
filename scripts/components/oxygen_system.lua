@@ -18,8 +18,9 @@ function set_oxygen(value)
     oxygen = math.min(math.max(0, value), max_oxygen)
     local is_player, character_name = c_manager.is_player()
     if is_player then
-        characters.set_field(hud.get_player(), character_name, "stats", "oxygen", oxygen)
-        events.emit("newgen:player_oxygen.set", entity:get_uid(), oxygen, max_oxygen)
+        local pid = entity:get_player()
+        characters.set_field(pid, character_name, "stats", "oxygen", oxygen)
+        events.emit("newgen:player_oxygen.set", pid, oxygen, max_oxygen)
     else
         c_manager.set_params("oxygen", oxygen)
     end

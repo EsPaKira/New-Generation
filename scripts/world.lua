@@ -13,7 +13,7 @@ local characters = require "characters/main"
 local recalculate = require "characters/recalculate"
 
 local breaking_blocks = {}
-local player_loaded = false -- NEVER USE THIS
+local loaded_players = {}
 
 local function get_durability(id)
     local durability = block.properties[id]["base:durability"]
@@ -58,13 +58,14 @@ function on_world_open()
             frames = particles
         })
     end)
-    events.on("newgen:player_death", function()
-        player_loaded = false
+    events.on("newgen:player_death", function(pid)
+        loaded_players[pid] = nil
     end)
     rules.create("keep-inventory", false)
 
     -- open newgen modules
     world_data.open()
+    recalculate.auto_load(characters.players)
 end
 
 function on_world_tick() 
@@ -151,21 +152,20 @@ local function tick_breaking(pid, tps, breaking)
     end
 end
 
-local function player_entity_loaded()
-    if player_loaded then return end
-    local pentity = entities.get(player.get_entity(hud.get_player()))
+local function player_entity_loaded(pid)
+    if loaded_players[pid] then return end
+    local eid = player.get_entity(pid)
+    local pentity = eid and entities.get(eid)
     if not pentity then return end
 
-    recalculate.auto_load(characters.players)
-
     local c_manager = pentity:require_component("newgen:characteristics_manager")
-    c_manager.set_player(hud.get_player(), true)
-    characters.update_survival_ui(hud.get_player(), characters.get_choosen_character(hud.get_player()))
-    player_loaded = true
+    c_manager.set_player(pid, true)
+    characters.update_survival_ui(pid, characters.get_choosen_character(pid))
+    loaded_players[pid] = true
 end
 
 function on_player_tick(pid, tps)
-    player_entity_loaded()
+    player_entity_loaded(pid)
     tick_breaking(pid, tps)
 end
 
