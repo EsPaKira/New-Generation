@@ -23,11 +23,13 @@ function characters.unlock_new_character(pid, character_name, cid)
         skills = {}
     }
 end
--- below - character data structure
--- group     > field      > value
+
+-- character data structure
+-- group     > field      > value -- hierarchy
 -- equipment > slot       > name
 -- stats     > stat_name  > value
 -- skills    > skill_name > level
+
 function characters.set_field(pid, character_name, group, field, value)
     local character = characters.get_character(pid, character_name)
     if not character then return end

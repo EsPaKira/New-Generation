@@ -9,8 +9,8 @@ function module.open(data)
     furnaces.FURNACES = data
 end
 
-function module.tick() 
-    for i, f in ipairs(furnaces.FURNACES) do 
+function module.tick()
+    for i, f in ipairs(furnaces.FURNACES) do
         -- check that furnace is exixts
         local finvid = inventory.get_block(f[1], f[2], f[3])
         if finvid == 0 then goto continue end
@@ -27,7 +27,7 @@ function module.tick()
             end
         end
         f[4][1] = f[4][1] - 1
-        
+
         -- raises temperature 
         if f[4][1] > 0 and f[4][2] < item.properties[f[7]]["newgen:material"]["max-temperature"] + f[6] then
             f[4][2] = f[4][2] + random.random(2,7)
@@ -46,7 +46,7 @@ function module.tick()
             module.craft(f[5])
             f[4][3] = 0
         end
-        
+
         -- remove furnace from furnaces if all processes are completed
         if f[4][1] <= 0 and f[4][2] <= 100 and f[4][3] <= 100 then
             block.set_variant(f[1], f[2], f[3], 0)
@@ -58,7 +58,7 @@ function module.tick()
     end
 end
 
-function module.add(x, y, z, finvid, f_bonus_temperature) 
+function module.add(x, y, z, finvid, f_bonus_temperature)
     -- {x, y, z, {fuel_burning_time, temperature, melting_progress}, finvid, f_bonus_temperature, fuel_id}
     if not module.contains(finvid) then
         table.insert(furnaces.FURNACES, {x, y, z, {0, 0, 0}, finvid, f_bonus_temperature, fuel_id})
@@ -85,7 +85,7 @@ function module.contains(finvid)
     return is_in, pos
 end
 
-function module.check(finvid, slot, type) 
+function module.check(finvid, slot, type)
     local itemid, count = inventory.get(finvid, slot)
 
     if item.properties[itemid]["newgen:material"] and item.properties[itemid]["newgen:material"].type == type then

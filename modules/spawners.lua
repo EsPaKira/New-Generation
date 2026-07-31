@@ -14,7 +14,7 @@ end
 function module.tick()
     for _, s in ipairs(spawners.data.SPAWNERS) do
         local x, y, z = s[1], s[2], s[3]
-        if block.get(x, y, z) == -1 then return end
+        if block.get(x, y, z) == -1 then goto continue end
 
         s[7] = s[7] + 0.05 -- 1 / tps
         if s[7] >= s[6] then
@@ -30,6 +30,7 @@ function module.tick()
                 module.add_entity(x, y, z, entity:get_uid())
             end
         end
+        ::continue::
     end
 end
 
@@ -48,7 +49,7 @@ end
 
 function module.add_entity(x, y, z, eid)
     if module.is_entity_exists(eid) then return end
-    
+
     local spawner = module.get_spawner(x, y, z)
     if spawner then
         table.insert(spawner[4], eid)
@@ -102,7 +103,7 @@ end
 function module.is_spawner_exists(x, y, z)
     for i, spawner in ipairs(spawners.data.SPAWNERS) do
         if spawner[1] == x and spawner[2] == y and spawner[3] == z then
-            return true, i
+            return true
         end
     end
     return false

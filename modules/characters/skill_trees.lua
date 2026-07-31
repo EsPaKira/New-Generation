@@ -9,7 +9,7 @@ function skill_trees.levelup(pid, character_name, skill_name, ignore_requirement
     if not character_skill_level then return false end
 
     if skill_trees.check_requirements(character, skill, character_skill_level, ignore_requirements) then
-        characters.set_field(pid, character_name, "skills", skill_name, (character_skill_level + 1))
+        character.skills[skill_name] = character_skill_level + 1
         skill_trees.set_skill_buffs(pid, character_name, skill)
         return true
     end
@@ -18,27 +18,25 @@ end
 
 function skill_trees.check_requirements(character, skill, character_skill_level, ignore_requirements)
     if ignore_requirements then return true end
-
     if (character_skill_level + 1) > skill["max-level"] then return false end
     if not skill["required-skills"] then return true end
 
     for _, req in ipairs(skill["required-skills"]) do
-        if not character.skills[req.id] then return false end -- there will be more difficult system in the future
+        local required_level = req.level or 1
+        local current_level = character.skills[req.id]
+        if current_level < required_level then return false end
     end
     return true
 end
 
 function skill_trees.get_skill_data(pid, character_name, skill_name)
     local character = characters.get_character(pid, character_name)
-    if not character then return false end
+    if not character then return nil end
 
     local skill = file.read_combined_object("skills/" .. skill_name .. ".json")
-    local character_skill_level = characters.get_field(pid, character_name, "skills", skill_name)
+    if not skill then return nil end
 
-    if not character_skill_level then
-        character_skill_level = 0
-    end
-
+    local character_skill_level = character.skills[skill_name] or 0
     return character_skill_level, skill, character
 end
 

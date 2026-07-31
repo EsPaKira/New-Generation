@@ -1,14 +1,8 @@
 {
     "material": "base:snow",
-    "texture-faces": [
-        "snow_pile_side",
-        "snow_pile_side",
-        "snow",
-        "snow",
-        "snow_pile_side",
-        "snow_pile_side"
-    ],
-    "model": "aabb",
+    "texture": "snow",
+    "model": "custom",
+    "model-name": "snow_pile",
     "hitbox": [0, 0, 0, 1, 0.1875, 1],
     "grounded": true,
     "replaceable": true,
