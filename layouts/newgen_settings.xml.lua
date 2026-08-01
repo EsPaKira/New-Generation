@@ -23,7 +23,7 @@ end
 
 function recalculate_button()
     audio.play_sound_2d("ui/button_click", 1, 1, "ui")
-    recalculate.recalculate_live(hud.get_player(), characters.players)
+    recalculate.recalculate_live(hud.get_player(), characters.get_player_data(hud.get_player()))
 end
 
 function play_sound()

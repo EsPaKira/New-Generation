@@ -10,28 +10,6 @@ local controller = {
 }
 
 
-function on_open()
-    controller.choosen_equipment = nil
-    controller.choosen_character = characters.get_choosen_character(hud.get_player())
-    document["character_name"].text = gui.str(characters.get_character(hud.get_player(), controller.choosen_character)["full-name"])
-    
-    hide_characteristics()
-    close_equipment_menu()
-
-    show_equipped_item_in_main_menu("head")
-    show_equipped_item_in_main_menu("helmet")
-    show_equipped_item_in_main_menu("cloak")
-    show_equipped_item_in_main_menu("body")
-    show_equipped_item_in_main_menu("chestplate")
-    show_equipped_item_in_main_menu("gloves")
-    show_equipped_item_in_main_menu("legs")
-    show_equipped_item_in_main_menu("greaves")
-    show_equipped_item_in_main_menu("belt")
-    show_equipped_item_in_main_menu("boots")
-
-    load_bg()
-end
-
 function load_bg()
     document["background"].src = api.get_background()
 end
@@ -157,6 +135,8 @@ end
 -- EQUIPMENT MENU --
 -- ############## --
 
+local EQUIPMENT_SLOTS = {"head", "helmet", "body", "chestplate", "cloak", "gloves", "belt", "legs", "greaves", "boots"}
+
 function open_equipment_menu(slot)
     click_sound()
     choose_equipment_slot(slot)
@@ -251,25 +231,29 @@ end
 
 function equipment_button(action)
     click_sound()
-    local equipped_item = equipment.get_equipment_by_slot(hud.get_player(), controller.choosen_character, controller.choosen_slot)
+    local pid = hud.get_player()
+    local equipped_item = equipment.get_equipment_by_slot(pid, controller.choosen_character, controller.choosen_slot)
+
     if action == "equip" then
-        local slot = inventory.find_by_item(player.get_inventory(hud.get_player()), controller.equipment[controller.choosen_equipment])
+        local new_equipment = item.name(controller.equipment[controller.choosen_equipment])
+        local equip_res = equipment.equip(pid, controller.choosen_character, controller.choosen_slot, item.name(controller.equipment[controller.choosen_equipment]), action)
+        if not equip_res then return end
 
-        local new_item = equipped_item ~= 0 and equipped_item or 0
-
-        inventory.set(player.get_inventory(hud.get_player()), slot, new_item, 1)
-        equipment.equip(hud.get_player(), controller.choosen_character, controller.choosen_slot, item.name(controller.equipment[controller.choosen_equipment]), action)
+        local slot = inventory.find_by_item(player.get_inventory(pid), controller.equipment[controller.choosen_equipment])
+        inventory.set(player.get_inventory(pid), slot, equipped_item, 1)
     else
-        if equipped_item ~= 0 then
-            local slot = inventory.find_by_item(player.get_inventory(hud.get_player()), 0)
-            if not slot then
-                document["cannot_remove_item"].visible = true
-                return
-            end
+        if equipped_item == 0 then return end
 
-            inventory.set(player.get_inventory(hud.get_player()), slot, equipped_item, 1)
-            equipment.equip(hud.get_player(), controller.choosen_character, controller.choosen_slot, item.name(equipped_item), action)
+        local slot = inventory.find_by_item(player.get_inventory(pid), 0)
+        if not slot then
+            document["cannot_remove_item"].visible = true
+            return
         end
+
+        local equip_res = equipment.equip(pid, controller.choosen_character, controller.choosen_slot, item.name(equipped_item), action)
+        if not equip_res then return end
+        
+        inventory.set(player.get_inventory(pid), slot, equipped_item, 1)
     end
 
     controller.choosen_equipment = nil
@@ -285,15 +269,16 @@ function controller:choose_equipment(id)
     document["choosen_item_info"]:clear()
     choose_equipment_xml(id)
     local itemid = controller.equipment[id]
+    local pid = hud.get_player()
 
     document["choosen_item_info"]:add(gui.template("choosen_equipment_info", {
         src = item.icon(itemid),
-        heat_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "heat_preservation"),
-        heat_r = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "heat_reflection"),
-        absolute_d_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "absolute_damage_protection"),
-        crushing_d_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "crushing_damage_protection", true),
-        slashing_d_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "slashing_damage_protection", true),
-        piercing_d_p = equipment.get_compared_stat(hud.get_player(), controller.choosen_character, controller.choosen_slot, itemid, "piercing_damage_protection", true)
+        heat_p = equipment.get_compared_stat(pid, controller.choosen_character, controller.choosen_slot, itemid, "heat_preservation"),
+        heat_r = equipment.get_compared_stat(pid, controller.choosen_character, controller.choosen_slot, itemid, "heat_reflection"),
+        absolute_d_p = equipment.get_compared_stat(pid, controller.choosen_character, controller.choosen_slot, itemid, "absolute_damage_protection"),
+        crushing_d_p = equipment.get_compared_stat(pid, controller.choosen_character, controller.choosen_slot, itemid, "crushing_damage_protection", true),
+        slashing_d_p = equipment.get_compared_stat(pid, controller.choosen_character, controller.choosen_slot, itemid, "slashing_damage_protection", true),
+        piercing_d_p = equipment.get_compared_stat(pid, controller.choosen_character, controller.choosen_slot, itemid, "piercing_damage_protection", true)
     }))
 end
 
@@ -310,4 +295,25 @@ function choose_equipment_xml(new_equipment)
         document["equipment_cell_" .. controller.choosen_equipment].hoverColor = {100, 100, 100, 100}
     end
     controller.choosen_equipment = new_equipment
+end
+
+
+
+-- ############ --
+-- START SCRIPT --
+-- ############ --
+
+function on_open()
+    controller.choosen_equipment = nil
+    controller.choosen_character = characters.get_choosen_character(hud.get_player())
+    document["character_name"].text = gui.str(characters.get_character(hud.get_player(), controller.choosen_character)["full-name"])
+    
+    hide_characteristics()
+    close_equipment_menu()
+
+    for _, slot in ipairs(EQUIPMENT_SLOTS) do
+        show_equipped_item_in_main_menu(slot)
+    end
+
+    load_bg()
 end

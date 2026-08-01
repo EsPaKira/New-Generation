@@ -13,13 +13,17 @@ function equipment.equip(pid, character_name, slot, equipment_name, action)
 
     if not equipment.is_valid_equipment(equipment_name, slot) then return false end
 
-    if not equipment.is_free_slot(character, slot) and action == "remove" then
-        character.equipment[slot] = nil
-        equipment.change_stats(pid, character_name, equipment_name, -1)
-        return true
-    elseif not equipment.is_free_slot(character, slot) and action == "equip" then
-        character.equipment[slot] = nil
-        equipment.change_stats(pid, character_name, equipment_name, -1)
+    if not equipment.is_free_slot(character, slot) then
+        if action == "remove" then
+            character.equipment[slot] = nil
+            equipment.change_stats(pid, character_name, equipment_name, -1)
+            return true
+        elseif action == "equip" then
+            character.equipment[slot] = nil
+            equipment.change_stats(pid, character_name, equipment_name, -1)
+        end
+    elseif action == "remove" then
+        return false
     end
 
     character.equipment[slot] = equipment_name
