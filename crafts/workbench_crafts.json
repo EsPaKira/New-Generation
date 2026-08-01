@@ -1,31 +1,7 @@
 [
     {
         "components": [
-            {"id": "base:planks.item", "count": 2}
-        ],
-        "results": [
-            {"id": "base:wooden_door.item", "count": 1}
-        ]
-    },
-    {
-        "components": [
-            {"id": "newgen:spruce_planks.item", "count": 2}
-        ],
-        "results": [
-            {"id": "base:wooden_door.item", "count": 1}
-        ]
-    },
-    {
-        "components": [
-            {"id": "newgen:birch_planks.item", "count": 2}
-        ],
-        "results": [
-            {"id": "base:wooden_door.item", "count": 1}
-        ]
-    },
-    {
-        "components": [
-            {"id": "newgen:willow_planks.item", "count": 2}
+            {"tag": "planks", "count": 2}
         ],
         "results": [
             {"id": "base:wooden_door.item", "count": 1}
@@ -81,14 +57,6 @@
     },
     {
         "components": [
-            {"id": "base:planks.item", "count": 3}
-        ],
-        "results": [
-            {"id": "newgen:box.item", "count": 1}
-        ]
-    },
-    {
-        "components": [
             {"id": "newgen:spruce_planks.item", "count": 1}
         ],
         "results": [
@@ -101,14 +69,6 @@
         ],
         "results": [
             {"id": "newgen:spruce_planks_stairs.item", "count": 4}
-        ]
-    },
-    {
-        "components": [
-            {"id": "newgen:spruce_planks.item", "count": 3}
-        ],
-        "results": [
-            {"id": "newgen:box.item", "count": 1}
         ]
     },
     {
@@ -129,14 +89,6 @@
     },
     {
         "components": [
-            {"id": "newgen:birch_planks.item", "count": 3}
-        ],
-        "results": [
-            {"id": "newgen:box.item", "count": 1}
-        ]
-    },
-    {
-        "components": [
             {"id": "newgen:willow_planks.item", "count": 1}
         ],
         "results": [
@@ -153,7 +105,7 @@
     },
     {
         "components": [
-            {"id": "newgen:willow_planks.item", "count": 3}
+            {"tag": "planks", "count": 3}
         ],
         "results": [
             {"id": "newgen:box.item", "count": 1}
