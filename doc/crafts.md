@@ -62,6 +62,7 @@ function on_interact(x, y, z, pid)
     -- crafts_id - название файла с крафтами без "crafts/" и ".json"
     -- для "crafts/workbench_crafts.json" crafts_id будет "workbench_crafts"
     hud.show_overlay("newgen:crafts", false, {crafts_id})
+    return true
 end
 ```
 
