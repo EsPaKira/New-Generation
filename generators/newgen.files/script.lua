@@ -66,6 +66,15 @@ local function gen_hmap(x, y, w, h, s)
 
     -- map:mul(river_map)
 
+    -- local detail = Heightmap(w, h)
+    -- detail.noiseSeed = SEED + 999
+    -- detail:noise({x, y}, 0.4*s, 3, 1)
+    -- detail:mul(0.5)
+    -- detail:add(0.5)
+    -- detail:mul(0.03)
+    -- detail:add(-0.015)
+    -- map:add(detail)
+
     -- map:max(0.0)
     -- map:min(1.0)
 
@@ -176,4 +185,3 @@ function generate_biome_parameters(x, y, w, h, s)
     local hmap = gen_hmap(x, y, w, h, s)
     return tempmap, hummap, hmap
 end
-
