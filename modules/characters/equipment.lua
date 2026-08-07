@@ -6,22 +6,29 @@ local EQUIPMENT_SLOTS = {"head", "helmet", "body", "chestplate", "cloak", "glove
 
 function equipment.equip(pid, character_name, slot, equipment_name, action)
     --action = "equip" or "remove"
-    if not equipment.is_correct_slot(slot) then return end
+    if not equipment.is_correct_slot(slot) then return false end
 
     local character = characters.get_character(pid, character_name)
-    if not character then return end
+    if not character then return false end
 
-    if not equipment.is_free_slot(character, slot) and action == "remove" then
-        characters.set_field(pid, character_name, "equipment", slot, nil)
-        equipment.change_stats(pid, character_name, equipment_name, -1)
-        return
-    elseif not equipment.is_free_slot(character, slot) and action == "equip" then
-        characters.set_field(pid, character_name, "equipment", slot, nil)
-        equipment.change_stats(pid, character_name, equipment_name, -1)
+    if not equipment.is_valid_equipment(equipment_name, slot) then return false end
+
+    if not equipment.is_free_slot(character, slot) then
+        if action == "remove" then
+            character.equipment[slot] = nil
+            equipment.change_stats(pid, character_name, equipment_name, -1)
+            return true
+        elseif action == "equip" then
+            character.equipment[slot] = nil
+            equipment.change_stats(pid, character_name, equipment_name, -1)
+        end
+    elseif action == "remove" then
+        return false
     end
 
-    characters.set_field(pid, character_name, "equipment", slot, equipment_name)
+    character.equipment[slot] = equipment_name
     equipment.change_stats(pid, character_name, equipment_name, 1)
+    return true
 end
 
 function equipment.change_stats(pid, character_name, equipment_name, action)
@@ -37,19 +44,22 @@ function equipment.change_stats(pid, character_name, equipment_name, action)
 end
 
 function equipment.is_correct_slot(slot)
-    local find = false
     for _, value in ipairs(EQUIPMENT_SLOTS) do
-        if value == slot then
-            find = true
-            break
-        end
+        if value == slot then return true end
     end
-    return find
+    return false
+end
+
+function equipment.is_valid_equipment(equipment_name, slot)
+    local itemid = item.index(equipment_name)
+    local equipment_data = item.properties[itemid]["newgen:equipment"]
+    if not equipment_data then return false end
+    if equipment_data.slot ~= slot then return false end
+    return true
 end
 
 function equipment.is_free_slot(character, slot)
-    if character.equipment[slot] then return false end
-    return true
+    return character.equipment[slot] == nil
 end
 
 function equipment.get_all_equipment_stats(itemid)

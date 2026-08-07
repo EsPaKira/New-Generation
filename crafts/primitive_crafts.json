@@ -42,6 +42,14 @@
     },
     {
         "components": [
+            {"tag": "pebble", "count": 2}
+        ],
+        "results": [
+            {"id": "newgen:stone_hoe_head", "count": 1}
+        ]
+    },
+    {
+        "components": [
             {"tag": "wood", "count": 1},
             {"id": "newgen:stick", "count": 1}
         ],

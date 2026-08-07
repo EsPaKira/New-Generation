@@ -23,7 +23,64 @@ local function gen_parameters(size, seed, x, y)
     return res
 end
 
+local RIVER_WIDTH = 0.3
+
 local function gen_hmap(x, y, w, h, s)
+    -- NEW GENERATOR
+    -- #############
+    -- local map = Heightmap(w, h)
+    -- map.noiseSeed = SEED
+    -- map:noise({x, y}, 0.01*s, 5, 1)
+    -- map:mul(0.5)
+    -- map:add(0.5)
+    -- map:mul(0.22)
+    -- map:add(0.28)
+
+    -- local mountain_mask = Heightmap(w, h)
+    -- mountain_mask.noiseSeed = SEED + 71
+    -- mountain_mask:noise({x+300, y+140}, 0.5, 3, 1)
+    -- mountain_mask:mul(0.5)
+    -- mountain_mask:add(-0.05)
+    -- mountain_mask:mul(2.222)
+    -- mountain_mask:max(0.0)
+    -- mountain_mask:min(1.0)
+    -- mountain_mask:pow(1.5)
+
+    -- local peaks = Heightmap(w, h)
+    -- peaks.noiseSeed = SEED + 133
+    -- peaks:noise({x+42, y+17}, 0.03*s, 5, 1)
+    -- peaks:mul(0.5)
+    -- peaks:add(0.5)
+    -- peaks:mul(0.27)
+    -- peaks:add(0.55)
+
+    -- map:mixin(peaks, mountain_mask)
+    -- local river_map = Heightmap(w, h)
+    -- river_map.noiseSeed = SEED + 811
+    -- river_map:noise({x+21, y+12}, 0.015*s, 4, 1)
+    -- river_map:abs()
+    -- river_map:mul(1.0 / RIVER_WIDTH)
+    -- river_map:min(1.0)
+    -- river_map:pow(0.6)
+    -- river_map:max(0.3)
+
+    -- map:mul(river_map)
+
+    -- local detail = Heightmap(w, h)
+    -- detail.noiseSeed = SEED + 999
+    -- detail:noise({x, y}, 0.4*s, 3, 1)
+    -- detail:mul(0.5)
+    -- detail:add(0.5)
+    -- detail:mul(0.03)
+    -- detail:add(-0.015)
+    -- map:add(detail)
+
+    -- map:max(0.0)
+    -- map:min(1.0)
+
+
+    -- OLD GENERATOR
+    -- #############
     local umap = Heightmap(w, h)
     local vmap = Heightmap(w, h)
     umap.noiseSeed = SEED
@@ -57,6 +114,7 @@ local function gen_hmap(x, y, w, h, s)
     mountainsmap:noise({x+42, y+17}, 0.2*s, 5, 0.3)
     mountainsmap:add(0.3)
     map:mixin(mountainsmap, umap)
+
     return map
 end
 
@@ -127,4 +185,3 @@ function generate_biome_parameters(x, y, w, h, s)
     local hmap = gen_hmap(x, y, w, h, s)
     return tempmap, hummap, hmap
 end
-

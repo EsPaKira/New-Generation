@@ -20,7 +20,7 @@
             "args": {
                 "loot_table": [
                     {   
-                        "item": "newgen:fur_cape",
+                        "item": "newgen:fur",
                         "min": 1,
                         "max": 2
                     },

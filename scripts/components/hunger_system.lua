@@ -17,8 +17,9 @@ function set_hunger(value)
     hunger = math.min(math.max(0, value), max_hunger)
     local is_player, character_name = c_manager.is_player()
     if is_player then
-        characters.set_field(hud.get_player(), character_name, "stats", "hunger", hunger)
-        events.emit("newgen:player_hunger.set", entity:get_uid(), hunger, max_hunger)
+        local pid = entity:get_player()
+        characters.set_field(pid, character_name, "stats", "hunger", hunger)
+        events.emit("newgen:player_hunger.set", pid, hunger, max_hunger)
     else
         c_manager.set_params("hunger", hunger)
     end

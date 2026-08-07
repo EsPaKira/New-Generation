@@ -30,8 +30,9 @@ function set_health(value)
     local is_player, character_name = c_manager.is_player()
 
     if is_player then
-        characters.set_field(hud.get_player(), character_name, "stats", "health", health)
-        events.emit("newgen:player_health.set", entity:get_uid(), health, max_health)
+        local pid = entity:get_player()
+        characters.set_field(pid, character_name, "stats", "health", health)
+        events.emit("newgen:player_health.set", pid, health, max_health)
     else
         c_manager.set_params("health", health)
     end

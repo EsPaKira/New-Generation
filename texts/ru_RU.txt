@@ -120,6 +120,7 @@ copper shovel=медная лопата
 cowberry=брусника
 flax fiber=льняное волокно
 flax seeds=семена льна
+fur=шкура
 fur cape=меховая накидка
 linen pants=льняные штаны
 linen shirt=льняная рубаха

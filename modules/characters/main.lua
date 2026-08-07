@@ -17,18 +17,19 @@ function characters.unlock_new_character(pid, character_name, cid)
     local character_data = file.read_combined_object("characters/" .. character_name .. ".json")
     player_characters[character_name] = {
         character_id = cid,
-        character_full_name = character_data["full-name"],
         entity_id = nil,
         stats = character_data["stats"],
         equipment = {},
         skills = {}
     }
 end
--- below - character data structure
--- group     > field      > value
+
+-- character data structure
+-- group     > field      > value -- hierarchy
 -- equipment > slot       > name
 -- stats     > stat_name  > value
 -- skills    > skill_name > level
+
 function characters.set_field(pid, character_name, group, field, value)
     local character = characters.get_character(pid, character_name)
     if not character then return end
@@ -80,6 +81,8 @@ function characters.get_character(pid, character_name)
 end
 
 function characters.update_survival_ui(pid, character_name)
+    if pid ~= hud.get_player() then return end
+
     local health = characters.get_field(pid, character_name, "stats", "health")
     local max_health = characters.get_field(pid, character_name, "stats", "max_health")
     survival_ui.set_health(health, max_health)

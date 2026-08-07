@@ -9,4 +9,5 @@ function on_use(pid)
     end
 
     inventory.decrement(pinvid, slot, 1)
+    return true
 end

@@ -11,7 +11,6 @@ function gamemodes.is_dead(playerid)
     return player.get_entity(playerid) == 0
 end
 
-
 function gamemodes.set(playerid, name)
     local gamemode = gamemodes.get(playerid)
     if name == "creative" then
@@ -24,6 +23,7 @@ function gamemodes.set(playerid, name)
         rules.set("allow-destroy", true)
         player.set_instant_destruction(playerid, true)
         player.set_infinite_items(playerid, true)
+        player.set_interaction_distance(playerid, 10)
     elseif name == "survival" then
         rules.set("allow-cheat-movement", false)
         rules.set("allow-flight", false)
@@ -36,6 +36,7 @@ function gamemodes.set(playerid, name)
         player.set_infinite_items(playerid, false)
         player.set_flight(playerid, false)
         player.set_noclip(playerid, false)
+        player.set_interaction_distance(playerid, 4)
     end
     gamemode.current = name
     events.emit("newgen:gamemodes.set", playerid, name)

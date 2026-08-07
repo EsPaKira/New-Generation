@@ -41,6 +41,8 @@ newgen предоставляет несколько компонентов дл
 
 Лут указывается в таблице args.
 
+Можно указать min, max, chance и count.
+
 **Требует для работы newgen:health_system**
 
 ## Пример components из newgen:entities/bear.json:

@@ -16,9 +16,10 @@ function on_hud_open()
     weather.start()
     health_effect = gfx.posteffects.index("newgen:death")
 
-    events.on("newgen:gamemodes.set", function(playerid, name)
+    events.on("newgen:gamemodes.set", function(pid, name)
+        if pid ~= hud.get_player() then return end
         if name == "survival" then
-            local entity = entities.get(player.get_entity(playerid))
+            local entity = entities.get(player.get_entity(pid))
             if not entity then
                 return -- dead
             end
@@ -29,15 +30,18 @@ function on_hud_open()
         end
     end)
 
-    events.on("newgen:player_health.set", function(eid, health, max_health)
+    events.on("newgen:player_health.set", function(pid, health, max_health)
+        if pid ~= hud.get_player() then return end
         survival_ui.set_health(health, max_health)
     end)
 
-    events.on("newgen:player_oxygen.set", function(eid, oxygen, max_oxygen)
+    events.on("newgen:player_oxygen.set", function(pid, oxygen, max_oxygen)
+        if pid ~= hud.get_player() then return end
         survival_ui.set_oxygen(oxygen, max_oxygen)
     end)
 
-    events.on("newgen:player_hunger.set", function(eid, hunger, max_hunger)
+    events.on("newgen:player_hunger.set", function(pid, hunger, max_hunger)
+        if pid ~= hud.get_player() then return end
         survival_ui.set_hunger(hunger, max_hunger)
     end)
 

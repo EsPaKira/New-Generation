@@ -6,11 +6,10 @@
 local body = entity.rigidbody
 local tsf = entity.transform
 
-local function is_flight(eid)
-    if eid == player.get_entity(hud.get_player()) then
-        local pid = entity:get_player()
-        return player.is_flight(pid) or player.is_noclip(pid)
-    end
+local function is_flight()
+    local pid = entity:get_player()
+    if pid == -1 then return false end
+    return player.is_flight(pid) or player.is_noclip(pid)
 end
 
 local water = block.index("base:water")
@@ -41,8 +40,7 @@ end
 local swim_speed = 3.5
 
 function on_physics_update()
-    local eid = entity:get_uid()
-    if is_flight(eid) then
+    if is_flight() then
         return
     end
 

@@ -1,10 +1,9 @@
 {
-    "icon": "items:stick",
+    "newgen:craft-material": "planks",
     "description": "Fuel",
-    "placing-block": "newgen:small_stick",
     "newgen:material": {
         "type": "fuel",
         "max-temperature": 800, 
-        "burning-time": 100
+        "burning-time": 300
     }
 }
