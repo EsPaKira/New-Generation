@@ -1,40 +1,42 @@
 local m = _G["$Multiplayer"]
 local api = require(string.format("%s:api/%s/api", m.pack_id, m.api_references.Neutron[2])).server
-local Message = import "net/protocol/message"
 
 local gamemodes = {}
 
 
-local GamemodeMsg = Message.new("newgen", "gamemode.set", {
-    name = "boolean"
-})
-
 function gamemodes.set(client, gamemode)
     local player_obj = client.player
 
-    if gamemode == "survival" then
-        api.rules.players.set_value(player_obj, "allow-content-access", false)
-        api.rules.players.set_value(player_obj, "allow-flight", false)
-        api.rules.players.set_value(player_obj, "allow-noclip", false)
-        api.rules.players.set_value(player_obj, "allow-cheat-movement", false)
-        api.rules.players.set_value(player_obj, "allow-debug-cheats", false)
-        api.rules.players.set_value(player_obj, "allow-fast-interaction", false)
-        api.rules.players.set_value(player_obj, "infinite-items", false)
+    local allow_content_access = api.rules.get_rule("allow-content-access")
+    local allow_flight = api.rules.get_rule("allow-flight")
+    local allow_noclip = api.rules.get_rule("allow-noclip")
+    local allow_cheat_movement = api.rules.get_rule("allow-cheat-movement")
+    local allow_debug_cheats = api.rules.get_rule("allow-debug-cheats")
+    local allow_fast_interaction = api.rules.get_rule("allow-fast-interaction")
 
+    if gamemode == "survival" then
+        api.rules.players.set_value(player_obj, allow_content_access, false)
+        api.rules.players.set_value(player_obj, allow_flight, false)
+        api.rules.players.set_value(player_obj, allow_noclip, false)
+        api.rules.players.set_value(player_obj, allow_cheat_movement, false)
+        api.rules.players.set_value(player_obj, allow_debug_cheats, false)
+        api.rules.players.set_value(player_obj, allow_fast_interaction, false)
+
+        player.set_infinite_items(player_obj.pid, false)
+        player.set_instant_destruction(player_obj.pid, false)
         player.set_interaction_distance(player_obj.pid, 5)
     else -- gamemode == "creative"
-        api.rules.players.set_value(player_obj, "allow-content-access", true)
-        api.rules.players.set_value(player_obj, "allow-flight", true)
-        api.rules.players.set_value(player_obj, "allow-noclip", true)
-        api.rules.players.set_value(player_obj, "allow-cheat-movement", true)
-        api.rules.players.set_value(player_obj, "allow-debug-cheats", true)
-        api.rules.players.set_value(player_obj, "allow-fast-interaction", true)
-        api.rules.players.set_value(player_obj, "infinite-items", true)
+        api.rules.players.set_value(player_obj, allow_content_access, true)
+        api.rules.players.set_value(player_obj, allow_flight, true)
+        api.rules.players.set_value(player_obj, allow_noclip, true)
+        api.rules.players.set_value(player_obj, allow_cheat_movement, true)
+        api.rules.players.set_value(player_obj, allow_debug_cheats, true)
+        api.rules.players.set_value(player_obj, allow_fast_interaction, true)
 
+        player.set_infinite_items(player_obj.pid, true)
+        player.set_instant_destruction(player_obj.pid, true)
         player.set_interaction_distance(player_obj.pid, 10)
     end
-
-    GamemodeMsg:tell(client, { name = (gamemode == "creative") })
 end
 
 function gamemodes.is_exists(gamemode)
