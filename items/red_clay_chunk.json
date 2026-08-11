@@ -1,7 +1,0 @@
-{
-    "icon": "items:red_clay_chunk",
-    "newgen:material": {
-        "type": "metal",
-        "melting-point": 800
-    }
-}

@@ -1,8 +1,0 @@
-{
-    "material": "base:stone",
-    "model": "custom",
-    "model-name": "slab",
-    "hidden": true,
-    "rotation": "pipe",
-    "hitbox": [0, 0, 0, 1, 0.5, 1]
-}

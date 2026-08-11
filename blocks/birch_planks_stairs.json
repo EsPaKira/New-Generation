@@ -1,8 +1,0 @@
-{
-    "parent": "newgen:stairs_template",
-    "texture": "birch_planks",
-    "caption": "birch planks stairs",
-    "hidden" : false,
-    "picking-item": "newgen:birch_planks_stairs.item",
-    "base:durability": 4.5
-}

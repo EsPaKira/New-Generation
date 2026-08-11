@@ -1,9 +1,0 @@
-{
-    "material": "base:stone",
-    "parent": "newgen:stairs_template",
-    "texture": "peridotite",
-    "caption": "peridotite stairs",
-    "hidden" : false,
-    "picking-item": "newgen:peridotite_stairs.item",
-    "base:durability": 9
-}

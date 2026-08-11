@@ -1,9 +1,0 @@
-{
-    "parent": "newgen:slab_template",
-    "texture": "bazalt",
-    "caption": "bazalt slab",
-    "hidden": false,
-    "picking-item": "newgen:bazalt_slab.item",
-    "newgen:full-block": "base:bazalt",
-    "base:durability": 6
-}

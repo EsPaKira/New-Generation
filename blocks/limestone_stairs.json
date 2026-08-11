@@ -1,9 +1,0 @@
-{
-    "material": "base:stone",
-    "parent": "newgen:stairs_template",
-    "texture": "limestone",
-    "caption": "limestone stairs",
-    "hidden" : false,
-    "picking-item": "newgen:limestone_stairs.item",
-    "base:durability": 9
-}

@@ -1,7 +1,0 @@
-{
-    "icon-type": "sprite",
-    "icon": "items:jug_of_water",
-    "uses": 2,
-    "stack-size": 1,
-    "script-name": "water_bucket"
-}

@@ -1,5 +1,0 @@
-{
-    "icon": "items:turnip_seeds",
-    "script-name": "seeds",
-    "newgen:crop": "newgen:turnip_crop"
-}

@@ -1,3 +1,0 @@
-@box from (0,0,0) to (1,0.1875,1) {
-    @part tags (east, west, north, south) region (0, 0.5625, 1, 0.75)
-}

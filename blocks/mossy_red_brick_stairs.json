@@ -1,9 +1,0 @@
-{
-    "material": "base:stone",
-    "parent": "newgen:stairs_template",
-    "texture": "mossy_red_bricks",
-    "caption": "mossy red brick stairs",
-    "hidden" : false,
-    "picking-item": "newgen:mossy_red_brick_stairs.item",
-    "base:durability": 9
-}

@@ -1,7 +1,0 @@
-{
-    "root": {
-        "name": "skeleton",
-        "model": "vestured_skeleton",
-        "offset": [0, 0.05, 0]
-    }
-}

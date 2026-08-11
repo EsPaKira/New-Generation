@@ -1,9 +1,0 @@
-{
-    "material": "base:stone",
-    "parent": "newgen:stairs_template",
-    "texture": "granite",
-    "caption": "granite stairs",
-    "hidden" : false,
-    "picking-item": "newgen:granite_stairs.item",
-    "base:durability": 9
-}

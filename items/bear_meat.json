@@ -1,7 +1,0 @@
-{
-    "icon": "items:bear_meat",
-    "script-name": "food",
-    "newgen:food": {
-        "saturation": 3
-    }
-}

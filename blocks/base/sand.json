@@ -1,8 +1,0 @@
-{
-    "script-name": "falling_block_particles",
-    "newgen:placed_particles": [
-        "particles:sand_0",
-        "particles:sand_1",
-        "particles:sand_2"
-    ]
-}

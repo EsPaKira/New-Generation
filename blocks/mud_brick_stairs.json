@@ -1,9 +1,0 @@
-{
-    "material": "base:stone",
-    "parent": "newgen:stairs_template",
-    "texture": "mud_bricks",
-    "caption": "mud brick stairs",
-    "hidden" : false,
-    "picking-item": "newgen:mud_brick_stairs.item",
-    "base:durability": 3
-}

@@ -1,9 +1,0 @@
-{
-    "script-name": "slab",
-    "description": "Fuel",
-    "newgen:material": {
-        "type": "fuel",
-        "max-temperature": 800, 
-        "burning-time": 150
-    }
-}

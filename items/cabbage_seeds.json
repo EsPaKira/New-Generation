@@ -1,5 +1,0 @@
-{
-    "icon": "items:cabbage_seeds",
-    "script-name": "seeds",
-    "newgen:crop": "newgen:cabbage_crop"
-}

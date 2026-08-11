@@ -1,9 +1,0 @@
-{
-    "material": "base:stone",
-    "parent": "newgen:stairs_template",
-    "texture": "dolomite",
-    "caption": "dolomite stairs",
-    "hidden" : false,
-    "picking-item": "newgen:dolomite_stairs.item",
-    "base:durability": 9
-}

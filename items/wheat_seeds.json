@@ -1,9 +1,0 @@
-{
-    "icon": "items:wheat_seeds",
-    "stack-size": 128,
-    "script-name": "seeds",
-    "newgen:crop": "newgen:wheat_crop",
-    "newgen:food": {
-        "saturation": 1
-    }
-}

@@ -1,8 +1,0 @@
-{
-    "parent": "newgen:stairs_template",
-    "texture": "spruce_planks",
-    "caption": "spruce planks stairs",
-    "hidden" : false,
-    "picking-item": "newgen:spruce_planks_stairs.item",
-    "base:durability": 4.5
-}

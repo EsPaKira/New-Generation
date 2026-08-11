@@ -1,8 +1,0 @@
-{
-    "parent": "newgen:stairs_template",
-    "texture": "willow_planks",
-    "caption": "willow planks stairs",
-    "hidden" : false,
-    "picking-item": "newgen:willow_planks_stairs.item",
-    "base:durability": 4.5
-}

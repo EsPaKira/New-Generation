@@ -1,8 +1,0 @@
-@box from (0.25, -0.0625, 0.5) to (0.75, 0.3125, 0.5) origin (0.3125, -0.0625, 0.5625) delete (east, west, top, bottom) {
-    @part tags (south) texture "blocks:cabbage_1" region (0, 0.625, 0.5, 1)
-    @part tags (north) texture "blocks:cabbage_1" region (0, 0.25, 0.5, 0.625)
-}
-@box from (0.5, -0.0625, 0.25) to (0.5, 0.3125, 0.75) origin (0.5625, -0.0625, 0.3125) delete (south, north, top, bottom) {
-    @part tags (west) texture "blocks:cabbage_1" region (0.5, 0.625, 1, 1)
-    @part tags (east) texture "blocks:cabbage_1" region (1, 0.25, 0.5, 0.625)
-}

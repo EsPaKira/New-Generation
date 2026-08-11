@@ -1,7 +1,0 @@
-{
-    "icon": "items:cabbage",
-    "script-name": "food",
-    "newgen:food": {
-        "saturation": 4
-    }
-}

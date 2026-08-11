@@ -1,8 +1,0 @@
-{
-    "icon": "items:potato",
-    "script-name": "seeds",
-    "newgen:crop": "newgen:potato_crop",
-    "newgen:food": {
-        "saturation": 2
-    }
-}
