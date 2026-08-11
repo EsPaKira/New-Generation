@@ -1,11 +1,15 @@
 local m = _G["$Multiplayer"]
 local api = require(string.format("%s:api/%s/api", m.pack_id, m.api_references.Neutron[2])).server
 
-local gamemodes = {}
+local gamemodes = {
+    players = {}
+}
 
 
 function gamemodes.set(client, gamemode)
     local player_obj = client.player
+
+    local player_gamemode = gamemodes.get(player_obj.identity, player_obj.pid)
 
     local allow_content_access = api.rules.get_rule("allow-content-access")
     local allow_flight = api.rules.get_rule("allow-flight")
@@ -37,6 +41,17 @@ function gamemodes.set(client, gamemode)
         player.set_instant_destruction(player_obj.pid, true)
         player.set_interaction_distance(player_obj.pid, 10)
     end
+
+    player_gamemode.current = gamemode
+end
+
+function gamemodes.get(identity, pid)
+    if gamemodes.players[identity] == nil then
+        gamemodes.players[identity] = {
+            current=player.is_infinite_items(pid)
+            and "creative" or "survival"}
+    end
+    return gamemodes.players[identity]
 end
 
 function gamemodes.is_exists(gamemode)
