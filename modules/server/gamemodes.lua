@@ -1,5 +1,5 @@
 local m = _G["$Multiplayer"]
-local api = require(string.format("%s:api/%s/api", m.pack_id, m.api_references.Neutron[2])).server
+local api = require(string.format("%s:api/%s/api", m.pack_id, m.api_references.Neutron[2]))[m.side]
 
 local gamemodes = {
     players = {}

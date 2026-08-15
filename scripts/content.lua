@@ -2,10 +2,11 @@ local m = _G["$Multiplayer"]
 
 function on_scripts_loading()
     require "rules"
+    require "breaking_events"
 
     if m.side == "server" then
         require "server/console"
-    elseif m.side == "client" then
+    else
         return
     end
 end

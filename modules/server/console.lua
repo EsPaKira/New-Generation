@@ -1,5 +1,5 @@
 local m = _G["$Multiplayer"]
-local api = require(string.format("%s:api/%s/api", m.pack_id, m.api_references.Neutron[2])).server
+local api = require(string.format("%s:api/%s/api", m.pack_id, m.api_references.Neutron[2]))[m.side]
 local gamemodes = require "server/gamemodes"
 
 api.console.set_command("gamemode: gamemode=<string> -> Changes player gamemode", {permissions={"role_management"}}, function(args, client)
