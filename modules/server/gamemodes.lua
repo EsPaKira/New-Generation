@@ -9,8 +9,6 @@ local gamemodes = {
 function gamemodes.set(client, gamemode)
     local player_obj = client.player
 
-    local player_gamemode = gamemodes.get(player_obj.identity, player_obj.pid)
-
     local allow_content_access = api.rules.get_rule("allow-content-access")
     local allow_flight = api.rules.get_rule("allow-flight")
     local allow_noclip = api.rules.get_rule("allow-noclip")
@@ -26,6 +24,8 @@ function gamemodes.set(client, gamemode)
         api.rules.players.set_value(player_obj, allow_debug_cheats, false)
         api.rules.players.set_value(player_obj, allow_fast_interaction, false)
 
+        player.set_flight(player_obj.pid, false)
+        player.set_noclip(player_obj.pid, false)
         player.set_infinite_items(player_obj.pid, false)
         player.set_instant_destruction(player_obj.pid, false)
         player.set_interaction_distance(player_obj.pid, 5)
@@ -42,14 +42,14 @@ function gamemodes.set(client, gamemode)
         player.set_interaction_distance(player_obj.pid, 10)
     end
 
-    player_gamemode.current = gamemode
+    gamemodes.players[client.account.identity] = gamemode
 end
 
-function gamemodes.get(identity, pid)
+function gamemodes.get(identity)
+    local pid = api.accounts.by_identity.get_client(identity).player.pid
+
     if gamemodes.players[identity] == nil then
-        gamemodes.players[identity] = {
-            current=player.is_infinite_items(pid)
-            and "creative" or "survival"}
+        gamemodes.players[identity] = player.is_infinite_items(pid) and "creative" or "survival"
     end
     return gamemodes.players[identity]
 end
@@ -57,5 +57,9 @@ end
 function gamemodes.is_exists(gamemode)
     return gamemode == "survival" or gamemode == "creative"
 end
+
+events.on("server:client_connected", function(client)
+    gamemodes.set(client, gamemodes.get(client.account.identity))
+end)
 
 return gamemodes

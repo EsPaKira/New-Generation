@@ -5,6 +5,7 @@ local PredictedEvent = api.predicted_events
 
 local self = Module()
 
+-- SERVER
 
 function self.server.on_start(client, data)
     local pid = client.player.pid
@@ -29,12 +30,38 @@ function self.server.on_finish(client, instant)
     block.destruct(x, y, z, client.player.pid)
 end
 
+-- CLIENT
 
-function self.client.on_ack_start(instant) end
+local function wrap_texture(progress)
+    return "cracks/cracks_" .. math.floor(progress * 11)
+end
+
+local function delete_wrap(instant)
+    if instant.data.wrapper then
+        gfx.blockwraps.unwrap(instant.data.wrapper)
+        instant.data.wrapper = nil
+    end
+end
+
+function self.client.on_ack_start(instant)
+    local x, y, z = unpack(instant.data.pos)
+    instant.data.wrapper = gfx.blockwraps.wrap({x, y, z}, wrap_texture(0))
+end
+
 function self.client.on_reject(instant) end
-function self.client.on_progress(instant) end
-function self.client.on_finish(instant) end
-function self.client.on_interrupt(instant) end
+function self.client.on_progress(instant)
+    if not instant.data.wrapper then return end
+
+    gfx.blockwraps.set_texture(instant.data.wrapper, wrap_texture(instant:get_progress()))
+end
+
+function self.client.on_finish(instant)
+    delete_wrap(instant)
+end
+
+function self.client.on_interrupt(instant)
+    delete_wrap(instant)
+end
 
 
 local BreakingEvent = PredictedEvent.new("newgen", "breaking", { pos = "Triple<int32, uint8, int32>" }, self:build())

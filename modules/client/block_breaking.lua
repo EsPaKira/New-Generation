@@ -21,6 +21,8 @@ local function stop_instant()
 end
 
 function module.start_breaking(x, y, z, pid)
+    if player.is_instant_destruction(pid) then return end
+
     if current_block and is_current_block(x, y, z) then return end
 
     stop_instant()
@@ -30,11 +32,11 @@ function module.start_breaking(x, y, z, pid)
     instant = BreakingEvent:start({ pos = pos })
 end
 
-function module.block_broken(x, y, z, pid)
-
+function module.block_broken()
+    stop_instant()
 end
 
-function module.player_tick(pid, tps)
+function module.player_tick(pid)
     if not current_block then return end
 
     local x, y, z = player.get_selected_block(pid)

@@ -8,11 +8,11 @@ function on_world_open()
     end
 end
 
-function on_player_tick(pid, tps)
+function on_player_tick(pid)
     if m.side == "server" then return end
 
     if not block_breaking then return end
-    block_breaking.player_tick(pid, tps)
+    block_breaking.player_tick(pid)
 end
 
 function on_block_breaking(blockid, x, y, z, pid)
@@ -20,9 +20,9 @@ function on_block_breaking(blockid, x, y, z, pid)
     block_breaking.start_breaking(x, y, z, pid)
 end
 
-function on_block_broken(blockid, x, y, z, pid)
+function on_block_broken()
     if m.side == "server" then return end
 
     if not block_breaking then return end
-    block_breaking.block_broken(x, y, z, pid)
+    block_breaking.block_broken()
 end
