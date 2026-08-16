@@ -43,6 +43,49 @@ local function delete_wrap(instant)
     end
 end
 
+local function breaking_particles(blockid)
+    local cam = cameras.get("core:first-person")
+    local front = cam:get_front()
+    local ray = block.raycast(cam:get_pos(), front, 6)
+    if not ray then
+        return
+    end
+    gfx.particles.emit(ray.endpoint, 4, {
+        lifetime=1.0,
+        spawn_interval=0.0001,
+        explosion={3, 3, 3},
+        velocity=vec3.add(vec3.mul(front, -1.0), {0, 0.5, 0}),
+        texture="blocks:"..block.get_textures(blockid)[1],
+        random_sub_uv=0.1,
+        size={0.1, 0.1, 0.1},
+        size_spread=0.2,
+        spawn_shape="box",
+        collision=true
+    })
+end
+
+local function breaking_sounds(x, y, z)
+    local blockid = block.get(x, y, z)
+    local material = block.materials[block.material(blockid)]
+    audio.play_sound(
+        1 >= 1.2 and -- tenporary solution
+            material.hitSound or
+            material.stepsSound, 
+        x + 0.5, y + 0.5, z + 0.5,
+        1.0, 0.9 + math.random() * 0.2, "regular"
+    )
+end
+
+local function breaked_sound(instant)
+    local x, y, z = unpack(instant.data.pos)
+    local material = block.materials[block.material(instant.data.blockid)]
+    audio.play_sound(
+        material.breakSound,
+        x + 0.5, y + 0.5, z + 0.5,
+        1.0, 0.9 + math.random() * 0.2, "regular"
+    )
+end
+
 function self.client.on_ack_start(instant)
     if instant.abandoned then
         instant:interrupt()
@@ -50,17 +93,28 @@ function self.client.on_ack_start(instant)
     end
 
     instant.data.wrapper = gfx.blockwraps.wrap(instant.data.pos, wrap_texture(0))
+    instant.data.blockid = block.get(unpack(instant.data.pos))
 end
 
 function self.client.on_reject(instant) end
+
 function self.client.on_progress(instant)
     if not instant.data.wrapper then return end
+
+    instant.data.tick = (instant.data.tick or 0) + 1
+
+    if instant.data.tick % 4 == 0 then
+        local x, y, z = unpack(instant.data.pos)
+        breaking_particles(block.get(x, y, z))
+        breaking_sounds(x, y, z)
+    end
 
     gfx.blockwraps.set_texture(instant.data.wrapper, wrap_texture(instant:get_progress()))
 end
 
 function self.client.on_finish(instant)
     delete_wrap(instant)
+    breaked_sound(instant)
 end
 
 function self.client.on_interrupt(instant)
