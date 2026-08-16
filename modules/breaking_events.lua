@@ -44,8 +44,12 @@ local function delete_wrap(instant)
 end
 
 function self.client.on_ack_start(instant)
-    local x, y, z = unpack(instant.data.pos)
-    instant.data.wrapper = gfx.blockwraps.wrap({x, y, z}, wrap_texture(0))
+    if instant.abandoned then
+        instant:interrupt()
+        return
+    end
+
+    instant.data.wrapper = gfx.blockwraps.wrap(instant.data.pos, wrap_texture(0))
 end
 
 function self.client.on_reject(instant) end

@@ -14,7 +14,11 @@ end
 
 local function stop_instant()
     if instant then
-        instant:interrupt()
+        if instant.active then
+            instant:interrupt()
+        else
+            instant.abandoned = true
+        end
         instant = nil
     end
     current_block = nil
