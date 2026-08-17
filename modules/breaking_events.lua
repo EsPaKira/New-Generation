@@ -10,11 +10,17 @@ local self = Module()
 function self.server.on_start(client, data)
     local pid = client.player.pid
     local px, py, pz = player.get_pos(pid)
-    local x, y, z = unpack(data.pos)
+    local pentity = entities.get(player.get_entity(pid))
+    local hitbox_height = pentity.rigidbody:get_size()[2]
+    local camera_offset = client.player.is_crouching and 0.5 or 0.7 -- 0.5 if crouching. 0.7 if standing
+    local hitbox_offset = hitbox_height * (camera_offset / 1.8)
 
-    if vec3.distance({px, py, pz}, {x, y, z}) > 5.35 then -- 5.35 only for base player model 
+    local raycast = block.raycast({px, py + hitbox_offset, pz}, player.get_dir(pid), player.get_interaction_distance(pid))
+
+    if not raycast then
         return false
     end
+
     return true
 end
 
