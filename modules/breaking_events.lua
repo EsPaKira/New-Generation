@@ -11,9 +11,8 @@ function self.server.on_start(client, data)
     local pid = client.player.pid
     local px, py, pz = player.get_pos(pid)
     local x, y, z = unpack(data.pos)
-    local reach_distance = player.get_interaction_distance(pid)
 
-    if vec3.distance({px, py, pz}, {x, y, z}) > reach_distance then
+    if vec3.distance({px, py, pz}, {x, y, z}) > 5.35 then -- 5.35 only for base player model 
         return false
     end
     return true
@@ -43,24 +42,19 @@ local function delete_wrap(instant)
     end
 end
 
-local function breaking_particles(blockid)
-    local cam = cameras.get("core:first-person")
-    local front = cam:get_front()
-    local ray = block.raycast(cam:get_pos(), front, 6)
-    if not ray then
-        return
-    end
-    gfx.particles.emit(ray.endpoint, 4, {
-        lifetime=1.0,
-        spawn_interval=0.0001,
-        explosion={3, 3, 3},
-        velocity=vec3.add(vec3.mul(front, -1.0), {0, 0.5, 0}),
-        texture="blocks:"..block.get_textures(blockid)[1],
-        random_sub_uv=0.1,
-        size={0.1, 0.1, 0.1},
-        size_spread=0.2,
-        spawn_shape="box",
-        collision=true
+local function breaking_particles(x, y, z)
+    local blockid = block.get(x, y, z)
+    gfx.particles.emit({x + 0.5, y + 0.5, z + 0.5}, 4, {
+        lifetime = 1.0,
+        spawn_interval = 0.0001,
+        explosion = {3, 3, 3},
+        velocity = {0, 0.5, 0},
+        texture = "blocks:" .. block.get_textures(blockid)[1],
+        random_sub_uv = 0.1,
+        size = {0.1, 0.1, 0.1},
+        size_spread = 0.2,
+        spawn_shape = "box",
+        collision = false
     })
 end
 
@@ -105,7 +99,7 @@ function self.client.on_progress(instant)
 
     if instant.data.tick % 4 == 0 then
         local x, y, z = unpack(instant.data.pos)
-        breaking_particles(block.get(x, y, z))
+        breaking_particles(x, y, z)
         breaking_sounds(x, y, z)
     end
 
