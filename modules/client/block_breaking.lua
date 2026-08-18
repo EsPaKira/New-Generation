@@ -27,13 +27,16 @@ end
 function module.start_breaking(x, y, z, pid)
     if player.is_instant_destruction(pid) then return end
 
+    local blockid = block.get(x, y, z)
+    if blockid == -1 then return end
+
     if current_block and is_current_block(x, y, z) then return end
 
     stop_instant()
 
     current_block = { x = x, y = y, z = z }
     local pos = {x, y, z}
-    instant = BreakingEvent:start({ pos = pos })
+    instant = BreakingEvent:start({ pos = pos, blockid = blockid })
 end
 
 function module.block_broken()

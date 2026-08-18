@@ -7,6 +7,17 @@ local self = Module()
 
 -- SERVER
 
+local function get_durability(blockid)
+    local durability = block.properties[blockid]["base:durability"]
+    if durability ~= nil then
+        return math.max(durability, 1e-5)
+    end
+    if block.get_model(blockid) == "X" then
+        return 1e-5
+    end
+    return 1.0
+end
+
 function self.server.on_start(client, data)
     local pid = client.player.pid
     local px, py, pz = player.get_pos(pid)
@@ -27,7 +38,23 @@ end
 function self.server.on_interrupt(client, instant) end
 
 function self.server.on_tick(client, instant)
-    return instant:get_progress() + 0.05
+    local x, y, z = unpack(instant.data.pos)
+    local blockid = block.get(x, y, z)
+    local speed = 1.0 / get_durability(blockid)
+    local power = 1.0
+
+    local invid, slot = player.get_inventory(client.player.pid)
+    local itemid, _ = inventory.get(invid, slot)
+    local tool = item.properties[itemid]["newgen:tool"]
+    if tool and tool.type == "breaker" then
+        local material = tool.materials[block.material(blockid)]
+        if material then
+            power = material.speed
+        end
+    end
+    speed = speed * power
+
+    return instant:get_progress() + 0.05 * speed
 end
 
 function self.server.on_finish(client, instant)
@@ -38,7 +65,7 @@ end
 -- CLIENT
 
 local function wrap_texture(progress)
-    return "cracks/cracks_" .. math.floor(progress * 11)
+    return "cracks/cracks_" .. math.floor(progress * 10)
 end
 
 local function delete_wrap(instant)
@@ -93,7 +120,7 @@ function self.client.on_ack_start(instant)
     end
 
     instant.data.wrapper = gfx.blockwraps.wrap(instant.data.pos, wrap_texture(0))
-    instant.data.blockid = block.get(unpack(instant.data.pos))
+    breaking_sounds(unpack(instant.data.pos))
 end
 
 function self.client.on_reject(instant) end
@@ -122,6 +149,6 @@ function self.client.on_interrupt(instant)
 end
 
 
-local BreakingEvent = PredictedEvent.new("newgen", "breaking", { pos = "Triple<int32, uint8, int32>" }, self:build())
+local BreakingEvent = PredictedEvent.new("newgen", "breaking", { pos = "Triple<int32, uint8, int32>", blockid = "uint16" }, self:build())
 
 return BreakingEvent
