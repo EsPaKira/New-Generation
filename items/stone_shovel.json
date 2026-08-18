@@ -1,0 +1,19 @@
+{
+    "icon": "items:stone_shovel",
+    "uses": 52,
+    "newgen:tool": {
+        "type": "breaker",
+        "materials": {
+            "base:ground": {
+                "speed": 1.9
+            },
+            "base:grass_block": {
+                "speed": 1.7
+            }
+        },
+        "damage": [
+            {"type": "slashing", "count": 1}
+        ]
+    },
+    "description": "1 slashing damage"
+}
