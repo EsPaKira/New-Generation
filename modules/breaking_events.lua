@@ -72,6 +72,15 @@ function self.server.on_finish(client, instant)
     block_drop.drop_block(x, y, z, client.player.pid)
 
     block.destruct(x, y, z, client.player.pid)
+
+    -- ITEM USES
+
+    local pinvid, slot = player.get_inventory(client.player.pid)
+    local itemid = inventory.get(pinvid, slot)
+
+    if item.properties[itemid]["newgen:tool"] and item.properties[itemid]["newgen:tool"].type == "breaker" then
+        inventory.use(pinvid, slot)
+    end
 end
 
 -- CLIENT
