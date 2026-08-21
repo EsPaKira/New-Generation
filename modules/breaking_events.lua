@@ -3,6 +3,9 @@ local api = require(string.format("%s:api/%s/api", m.pack_id, m.api_references.N
 local Module = api.utils.classes.module
 local PredictedEvent = api.predicted_events
 
+local base_util = require "base:util"
+local block_drop = require "server/block_drop"
+
 local self = Module()
 
 -- SERVER
@@ -39,6 +42,12 @@ function self.server.on_interrupt(client, instant) end
 
 function self.server.on_tick(client, instant)
     local x, y, z = unpack(instant.data.pos)
+
+    if player.is_instant_destruction(client.player.pid) then
+        block_drop.drop_block(x, y, z, client.player.pid)
+        return 1
+    end
+
     local blockid = block.get(x, y, z)
     local speed = 1.0 / get_durability(blockid)
     local power = 1.0
@@ -59,6 +68,9 @@ end
 
 function self.server.on_finish(client, instant)
     local x, y, z = unpack(instant.data.pos)
+
+    block_drop.drop_block(x, y, z, client.player.pid)
+
     block.destruct(x, y, z, client.player.pid)
 end
 
@@ -95,7 +107,7 @@ local function breaking_sounds(x, y, z)
     local blockid = block.get(x, y, z)
     local material = block.materials[block.material(blockid)]
     audio.play_sound(
-        1 >= 1.2 and -- tenporary solution
+        random.random(0, 1) == 0 and
             material.hitSound or
             material.stepsSound, 
         x + 0.5, y + 0.5, z + 0.5,
@@ -104,6 +116,9 @@ local function breaking_sounds(x, y, z)
 end
 
 local function breaked_sound(instant)
+    local pid = hud.get_player()
+    if player.is_instant_destruction(pid) then return end
+
     local x, y, z = unpack(instant.data.pos)
     local material = block.materials[block.material(instant.data.blockid)]
     audio.play_sound(
