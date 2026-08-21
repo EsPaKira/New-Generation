@@ -4,18 +4,9 @@
     "newgen:tool": {
         "type": "breaker",
         "materials": {
-            "base:stone": {
-                "speed": 3.3
-            },
-            "base:wood": {
-                "speed": 1.2
-            },
-            "base:ground": {
-                "speed": 1.2
-            },
-            "base:grass_block": {
-                "speed": 1.1
-            }
+            "newgen:stone": 3.3,
+            "newgen:wood": 1.2,
+            "newgen:ground": 1.2
         },
         "damage": [
             {"type": "piercing", "count": 3}

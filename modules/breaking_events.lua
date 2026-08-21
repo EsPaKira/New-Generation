@@ -56,9 +56,11 @@ function self.server.on_tick(client, instant)
     local itemid, _ = inventory.get(invid, slot)
     local tool = item.properties[itemid]["newgen:tool"]
     if tool and tool.type == "breaker" then
-        local material = tool.materials[block.material(blockid)]
-        if material then
-            power = material.speed
+        for material, material_speed in pairs(tool.materials) do
+            if block.has_tag(blockid, material) then
+                power = material_speed
+                break
+            end
         end
     end
     speed = speed * power

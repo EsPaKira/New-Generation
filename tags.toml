@@ -1,0 +1,18 @@
+"newgen:plant" = [
+    "base:leaves",
+    "base:grass"
+]
+"newgen:wood" = [
+    "base:wood",
+    "base:planks",
+    "base:torch",
+    "base:wooden_door"
+]
+"newgen:ground" = [
+    "base:dirt",
+    "base:grass_block"
+]
+"newgen:stone" = [
+    "base:stone",
+    "base:coal_ore"
+]

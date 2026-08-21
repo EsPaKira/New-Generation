@@ -12,6 +12,9 @@
     "picking-item": "newgen:stick",
     "base:durability": 0.0,
     "base:loot": [
-        {"item": "newgen:stick", "count": 1}
+        {
+            "item": "newgen:stick",
+            "count": 1
+        }
     ]
 }

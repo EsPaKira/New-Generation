@@ -4,18 +4,8 @@
     "newgen:tool": {
         "type": "breaker",
         "materials": {
-            "base:stone": {
-                "speed": 1
-            },
-            "base:wood": {
-                "speed": 1
-            },
-            "base:ground": {
-                "speed": 2
-            },
-            "base:grass_block": {
-                "speed": 1.8
-            }
+            "newgen:ground": 2,
+            "newgen:plant": 1.5
         },
         "damage": [
             {"type": "slashing", "count": 2}
