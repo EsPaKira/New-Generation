@@ -1,0 +1,17 @@
+{
+    "newgen:loot": {
+        "default": [
+            {
+                "item": "newgen:stick",
+                "min": 1,
+                "max": 2
+            }
+        ],
+        "newgen:axe": [
+            {
+                "item": "base:leaves.item",
+                "count": 1
+            }
+        ]
+    }
+}

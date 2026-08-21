@@ -21,5 +21,8 @@
             {"type": "slashing", "count": 5}
         ]
     },
+    "tags": [
+        "newgen:axe"
+    ],
     "description": "5 slashing damage"
 }

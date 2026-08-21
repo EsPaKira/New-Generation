@@ -9,7 +9,11 @@
     "stone_shovel",
     "tin_bronze_axe",
     "tin_bronze_pickaxe",
-    "tin_bronze_shovel"
+    "tin_bronze_shovel",
+    "stick"
   ],
-  "blocks": []
+  "blocks": [
+    "base:leaves",
+    "small_stick"
+  ]
 }

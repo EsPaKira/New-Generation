@@ -3,13 +3,27 @@ local base_util = require "base:util"
 local module = {}
 
 
+local function find_loot_by_tag(loot_table, itemid)
+    if itemid == 0 then return nil end
+
+    for key, loot in pairs(loot_table) do
+        if item.has_tag(itemid, key) then
+            return loot
+        end
+    end
+    return nil
+end
+
 local function drop_loot(x, y, z, pid)
     local blockid = block.get(x, y, z)
     local newgen_loot = block.properties[blockid]["newgen:loot"]
     local loot_table = {}
 
     if newgen_loot then
-        loot_table = base_util.calc_loot(newgen_loot)
+        local pinvid, slot = player.get_inventory(pid)
+        local itemid = inventory.get(pinvid, slot)
+        local matched = find_loot_by_tag(newgen_loot, itemid)
+        loot_table = base_util.calc_loot(matched or newgen_loot.default or {})
     else
         loot_table = base_util.block_loot(blockid)
     end
