@@ -42,19 +42,15 @@ function self.server.on_interrupt(client, instant) end
 
 function self.server.on_tick(client, instant)
     local x, y, z = unpack(instant.data.pos)
-
-    if player.is_instant_destruction(client.player.pid) then
-        block_drop.drop_block(x, y, z, client.player.pid)
-        return 1
-    end
-
     local blockid = block.get(x, y, z)
+
     local speed = 1.0 / get_durability(blockid)
     local power = 1.0
 
     local invid, slot = player.get_inventory(client.player.pid)
     local itemid, _ = inventory.get(invid, slot)
     local tool = item.properties[itemid]["newgen:tool"]
+
     if tool and tool.type == "breaker" then
         for material, material_speed in pairs(tool.materials) do
             if block.has_tag(blockid, material) then
@@ -128,7 +124,6 @@ end
 
 local function breaked_sound(instant)
     local pid = hud.get_player()
-    if player.is_instant_destruction(pid) then return end
 
     local x, y, z = unpack(instant.data.pos)
     local material = block.materials[block.material(instant.data.blockid)]

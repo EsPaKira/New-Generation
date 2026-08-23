@@ -1,5 +1,10 @@
 {
-  "entities": [],
+  "blocks": [
+    "base:leaves",
+    "small_stick",
+    "bag",
+    "box"
+  ],
   "items": [
     "copper_axe",
     "copper_pickaxe",
@@ -12,8 +17,5 @@
     "tin_bronze_shovel",
     "stick"
   ],
-  "blocks": [
-    "base:leaves",
-    "small_stick"
-  ]
+  "entities": []
 }

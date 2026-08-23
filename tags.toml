@@ -14,5 +14,7 @@
 ]
 "newgen:stone" = [
     "base:stone",
-    "base:coal_ore"
+    "base:coal_ore",
+    "base:glass",
+    "base:ice"
 ]

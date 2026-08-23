@@ -1,9 +1,12 @@
 local m = _G["$Multiplayer"]
-local block_breaking 
+local block_breaking
+local block_drop
 
 
 function on_world_open()
-    if m.side == "client" then
+    if m.side == "server" then
+        block_drop = require "server/block_drop"
+    else
         block_breaking = require "client/block_breaking"
     end
 end
@@ -20,8 +23,14 @@ function on_block_breaking(blockid, x, y, z, pid)
     block_breaking.start_breaking(x, y, z, pid)
 end
 
-function on_block_broken()
-    if m.side == "server" then return end
+function on_block_broken(blockid, x, y, z, pid)
+    if m.side == "server" then
+        if pid == -1 then
+            if not block_drop then return end
+            block_drop.drop_loot(blockid, x, y, z, pid)
+        end
+        return
+    end
 
     if not block_breaking then return end
     block_breaking.block_broken()

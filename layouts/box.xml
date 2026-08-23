@@ -1,0 +1,3 @@
+<inventory>
+    <slots-grid rows="3" count="18" sharefunc="inventory_share_func"/>
+</inventory>

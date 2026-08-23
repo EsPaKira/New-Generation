@@ -1,0 +1,21 @@
+{
+    "model": "custom",
+    "model-name": "bag",
+    "material": "base:carpet",
+    "hitbox": [0.1875, 0, 0.1875, 0.625, 0.625, 0.625],
+    "light-passing": true,
+    "ui-layout": "newgen:bag",
+    "inventory-size": 8,
+    "newgen:have-loot": true,
+    "state-based": {
+        "offset": 0,
+        "bits": 1,
+        "variants": [
+            {
+                "model": "custom",
+                "model-name": "bag"
+            }
+        ]
+    },
+    "base:durability": 2.5
+}

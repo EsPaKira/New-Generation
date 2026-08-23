@@ -25,6 +25,8 @@ local function stop_instant()
 end
 
 function module.start_breaking(x, y, z, pid)
+    if player.is_instant_destruction(pid) then return end
+
     local blockid = block.get(x, y, z)
     if blockid == -1 then return end
 
