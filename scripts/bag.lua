@@ -1,6 +1,6 @@
 local m = _G["$Multiplayer"]
 local api = require(string.format("%s:api/%s/api", m.pack_id, m.api_references.Neutron[2]))[m.side]
-local block_drop = require "server/block_drop"
+local block_drop = m.side == "server" and require "server/block_drop" or nil
 
 function on_interact(x, y, z, pid)
     if m.side == "client" then return end

@@ -1,5 +1,3 @@
-local m = _G["$Multiplayer"]
-local api = require(string.format("%s:api/%s/api", m.pack_id, m.api_references.Neutron[2]))[m.side]
 local BreakingEvent = require "breaking_events"
 
 local current_block = nil

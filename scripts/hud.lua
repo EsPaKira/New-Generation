@@ -1,0 +1,1 @@
+local stats = require "client/stats"

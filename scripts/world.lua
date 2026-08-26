@@ -1,6 +1,7 @@
 local m = _G["$Multiplayer"]
 local block_breaking
 local block_drop
+local player_loaded = false
 
 
 function on_world_open()
@@ -13,6 +14,10 @@ end
 
 function on_player_tick(pid)
     if m.side == "server" then return end
+    if not player_loaded then
+        events.emit("newgen:player_loaded", pid)
+        player_loaded = true
+    end
 
     if not block_breaking then return end
     block_breaking.player_tick(pid)

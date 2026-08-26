@@ -1,0 +1,22 @@
+{
+    "body_level": {
+        "active": true,
+        "default": 1
+    },
+    "max_hp": {
+        "active": true,
+        "default": 5
+    },
+    "hp": {
+        "active": true,
+        "default": 5
+    },
+    "max_oxygen": {
+        "active": true,
+        "default": 5
+    },
+    "oxygen": {
+        "active": true,
+        "default": 5
+    }
+}

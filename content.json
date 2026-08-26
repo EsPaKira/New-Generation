@@ -1,9 +1,6 @@
 {
-  "blocks": [
-    "base:leaves",
-    "small_stick",
-    "bag",
-    "box"
+  "entities": [
+    "base:player"
   ],
   "items": [
     "copper_axe",
@@ -17,5 +14,10 @@
     "tin_bronze_shovel",
     "stick"
   ],
-  "entities": []
+  "blocks": [
+    "base:leaves",
+    "small_stick",
+    "bag",
+    "box"
+  ]
 }
