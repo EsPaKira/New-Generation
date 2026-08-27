@@ -9,18 +9,19 @@ local function set_stats(pid)
     local pentity = entities.get(player.get_entity(pid))
     local stats_component = pentity:get_component("newgen:stats")
 
+    local identity = api.sandbox.players.get_by_pid(pid).identity
     local replica = module.get(pid)
 
-    if not metadata.data.players[api.sandbox.players.get_by_pid(pid).identity] then
-        metadata.data.players[api.sandbox.players.get_by_pid(pid).identity] = {}
+    if not metadata.data.players[identity] then
+        metadata.data.players[identity] = {}
         local stats = stats_component.get_all_stats()
 
         for stat, value in pairs(stats) do
             replica[stat] = value
-            metadata.data.players[api.sandbox.players.get_by_pid(pid).identity][stat] = value
+            metadata.data.players[identity][stat] = value
         end
     else
-        for stat, value in pairs(metadata.data.players[api.sandbox.players.get_by_pid(pid).identity]) do
+        for stat, value in pairs(metadata.data.players[identity]) do
 
             replica[stat] = value
             stats_component.set_stat(stat, value)

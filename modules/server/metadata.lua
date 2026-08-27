@@ -6,6 +6,8 @@ local module = {
 
 
 function module.load()
+    if not file.isdir("world:data/newgen") then return end
+
     for _, path in ipairs(file.list("world:data/newgen")) do
         local name = file.stem(path)
         local data = file.read(path)

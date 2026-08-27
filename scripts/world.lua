@@ -18,7 +18,9 @@ function on_world_open()
 end
 
 function on_world_save()
-    metadata.save()
+    if m.side == "server" then
+        metadata.save()
+    end
 end
 
 if m.side == "client" then

@@ -170,6 +170,6 @@ function self.client.on_interrupt(instant)
 end
 
 
-local BreakingEvent = PredictedEvent.new("newgen", "breaking", { pos = "Triple<int32, uint8, int32>", blockid = "uint16" }, self:build())
+local BreakingEvent = PredictedEvent.new(PACK_ID, "breaking", { pos = "Triple<int32, uint8, int32>", blockid = "uint16" }, self:build())
 
 return BreakingEvent

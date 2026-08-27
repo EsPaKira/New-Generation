@@ -31,10 +31,13 @@ function set_stat(stat, value)
             if replica then
                 replica[stat] = value
             end
-            if not metadata.data.players[api.sandbox.players.get_by_pid(pid).identity] then
-                metadata.data.players[api.sandbox.players.get_by_pid(pid).identity] = {}
+
+            local identity = api.sandbox.players.get_by_pid(pid).identity
+
+            if not metadata.data.players[identity] then
+                metadata.data.players[identity] = {}
             end
-            metadata.data.players[api.sandbox.players.get_by_pid(pid).identity][stat] = value
+            metadata.data.players[identity][stat] = value
         end
     end  
 end

@@ -9,6 +9,6 @@ for stat, data in pairs(config.stats) do
 end
 
 
-local StatsReplication = api.replications.new("newgen", "stats", schema)
+local StatsReplication = api.replications.new(PACK_ID, "stats", schema)
 
 return StatsReplication
