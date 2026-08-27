@@ -12,15 +12,16 @@ function on_world_open()
     end
 end
 
-function on_player_tick(pid)
-    if m.side == "server" then return end
-    if not player_loaded then
-        events.emit("newgen:player_loaded", pid)
-        player_loaded = true
-    end
+if m.side == "client" then
+    function on_player_tick(pid)
+        if not player_loaded then
+            events.emit("newgen:player_loaded", pid)
+            player_loaded = true
+        end
 
-    if not block_breaking then return end
-    block_breaking.player_tick(pid)
+        if not block_breaking then return end
+        block_breaking.player_tick(pid)
+    end
 end
 
 function on_block_breaking(blockid, x, y, z, pid)

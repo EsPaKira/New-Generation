@@ -1,4 +1,5 @@
 local m = _G["$Multiplayer"]
+local server_stats = m.side == "server" and require "server/stats" or nil
 
 local stats = {}
 
@@ -19,6 +20,16 @@ end
 function set_stat(stat, value)
     stats[stat] = value
     SAVED_DATA[stat] = value
+
+    if server_stats then
+        local pid = entity:get_player()
+        if pid ~= -1 then
+            local replica = server_stats.get(pid)
+            if replica then
+                replica[stat] = value
+            end
+        end
+    end
 end
 
 function get_all_stats()
