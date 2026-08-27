@@ -1,15 +1,24 @@
 local m = _G["$Multiplayer"]
+
 local block_breaking
-local block_drop
 local player_loaded = false
+
+local block_drop
+local metadata
 
 
 function on_world_open()
     if m.side == "server" then
+        metadata = require "server/metadata"
+        metadata.load()
         block_drop = require "server/block_drop"
     else
         block_breaking = require "client/block_breaking"
     end
+end
+
+function on_world_save()
+    metadata.save()
 end
 
 if m.side == "client" then

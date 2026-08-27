@@ -1,7 +1,10 @@
 local m = _G["$Multiplayer"]
+local api = require(string.format("%s:api/%s/api", m.pack_id, m.api_references.Neutron[2]))[m.side]
 local server_stats = m.side == "server" and require "server/stats" or nil
+local metadata = m.side == "server" and require "server/metadata" or nil
 
 local stats = {}
+
 
 local function def_stats(name, def_value)
     stats[name] = SAVED_DATA[name] or ARGS[name] or def_value
@@ -21,15 +24,19 @@ function set_stat(stat, value)
     stats[stat] = value
     SAVED_DATA[stat] = value
 
-    if server_stats then
+    if m.side == "server" then
         local pid = entity:get_player()
         if pid ~= -1 then
             local replica = server_stats.get(pid)
             if replica then
                 replica[stat] = value
             end
+            if not metadata.data.players[api.sandbox.players.get_by_pid(pid).identity] then
+                metadata.data.players[api.sandbox.players.get_by_pid(pid).identity] = {}
+            end
+            metadata.data.players[api.sandbox.players.get_by_pid(pid).identity][stat] = value
         end
-    end
+    end  
 end
 
 function get_all_stats()

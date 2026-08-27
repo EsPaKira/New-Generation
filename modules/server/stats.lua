@@ -1,15 +1,30 @@
+local m = _G["$Multiplayer"]
+local api = require(string.format("%s:api/%s/api", m.pack_id, m.api_references.Neutron[2]))[m.side]
 local StatsReplication = require "stats_replication"
+local metadata = require "server/metadata"
 local module = {}
 
 
 local function set_stats(pid)
     local pentity = entities.get(player.get_entity(pid))
     local stats_component = pentity:get_component("newgen:stats")
-    local stats = stats_component.get_all_stats()
 
     local replica = module.get(pid)
-    for stat, value in pairs(stats) do
-        replica[stat] = value
+
+    if not metadata.data.players[api.sandbox.players.get_by_pid(pid).identity] then
+        metadata.data.players[api.sandbox.players.get_by_pid(pid).identity] = {}
+        local stats = stats_component.get_all_stats()
+
+        for stat, value in pairs(stats) do
+            replica[stat] = value
+            metadata.data.players[api.sandbox.players.get_by_pid(pid).identity][stat] = value
+        end
+    else
+        for stat, value in pairs(metadata.data.players[api.sandbox.players.get_by_pid(pid).identity]) do
+
+            replica[stat] = value
+            stats_component.set_stat(stat, value)
+        end
     end
 end
 

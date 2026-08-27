@@ -6,6 +6,7 @@ function on_scripts_loading()
     require "config"
 
     if m.side == "server" then
+        require "server/metadata"
         require "server/console"
         require "server/stats"
     else
