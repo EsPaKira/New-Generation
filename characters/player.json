@@ -1,0 +1,10 @@
+{
+    "full-name": "Base Player",
+    "stats": {
+        "body_level": 1,
+        "hp": 20,
+        "max_hp": 20,
+        "oxygen": 20,
+        "max_oxygen": 20
+    }
+}

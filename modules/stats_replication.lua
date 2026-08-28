@@ -8,6 +8,8 @@ for stat, data in pairs(config.stats) do
     schema[stat] = data.net_type
 end
 
+schema.choosen_character = "string"
+
 
 local StatsReplication = api.replications.new(PACK_ID, "stats", schema)
 

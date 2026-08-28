@@ -20,11 +20,13 @@ if m.side == "server" then
     end
 end
 
-function set_stat(stat, value)
+function set_stat(stat, value, from_stats_module)
     stats[stat] = value
     SAVED_DATA[stat] = value
 
     if m.side == "server" then
+        if from_stats_module then return end
+
         local pid = entity:get_player()
         if pid ~= -1 then
             local replica = server_stats.get(pid)
@@ -33,11 +35,18 @@ function set_stat(stat, value)
             end
 
             local identity = api.sandbox.players.get_by_pid(pid).identity
+            local character_id = metadata.data.players[identity].choosen_character
 
             if not metadata.data.players[identity] then
-                metadata.data.players[identity] = {}
+                metadata.data.players[identity] = {
+                    characters = {}
+                }
+                metadata.data.players[identity].characters[character_id] = {
+                    stats = {}
+                }
             end
-            metadata.data.players[identity][stat] = value
+
+            metadata.data.players[identity].characters[character_id].stats[stat] = value
         end
     end  
 end
