@@ -13,34 +13,28 @@ end
 local function set_stats(pid, character_id)
     local pentity = entities.get(player.get_entity(pid))
     local stats_component = pentity:get_component("newgen:stats")
-
     local identity = api.sandbox.players.get_by_pid(pid).identity
     local replica = module.get(pid)
 
-    if not metadata.data.players[identity] then
-        metadata.data.players[identity] = {
-            characters = {}
-        }
-        metadata.data.players[identity].characters[character_id] = {
-            stats = {}
-        }
+    local record = metadata.data.players[identity]
+    if not record then
+        record = { characters = {} }
+        metadata.data.players[identity] = record
+    end
 
-        local character_stats = get_character_stats(character_id)
+    local character = record.characters[character_id]
+    if not character then
+        character = { stats = get_character_stats(character_id) }
+        record.characters[character_id] = character
+    end
 
-        for stat, value in pairs(character_stats) do
-            replica[stat] = value
-            metadata.data.players[identity].characters[character_id].stats[stat] = value
-            stats_component.set_stat(stat, value, true)
-        end
-    else
-        for stat, value in pairs(metadata.data.players[identity].characters[character_id].stats) do
-            replica[stat] = value
-            stats_component.set_stat(stat, value, true)
-        end
+    for stat, value in pairs(character.stats) do
+        replica[stat] = value
+        stats_component.set_stat(stat, value, true)
     end
 
     replica.choosen_character = character_id
-    metadata.data.players[identity].choosen_character = character_id
+    record.choosen_character = character_id
 end
 
 function module.add(uid, initial, client)

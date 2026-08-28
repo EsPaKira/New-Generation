@@ -35,18 +35,20 @@ function set_stat(stat, value, from_stats_module)
             end
 
             local identity = api.sandbox.players.get_by_pid(pid).identity
-            local character_id = metadata.data.players[identity].choosen_character
-
-            if not metadata.data.players[identity] then
-                metadata.data.players[identity] = {
-                    characters = {}
-                }
-                metadata.data.players[identity].characters[character_id] = {
-                    stats = {}
-                }
+            
+            local record = metadata.data.players[identity]
+            if not record or not record.choosen_character then
+                return -- called before server:on_player_ready in server/stats.lua
             end
 
-            metadata.data.players[identity].characters[character_id].stats[stat] = value
+            local character_id = record.choosen_character
+            local character = record.characters[character_id]
+            if not character then
+                character = { stats = {} }
+                record.characters[character_id] = character
+            end
+
+            character.stats[stat] = value
         end
     end  
 end
