@@ -1,6 +1,51 @@
 {
-  "entities": [
-    "base:player"
+  "blocks": [
+    "base:leaves",
+    "small_stick",
+    "bag",
+    "box",
+    "birch",
+    "birch_planks",
+    "bush",
+    "calendula",
+    "campfire",
+    "cattail",
+    "chalk",
+    "chanterelles",
+    "clover",
+    "daisies",
+    "dandelions",
+    "dead_bush",
+    "dead_white_bush",
+    "diorite",
+    "dolomite",
+    "gabbro",
+    "gneiss",
+    "granite",
+    "gypsum",
+    "knapweeds",
+    "lily",
+    "limestone",
+    "mantle",
+    "marble",
+    "moss",
+    "mossy_red_bricks",
+    "mud_bricks",
+    "peridotite",
+    "red_bricks",
+    "red_clay",
+    "sailcloth",
+    "sandstone",
+    "scarecrow",
+    "snow",
+    "snow_grass",
+    "snow_pile",
+    "spruce",
+    "spruce_planks",
+    "web",
+    "white_mushrooms",
+    "willow",
+    "willow_planks"
   ],
   "items": [
     "copper_axe",
@@ -14,10 +59,7 @@
     "tin_bronze_shovel",
     "stick"
   ],
-  "blocks": [
-    "base:leaves",
-    "small_stick",
-    "bag",
-    "box"
+  "entities": [
+    "base:player"
   ]
 }
