@@ -28,7 +28,7 @@ function set_stat(stat, value, from_stats_module)
         if from_stats_module then return end
 
         local pid = entity:get_player()
-        if pid ~= -1 then
+        if pid ~= -1 and pid ~= 0 then
             local replica = server_stats.get(pid)
             if replica then
                 replica[stat] = value

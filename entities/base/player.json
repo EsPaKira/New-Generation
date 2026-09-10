@@ -1,5 +1,8 @@
 {
     "components": [
-        "newgen:stats"
+        "newgen:stats",
+        "newgen:swimming",
+        "newgen:oxygen",
+        "newgen:health"
     ]
 }
