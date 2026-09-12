@@ -1,8 +1,12 @@
+local m = _G["$Multiplayer"]
+if m.side == "client" then return end
+
 local newgen_utils = require "utils"
+local config = require "config"
 local stats = entity:require_component("newgen:stats")
 
 local time_under_water = 0
-local SUFFOCATION_DAMAGE = 1000 -- TODO: suffocation damage config
+local SUFFOCATION_DAMAGE = config.main["suffocation-damage"]
 
 
 function on_update(tps)

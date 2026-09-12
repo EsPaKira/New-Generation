@@ -1,5 +1,6 @@
 local module = {
-    stats = {}
+    stats = {},
+    main = {}
 }
 
 
@@ -11,5 +12,7 @@ for stat, data in pairs(file.read_combined_object("config/newgen_stats.json")) d
         }
     end
 end
+
+module.main = file.read_combined_object("config/newgen.json")
 
 return module

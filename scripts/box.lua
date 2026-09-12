@@ -3,7 +3,7 @@ local api = require(string.format("%s:api/%s/api", m.pack_id, m.api_references.N
 local block_drop = m.side == "server" and require "server/block_drop" or nil
 
 function on_interact(x, y, z, pid)
-    if m.side == "client" then return end
+    if m.side == "client" then return true end
 
     local player_obj = api.sandbox.players.get_by_pid(pid)
     api.sandbox.inventories.open_block(player_obj, {x, y, z})
