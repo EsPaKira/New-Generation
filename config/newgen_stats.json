@@ -18,5 +18,13 @@
     "oxygen": {
         "active": true,
         "default": 5
+    },
+    "hunger": {
+        "active": true,
+        "default": 0
+    },
+    "max_hunger": {
+        "active": true,
+        "default": 20
     }
 }
