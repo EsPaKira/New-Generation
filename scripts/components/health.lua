@@ -8,18 +8,18 @@ local stats = entity:require_component("newgen:stats")
 local health_regen_timer = 0
 local in_battle_timer = 0
 local hunger_timer = 0
+local max_fall_y = nil
 
 
 function set_health(value)
     if m.side == "client" then return end
-    if value == 0 then return end
 
     local health = stats:get_hp()
     local max_health = stats:get_max_hp()
-    print(value, health)
+
     health = math.min(math.max(0, health - value), max_health)
-    stats.set_stat("health", health)
-    print("HEALTH", health)
+    stats.set_stat("hp", health)
+
     if health == 0 then
         die()
     end
@@ -46,6 +46,7 @@ function die()
 end
 
 function heal(points)
+    if points == 0 then return end
     set_health(-points)
 end
 
@@ -96,7 +97,20 @@ end
 --     in_battle_timer = in_battle_timer - 1 / tps
 -- end
 
-function on_grounded(force)
-    local dmg = math.floor((force - 13) * 1.1)
-    damage(math.max(0, math.floor(dmg)), "falling")
+function on_update(tps)
+    local y = entity.transform:get_pos()[2]
+    if max_fall_y == nil or y > max_fall_y then
+        max_fall_y = y
+    end
+end
+
+function on_grounded()
+    local y = entity.transform:get_pos()[2]
+    local height = (max_fall_y or y) - y
+    max_fall_y = nil
+
+    if height <= 0 then return end
+
+    local dmg = math.max(0, math.floor((height - 3) * 2))
+    damage(dmg, "falling")
 end
