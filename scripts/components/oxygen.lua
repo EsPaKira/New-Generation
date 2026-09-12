@@ -1,4 +1,3 @@
-local m = _G["$Multiplayer"]
 local time_under_water = 0
 
 local stats = entity:require_component("newgen:stats")
@@ -6,8 +5,6 @@ local SUFFOCATION_DAMAGE = 1000 -- TODO: suffocation damage config
 
 
 function on_update(tps)
-    if m.side == "client" then return end
-
     if time_under_water >= 1 then
         local oxygen = stats:get_oxygen()
         local max_oxygen = stats:get_max_oxygen()

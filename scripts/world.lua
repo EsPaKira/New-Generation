@@ -27,6 +27,11 @@ if m.side == "client" then
     function on_player_tick(pid)
         if not player_loaded then
             events.emit("newgen:player_loaded", pid)
+
+            local pentity = entities.get(player.get_entity(pid))
+            pentity:set_enabled("newgen:health", false)
+            pentity:set_enabled("newgen:oxygen", false)
+
             player_loaded = true
         end
 

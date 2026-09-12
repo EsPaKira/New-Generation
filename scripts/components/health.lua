@@ -1,7 +1,6 @@
 -- Original code - base_survival by MihailRis
 -- Protected by MIT license
 -- https://github.com/MihailRis/base_survival
-local m = _G["$Multiplayer"]
 local stats = entity:require_component("newgen:stats")
 -- local hunger_system = entity:get_component("newgen:hunger_system")
 
@@ -12,8 +11,6 @@ local max_fall_y = nil
 
 
 function set_health(value)
-    if m.side == "client" then return end
-
     local health = stats:get_hp()
     local max_health = stats:get_max_hp()
 
