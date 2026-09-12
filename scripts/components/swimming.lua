@@ -1,12 +1,10 @@
 -- Original code - NotSurvival by kotisoff
 -- Protected by MIT license
 -- https://github.com/kotisoff/NotSurvival
-
 local m = _G["$Multiplayer"]
 local body = entity.rigidbody
-local tsf = entity.transform
+local newgen_utils = require "utils"
 
-local water_id = block.index("base:water")
 local swim_speed = 3.5
 
 
@@ -14,28 +12,6 @@ local function is_flight()
     local pid = entity:get_player()
     if pid == -1 then return false end
     return player.is_flight(pid) or player.is_noclip(pid)
-end
-
-function entity_pos()
-    local pos = tsf:get_pos()
-    pos[1] = math.floor(pos[1])
-    pos[3] = math.floor(pos[3])
-    return pos
-end
-
-local function is_in_water()
-    local pos = entity_pos()
-    return block.get(pos[1], pos[2] - 0.3, pos[3]) == water_id or block.get(pos[1], pos[2] + 1, pos[3]) == water_id
-end
-
-function head_underwater()
-    local pos = entity_pos()
-    return block.get(pos[1], pos[2] + 0.8, pos[3]) == water_id
-end
-
-local function body_underwater()
-    local pos = entity_pos()
-    return block.get(pos[1], pos[2], pos[3]) == water_id
 end
 
 local function is_local_player()
@@ -47,8 +23,9 @@ function on_physics_update()
     if m.side == "server" then return end
     if not is_local_player() then return end
     if is_flight() then return end
+    local eid = entity:get_uid()
 
-    if is_in_water() then
+    if newgen_utils.is_in_water(eid) then
         local vel = body:get_vel()
 
         if vec3.length({ vel[1], 0, vel[3] }) > swim_speed then
@@ -60,7 +37,7 @@ function on_physics_update()
 
         if not hud.is_inventory_open() then
             if input.is_active("movement.jump") then
-                if not body_underwater() then
+                if not newgen_utils.is_body_underwater(eid) then
                     vel[2] = 6
                 else
                     vel[2] = 3
