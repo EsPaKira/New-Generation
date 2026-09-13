@@ -26,5 +26,13 @@
     "max_hunger": {
         "active": true,
         "default": 20
+    },
+    "stamina": {
+        "active": true,
+        "default": 20
+    },
+    "max_stamina": {
+        "active": true,
+        "default": 20
     }
 }

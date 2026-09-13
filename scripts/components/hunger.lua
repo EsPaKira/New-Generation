@@ -1,9 +1,14 @@
+local m = _G["$Multiplayer"]
+if m.side == "client" then return end
+
+local stats = entity:require_component("newgen:stats")
+
 local hunger_progress = 0
 
 
 function set_hunger(value)
     if value == 0 then return end
-    if player.get_instant_destruction(entity:get_player()) then return end
+    if player.is_instant_destruction(entity:get_player()) then return end
 
     local max_hunger = stats:get_max_hunger()
 
