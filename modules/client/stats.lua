@@ -8,6 +8,10 @@ function module.get_stat(stat)
     return stats[stat]
 end
 
+function module.get_all()
+    return stats
+end
+
 events.on("newgen:player_loaded", function(pid)
     stats = StatsReplication:create_listener(pid, {})
 end)

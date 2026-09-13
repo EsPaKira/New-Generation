@@ -1,5 +1,27 @@
 {
     "post-effects": [
         "death"
+    ],
+    "textures": [
+        "gui/health_bar",
+        "gui/oxygen_bar",
+        "gui/stamina_bar",
+        "gui/curtain",
+        "gui/bar_frame",
+        "gui/hunger",
+        "gui/head",
+        "gui/crafting",
+        "gui/newgen_settings_icon"
+    ],
+    "sounds": [
+        "ambient/water_splash",
+        "entities/bear_breath",
+        "entities/damage",
+        "entities/skeleton_damage",
+        "entities/spider",
+        "entities/spider_attack",
+        "entities/spider_damage",
+        "ui/button_click",
+        "ui/upgrade"
     ]
 }
