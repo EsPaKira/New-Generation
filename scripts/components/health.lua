@@ -6,6 +6,7 @@ if m.side == "client" then return end
 
 local stats = entity:require_component("newgen:stats")
 -- local hunger_system = entity:get_component("newgen:hunger_system")
+local tsf = entity.transform
 
 local health_regen_timer = 0
 local in_battle_timer = 0
@@ -26,8 +27,6 @@ function set_health(value)
 end
 
 function die()
-    local tsf = entity.transform
-
     local pid = entity:get_player()
     if pid == -1 then
         local loot = entity:get_component("newgen:loot")
@@ -98,14 +97,14 @@ end
 -- end
 
 function on_update(tps)
-    local y = entity.transform:get_pos()[2]
+    local y = tsf:get_pos()[2]
     if max_fall_y == nil or y > max_fall_y then
         max_fall_y = y
     end
 end
 
 function on_grounded()
-    local y = entity.transform:get_pos()[2]
+    local y = tsf:get_pos()[2]
     local height = (max_fall_y or y) - y
     max_fall_y = nil
 

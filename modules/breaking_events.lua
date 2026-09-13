@@ -41,7 +41,8 @@ end
 function self.server.on_interrupt(client, instant) end
 
 function self.server.on_tick(client, instant)
-    local x, y, z = unpack(instant.data.pos)
+    local pos = instant.data.pos
+    local x, y, z = pos[1], pos[2], pos[3]
     local blockid = block.get(x, y, z)
 
     local speed = 1.0 / get_durability(blockid)
@@ -65,13 +66,14 @@ function self.server.on_tick(client, instant)
 end
 
 function self.server.on_finish(client, instant)
-    local x, y, z = unpack(instant.data.pos)
+    local pos = instant.data.pos
+    local x, y, z = pos[1], pos[2], pos[3]
 
     block_drop.drop_block(x, y, z, client.player.pid)
 
     block.destruct(x, y, z, client.player.pid)
 
-    -- ITEM USES
+    -- TOOLS USES
 
     local pinvid, slot = player.get_inventory(client.player.pid)
     local itemid = inventory.get(pinvid, slot)
@@ -125,8 +127,10 @@ end
 local function breaked_sound(instant)
     local pid = hud.get_player()
 
-    local x, y, z = unpack(instant.data.pos)
+    local pos = instant.data.pos
+    local x, y, z = pos[1], pos[2], pos[3]
     local material = block.materials[block.material(instant.data.blockid)]
+
     audio.play_sound(
         material.breakSound,
         x + 0.5, y + 0.5, z + 0.5,
@@ -140,8 +144,10 @@ function self.client.on_ack_start(instant)
         return
     end
 
-    instant.data.wrapper = gfx.blockwraps.wrap(instant.data.pos, wrap_texture(0))
-    breaking_sounds(unpack(instant.data.pos))
+    local pos = instant.data.pos
+
+    instant.data.wrapper = gfx.blockwraps.wrap(pos, wrap_texture(0))
+    breaking_sounds(pos[1], pos[2], pos[3])
 end
 
 function self.client.on_reject(instant) end
@@ -152,7 +158,8 @@ function self.client.on_progress(instant)
     instant.data.tick = (instant.data.tick or 0) + 1
 
     if instant.data.tick % 4 == 0 then
-        local x, y, z = unpack(instant.data.pos)
+        local pos = instant.data.pos
+        local x, y, z = pos[1], pos[2], pos[3]
         breaking_particles(x, y, z)
         breaking_sounds(x, y, z)
     end
