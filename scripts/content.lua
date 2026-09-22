@@ -4,6 +4,7 @@ function on_scripts_loading()
     require "rules"
     require "breaking_events"
     require "config"
+    require "respawn"
 
     if m.side == "server" then
         require "server/metadata"

@@ -12,8 +12,6 @@ function module.get_all()
     return stats
 end
 
-events.on("newgen:player_loaded", function(pid)
-    stats = StatsReplication:create_listener(pid, {})
-end)
+stats = StatsReplication:create_listener(hud.get_player(), {})
 
 return module

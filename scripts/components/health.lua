@@ -60,7 +60,7 @@ function damage(points, type)
     if points == 0 then return end
 
     local pid = entity:get_player()
-    if pid and player.is_instant_destruction(pid) then
+    if pid ~= -1 and player.is_instant_destruction(pid) then
         return
     end
 

@@ -1,4 +1,9 @@
 {
+    "is_dead": {
+        "active": true,
+        "default": false,
+        "net_type": "boolean"
+    },
     "body_level": {
         "active": true,
         "default": 1
