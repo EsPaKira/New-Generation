@@ -1,2 +1,6 @@
-<container>
+<container size-func="unpack(gui.get_viewport())">
+    <container size="300,100" position-func="gui.get_viewport()[1] / 2 - 150, gui.get_viewport()[2] / 2 - 50" color="#000000">
+        <container size="200,40" gravity="top-center"><label text-align="center" gravity="center-center" color="#ff0000">You are dead.</label></container>
+        <button size="100,40" gravity="bottom-center">Respawn</button>
+    </container>
 </container>

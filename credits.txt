@@ -1,2 +1,10 @@
-textures/gui/planks.png - Neveix
-shaders/effects/death.glsl - MihailRis
+Neveix - https://github.com/Neveix
+    textures/gui/planks.png
+
+MihailRis - https://github.com/MihailRis
+    scripts/components/health.lua - [MIT license] - https://github.com/MihailRis/base_survival/blob/main/LICENSE
+
+kotisoff - https://github.com/kotisoff
+    modules/client/survival_ui.lua - [MIT license] - https://github.com/kotisoff/NotSurvival/blob/multiplayer/LICENSE
+    layouts/survival_ui.xml - [MIT license] - https://github.com/kotisoff/NotSurvival/blob/multiplayer/LICENSE
+    layouts/survival_ui.xml.lua - [MIT license] - https://github.com/kotisoff/NotSurvival/blob/multiplayer/LICENSE

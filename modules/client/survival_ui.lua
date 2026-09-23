@@ -7,6 +7,7 @@ local old_oxygen = nil
 local old_max_oxygen = nil
 local old_hunger = nil
 local old_max_hunger = nil
+local death_effect = gfx.posteffects.index("newgen:death")
 
 local module = {}
 
@@ -43,8 +44,26 @@ function module.close_survival_hud()
     hud.close("newgen:survival_ui")
 end
 
+function module.open_death_menu()
+    module.close_survival_hud()
+    hud.open_permanent("newgen:death_menu")
+    gfx.posteffects.set_effect(death_effect, "death")
+    gfx.posteffects.set_intensity(death_effect, 1.0)
+end
+
+function module.close_death_menu()
+    hud.show_overlay("newgen:survival_ui")
+    hud.close("newgen:death_menu")
+    gfx.posteffects.set_intensity(death_effect, 0.0)
+end
+
 input.add_callback("hud.inventory", function()
     --hud.close("newgen:body_tree")
+    if hud.is_open("newgen:death_menu") then
+        hud.close_inventory()
+        return
+    end
+
     if hud.is_open("newgen:side_menu") then
         hud.close("newgen:side_menu")
         return
@@ -58,6 +77,8 @@ input.add_callback("hud.inventory", function()
 end)
 
 input.add_callback("key:escape", function()
+    if hud.is_open("newgen:death_menu") then return end
+
     hud.close("newgen:side_menu")
     --hud.close("newgen:body_tree")
 end)
