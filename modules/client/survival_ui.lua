@@ -7,10 +7,37 @@ local old_oxygen = nil
 local old_max_oxygen = nil
 local old_hunger = nil
 local old_max_hunger = nil
-local death_effect = gfx.posteffects.index("newgen:death")
+local death_effect
 
 local module = {}
 
+
+function module.open()
+    death_effect = gfx.posteffects.index("newgen:death")
+
+    input.add_callback("hud.inventory", function()
+        --hud.close("newgen:body_tree")
+        if hud.is_open("newgen:death_menu") then return end
+
+        if hud.is_open("newgen:side_menu") then
+            hud.close("newgen:side_menu")
+            return
+        end
+        -- if hud.is_open("newgen:crafts") then
+        --     hud.close("newgen:crafts")
+        -- end
+        if not hud.is_inventory_open() then
+            hud.open_permanent("newgen:side_menu")
+        end
+    end)
+
+    input.add_callback("key:escape", function()
+        if hud.is_open("newgen:death_menu") then return end
+
+        hud.close("newgen:side_menu")
+        --hud.close("newgen:body_tree")
+    end)
+end
 
 function module.update()
     local all_stats = stats.get_all()
@@ -46,7 +73,7 @@ end
 
 function module.open_death_menu()
     module.close_survival_hud()
-    hud.open_permanent("newgen:death_menu")
+    hud.show_overlay("newgen:death_menu")
     gfx.posteffects.set_effect(death_effect, "death")
     gfx.posteffects.set_intensity(death_effect, 1.0)
 end
@@ -56,32 +83,6 @@ function module.close_death_menu()
     hud.close("newgen:death_menu")
     gfx.posteffects.set_intensity(death_effect, 0.0)
 end
-
-input.add_callback("hud.inventory", function()
-    --hud.close("newgen:body_tree")
-    if hud.is_open("newgen:death_menu") then
-        hud.close_inventory()
-        return
-    end
-
-    if hud.is_open("newgen:side_menu") then
-        hud.close("newgen:side_menu")
-        return
-    end
-    -- if hud.is_open("newgen:crafts") then
-    --     hud.close("newgen:crafts")
-    -- end
-    if not hud.is_inventory_open() then
-        hud.open_permanent("newgen:side_menu")
-    end
-end)
-
-input.add_callback("key:escape", function()
-    if hud.is_open("newgen:death_menu") then return end
-
-    hud.close("newgen:side_menu")
-    --hud.close("newgen:body_tree")
-end)
 
 events.on("newgen:block_open", function()
     hud.open_permanent("newgen:side_menu")
