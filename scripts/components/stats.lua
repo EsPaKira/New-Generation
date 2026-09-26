@@ -1,7 +1,10 @@
 local m = _G["$Multiplayer"]
+if m.side == "client" then return end
+
 local api = require(string.format("%s:api/%s/api", m.pack_id, m.api_references.Neutron[2]))[m.side]
-local server_stats = m.side == "server" and require "server/stats" or nil
-local metadata = m.side == "server" and require "server/metadata" or nil
+local server_stats = require "server/stats" 
+local metadata = require "server/metadata"
+local config = require "config"
 
 local stats = {}
 
@@ -13,11 +16,8 @@ local function def_stats(name, def_value)
     end
 end
 
-if m.side == "server" then
-    local config = require "config"
-    for stat, data in pairs(config.stats) do
-        def_stats(stat, data.default)
-    end
+for stat, data in pairs(config.stats) do
+    def_stats(stat, data.default)
 end
 
 function set_stat(stat, value, from_stats_module)

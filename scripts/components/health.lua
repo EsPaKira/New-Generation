@@ -33,15 +33,10 @@ function die()
         if loot then
             loot.drop_loot()
         end
-        -- entity:despawn()
-        return
     end
 
-    -- if not rules.get("keep-inventory") then
-    --     DI.drop_inventory(player.get_inventory(pid), entity.transform:get_pos(), 8)
-    -- end
-    -- entity:despawn()
-    -- player.set_entity(pid, 0)
+    stats.set_stat("is_dead", true)
+    max_fall_y = nil
 end
 
 function heal(points)

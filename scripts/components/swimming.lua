@@ -2,18 +2,16 @@
 -- Protected by MIT license
 -- https://github.com/kotisoff/NotSurvival
 local m = _G["$Multiplayer"]
+if m.side == "server" then return end
+
 local newgen_utils = require "utils"
 local body = entity.rigidbody
 local eid = entity:get_uid()
 
 local swim_speed = 3.5
 
-local is_server_side = (m.side == "server") 
-
 
 function on_physics_update()
-    if is_server_side then return end
-
     local pid = entity:get_player()
     if pid == -1 or pid ~= hud.get_player() then return end
     if player.is_flight(pid) or player.is_noclip(pid) then return end

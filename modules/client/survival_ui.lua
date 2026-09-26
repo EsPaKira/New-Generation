@@ -1,5 +1,6 @@
 local stats = require "client/stats"
 local survival_hud_manager = require "client/survival_hud_manager"
+local respawn = require "respawn"
 
 local old_hp = nil
 local old_max_hp = nil
@@ -7,6 +8,7 @@ local old_oxygen = nil
 local old_max_oxygen = nil
 local old_hunger = nil
 local old_max_hunger = nil
+local old_is_dead = false
 local death_effect
 
 local module = {}
@@ -59,6 +61,14 @@ function module.update()
         old_max_hunger = all_stats.max_hunger
         survival_hud_manager.set_hunger(old_hunger, old_max_hunger)
     end
+
+    if all_stats.is_dead ~= old_is_dead then
+        old_is_dead = all_stats.is_dead
+
+        if all_stats.is_dead then
+            module.open_death_menu()
+        end
+    end
 end
 
 function module.open_survival_hud()
@@ -78,6 +88,7 @@ function module.open_death_menu()
 end
 
 function module.close_death_menu()
+    respawn.on_respawn()
     input.set_enabled("hud.inventory", true)
     module.open_survival_hud()
     hud.close("newgen:death_menu")
