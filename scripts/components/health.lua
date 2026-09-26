@@ -6,7 +6,9 @@ if m.side == "client" then return end
 
 local stats = entity:require_component("newgen:stats")
 -- local hunger_system = entity:get_component("newgen:hunger_system")
+local newgen_utils = require "utils"
 local tsf = entity.transform
+local eid = entity:get_uid()
 
 local health_regen_timer = 0
 local in_battle_timer = 0
@@ -36,7 +38,6 @@ function die()
     end
 
     stats.set_stat("is_dead", true)
-    max_fall_y = nil
 end
 
 function heal(points)
@@ -99,6 +100,11 @@ function on_update(tps)
 end
 
 function on_grounded()
+    if newgen_utils.is_in_water(eid) then
+        max_fall_y = nil
+        return
+    end
+
     local y = tsf:get_pos()[2]
     local height = (max_fall_y or y) - y
     max_fall_y = nil
