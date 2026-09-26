@@ -1,4 +1,7 @@
 {
     "texture": "snow",
-    "material": "base:snow"
+    "material": "base:snow",
+    "tags": [
+        "newgen:ground"
+    ]
 }

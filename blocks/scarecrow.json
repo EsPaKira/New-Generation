@@ -6,5 +6,8 @@
     "hitbox": [0.1875, 0, 0.1875, 0.625, 2.625, 0.625],
     "rotation": "pane",
     "light-passing": true,
-    "base:durability": 5
+    "base:durability": 5,
+    "tags": [
+        "newgen:wood"
+    ]
 }

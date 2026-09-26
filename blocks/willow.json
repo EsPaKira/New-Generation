@@ -9,5 +9,8 @@
         "willow"
     ],
     "rotation": "pipe",
-    "base:durability": 6.0
+    "base:durability": 6.0,
+    "tags": [
+        "newgen:wood"
+    ]
 }

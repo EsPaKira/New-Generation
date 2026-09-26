@@ -1,4 +1,7 @@
 {
     "texture": "mud_bricks",
-    "base:durability": 4
+    "base:durability": 4,
+    "tags": [
+        "newgen:stone"
+    ]
 }

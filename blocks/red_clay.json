@@ -1,5 +1,6 @@
 {
     "texture": "red_clay",
+    "material": "base:ground",
     "base:durability": 4,
     "base:loot": [
         {

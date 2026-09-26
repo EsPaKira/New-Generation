@@ -1,4 +1,7 @@
 {
     "texture": "mossy_red_bricks",
-    "base:durability": 10.5
+    "base:durability": 10.5,
+    "tags": [
+        "newgen:stone"
+    ]
 }

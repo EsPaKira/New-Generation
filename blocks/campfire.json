@@ -26,5 +26,8 @@
             "particles:smoke_1"
         ]
     },
-    "base:durability": 0.1
+    "base:durability": 0.1,
+    "tags": [
+        "newgen:wood"
+    ]
 }

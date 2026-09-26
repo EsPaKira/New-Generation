@@ -8,5 +8,8 @@
     "grounded": true,
     "obstacle": false,
     "rotation": "pane",
-    "base:durability": 0.1
+    "base:durability": 0.1,
+    "tags": [
+        "newgen:plant"
+    ]
 }

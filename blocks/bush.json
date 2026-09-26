@@ -6,5 +6,8 @@
     "light-passing": true,
     "rotation": "pane",
     "obstacle": false,
-    "grounded": true
+    "grounded": true,
+    "tags": [
+        "newgen:plant"
+    ]
 }

@@ -15,5 +15,8 @@
     "obstacle": false,
     "sky-light-passing": true,
     "light-passing": true,
-    "base:durability": 0.5
+    "base:durability": 0.5,
+    "tags": [
+        "newgen:plant"
+    ]
 }

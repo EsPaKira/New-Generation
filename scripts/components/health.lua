@@ -93,6 +93,11 @@ end
 -- end
 
 function on_update(tps)
+    if newgen_utils.is_in_water(eid) then
+        max_fall_y = nil
+        return
+    end
+
     local y = tsf:get_pos()[2]
     if max_fall_y == nil or y > max_fall_y then
         max_fall_y = y

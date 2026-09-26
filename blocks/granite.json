@@ -1,4 +1,7 @@
 {
     "texture": "granite",
-    "base:durability": 12.0
+    "base:durability": 12.0,
+    "tags": [
+        "newgen:stone"
+    ]
 }
