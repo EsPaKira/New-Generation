@@ -12,13 +12,11 @@ local death_effect
 local module = {}
 
 
-function module.open()
+function module.start()
     death_effect = gfx.posteffects.index("newgen:death")
 
     input.add_callback("hud.inventory", function()
         --hud.close("newgen:body_tree")
-        if hud.is_open("newgen:death_menu") then return end
-
         if hud.is_open("newgen:side_menu") then
             hud.close("newgen:side_menu")
             return
@@ -32,7 +30,7 @@ function module.open()
     end)
 
     input.add_callback("key:escape", function()
-        if hud.is_open("newgen:death_menu") then return end
+        if hud.is_open("newgen:death_menu") then return true end
 
         hud.close("newgen:side_menu")
         --hud.close("newgen:body_tree")
@@ -72,6 +70,7 @@ function module.close_survival_hud()
 end
 
 function module.open_death_menu()
+    input.set_enabled("hud.inventory", false)
     module.close_survival_hud()
     hud.show_overlay("newgen:death_menu")
     gfx.posteffects.set_effect(death_effect, "death")
@@ -79,7 +78,8 @@ function module.open_death_menu()
 end
 
 function module.close_death_menu()
-    hud.show_overlay("newgen:survival_ui")
+    input.set_enabled("hud.inventory", true)
+    module.open_survival_hud()
     hud.close("newgen:death_menu")
     gfx.posteffects.set_intensity(death_effect, 0.0)
 end

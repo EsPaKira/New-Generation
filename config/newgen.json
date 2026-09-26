@@ -1,5 +1,6 @@
 {
     "version": "0.6.0",
     "suffocation-damage": 10000,
-    "survival-ui": "newgen:client/survival_ui"
+    "survival-ui": "newgen:client/survival_ui",
+    "death-menu": "newgen:death_menu"
 }
