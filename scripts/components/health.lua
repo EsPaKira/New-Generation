@@ -7,6 +7,7 @@ if m.side == "client" then return end
 local stats = entity:require_component("newgen:stats")
 -- local hunger_system = entity:get_component("newgen:hunger_system")
 local newgen_utils = require "utils"
+local respawn = require "respawn"
 local tsf = entity.transform
 local eid = entity:get_uid()
 
@@ -35,9 +36,12 @@ function die()
         if loot then
             loot.drop_loot()
         end
+
+        return
     end
 
     stats.set_stat("is_dead", true)
+    respawn.notify_death(eid)
 end
 
 function heal(points)
