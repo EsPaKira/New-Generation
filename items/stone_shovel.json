@@ -11,5 +11,8 @@
             {"type": "slashing", "count": 1}
         ]
     },
+    "tags": [
+        "newgen:shovel"
+    ],
     "description": "1 slashing damage"
 }

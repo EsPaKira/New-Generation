@@ -12,5 +12,8 @@
             {"type": "piercing", "count": 5}
         ]
     },
+    "tags": [
+        "newgen:pickaxe"
+    ],
     "description": "5 piercing damage"
 }

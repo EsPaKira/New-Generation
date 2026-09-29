@@ -11,5 +11,8 @@
             {"type": "crushing", "count": 2}
         ]
     },
+    "tags": [
+        "newgen:pickaxe"
+    ],
     "description": "2 crushing damage"
 }
