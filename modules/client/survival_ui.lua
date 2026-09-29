@@ -1,3 +1,4 @@
+local config = require "config"
 local stats = require "client/stats"
 local survival_hud_manager = require "client/survival_hud_manager"
 local respawn = require "respawn"
@@ -10,6 +11,8 @@ local old_hunger = nil
 local old_max_hunger = nil
 local old_is_dead = false
 local death_effect
+
+local death_menu = config.main["death-menu"]
 
 local module = {}
 
@@ -32,7 +35,7 @@ function module.start()
     end)
 
     input.add_callback("key:escape", function()
-        if hud.is_open("newgen:death_menu") then return true end
+        if hud.is_open(death_menu) then return true end
 
         hud.close("newgen:side_menu")
         --hud.close("newgen:body_tree")
@@ -82,7 +85,7 @@ end
 function module.open_death_menu()
     input.set_enabled("hud.inventory", false)
     module.close_survival_hud()
-    hud.show_overlay("newgen:death_menu")
+    hud.show_overlay(death_menu)
     gfx.posteffects.set_effect(death_effect, "death")
     gfx.posteffects.set_intensity(death_effect, 1.0)
 end
@@ -91,7 +94,7 @@ function module.close_death_menu()
     respawn.on_respawn()
     input.set_enabled("hud.inventory", true)
     module.open_survival_hud()
-    hud.close("newgen:death_menu")
+    hud.close(death_menu)
     gfx.posteffects.set_intensity(death_effect, 0.0)
 end
 
