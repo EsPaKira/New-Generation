@@ -10,7 +10,7 @@ local RespawnedMessage = Message.new("newgen", "respawned", { uid = "int16" }) -
 local DeathMessage = Message.new("newgen", "death", { uid = "int16" }) -- server > client
 
 local function get_entity_by_neutron_uid(uid)
-    local cuid = api.entities.__get_uids__()[uid]
+    local cuid = api.entities.server_to_client_uid(uid)
     if not cuid then return nil end
 
     return entities.get(cuid)
