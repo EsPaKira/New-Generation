@@ -1,0 +1,6 @@
+{
+    "script-name": "food",
+    "newgen:food": {
+        "saturation": 3
+    }
+}

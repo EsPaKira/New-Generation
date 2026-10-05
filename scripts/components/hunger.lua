@@ -6,7 +6,7 @@ local stats = entity:require_component("newgen:stats")
 local hunger_progress = 0
 
 
-function set_hunger(value)
+local function set_hunger(value)
     if value == 0 then return end
     if player.is_instant_destruction(entity:get_player()) then return end
 
@@ -23,12 +23,11 @@ function on_update(tps)
     hunger_progress = hunger_progress + 1 / tps
 end
 
+function eat(saturation)
+    set_hunger(stats:get_hunger() - saturation)
+end
+
 events.on("newgen:heal", function(pid)
     if pid ~= entity:get_player() then return end
     set_hunger(stats:get_hunger() + 1)
-end)
-
-events.on("newgen:eat", function(saturation, pid)
-    if pid ~= entity:get_player() then return end
-    set_hunger(stats:get_hunger() - saturation)
 end)

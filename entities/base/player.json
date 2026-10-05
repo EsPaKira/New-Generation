@@ -3,6 +3,7 @@
         "newgen:stats",
         "newgen:swimming",
         "newgen:oxygen",
-        "newgen:health"
+        "newgen:health",
+        "newgen:hunger"
     ]
 }

@@ -17,19 +17,7 @@ local hunger_timer = 0
 local max_fall_y = nil
 
 
-function set_health(value)
-    local health = stats:get_hp()
-    local max_health = stats:get_max_hp()
-
-    health = math.min(math.max(0, health - value), max_health)
-    stats.set_stat("hp", health)
-
-    if health == 0 then
-        die()
-    end
-end
-
-function die()
+local function die()
     local pid = entity:get_player()
     if pid == -1 then
         local loot = entity:get_component("newgen:loot")
@@ -44,9 +32,16 @@ function die()
     respawn.notify_death(eid)
 end
 
-function heal(points)
-    if points == 0 then return end
-    set_health(-points)
+local function set_health(value)
+    local health = stats:get_hp()
+    local max_health = stats:get_max_hp()
+
+    health = math.min(math.max(0, health - value), max_health)
+    stats.set_stat("hp", health)
+
+    if health == 0 then
+        die()
+    end
 end
 
 local function calculate_damage(points, type)
@@ -54,6 +49,11 @@ local function calculate_damage(points, type)
     -- local protection = c_manager["get_" .. type .. "_damage_protection"]()
     -- return math.round(math.max(0, (points - c_manager:get_absolute_damage_protection()) * (1 - protection)))
     return points
+end
+
+function heal(points)
+    if points == 0 then return end
+    set_health(-points)
 end
 
 function damage(points, type)

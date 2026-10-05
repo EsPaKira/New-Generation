@@ -3,7 +3,6 @@ local api = require(string.format("%s:api/%s/api", m.pack_id, m.api_references.N
 local Module = api.utils.classes.module
 local PredictedEvent = api.predicted_events
 
-local base_util = require "base:util"
 local block_drop = require "server/block_drop"
 
 local self = Module()
@@ -118,7 +117,7 @@ local function breaking_sounds(x, y, z)
     audio.play_sound(
         random.random(0, 1) == 0 and
             material.hitSound or
-            material.stepsSound, 
+            material.stepsSound,
         x + 0.5, y + 0.5, z + 0.5,
         1.0, 0.9 + math.random() * 0.2, "regular"
     )

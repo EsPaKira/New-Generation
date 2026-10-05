@@ -50,7 +50,7 @@ function set_stat(stat, value, from_stats_module)
 
             character.stats[stat] = value
         end
-    end  
+    end
 end
 
 function get_all_stats()

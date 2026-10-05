@@ -35,6 +35,7 @@ function self.server.respawn(client)
     if not pentity then return end
 
     local stats_component = pentity:get_component("newgen:stats")
+    if not stats_component then return end
 
     stats_component.set_stat("is_dead", false)
     stats_component.set_stat("oxygen", replica.max_oxygen)
