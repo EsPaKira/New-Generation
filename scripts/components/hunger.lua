@@ -3,9 +3,12 @@ if m.side == "client" then return end
 
 local stats = entity:require_component("newgen:stats")
 local health_component
+local config = require "config"
 
 local hunger_progress = 0
 local health_regen_timer = 0
+local regen_time = config.main["regen-time"]
+local hunger_time = config.main["hunger-time"]
 
 
 local function set_hunger(value)
@@ -25,12 +28,12 @@ local function should_heal()
 end
 
 function on_update(tps)
-    if hunger_progress >= 120 then
+    if hunger_progress >= hunger_time then
         hunger_progress = 0
         set_hunger(stats:get_hunger() + 1)
     end
 
-    if health_regen_timer >= 1 then
+    if health_regen_timer >= regen then
         if not health_component then
             health_component = entity:get_component("newgen:health")
         end

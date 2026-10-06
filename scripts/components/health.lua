@@ -7,11 +7,13 @@ if m.side == "client" then return end
 local stats = entity:require_component("newgen:stats")
 local newgen_utils = require "utils"
 local respawn = require "respawn"
+local config = require "config"
+
 local tsf = entity.transform
 local eid = entity:get_uid()
-
 local in_battle_timer = 0
 local max_fall_y = nil
+local in_battle_time = config.main["in-battle-time"]
 
 
 local function die()
@@ -61,7 +63,7 @@ function damage(points, type)
         return
     end
 
-    in_battle_timer = 10
+    in_battle_timer = in_battle_time
 
     local end_damage = calculate_damage(points, type)
 
