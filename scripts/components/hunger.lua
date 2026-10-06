@@ -2,8 +2,10 @@ local m = _G["$Multiplayer"]
 if m.side == "client" then return end
 
 local stats = entity:require_component("newgen:stats")
+local health_component
 
 local hunger_progress = 0
+local health_regen_timer = 0
 
 
 local function set_hunger(value)
@@ -15,12 +17,41 @@ local function set_hunger(value)
     stats.set_stat("hunger", math.min(math.max(0, value), max_hunger))
 end
 
+local function should_heal()
+    local hunger, max_hunger = stats:get_hunger(), stats:get_max_hunger()
+
+    if hunger < max_hunger then return true end
+    return false
+end
+
 function on_update(tps)
     if hunger_progress >= 120 then
         hunger_progress = 0
         set_hunger(stats:get_hunger() + 1)
     end
-    hunger_progress = hunger_progress + 1 / tps
+
+    if health_regen_timer >= 1 then
+        if not health_component then
+            health_component = entity:get_component("newgen:health")
+        end
+
+        if health_component then
+            if not should_heal() then
+                health_regen_timer = 0
+                health_component.damage(1, "hunger")
+            elseif not health_component.is_full_hp()
+            and not health_component.is_in_battle() then
+                health_component.heal(1)
+                set_hunger(stats:get_hunger() + 1)
+            end
+        end
+
+        health_regen_timer = 0
+    end
+
+    local tick_time = 1 / tps
+    health_regen_timer = health_regen_timer + tick_time
+    hunger_progress = hunger_progress + tick_time
 end
 
 function eat(saturation)

@@ -7,7 +7,7 @@ local module = {}
 
 
 local function is_current_block(x, y, z)
-    return x ~= nil and x == current_block.x and y == current_block.y and z == current_block.z
+    return x ~= nil and x == current_block[1] and y == current_block[2] and z == current_block[3]
 end
 
 local function stop_instant()
@@ -32,8 +32,8 @@ function module.start_breaking(x, y, z, pid)
 
     stop_instant()
 
-    current_block = { x = x, y = y, z = z }
     local pos = {x, y, z}
+    current_block = pos
 
     instant = BreakingEvent:start({ pos = pos, blockid = blockid })
 end

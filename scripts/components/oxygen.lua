@@ -4,6 +4,7 @@ if m.side == "client" then return end
 local newgen_utils = require "utils"
 local config = require "config"
 local stats = entity:require_component("newgen:stats")
+local health_component
 local eid = entity:get_uid()
 
 local time_under_water = 0
@@ -25,9 +26,12 @@ function on_update(tps)
         stats.set_stat("oxygen", oxygen)
 
         if oxygen == 0 then
-            local health = entity:get_component("newgen:health")
-            if health then
-                health.damage(SUFFOCATION_DAMAGE, "suffocation")
+            if not health_component then
+                health_component = entity:get_component("newgen:health")
+            end
+
+            if health_component then
+                health_component.damage(SUFFOCATION_DAMAGE, "suffocation")
             end
         end
 

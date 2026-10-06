@@ -5,15 +5,12 @@ local m = _G["$Multiplayer"]
 if m.side == "client" then return end
 
 local stats = entity:require_component("newgen:stats")
--- local hunger_system = entity:get_component("newgen:hunger_system")
 local newgen_utils = require "utils"
 local respawn = require "respawn"
 local tsf = entity.transform
 local eid = entity:get_uid()
 
-local health_regen_timer = 0
 local in_battle_timer = 0
-local hunger_timer = 0
 local max_fall_y = nil
 
 
@@ -71,41 +68,26 @@ function damage(points, type)
     set_health(end_damage)
 end
 
--- local function should_heal()
---     local hunger, max_hunger = hunger_system.get_hunger()
+function is_in_battle()
+    return in_battle_timer > 0
+end
 
---     if hunger < max_hunger then return true end
---     return false
--- end
-
--- function on_update(tps)
---     if health_regen_timer >= 1 and in_battle_timer <= 0 then
---         if hunger_system then -- will be moved into effect system in the future
---             if not should_heal() then
---                 health_regen_timer = 0
---                 damage(1, "hunger")
---                 return
---             end
---         end
-
---         heal(1)
---         health_regen_timer = 0
---     end
-
---     health_regen_timer = health_regen_timer + 1 / tps
---     in_battle_timer = in_battle_timer - 1 / tps
--- end
+function is_full_hp()
+    local hp, max_hp = stats:get_hp(), stats:get_max_hp()
+    return hp == max_hp
+end
 
 function on_update(tps)
     if newgen_utils.is_in_water(eid) then
         max_fall_y = nil
-        return
+    else
+        local y = tsf:get_pos()[2]
+        if max_fall_y == nil or y > max_fall_y then
+            max_fall_y = y
+        end
     end
 
-    local y = tsf:get_pos()[2]
-    if max_fall_y == nil or y > max_fall_y then
-        max_fall_y = y
-    end
+    in_battle_timer = in_battle_timer - 1 / tps
 end
 
 function on_grounded()
@@ -120,6 +102,6 @@ function on_grounded()
 
     if height <= 0 then return end
 
-    local dmg = math.max(0, math.floor((height - 3) * 2))
+    local dmg = math.max(0, math.floor((height - 3.9)))
     damage(dmg, "falling")
 end
