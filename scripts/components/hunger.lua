@@ -33,7 +33,7 @@ function on_update(tps)
         set_hunger(stats:get_hunger() + 1)
     end
 
-    if health_regen_timer >= regen then
+    if health_regen_timer >= regen_time then
         if not health_component then
             health_component = entity:get_component("newgen:health")
         end

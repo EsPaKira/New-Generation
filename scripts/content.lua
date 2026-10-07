@@ -5,6 +5,8 @@ function on_scripts_loading()
     require "breaking_events"
     require "config"
     require "respawn"
+    local crafts = require "crafting"
+    crafts.load_and_update()
 
     if m.side == "server" then
         require "server/metadata"
