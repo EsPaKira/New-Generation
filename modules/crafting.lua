@@ -18,13 +18,15 @@ function self.shared.load()
     for _, categories in ipairs(all_crafts) do
         local category = categories:match("/(.+)")
         local group = categories:match(":(.+)")
-        crafts_by_category[category] = {}
+        crafts_by_category[category] = crafts_by_category[category] or {}
 
         for _, craft in ipairs(file.list_all_res(group)) do
             local craft_name = craft:match("/([^/.]+)%.json$")
-            local craft_data = file.read_combined_object(craft:match(":(.+)"))
-            crafts_by_category[category][craft_name] = craft_data
-            crafts_all[category .. ":" .. craft_name] = craft_data
+            if not crafts_by_category[category][craft_name] then
+                local craft_data = file.read_combined_object(craft:match(":(.+)"))
+                crafts_by_category[category][craft_name] = craft_data
+                crafts_all[category .. ":" .. craft_name] = craft_data
+            end
         end
     end
 end
