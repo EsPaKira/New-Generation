@@ -1,3 +1,6 @@
+-- Original code - base_survival by MihailRis
+-- Protected by MIT license
+-- https://github.com/MihailRis/base_survival
 local m = _G["$Multiplayer"]
 local api = require(string.format("%s:api/%s/api", m.pack_id, m.api_references.Neutron[2]))[m.side]
 local Module = api.utils.classes.module

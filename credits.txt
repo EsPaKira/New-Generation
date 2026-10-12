@@ -3,8 +3,9 @@ Neveix - https://github.com/Neveix
 
 MihailRis - https://github.com/MihailRis
     scripts/components/health.lua - [MIT license] - https://github.com/MihailRis/base_survival/blob/main/LICENSE
+    modules/craftings.lua - [MIT license] - https://github.com/MihailRis/base_survival/blob/main/LICENSE
 
 kotisoff - https://github.com/kotisoff
-    modules/client/survival_ui.lua - [MIT license] - https://github.com/kotisoff/NotSurvival/blob/multiplayer/LICENSE
+    scripts/components/swimming.lua - [MIT license] - https://github.com/kotisoff/NotSurvival/blob/multiplayer/LICENSE
     layouts/survival_ui.xml - [MIT license] - https://github.com/kotisoff/NotSurvival/blob/multiplayer/LICENSE
     layouts/survival_ui.xml.lua - [MIT license] - https://github.com/kotisoff/NotSurvival/blob/multiplayer/LICENSE

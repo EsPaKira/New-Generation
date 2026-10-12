@@ -26,9 +26,9 @@ function module.start()
             hud.close("newgen:side_menu")
             return
         end
-        -- if hud.is_open("newgen:crafts") then
-        --     hud.close("newgen:crafts")
-        -- end
+        if hud.is_open("newgen:crafts") then
+            hud.close("newgen:crafts")
+        end
         if not hud.is_inventory_open() then
             hud.open_permanent("newgen:side_menu")
         end

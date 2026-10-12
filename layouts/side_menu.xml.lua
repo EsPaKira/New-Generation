@@ -5,8 +5,8 @@ end
 
 function open_crafting_menu()
     audio.play_sound_2d("ui/button_click", 1, 1, "ui")
-    --hud.close("newgen:player_button")
-    --hud.show_overlay("newgen:crafts", false)
+    hud.close("newgen:side_menu")
+    hud.show_overlay("newgen:crafts", false)
 end
 
 function open_settings_menu()
