@@ -1,6 +1,6 @@
 {
     "components": [
-        {"tag": "wood", "count": 1}
+        {"tag": "newgen:wood", "count": 1}
     ],
     "results": [
         {"id": "newgen:stick", "count": 8}

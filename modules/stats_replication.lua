@@ -5,7 +5,7 @@ local config = require "config"
 local schema = {}
 
 for stat, data in pairs(config.stats) do
-    schema[stat] = data.net_type
+    schema[stat] = data["net-type"]
 end
 
 schema.choosen_character = "string"

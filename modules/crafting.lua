@@ -16,54 +16,6 @@ local self = Module()
 
 -- SHARED
 
-function self.shared.load()
-    local all_crafts = file.list_all_res("crafts")
-    for _, categories in ipairs(all_crafts) do
-        local category = categories:match("/(.+)")
-        local group = categories:match(":(.+)")
-        crafts_by_category[category] = crafts_by_category[category] or {}
-
-        for _, craft in ipairs(file.list_all_res(group)) do
-            local craft_name = craft:match("/([^/.]+)%.json$")
-            if not crafts_by_category[category][craft_name] then
-                local craft_data = file.read_combined_object(craft:match(":(.+)"))
-                crafts_by_category[category][craft_name] = craft_data
-                crafts_all[category .. ":" .. craft_name] = craft_data
-            end
-        end
-    end
-end
-
-function self.shared.find_all_containing(category, itemid, item_tag)
-    local found = {}
-
-    if not crafts_by_category[category] then return found end
-
-    for _, craft in pairs(crafts_by_category[category]) do
-        for _, comp in pairs(craft.components or {}) do
-            if item_tag and comp.tag ~= nil then
-                if item_tag == comp.tag then
-                    table.insert(found, craft)
-                    break
-                end
-            end
-            if comp.id == itemid then
-                table.insert(found, craft)
-                break
-            end
-        end
-    end
-
-    return found
-end
-
--- SERVER
-
-local function drop_overflow(pid, itemid, count)
-    local drop_pos = { player.get_pos(pid) }
-    base_util.drop(drop_pos, itemid, count)
-end
-
 local function build_consumption_plan(pinvid, craft)
     local plan = {}
     local remaining_by_slot = {}
@@ -106,6 +58,56 @@ local function build_consumption_plan(pinvid, craft)
     end
 
     return plan
+end
+
+function self.shared.load()
+    local all_crafts = file.list_all_res("crafts")
+    for _, categories in ipairs(all_crafts) do
+        local category = categories:match("/(.+)")
+        local group = categories:match(":(.+)")
+        crafts_by_category[category] = crafts_by_category[category] or {}
+
+        for _, craft in ipairs(file.list_all_res(group)) do
+            local craft_name = craft:match("/([^/.]+)%.json$")
+            if not crafts_by_category[category][craft_name] then
+                local craft_data = file.read_combined_object(craft:match(":(.+)"))
+                crafts_by_category[category][craft_name] = craft_data
+                crafts_all[category .. ":" .. craft_name] = craft_data
+            end
+        end
+    end
+end
+
+function self.shared.find_all_containing(category, itemid)
+    local found = {}
+
+    if not crafts_by_category[category] then return found end
+
+    for _, craft in pairs(crafts_by_category[category]) do
+        for _, comp in ipairs(craft.components or {}) do
+            local matches = false
+
+            if comp.id then
+                matches = itemid == item.index(comp.id)
+            elseif comp.tag then
+                matches = itemid ~= nil and item.has_tag(itemid, comp.tag)
+            end
+
+            if matches then
+                table.insert(found, craft)
+                break
+            end
+        end
+    end
+
+    return found
+end
+
+-- SERVER
+
+local function drop_overflow(pid, itemid, count)
+    local drop_pos = { player.get_pos(pid) }
+    base_util.drop(drop_pos, itemid, count)
 end
 
 function self.server.craft(pid, craft_name)
@@ -151,6 +153,37 @@ function self.client.find_all_results(itemid)
     end
 
     return found
+end
+
+function self.client.get_component_count(pinvid, component)
+    local total = 0
+
+    for slot = 0, inventory.size(pinvid) - 1 do
+        local itemid, count = inventory.get(pinvid, slot)
+
+        if itemid ~= 0 and count > 0 then
+            local matches
+
+            if component.id then
+                matches = itemid == item.index(component.id)
+            else
+                matches = item.has_tag(itemid, component.tag)
+            end
+
+            if matches then
+                total = total + count
+            end
+        end
+    end
+
+    return total
+end
+
+function self.client.is_enough(recipe_id, pinvid)
+    local craft = crafts_all[recipe_id]
+    if not craft then return false end
+
+    return build_consumption_plan(pinvid, craft) ~= nil
 end
 
 function self.client.try_craft(craft_name)
