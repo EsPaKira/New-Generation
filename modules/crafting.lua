@@ -140,6 +140,7 @@ end)
 
 function self.client.find_all_results(itemid)
     local found = {}
+    itemid = item.name(itemid)
 
     for category, crafts in pairs(crafts_by_category) do
         for _, craft in pairs(crafts) do

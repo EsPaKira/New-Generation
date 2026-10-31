@@ -2,7 +2,7 @@
     "is_dead": {
         "active": true,
         "default": false,
-        "net_type": "boolean"
+        "net-type": "boolean"
     },
     "body_level": {
         "active": true,
