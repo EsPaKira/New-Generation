@@ -71,8 +71,9 @@ function self.shared.load()
             local craft_name = craft:match("/([^/.]+)%.json$")
             if not crafts_by_category[category][craft_name] then
                 local craft_data = file.read_combined_object(craft:match(":(.+)"))
+                craft_data.recipe_id = category .. ":" .. craft_name
                 crafts_by_category[category][craft_name] = craft_data
-                crafts_all[category .. ":" .. craft_name] = craft_data
+                crafts_all[craft_data.recipe_id] = craft_data
             end
         end
     end
@@ -123,7 +124,7 @@ function self.server.craft(pid, craft_name)
     end
 
     for i, result in ipairs(craft.results) do
-        local itemid = result.id
+        local itemid = item.index(result.id)
         local overflow = inventory.add(pinvid, itemid, result.count)
 
         if overflow > 0 then
