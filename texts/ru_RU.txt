@@ -43,6 +43,7 @@ primitive_forge_crafts=Крафты на примитивной кузнице
 melting_crafts=Переплавка
 Close=Закрыть
 Craft=Создать
+wood-craft=Дерево
 
 # Меню навыков
 

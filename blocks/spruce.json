@@ -11,6 +11,7 @@
     "rotation": "pipe",
     "base:durability": 6.0,
     "tags": [
-        "newgen:wood"
+        "newgen:wood",
+        "newgen:wood-craft"
     ]
 }

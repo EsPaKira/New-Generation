@@ -37,7 +37,7 @@ local function build_consumption_plan(pinvid, craft)
             end
 
             local itemid = itemid_by_slot[slot]
-            local matches
+            local matches = false
             if component.id then
                 matches = itemid == item.index(component.id)
             else

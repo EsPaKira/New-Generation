@@ -11,7 +11,8 @@
         "gui/hunger",
         "gui/head",
         "gui/crafting",
-        "gui/newgen_settings_icon"
+        "gui/newgen_settings_icon",
+        "gui/wood-craft"
     ],
     "sounds": [
         "ambient/water_splash",
