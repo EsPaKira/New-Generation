@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 Any logs.
-=======
-Any logs.
->>>>>>> e84ef8d2672436c2455d1a0fbd9ae064f038d056

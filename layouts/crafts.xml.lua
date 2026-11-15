@@ -46,11 +46,7 @@ local function display_craft(craft, button)
 end
 
 local function refresh_crafts(invid)
-<<<<<<< HEAD
-    categories = {"primitive"}
-=======
     local categories = {"primitive"}
->>>>>>> e84ef8d2672436c2455d1a0fbd9ae064f038d056
     if controller.craft_category ~= 0 and controller.craft_category ~= "primitive" then
         table.insert(categories, controller.craft_category)
     end
@@ -70,26 +66,15 @@ local function refresh_crafts(invid)
             end
         end
     end
-<<<<<<< HEAD
     controller.shown_crafts = shown_crafts
-=======
->>>>>>> e84ef8d2672436c2455d1a0fbd9ae064f038d056
 
     table.sort(shown_crafts, function(a, b)
         return a.recipe_id < b.recipe_id
     end)
-<<<<<<< HEAD
 
     local shown_crafts_count = math.min(controller.max_crafts, #shown_crafts)
     for i = 1, shown_crafts_count do
         display_craft(shown_crafts[i], craft_buttons[i])
-=======
-    controller.shown_crafts = shown_crafts
-
-    local shown_crafts_count = math.min(controller.max_crafts, #shown_crafts)
-    for i = 0, shown_crafts_count - 1 do
-        display_craft(shown_crafts[i + 1], craft_buttons[i + 1])
->>>>>>> e84ef8d2672436c2455d1a0fbd9ae064f038d056
     end
     for i = shown_crafts_count, controller.max_crafts - 1 do
         for _, node in ipairs(craft_buttons[i + 1]) do
@@ -132,8 +117,6 @@ local function refresh_info(craft)
     end
 end
 
-<<<<<<< HEAD
-=======
 local function refresh_component_info()
     if #controller.component_pages > 1 then
         document["component_info_switch"].visible = true 
@@ -195,12 +178,6 @@ end
 
 -- GLOBALS
 
-function on_items_update()
-    refresh_crafts(controller.invid)
-    refresh_info()
-end
-
->>>>>>> e84ef8d2672436c2455d1a0fbd9ae064f038d056
 function on_open(craft_category)
     document["crafts_header"].text = craft_category == 0 and gui.str("Crafts") or gui.str("Crafts on " .. craft_category)
 
@@ -229,12 +206,9 @@ function on_open(craft_category)
     end
 
     refresh_crafts(controller.invid)
-<<<<<<< HEAD
     refresh_info()
-=======
     hide_info("craft", true)
     hide_info("component", true)
->>>>>>> e84ef8d2672436c2455d1a0fbd9ae064f038d056
 end
 
 function craft()
@@ -377,11 +351,8 @@ function component_go_back()
     local last = controller.component_history[#controller.component_history]
     display_component_info(last[1], false, last[2])
 end
-<<<<<<< HEAD
 
 events.on("newgen:items_update", function()
     refresh_crafts(controller.invid)
     refresh_info()
 end)
-=======
->>>>>>> e84ef8d2672436c2455d1a0fbd9ae064f038d056
