@@ -9,6 +9,7 @@ local Message = api.messages
 local base_util = require "base:util"
 
 local CraftRequest = Message.new("newgen", "craft", { recipe_id = "string" })
+local CraftResult = Message.new("newgen", "craft_result", { ok = "boolean" })
 local crafts_by_category = {}
 local crafts_all = {}
 
@@ -37,7 +38,7 @@ local function build_consumption_plan(pinvid, craft)
             end
 
             local itemid = itemid_by_slot[slot]
-            local matches
+            local matches = false
             if component.id then
                 matches = itemid == item.index(component.id)
             else
@@ -71,8 +72,9 @@ function self.shared.load()
             local craft_name = craft:match("/([^/.]+)%.json$")
             if not crafts_by_category[category][craft_name] then
                 local craft_data = file.read_combined_object(craft:match(":(.+)"))
+                craft_data.recipe_id = category .. ":" .. craft_name
                 crafts_by_category[category][craft_name] = craft_data
-                crafts_all[category .. ":" .. craft_name] = craft_data
+                crafts_all[craft_data.recipe_id] = craft_data
             end
         end
     end
@@ -112,29 +114,34 @@ end
 
 function self.server.craft(pid, craft_name)
     local craft = crafts_all[craft_name]
-    if not craft then return end
+    if not craft then return false end
 
     local pinvid = player.get_inventory(pid)
     local consumption_plan = build_consumption_plan(pinvid, craft)
-    if not consumption_plan then return end
+    if not consumption_plan then return false end
 
     for slot, count in pairs(consumption_plan) do
         inventory.decrement(pinvid, slot, count)
     end
 
     for i, result in ipairs(craft.results) do
-        local itemid = result.id
+        local itemid = item.index(result.id)
         local overflow = inventory.add(pinvid, itemid, result.count)
 
         if overflow > 0 then
             drop_overflow(pid, itemid, overflow)
         end
     end
+
+    return true
 end
 
-CraftRequest:on(function(client, data)
-    self.craft(client.player.pid, data.recipe_id)
-end)
+if m.side == "server" then
+    CraftRequest:on(function(client, data) -- TODO
+        local ok = self.craft(client.player.pid, data.recipe_id)
+        CraftResult:tell(client, { ok = ok == true }) -- Работает до того, как на клиенте обновляется инвентарь. Пока что хз как исправить
+    end)
+end
 
 -- CLIENT
 
@@ -189,6 +196,13 @@ end
 
 function self.client.try_craft(craft_name)
     CraftRequest:send({ recipe_id = craft_name })
+end
+
+if m.side == "client" then
+    CraftResult:on(function(data)
+        if not hud.is_open("newgen:crafts") then return end
+        events.emit("newgen:items_update")
+    end)
 end
 
 return self:build()

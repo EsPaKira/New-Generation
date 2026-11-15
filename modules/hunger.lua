@@ -51,5 +51,4 @@ function self.client.try_eat(pid)
     EatMessage:send({})
 end
 
-
 return self:build()

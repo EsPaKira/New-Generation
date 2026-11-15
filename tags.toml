@@ -8,6 +8,12 @@
     "base:torch",
     "base:wooden_door"
 ]
+"newgen:wood-craft" = [
+    "base:wood",
+    "newgen:birch",
+    "newgen:spruce",
+    "newgen:willow"
+]
 "newgen:ground" = [
     "base:dirt",
     "base:grass_block"

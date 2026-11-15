@@ -49,9 +49,11 @@ function self.server.notify_death(uid)
     DeathMessage:echo({ uid = uid })
 end
 
-RespawnMessage:on(function(client)
-    self.respawn(client)
-end)
+if m.side == "server" then
+    RespawnMessage:on(function(client)
+        self.respawn(client)
+    end)
+end
 
 -- CLIENT
 
