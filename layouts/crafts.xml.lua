@@ -46,7 +46,11 @@ local function display_craft(craft, button)
 end
 
 local function refresh_crafts(invid)
+<<<<<<< HEAD
     categories = {"primitive"}
+=======
+    local categories = {"primitive"}
+>>>>>>> e84ef8d2672436c2455d1a0fbd9ae064f038d056
     if controller.craft_category ~= 0 and controller.craft_category ~= "primitive" then
         table.insert(categories, controller.craft_category)
     end
@@ -66,15 +70,26 @@ local function refresh_crafts(invid)
             end
         end
     end
+<<<<<<< HEAD
     controller.shown_crafts = shown_crafts
+=======
+>>>>>>> e84ef8d2672436c2455d1a0fbd9ae064f038d056
 
     table.sort(shown_crafts, function(a, b)
         return a.recipe_id < b.recipe_id
     end)
+<<<<<<< HEAD
 
     local shown_crafts_count = math.min(controller.max_crafts, #shown_crafts)
     for i = 1, shown_crafts_count do
         display_craft(shown_crafts[i], craft_buttons[i])
+=======
+    controller.shown_crafts = shown_crafts
+
+    local shown_crafts_count = math.min(controller.max_crafts, #shown_crafts)
+    for i = 0, shown_crafts_count - 1 do
+        display_craft(shown_crafts[i + 1], craft_buttons[i + 1])
+>>>>>>> e84ef8d2672436c2455d1a0fbd9ae064f038d056
     end
     for i = shown_crafts_count, controller.max_crafts - 1 do
         for _, node in ipairs(craft_buttons[i + 1]) do
@@ -117,6 +132,75 @@ local function refresh_info(craft)
     end
 end
 
+<<<<<<< HEAD
+=======
+local function refresh_component_info()
+    if #controller.component_pages > 1 then
+        document["component_info_switch"].visible = true 
+        document["component_info_pages"].text = controller.component_page .. "/" .. #controller.component_pages
+    else
+        document["component_info_switch"].visible = false
+    end
+
+    document["component_info_components"]:clear()
+    document["component_info_components"].visible = true
+
+    local data = controller.component_pages[controller.component_page] or {}
+    if data[1] == "text" then
+        document["component_info_components"]:add("<container size='300,200'><label id='component_info_description' size='284,196' pos='8,4' multiline='true' text-wrap='true'></label></container>")
+        document["component_info_description"].text = gui.str(data[2])
+    elseif data[1] == "craft" then
+        if data[2] ~= "primitive" then
+            document["component_info_components"]:add("<container size='300,25'><label text-align='center' gravity='center-center' color='#8b8b8b'>" .. gui.str(data[2]) .."</label></container>")
+        end
+        display_components(data[3], "component_info_components")
+    else
+        document["component_info_components"].visible = false
+    end
+end
+
+local function display_component_info(comp, save, page)
+    controller.component_page = page or 1
+    local component_pages = {}
+
+    document["component_info"].visible = true
+
+    if comp.id then
+        local itemid = item.index(comp.id)
+        document["component_info_img"].src = item.icon(itemid)
+        document["component_info_name"].text = gui.str(item.caption(itemid))
+
+        for _, found in ipairs(crafting.find_all_results(itemid)) do
+            table.insert(component_pages, {"craft", found[1], found[2]})
+        end
+    else
+        local name = tag_name(comp.tag)
+        document["component_info_img"].src = "gui/" .. name
+        document["component_info_name"].text = gui.str("material") .. ": " .. gui.str(name)
+
+        local path = file.find("materials/" .. name .. ".txt")
+        if path then
+            table.insert(component_pages, {"text", file.read(path)})
+        end
+    end
+    controller.component_pages = component_pages
+    if save then
+        table.insert(controller.component_history, {comp, controller.component_page})
+    end
+
+    document["component_go_back"].visible = #controller.component_history >= 2
+
+    refresh_component_info()
+end
+
+-- GLOBALS
+
+function on_items_update()
+    refresh_crafts(controller.invid)
+    refresh_info()
+end
+
+>>>>>>> e84ef8d2672436c2455d1a0fbd9ae064f038d056
 function on_open(craft_category)
     document["crafts_header"].text = craft_category == 0 and gui.str("Crafts") or gui.str("Crafts on " .. craft_category)
 
@@ -145,7 +229,12 @@ function on_open(craft_category)
     end
 
     refresh_crafts(controller.invid)
+<<<<<<< HEAD
     refresh_info()
+=======
+    hide_info("craft", true)
+    hide_info("component", true)
+>>>>>>> e84ef8d2672436c2455d1a0fbd9ae064f038d056
 end
 
 function craft()
@@ -288,8 +377,11 @@ function component_go_back()
     local last = controller.component_history[#controller.component_history]
     display_component_info(last[1], false, last[2])
 end
+<<<<<<< HEAD
 
 events.on("newgen:items_update", function()
     refresh_crafts(controller.invid)
     refresh_info()
 end)
+=======
+>>>>>>> e84ef8d2672436c2455d1a0fbd9ae064f038d056

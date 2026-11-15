@@ -198,6 +198,7 @@ function self.client.try_craft(craft_name)
     CraftRequest:send({ recipe_id = craft_name })
 end
 
+<<<<<<< HEAD
 if m.side == "client" then
     CraftResult:on(function(data)
         if not hud.is_open("newgen:crafts") then return end
@@ -205,4 +206,6 @@ if m.side == "client" then
     end)
 end
 
+=======
+>>>>>>> e84ef8d2672436c2455d1a0fbd9ae064f038d056
 return self:build()
