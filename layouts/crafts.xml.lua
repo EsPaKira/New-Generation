@@ -2,6 +2,7 @@
 -- Protected by MIT license
 -- https://github.com/MihailRis/base_survival
 local crafting = require "crafting"
+local metadata = require "client/metadata"
 
 local controller = {
     max_crafts = 0,
@@ -176,6 +177,10 @@ local function display_component_info(comp, save, page)
     refresh_component_info()
 end
 
+local function load_bg()
+    document["background"].src = metadata.background
+end
+
 -- GLOBALS
 
 function on_open(craft_category)
@@ -205,6 +210,7 @@ function on_open(craft_category)
         end
     end
 
+    load_bg()
     refresh_crafts(controller.invid)
     refresh_info()
     hide_info("craft", true)

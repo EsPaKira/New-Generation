@@ -12,7 +12,10 @@
         "gui/head",
         "gui/crafting",
         "gui/newgen_settings_icon",
-        "gui/wood-craft"
+        "gui/wood-craft",
+        "gui/space",
+        "gui/total_black",
+        "gui/total_gray"
     ],
     "sounds": [
         "ambient/water_splash",

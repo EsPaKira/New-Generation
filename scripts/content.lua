@@ -13,6 +13,6 @@ function on_scripts_loading()
         require "server/console"
         require "server/stats"
     else
-        return
+        require "client/metadata"
     end
 end

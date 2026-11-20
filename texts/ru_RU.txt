@@ -70,13 +70,9 @@ Increases maximum stamina for 2. Will be work after combat update.=Увелич�
 # Настройки New Generation
 
 New Generation settings=Настройки New Generation
-These settings are necessary for recalculating characters stats and for changing the gamemode=Эти настройки нужны для перерасчёта характеристик персонажей и для смены gamemode
-Change gamemode=Сменить gamemode
-Survival=Выживание
-Creative=Творческий
-Recalculate characteristics=Перерасчитать характеристики
-Recalculate=Перерасчитать
-Recalculate stats for all available characters=Перерасчитывает характеристики для всех доступных персонажей
+Current gamemode=Текущий режим игры
+survival=выживание
+creative=творческий
 Select background=Выбрать фон
 
 # Фоны

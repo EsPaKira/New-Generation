@@ -1,6 +1,6 @@
 <container size-func="unpack(gui.get_viewport())">
     <image id="background" size-func="unpack(gui.get_viewport())" />
-    <button hover-color="050" color="100" gravity="top-right" onclick="go_back()">@Back</button>
+    <button size="75,40" hover-color="050" color="100" gravity="top-right" onclick="go_back()">@Back</button>
 
     <button id="crafts_header" size="755,30" z-index="2" interactive="false" position-func="gui.get_viewport()[1]/2 - 377.5, 0">@Crafts</button>
     <panel size-func="755,gui.get_viewport()[2]" color="#00000070" position-func="gui.get_viewport()[1]/2 - 377.5, 30">

@@ -5,8 +5,8 @@ local module = {
 }
 
 -- players
--- choosen_character: string
--- characters: table
+-- choosen_character: <string>
+-- characters: <table>
 
 function module.load()
     if not file.isdir("world:data/newgen") then return end
