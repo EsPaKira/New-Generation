@@ -13,7 +13,7 @@
 
     <container id="select_bg" size="400,60" color="#00000050" position-func="gui.get_viewport()[1]/2 - 200, 250">
         <container size="160,40" pos="15,10"><label gravity="center-center">@Select background</label></container>
-        <select id="bg_select" size="140,40" onselect="function(opt) select_bg(opt) end" pos="245,10" onclick="play_sound()">
+        <select id="bg_select" size="180,40" onselect="function(opt) select_bg(opt) end" pos="205,10" onclick="play_sound()">
             <!-- content is generated in script -->
         </select>
     </container>

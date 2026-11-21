@@ -125,12 +125,16 @@ function self.server.craft(pid, craft_name)
     end
 
     for i, result in ipairs(craft.results) do
+        if result.tag then goto continue end
+
         local itemid = item.index(result.id)
         local overflow = inventory.add(pinvid, itemid, result.count)
 
         if overflow > 0 then
             drop_overflow(pid, itemid, overflow)
         end
+
+        ::continue::
     end
 
     return true

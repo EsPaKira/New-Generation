@@ -4,6 +4,7 @@
     "in-battle-time": 10,
     "regen-time": 1,
     "hunger-time": 120,
+    "standard-background": "gui/space",
     "survival-ui": "newgen:client/survival_ui",
     "death-menu": "newgen:death_menu"
 }
