@@ -5,10 +5,5 @@
     "regen-time": 1,
     "hunger-time": 120,
     "survival-ui": "newgen:client/survival_ui",
-    "death-menu": "newgen:death_menu",
-    "backgrounds": [
-        "gui/space",
-        "gui/total_gray",
-        "gui/total_black"
-    ]
+    "death-menu": "newgen:death_menu"
 }

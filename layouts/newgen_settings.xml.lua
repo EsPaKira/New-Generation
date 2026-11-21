@@ -19,7 +19,7 @@ function play_sound()
 end
 
 function load_variants_bg()
-    local bgs = config.main.backgrounds
+    local bgs = config.backgrounds
 
     local options = {}
     for _, bg in ipairs(bgs) do

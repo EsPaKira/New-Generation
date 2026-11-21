@@ -1,4 +1,5 @@
 local module = {
+    backgrounds = {},
     stats = {},
     main = {}
 }
@@ -13,6 +14,7 @@ for stat, data in pairs(file.read_combined_object("config/newgen_stats.json")) d
     end
 end
 
+module.backgrounds = file.read_combined_list("config/newgen_backgrounds.json")
 module.main = file.read_combined_object("config/newgen.json")
 
 return module
