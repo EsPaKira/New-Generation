@@ -5,7 +5,7 @@
     "hitbox": [0.1875, 0, 0.1875, 0.625, 0.625, 0.625],
     "light-passing": true,
     "ui-layout": "newgen:bag",
-    "inventory-size": 8,
+    "inventory-size": 10,
     "newgen:have-loot": true,
     "state-based": {
         "offset": 0,

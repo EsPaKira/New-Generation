@@ -1,25 +1,4 @@
 {
-  "entities": [
-    "base:player"
-  ],
-  "items": [
-    "copper_axe",
-    "copper_pickaxe",
-    "copper_shovel",
-    "stone_axe",
-    "stone_hammer",
-    "stone_shovel",
-    "tin_bronze_axe",
-    "tin_bronze_pickaxe",
-    "tin_bronze_shovel",
-    "stick",
-    "bear_meat",
-    "blackberry",
-    "cabbage",
-    "chanterelles.item",
-    "cowberry",
-    "white_mushrooms.item"
-  ],
   "blocks": [
     "base:leaves",
     "small_stick",
@@ -66,6 +45,28 @@
     "web",
     "white_mushrooms",
     "willow",
-    "willow_planks"
+    "willow_planks",
+    "clay_oven"
+  ],
+  "items": [
+    "copper_axe",
+    "copper_pickaxe",
+    "copper_shovel",
+    "stone_axe",
+    "stone_hammer",
+    "stone_shovel",
+    "tin_bronze_axe",
+    "tin_bronze_pickaxe",
+    "tin_bronze_shovel",
+    "stick",
+    "bear_meat",
+    "blackberry",
+    "cabbage",
+    "chanterelles.item",
+    "cowberry",
+    "white_mushrooms.item"
+  ],
+  "entities": [
+    "base:player"
   ]
 }

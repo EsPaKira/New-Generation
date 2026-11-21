@@ -80,6 +80,7 @@ Select background=Выбрать фон
 gui/space=Космос
 gui/total_gray=Абсолютно серый
 gui/total_black=Абсолютно чёрный
+blocks:transparent=Прозрачный
 
 
 # Чат

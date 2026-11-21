@@ -15,7 +15,11 @@
         "gui/wood-craft",
         "gui/space",
         "gui/total_black",
-        "gui/total_gray"
+        "gui/total_gray",
+        "gui/clay_oven",
+        "gui/fire",
+        "gui/fire_active",
+        "gui/progress_bar"
     ],
     "sounds": [
         "ambient/water_splash",

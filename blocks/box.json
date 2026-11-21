@@ -9,7 +9,7 @@
     ],
     "material": "base:wood",
     "ui-layout": "newgen:box",
-    "inventory-size": 18,
+    "inventory-size": 20,
     "newgen:have-loot": true,
     "state-based": {
         "offset": 0,
