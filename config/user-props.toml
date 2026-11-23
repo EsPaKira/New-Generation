@@ -1,3 +1,5 @@
 "newgen:tool" = {}
 "newgen:loot" = {}
 "newgen:food" = {}
+"newgen:fuel" = {}
+"newgen:furnace" = {}

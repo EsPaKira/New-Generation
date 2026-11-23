@@ -1,30 +1,44 @@
--- local finvid = nil
+local m = _G["$Multiplayer"]
+local api = require(string.format("%s:api/%s/api", m.pack_id, m.api_references.Neutron[2]))[m.side]
+local furnaces = m.side == "server" and require "server/furnaces" or nil
+local block_drop = m.side == "server" and require "server/block_drop" or nil
 
--- function on_interact(x, y, z, pid)
---     local pinvid, slot = player.get_inventory(pid)
---     local itemid, count = inventory.get(pinvid, slot)
-    
---     if item.name(itemid) == "base:torch.item" then
---         finvid = inventory.get_block(x, y, z)
---         local fitemid, fcount = inventory.get(finvid, 1)
---         local furnaces = require "furnaces"
---         if furnaces.check(finvid, 1, "fuel") then
---             block.set_variant(x, y, z, 1)
---             -- pos, finvid, additional max temperature
---             furnaces.add(x, y, z, finvid, 300)
---             return true
---         end
---     end
---     hud.open_block(x, y, z)
---     hud.open_permanent("newgen:player_button")
+local TORCH = item.index("base:torch.item")
 
---     return true
--- end
+local function holds_torch(pid)
+    local pinvid, slot = player.get_inventory(pid)
+    local itemid = inventory.get(pinvid, slot)
+    return itemid == TORCH
+end
 
--- function on_broken(x, y, z)
---     local furnaces = require "furnaces"
---     furnaces.remove(finvid)
--- end
+function on_interact(x, y, z, pid)
+    if m.side == "client" then
+        if not holds_torch(pid) then
+            events.emit("newgen:block_open")
+        end
+        return true
+    end
+
+    if holds_torch(pid) and furnaces.ignite(x, y, z) then
+        return true
+    end
+
+    local player_obj = api.sandbox.players.get_by_pid(pid)
+    api.sandbox.inventories.open_block(player_obj, {x, y, z})
+end
+
+function on_breaking(x, y, z, pid)
+    if m.side == "client" then return end
+    if player.is_instant_destruction(pid) then
+        block_drop.drop_block(x, y, z, pid)
+    end
+end
+
+function on_broken(x, y, z)
+    if m.side == "server" then
+        furnaces.remove(x, y, z)
+    end
+end
 
 -- events.on("newgen:furnace.update", function(t, m, pos)
 --     if random.random(1, 10) > 7 then 

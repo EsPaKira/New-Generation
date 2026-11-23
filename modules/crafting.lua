@@ -105,6 +105,10 @@ function self.shared.find_all_containing(category, itemid)
     return found
 end
 
+function self.shared.get_recipe(recipe_id)
+    return crafts_all[recipe_id]
+end
+
 -- SERVER
 
 local function drop_overflow(pid, itemid, count)
@@ -115,6 +119,8 @@ end
 function self.server.craft(pid, craft_name)
     local craft = crafts_all[craft_name]
     if not craft then return false end
+
+    if crafts_by_category[melting][craft_name] then return false end
 
     local pinvid = player.get_inventory(pid)
     local consumption_plan = build_consumption_plan(pinvid, craft)

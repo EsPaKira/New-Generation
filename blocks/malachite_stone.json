@@ -1,0 +1,16 @@
+{
+    "texture": "malachite_stone",
+    "model": "aabb",
+    "hitbox": [0.55,0.0,0.5,0.2,0.15,0.3],
+    "rotation": "pane",
+    "light-passing": true,
+    "sky-light-passing": true,
+    "material": "base:stone",
+    "grounded": true,
+    "hidden": true,
+    "base:durability": 0.1,
+    "picking-item": "newgen:malachite_ore",
+    "base:loot": [
+        {"item": "newgen:malachite_ore", "count": 1}
+    ]
+}

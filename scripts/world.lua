@@ -5,6 +5,7 @@ local player_loaded = false
 
 local block_drop
 local metadata
+local furnaces
 
 
 function on_world_open()
@@ -12,6 +13,7 @@ function on_world_open()
         metadata = require "server/metadata"
         metadata.load()
         block_drop = require "server/block_drop"
+        furnaces = require "server/furnaces"
     else
         block_breaking = require "client/block_breaking"
     end
@@ -32,6 +34,12 @@ if m.side == "client" then
 
         if not block_breaking then return end
         block_breaking.player_tick(pid)
+    end
+end
+
+if m.side == "server" then
+    function on_world_tick()
+        furnaces.tick()
     end
 end
 

@@ -10,6 +10,7 @@ function on_scripts_loading()
 
     if m.side == "server" then
         require "server/metadata"
+        require "server/furnaces"
         require "server/console"
         require "server/stats"
     else
