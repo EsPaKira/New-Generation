@@ -120,7 +120,7 @@ function self.server.craft(pid, craft_name)
     local craft = crafts_all[craft_name]
     if not craft then return false end
 
-    if crafts_by_category[melting][craft_name] then return false end
+    if craft_name:match("^melting:") then return false end
 
     local pinvid = player.get_inventory(pid)
     local consumption_plan = build_consumption_plan(pinvid, craft)

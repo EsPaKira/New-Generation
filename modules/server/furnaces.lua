@@ -62,13 +62,23 @@ local function can_output(invid, result)
     return out_id == result_id and out_count + result.count <= item.stack_size(result_id)
 end
 
+local function put_output(invid, result)
+    local result_id = item.index(result.id)
+    local out_id, out_count = inventory.get(invid, OUTPUT_SLOT)
+    if out_id == 0 then
+        inventory.set(invid, OUTPUT_SLOT, result_id, result.count)
+    else
+        inventory.set_count(invid, OUTPUT_SLOT, out_count + result.count)
+    end
+end
+
 local function recheck(f, invid, base_tier)
     local effective_tier = math.min(base_tier, f.fuel_tier)
     local input_id, input_count = inventory.get(invid, INPUT_SLOT)
     local recipe, needs_more_tier = pick_recipe(input_id, input_count, effective_tier)
 
     if recipe then
-        if recipe.id ~= recipe.recipe_id then
+        if f.recipe_id ~= recipe.recipe_id then
             f.recipe_id = recipe.recipe_id
             f.progress = 0
         end
@@ -120,7 +130,7 @@ local function complete(f, invid, recipe)
         return
     end
 
-    inventory.set_count(invid, INPUT_SLOT, input_count - comp.result)
+    inventory.set_count(invid, INPUT_SLOT, input_count - comp.count)
     put_output(invid, result)
     f.progress = f.progress - need
     f.dirty = true
@@ -229,6 +239,9 @@ end
 function module.tick()
     tick_counter = tick_counter + 1
     local check = tick_counter == 20
+    if check then
+        tick_counter = 0
+    end
 
     for _, f in pairs(states()) do
         tick_furnace(f, check)

@@ -2,12 +2,22 @@ local m = _G["$Multiplayer"]
 local api = require(string.format("%s:api/%s/api", m.pack_id, m.api_references.Neutron[2]))[m.side]
 local StatsReplication = require "stats_replication"
 local metadata = require "server/metadata"
+local config = require "config"
 local module = {}
 
 
 local function get_character_stats(character_id)
     local character_data = file.read_combined_object("characters/" .. character_id .. ".json")
-    return character_data.stats
+    local stats = {}
+
+    for stat, info in pairs(config.stats) do
+        stats[stat] = info.default
+    end
+    for stat, value in pairs(character_data.stats) do
+        stats[stat] = value
+    end
+
+    return stats
 end
 
 local function set_stats(pid, character_id)
