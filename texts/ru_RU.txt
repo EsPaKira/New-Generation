@@ -36,7 +36,7 @@ Choosen character name=Имя выбранного персонажа
 # Меню крафтов
 
 Crafts=Крафты
-Crafts on workbench_crafts=Крафты на верстаке
+Crafts on workbench=Крафты на верстаке
 workbench=Крафты на верстаке
 Crafts on primitive_forge_crafts=Крафты на примитивной кузнице
 primitive_forge_crafts=Крафты на примитивной кузнице

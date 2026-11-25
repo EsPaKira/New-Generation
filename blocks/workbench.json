@@ -1,0 +1,8 @@
+{
+    "model": "custom",
+    "model-name": "workbench",
+    "rotation": "pane",
+    "material": "base:wood",
+    "script-name": "workbench",
+    "newgen:workbench-category": "workbench"
+}

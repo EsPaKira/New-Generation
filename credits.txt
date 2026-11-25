@@ -1,5 +1,5 @@
 Neveix - https://github.com/Neveix
-    textures/gui/planks.png
+    textures/gui/planks-craft.png
 
 MihailRis - https://github.com/MihailRis
     scripts/components/health.lua - [MIT license] - https://github.com/MihailRis/base_survival/blob/main/LICENSE

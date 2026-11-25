@@ -1,6 +1,5 @@
 # Crafts menu
 
-Crafts on workbench_crafts=Crafts on workbench
 workbench=Crafts on workbench
 Crafts on primitive_forge_crafts=Crafts on primitive forge
 primitive_forge_crafts=Crafts on primitive forge

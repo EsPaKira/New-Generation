@@ -5,7 +5,6 @@ local Message = api.messages
 
 local EatMessage = Message.new("newgen", "eat", {})
 
-
 local self = Module()
 
 -- SERVER

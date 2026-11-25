@@ -1,0 +1,8 @@
+{
+    "components": [
+        {"tag": "newgen:planks-craft", "count": 2}
+    ],
+    "results": [
+        {"id": "base:wooden_door.item", "count": 1}
+    ]
+}

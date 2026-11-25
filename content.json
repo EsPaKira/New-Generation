@@ -1,27 +1,4 @@
 {
-  "entities": [
-    "base:player"
-  ],
-  "items": [
-    "copper_axe",
-    "copper_pickaxe",
-    "copper_shovel",
-    "stone_axe",
-    "stone_hammer",
-    "stone_shovel",
-    "tin_bronze_axe",
-    "tin_bronze_pickaxe",
-    "tin_bronze_shovel",
-    "stick",
-    "bear_meat",
-    "blackberry",
-    "cabbage",
-    "chanterelles.item",
-    "cowberry",
-    "white_mushrooms.item",
-    "copper_nugget",
-    "malachite_ore"
-  ],
   "blocks": [
     "base:leaves",
     "small_stick",
@@ -70,6 +47,30 @@
     "willow",
     "willow_planks",
     "clay_oven",
-    "malachite_stone"
+    "malachite_stone",
+    "workbench"
+  ],
+  "items": [
+    "copper_axe",
+    "copper_pickaxe",
+    "copper_shovel",
+    "stone_axe",
+    "stone_hammer",
+    "stone_shovel",
+    "tin_bronze_axe",
+    "tin_bronze_pickaxe",
+    "tin_bronze_shovel",
+    "stick",
+    "bear_meat",
+    "blackberry",
+    "cabbage",
+    "chanterelles.item",
+    "cowberry",
+    "white_mushrooms.item",
+    "copper_nugget",
+    "malachite_ore"
+  ],
+  "entities": [
+    "base:player"
   ]
 }

@@ -12,6 +12,8 @@ local CraftRequest = Message.new("newgen", "craft", { recipe_id = "string" })
 local CraftResult = Message.new("newgen", "craft_result", { ok = "boolean" })
 local crafts_by_category = {}
 local crafts_all = {}
+local stations = {}
+local MAX_STATION_DISTANCE_SQ = 36
 
 local self = Module()
 
@@ -116,11 +118,30 @@ local function drop_overflow(pid, itemid, count)
     base_util.drop(drop_pos, itemid, count)
 end
 
+local function is_workbench(x, y, z)
+    local blockid = block.get(x, y, z)
+    if blockid == -1 then return false end
+    local props = block.properties[blockid]
+    return props and props["newgen:workbench-category"] or nil
+end
+
+local function is_player_station(pid)
+    local st = stations[pid]
+    if not st then return false end
+
+    local px, py, pz = player.get_pos(pid)
+    local dx, dy, dz = px - (st.x + 0.5), py - (st.y + 0.5), pz - (st.z + 0.5)
+    if dx * dx + dy * dy + dz * dz > MAX_STATION_DISTANCE_SQ then return false end
+
+    return is_workbench(st.x, st.y, st.z)
+end
+
 function self.server.craft(pid, craft_name)
     local craft = crafts_all[craft_name]
     if not craft then return false end
 
-    if craft_name:match("^melting:") then return false end
+    local category = craft_name:match("^(.-):")
+    if category == "melting" or category ~= is_player_station(pid) then return false end
 
     local pinvid = player.get_inventory(pid)
     local consumption_plan = build_consumption_plan(pinvid, craft)
@@ -146,11 +167,21 @@ function self.server.craft(pid, craft_name)
     return true
 end
 
+function self.server.open_station(x, y, z, pid)
+    if is_workbench(x, y, z) then
+        stations[pid] = { x = x, y = y, z = z }
+    end
+end
+
 if m.side == "server" then
     CraftRequest:on(function(client, data) -- TODO
         local ok = self.craft(client.player.pid, data.recipe_id)
         CraftResult:tell(client, { ok = ok == true }) -- Работает до того, как на клиенте обновляется инвентарь. Пока что хз как исправить
     end)
+
+    events.on("server:client_disconnected", function(client)
+    stations[client.player.pid] = nil
+end)
 end
 
 -- CLIENT

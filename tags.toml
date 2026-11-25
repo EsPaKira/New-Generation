@@ -14,6 +14,12 @@
     "newgen:spruce",
     "newgen:willow"
 ]
+"newgen:planks-craft" = [
+    "base:planks",
+    "newgen:birch_planks",
+    "newgen:spruce_planks",
+    "newgen:willow_planks"
+]
 "newgen:ground" = [
     "base:dirt",
     "base:grass_block"

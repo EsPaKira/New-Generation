@@ -16,7 +16,6 @@ local function get_entity_by_neutron_uid(uid)
     return entities.get(cuid)
 end
 
-
 local self = Module()
 
 -- SERVER
