@@ -15,5 +15,6 @@ function on_scripts_loading()
         require "server/stats"
     else
         require "client/metadata"
+        require "furnace_sync"
     end
 end

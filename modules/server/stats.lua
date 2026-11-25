@@ -38,6 +38,12 @@ local function set_stats(pid, character_id)
         record.characters[character_id] = character
     end
 
+    for stat, info in pairs(config.stats) do
+        if character.stats[stat] == nil then
+            character.stats[stat] = info.default
+        end
+    end
+
     for stat, value in pairs(character.stats) do
         replica[stat] = value
         stats_component.set_stat(stat, value, true)

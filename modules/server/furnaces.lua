@@ -1,7 +1,6 @@
--- burn-time - ms, recipe.time = s
-
 local crafting = require "crafting"
 local metadata = require "server/metadata"
+local sync = require "furnace_sync"
 
 local INPUT_SLOT, FUEL_SLOT, OUTPUT_SLOT = 0, 1, 2
 local UNACTIVE_VARIANT, ACTIVE_VARIANT = 0, 1
@@ -9,6 +8,8 @@ local UNACTIVE_VARIANT, ACTIVE_VARIANT = 0, 1
 local TICK_MS = 50
 local TICKS_PER_SECOND = 20
 local tick_counter = 0
+
+-- burn-time - ms, recipe.time = s
 
 local module = {}
 
@@ -101,7 +102,7 @@ end
 local function set_lit(f, lit)
     if f.lit == lit then return end
     f.lit = lit
-    block.set_variant(f.x, f.y, f.z, lit and ACTIVE_VARIANT or UNACTIVE_VARIANT)
+    sync.set_variant(f.x, f.y, f.z, lit and ACTIVE_VARIANT or UNACTIVE_VARIANT)
 end
 
 local function extinguish(f)
