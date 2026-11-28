@@ -1,0 +1,32 @@
+{
+    "head": {
+        "active": true
+    },
+    "helmet": {
+        "active": true
+    },
+    "body": {
+        "active": true
+    },
+    "chestplate": {
+        "active": true
+    },
+    "cloak": {
+        "active": true
+    },
+    "gloves": {
+        "active": true
+    },
+    "belt": {
+        "active": true
+    },
+    "legs": {
+        "active": true
+    },
+    "greaves": {
+        "active": true
+    },
+    "boots": {
+        "active": true
+    }
+}

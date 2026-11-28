@@ -2,13 +2,13 @@
 
 ## Как указывать
 
-В ```config/newgen.json``` создаете объект.
+В ```ваш_пак:config/newgen/main.json``` создаете объект.
 
 ### Доступные ключи
 
 ```survival-ui``` - Можно указать собственный входной файл (адрес - пак:путь_без_.lua) для интерфейса (открывается при включенном режиме выживания).
 
-Пример из ```newgen:config/newgen.json``` - ```"survival-ui": "newgen:client/survival_ui"```
+Пример из ```newgen:config/newgen.main.json``` - ```"survival-ui": "newgen:client/survival_ui"```
 
 Шаблон для файла:
 
@@ -43,7 +43,7 @@ end
 
 ### Меню смерти
 
-В ```config/newgen.json``` - ```death-menu```. Просто указать XML-файл (Например: ```newgen:death_menu``` без .xml).
+В ```death-menu``` просто указать XML-файл (Например: ```"newgen:death_menu"``` без .xml).
 
 ### Боковая панель
 

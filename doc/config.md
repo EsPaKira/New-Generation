@@ -1,6 +1,6 @@
 # Конфигурация New Generation
 
-Все параметры настраиваются через config/newgen.json
+Все параметры настраиваются через config/newgen/main.json
 
 ## Урон при удушье
 
@@ -10,7 +10,7 @@
 
 Ключ - ```"suffocation-damage"```
 
-### Пример *config/newgen.json:*
+### Пример *config/newgen/main.json:*
 
 ```json
 {
@@ -52,8 +52,8 @@
 
 ## Фоны интерфейса
 
-Можно добавить новые фоны интерфейса. Пример реализации в ```newgen:config/newgen_backgrounds.json```. Не забудьте указать фоны в ```ваш_пак:preload.json```.
+Можно добавить новые фоны интерфейса. Пример реализации в ```newgen:config/newgen/backgrounds.json```. Не забудьте указать фоны в ```ваш_пак:preload.json```.
 
-В ```ваш_пак:config/newgen.json``` можно указать фон по умолчанию через ```standard-background```. *По умолчанию отображается фон из config:newgen/background.txt, если есть. Он общий на все миры*
+В ```ваш_пак:config/newgen/main.json``` можно указать фон по умолчанию через ```standard-background```. *По умолчанию отображается фон из config:newgen/background.txt, если есть. Он общий на все миры*
 
 [Назад](main_page.md)

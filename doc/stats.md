@@ -2,7 +2,7 @@
 
 ## Как указывать
 
-В ```config/newgen_stats.json``` создаете:
+В ```config/newgen/stats.json``` создаете:
 
 ```json
 {
@@ -24,6 +24,6 @@
 >[!WARNING]
 >Не прописывайте ```active = false``` для ```is_dead```, ```max_hp```, ```hp```, ```max_oxygen```, ```oxygen```, ```max_hunger``` и ```hunger```. Ну пожалуйста. Иначе всё сломается.
 
-*Все примеры можно посмотреть в ```newgen:config/newgen_stats.json```.*
+*Все примеры можно посмотреть в ```newgen:config/newgen/stats.json```.*
 
 [Назад](main_page.md)
